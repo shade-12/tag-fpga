@@ -1,5 +1,5 @@
 Flow report for TAG_Computer
-Thu Feb 25 01:19:51 2021
+Thu Feb 25 10:54:13 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 25 01:18:38 2021      ;
+; Flow Status                     ; Successful - Thu Feb 25 10:53:04 2021      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; TAG_Computer                               ;
 ; Top-level Entity Name           ; TAG_Computer_Verilog                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Final                                      ;
-; Logic utilization (in ALMs)     ; 4,545 / 32,070 ( 14 % )                    ;
-; Total registers                 ; 5882                                       ;
+; Logic utilization (in ALMs)     ; 4,541 / 32,070 ( 14 % )                    ;
+; Total registers                 ; 5926                                       ;
 ; Total pins                      ; 309 / 457 ( 68 % )                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 35,968 / 4,065,280 ( < 1 % )               ;
@@ -68,172 +68,63 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/25/2021 01:10:34 ;
+; Start date & time ; 02/25/2021 10:44:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TAG_Computer        ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                                                      ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+---------------+---------------------------------------+------------+
-; Assignment Name                     ; Value                                                                                                      ; Default Value ; Entity Name                           ; Section Id ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+---------------+---------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 13718489232414.161424422814824                                                                             ; --            ; --                                    ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                                                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                                                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                                                 ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.c                                                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.h                                                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto.pre.h                                           ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c                                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c                                 ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_defines.pre.h                                        ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/system.pre.h                                                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.c                                                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.h                                                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/hps.pre.xml                                                              ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; HPS_PARTITION                       ; On                                                                                                         ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                         ; --            ; --                                    ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/../../TAG_Computer.qsys                                                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/TAG_Computer.v                                                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_reset_controller.v                                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_reset_synchronizer.v                                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_reset_controller.sdc                                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_irq_mapper_001.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_irq_mapper.sv                                              ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_width_adapter.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_address_alignment.sv                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_burst_uncompressor.sv                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_arbitrator.sv                                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_rsp_mux.sv                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_rsp_demux.sv                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_cmd_mux.sv                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_cmd_demux.sv                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_traffic_limiter.sv                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_reorder_memory.sv                                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_sc_fifo.v                                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_pipeline_base.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_router_001.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_1_router.sv                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_axi_slave_ni.sv                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/credit_producer.v                                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_master_agent.sv                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_master_translator.sv                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_avalon_st_adapter_001.v                  ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_avalon_st_adapter.v                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_rsp_mux_002.sv                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_rsp_mux.sv                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_rsp_demux_011.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_rsp_demux_001.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_rsp_demux.sv                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_cmd_mux_011.sv                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_cmd_mux_001.sv                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_cmd_mux.sv                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_cmd_demux_002.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_cmd_demux.sv                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_burst_adapter.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_burst_adapter_13_1.sv                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_burst_adapter_new.sv                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_incr_burst_converter.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_wrap_burst_converter.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_default_burst_converter.sv                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_pipeline_stage.sv                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_016.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_008.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_007.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_006.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_005.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_003.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router_002.sv                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_mm_interconnect_0_router.sv                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_slave_agent.sv                                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_axi_master_ni.sv                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_merlin_slave_translator.sv                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_System_PLL.v                                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_up_avalon_reset_from_locked_signal.v                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_System_PLL_sys_pll.vo                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_SysID.vo                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_Slider_Switches.v                                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_SDRAM.v                                                    ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_SDRAM_test_component.v                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_PushButtons.v                                              ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_Onchip_SRAM.hex                                            ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_Onchip_SRAM.v                                              ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_LEDS.v                                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_JTAG_UART_For_ARM0.v                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_JTAG_To_FPGA_Bridge.v                                      ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_JTAG_To_FPGA_Bridge_p2b_adapter.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_JTAG_To_FPGA_Bridge_b2p_adapter.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_packets_to_master.v                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_packets_to_bytes.v                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_bytes_to_packets.v                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_JTAG_To_FPGA_Bridge_timing_adt.sv                          ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_jtag_interface.v                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_jtag_dc_streaming.v                                              ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_jtag_sld_node.v                                                  ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_jtag_streaming.v                                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_clock_crosser.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_idle_remover.v                                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_idle_inserter.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_st_jtag_interface.sdc                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_Interval_Timer.v                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_IO_Bridge.v                                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_HEX0_1.v                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS.v                                               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_hps_io.v                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/verbosity_pkg.sv                                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/avalon_utilities_pkg.sv                                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/avalon_mm_pkg.sv                                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_mm_slave_bfm.sv                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_interrupt_sink.sv                                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_clock_source.sv                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/altera_avalon_reset_source.sv                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_hps_io_border_memory.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_hps_io_border_hps_io.sv                         ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_hps_io_border.sv                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/questa_mvc_svapi.svh                                                    ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/mgc_common_axi.sv                                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/mgc_axi_master.sv                                                       ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/mgc_axi_slave.sv                                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_fpga_interfaces_h2f_mpu_events.sv               ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/simulation/submodules/TAG_Computer_ARM_A9_HPS_fpga_interfaces.sv                              ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/../TAG_Computer.cmp                                                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/../../D                                                                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/TAG_Computer_ARM_A9_HPS_hps.svd                                                     ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/../../TAG_Computer.qsys                                                             ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.c                                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.h                                                ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto.pre.h                                           ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c                                 ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_defines.pre.h                                        ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/system.pre.h                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.c                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.h                                                   ; --            ; --                                    ; --         ;
-; MISC_FILE                           ; TAG_Computer/synthesis/submodules/hps.pre.xml                                                              ; --            ; --                                    ; --         ;
-; PARTITION_COLOR                     ; 16764057                                                                                                   ; --            ; TAG_Computer_Verilog                  ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                                      ; --            ; TAG_Computer_Verilog                  ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                                     ; --            ; TAG_Computer_Verilog                  ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                        ; --            ; --                                    ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                      ; --            ; --                                    ; --         ;
-; SLD_FILE                            ; TAG_Computer/synthesis/TAG_Computer.regmap                                                                 ; --            ; --                                    ; --         ;
-; SLD_FILE                            ; TAG_Computer/synthesis/TAG_Computer.debuginfo                                                              ; --            ; --                                    ; --         ;
-; SLD_INFO                            ; QSYS_NAME TAG_Computer HAS_SOPCINFO 1 GENERATION_ID 1614243730                                             ; --            ; --                                    ; --         ;
-; SOPCINFO_FILE                       ; TAG_Computer/synthesis/../../TAG_Computer.sopcinfo                                                         ; --            ; --                                    ; --         ;
-; SPD_FILE                            ; TAG_Computer/simulation/../TAG_Computer.spd                                                                ; --            ; --                                    ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                                                         ; --            ; --                                    ; --         ;
-; TOP_LEVEL_ENTITY                    ; TAG_Computer_Verilog                                                                                       ; TAG_Computer  ; --                                    ; --         ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+---------------+---------------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                      ;
++-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
+; Assignment Name                     ; Value                                                                      ; Default Value ; Entity Name                           ; Section Id ;
++-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 13718489232414.161427869912992                                             ; --            ; --                                    ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto.pre.h           ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/system.pre.h                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/hps.pre.xml                              ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; HPS_PARTITION                       ; On                                                                         ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                         ; --            ; --                                    ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                          ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/../TAG_Computer.cmp                                 ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/../../D                                             ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/TAG_Computer_ARM_A9_HPS_hps.svd                     ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/../../TAG_Computer.qsys                             ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.c                ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer.pre.h                ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto.pre.h           ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c   ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/sequencer_defines.pre.h        ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/system.pre.h                   ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.c                   ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/sequencer/tclrpt.pre.h                   ; --            ; --                                    ; --         ;
+; MISC_FILE                           ; TAG_Computer/synthesis/submodules/hps.pre.xml                              ; --            ; --                                    ; --         ;
+; PARTITION_COLOR                     ; 16764057                                                                   ; --            ; TAG_Computer_Verilog                  ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                      ; --            ; TAG_Computer_Verilog                  ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                                     ; --            ; TAG_Computer_Verilog                  ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                        ; --            ; --                                    ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                      ; --            ; --                                    ; --         ;
+; SLD_FILE                            ; TAG_Computer/synthesis/TAG_Computer.regmap                                 ; --            ; --                                    ; --         ;
+; SLD_FILE                            ; TAG_Computer/synthesis/TAG_Computer.debuginfo                              ; --            ; --                                    ; --         ;
+; SLD_INFO                            ; QSYS_NAME TAG_Computer HAS_SOPCINFO 1 GENERATION_ID 1614243730             ; --            ; --                                    ; --         ;
+; SOPCINFO_FILE                       ; TAG_Computer/synthesis/../../TAG_Computer.sopcinfo                         ; --            ; --                                    ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                         ; --            ; --                                    ; --         ;
+; TOP_LEVEL_ENTITY                    ; TAG_Computer_Verilog                                                       ; TAG_Computer  ; --                                    ; --         ;
++-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -241,11 +132,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:16     ; 1.0                     ; 5345 MB             ; 00:01:33                           ;
-; Fitter                    ; 00:03:30     ; 1.0                     ; 7029 MB             ; 00:03:51                           ;
-; Assembler                 ; 00:00:15     ; 1.0                     ; 4982 MB             ; 00:00:15                           ;
-; TimeQuest Timing Analyzer ; 00:01:09     ; 1.0                     ; 5901 MB             ; 00:01:09                           ;
-; Total                     ; 00:06:10     ; --                      ; --                  ; 00:06:48                           ;
+; Analysis & Synthesis      ; 00:01:12     ; 1.0                     ; 5299 MB             ; 00:01:26                           ;
+; Fitter                    ; 00:03:23     ; 1.0                     ; 7005 MB             ; 00:03:38                           ;
+; Assembler                 ; 00:00:16     ; 1.0                     ; 4974 MB             ; 00:00:15                           ;
+; TimeQuest Timing Analyzer ; 00:01:06     ; 1.0                     ; 5902 MB             ; 00:01:05                           ;
+; Total                     ; 00:05:57     ; --                      ; --                  ; 00:06:24                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
