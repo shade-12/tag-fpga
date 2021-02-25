@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="223" />
+   <irq preferredWidth="47" />
+   <export preferredWidth="198" />
+   <name preferredWidth="238" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/University Program/Bridges,Project,Library,Library/University Program" />
+ <window width="1942" height="1102" x="-11" y="-11" />
+ <generation path="TAG_Computer" simulation="VERILOG" />
+</preferences>
