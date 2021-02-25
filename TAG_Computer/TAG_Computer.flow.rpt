@@ -1,5 +1,5 @@
 Flow report for TAG_Computer
-Thu Feb 25 14:09:52 2021
+Thu Feb 25 15:10:18 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 25 14:08:24 2021      ;
+; Flow Status                     ; Successful - Thu Feb 25 15:08:57 2021      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; TAG_Computer                               ;
 ; Top-level Entity Name           ; TAG_Computer_Verilog                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Final                                      ;
-; Logic utilization (in ALMs)     ; 5,583 / 32,070 ( 17 % )                    ;
-; Total registers                 ; 7349                                       ;
+; Logic utilization (in ALMs)     ; 5,581 / 32,070 ( 17 % )                    ;
+; Total registers                 ; 7301                                       ;
 ; Total pins                      ; 309 / 457 ( 68 % )                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 35,968 / 4,065,280 ( < 1 % )               ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/25/2021 13:59:00 ;
+; Start date & time ; 02/25/2021 14:59:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TAG_Computer        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
 ; Assignment Name                     ; Value                                                                      ; Default Value ; Entity Name                           ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 13718489232414.161429033406132                                             ; --            ; --                                    ; --         ;
+; COMPILER_SIGNATURE_ID               ; 13718489232414.161429399302728                                             ; --            ; --                                    ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
@@ -132,11 +132,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:20     ; 1.0                     ; 5413 MB             ; 00:01:37                           ;
-; Fitter                    ; 00:03:45     ; 1.0                     ; 7502 MB             ; 00:04:11                           ;
-; Assembler                 ; 00:00:15     ; 1.0                     ; 4986 MB             ; 00:00:15                           ;
-; TimeQuest Timing Analyzer ; 00:01:25     ; 1.0                     ; 6140 MB             ; 00:01:24                           ;
-; Total                     ; 00:06:45     ; --                      ; --                  ; 00:07:27                           ;
+; Analysis & Synthesis      ; 00:01:23     ; 1.0                     ; 5444 MB             ; 00:01:40                           ;
+; Fitter                    ; 00:04:20     ; 1.0                     ; 7510 MB             ; 00:04:46                           ;
+; Assembler                 ; 00:00:16     ; 1.0                     ; 4991 MB             ; 00:00:16                           ;
+; TimeQuest Timing Analyzer ; 00:01:19     ; 1.0                     ; 6146 MB             ; 00:01:18                           ;
+; Total                     ; 00:07:18     ; --                      ; --                  ; 00:08:00                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
