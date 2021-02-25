@@ -960,7 +960,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE TAG_Computer_Verilog.v
-set_global_assignment -name SIP_FILE TAG_Computer/simulation/TAG_Computer.sip
 set_global_assignment -name VHDL_FILE HexTo7SegmentDisplay.vhd
 set_global_assignment -name SDC_FILE TAG_Computer.sdc
 set_global_assignment -name VERILOG_FILE TAG_Computer/synthesis/TAG_Computer.v -library TAG_Computer
