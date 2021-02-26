@@ -91,6 +91,10 @@ int RS232TestForReceivedData(void)
 void RS232Flush(void)
 {
  // while bit 0 of Line Status Register == ‘1’
- // read unwanted char out of fifo receiver buffer
- // return; // no more characters so return
+ while (RS232_LineStatusReg & 1) {
+  // read unwanted char out of fifo receiver buffer
+  char c = RS232_ReceiverFifo;
+ }
+ 
+ return; // no more characters so return
 }
