@@ -56,7 +56,10 @@ int putcharRS232(int c)
 
  // indicating we can write to the device
  // write character to Transmitter fifo register
+ RS232_TransmitterFifo = c;
+
  // return the character we printed
+ return c;
 }
 
 
