@@ -1,15 +1,15 @@
-#define RS232_ReceiverFifo                  (volatile unsigned *)(0xFF210200)
-#define RS232_TransmitterFifo               (volatile unsigned *)(0xFF210200)
-#define RS232_InterruptEnableReg            (volatile unsigned *)(0xFF210202)
-#define RS232_InterruptIdentificationReg    (volatile unsigned *)(0xFF210204)
-#define RS232_FifoControlReg                (volatile unsigned *)(0xFF210204)
-#define RS232_LineControlReg                (volatile unsigned *)(0xFF210206)
-#define RS232_ModemControlReg               (volatile unsigned *)(0xFF210208)
-#define RS232_LineStatusReg                 (volatile unsigned *)(0xFF21020A)
-#define RS232_ModemStatusReg                (volatile unsigned *)(0xFF21020C)
-#define RS232_ScratchReg                    (volatile unsigned *)(0xFF21020E)
-#define RS232_DivisorLatchLSB               (volatile unsigned *)(0xFF210200)
-#define RS232_DivisorLatchMSB               (volatile unsigned *)(0xFF210202)
+#define RS232_ReceiverFifo                  (*(volatile unsigned char *)(0xFF210200))
+#define RS232_TransmitterFifo               (*(volatile unsigned char *)(0xFF210200))
+#define RS232_InterruptEnableReg            (*(volatile unsigned char *)(0xFF210202))
+#define RS232_InterruptIdentificationReg    (*(volatile unsigned char *)(0xFF210204))
+#define RS232_FifoControlReg                (*(volatile unsigned char *)(0xFF210204))
+#define RS232_LineControlReg                (*(volatile unsigned char *)(0xFF210206))
+#define RS232_ModemControlReg               (*(volatile unsigned char *)(0xFF210208))
+#define RS232_LineStatusReg                 (*(volatile unsigned char *)(0xFF21020A))
+#define RS232_ModemStatusReg                (*(volatile unsigned char *)(0xFF21020C))
+#define RS232_ScratchReg                    (*(volatile unsigned char *)(0xFF21020E))
+#define RS232_DivisorLatchLSB               (*(volatile unsigned char *)(0xFF210200))
+#define RS232_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210202))
 
 #define BR_CLK_FREQ     50000000
 #define RS232_BAUD_RATE 112500
@@ -28,30 +28,32 @@
 void Init_RS232(void)
 {
     // set bit 7 of Line Control Register to 1, to gain access to the baud rate registers
-    *(RS232_LineControlReg + 7) = 1;
+    RS232_LineControlReg |= 64;
 
     // set Divisor latch (LSB and MSB) with correct value for required baud rate
     // baud rate divisor value = (freq of BR_clk) / (desired baud rate * 16)
-    *RS232_DivisorLatchLSB = BR_CLK_FREQ / (RS232_BAUD_RATE * 16);
-    *RS232_DivisorLatchMSB = BR_CLK_FREQ / (RS232_BAUD_RATE * 16);
+    RS232_DivisorLatchLSB = BR_CLK_FREQ / (RS232_BAUD_RATE * 16);
+    RS232_DivisorLatchMSB = BR_CLK_FREQ / (RS232_BAUD_RATE * 16);
 
     // set bit 7 of Line control register back to 0 and
     // program other bits in that reg for 8 bit data, 1 stop bit, no parity etc
-    *(RS232_LineControlReg + 7) = 0;
+    RS232_LineControlReg &= 63;
 
     // Reset the Fifo’s in the FiFo Control Reg by setting bits 1 & 2
-    *RS232_FifoControlReg = 1;
-    *(RS232_FifoControlReg + 1) = 1;
+    RS232_FifoControlReg |= 6;
 
     // Now Clear all bits in the FiFo control registers
-    *RS232_FifoControlReg = 0;
-    *(RS232_FifoControlReg + 1) = 0;
+    RS232_FifoControlReg &= 249;
 }
 
 
 int putcharRS232(int c)
 {
  // wait for Transmitter Holding Register bit (5) of line status register to be '1'
+ unsigned char bit_5 = 0;
+ bit_5 |= (RS232_LineStatusReg & 32);
+ while (!bit_5) {}
+
  // indicating we can write to the device
  // write character to Transmitter fifo register
  // return the character we printed
