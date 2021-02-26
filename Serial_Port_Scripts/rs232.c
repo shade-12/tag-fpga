@@ -66,7 +66,7 @@ int putcharRS232(int c)
 int getcharRS232( void )
 {
  // wait for Data Ready bit (0) of line status register to be '1'
- while (!(RS232_LineStatusReg << 7)) {}
+ while (!(RS232_LineStatusReg & 1)) {}
 
  // read new character from ReceiverFiFo register
  // return new character
@@ -81,6 +81,7 @@ int RS232TestForReceivedData(void)
 {
  // if RS232_LineStatusReg bit 0 is set to 1
  //return TRUE, otherwise return FALSE
+ return (RS232_LineStatusReg & 1);
 }
 
 
