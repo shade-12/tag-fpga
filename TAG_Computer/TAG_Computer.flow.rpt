@@ -1,5 +1,5 @@
 Flow report for TAG_Computer
-Thu Feb 25 15:41:49 2021
+Thu Feb 25 22:51:45 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 25 15:40:28 2021      ;
+; Flow Status                     ; Successful - Thu Feb 25 22:50:28 2021      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; TAG_Computer                               ;
 ; Top-level Entity Name           ; TAG_Computer_Verilog                       ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/25/2021 15:31:16 ;
+; Start date & time ; 02/25/2021 22:41:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TAG_Computer        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
 ; Assignment Name                     ; Value                                                                      ; Default Value ; Entity Name                           ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------------------+---------------+---------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 13718489232414.161429587004672                                             ; --            ; --                                    ; --         ;
+; COMPILER_SIGNATURE_ID               ; 13718489232414.161432168821652                                             ; --            ; --                                    ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
 ; HPS_ISW_FILE                        ; TAG_Computer/synthesis/submodules/sequencer/sdram_io.pre.h                 ; --            ; TAG_Computer_ARM_A9_HPS_hps_io_border ; --         ;
@@ -132,11 +132,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:24     ; 1.0                     ; 5444 MB             ; 00:01:43                           ;
-; Fitter                    ; 00:04:22     ; 1.0                     ; 7514 MB             ; 00:04:48                           ;
-; Assembler                 ; 00:00:16     ; 1.0                     ; 4994 MB             ; 00:00:16                           ;
-; TimeQuest Timing Analyzer ; 00:01:19     ; 1.0                     ; 6146 MB             ; 00:01:18                           ;
-; Total                     ; 00:07:21     ; --                      ; --                  ; 00:08:05                           ;
+; Analysis & Synthesis      ; 00:01:17     ; 1.0                     ; 5444 MB             ; 00:01:37                           ;
+; Fitter                    ; 00:04:13     ; 1.0                     ; 7514 MB             ; 00:04:36                           ;
+; Assembler                 ; 00:00:15     ; 1.0                     ; 4994 MB             ; 00:00:15                           ;
+; TimeQuest Timing Analyzer ; 00:01:15     ; 1.0                     ; 6183 MB             ; 00:01:14                           ;
+; Total                     ; 00:07:00     ; --                      ; --                  ; 00:07:42                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

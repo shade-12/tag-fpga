@@ -27,7 +27,7 @@
 void main(void)
 {
     int switches ;
-	printf("Hello from the CPEN 391 System\n");
+	printf("Hello from the TAG Computer System\n");
 
     while(1)    {
         switches = *SWITCHES ;
