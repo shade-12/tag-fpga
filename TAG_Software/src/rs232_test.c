@@ -10,7 +10,7 @@
 
 void main(void)
 {
-    printf("UART Serial Port Test Program\n");
+    printf("UART RS232 Serial Port Test Program\n");
 
     rs232Init();
     rs232Flush();

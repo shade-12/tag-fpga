@@ -2,7 +2,6 @@
 
 #include "rs232.h"
 
-#define RS232       ((volatile unsigned char *)(0xFF210200))
 #define RS232_ReceiverFifo                  (*(volatile unsigned char *)(0xFF210200))
 #define RS232_TransmitterFifo               (*(volatile unsigned char *)(0xFF210200))
 #define RS232_InterruptEnableReg            (*(volatile unsigned char *)(0xFF210202))
