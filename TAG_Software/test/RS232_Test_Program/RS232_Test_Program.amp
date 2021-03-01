@@ -12,7 +12,8 @@
     <program>
         <type>C Program</type>
         <source_files>
-            <source_file filepath="true">../../include/rs232.h</source_file>
+            <source_file filepath="true">../../src/rs232_test.c</source_file>
+            <source_file filepath="true">../../src/rs232.h</source_file>
             <source_file filepath="true">../../src/rs232.c</source_file>
         </source_files>
         <options>
