@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><altera_monitor_program_project version="1.0">
     <architecture>ARM Cortex-A9</architecture>
     <system>
-        <system_info filepath="true">../TAG_Computer/TAG_Computer.sopcinfo</system_info>
-        <system_sof filepath="true">../TAG_Computer/TAG_Computer.sof</system_sof>
+        <system_info filepath="true">../../../TAG_Computer/TAG_Computer.sopcinfo</system_info>
+        <system_sof filepath="true">../../../TAG_Computer/TAG_Computer.sof</system_sof>
         <system_jdi filepath="true"/>
         <cable>DE-SoC [USB-1]</cable>
         <processor>ARM_A9_HPS_arm_a9_0</processor>
@@ -12,7 +12,8 @@
     <program>
         <type>C Program</type>
         <source_files>
-            <source_file filepath="true">rs232.c</source_file>
+            <source_file filepath="true">../../include/rs232.h</source_file>
+            <source_file filepath="true">../../src/rs232.c</source_file>
         </source_files>
         <options>
             <compiler_flags>-g -O1</compiler_flags>
