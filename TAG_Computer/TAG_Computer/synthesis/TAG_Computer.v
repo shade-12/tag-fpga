@@ -104,14 +104,14 @@ module TAG_Computer (
 		input  wire        system_pll_ref_reset_reset       // system_pll_ref_reset.reset
 	);
 
-	wire         system_pll_sys_clk_clk;                                             // System_PLL:sys_clk_clk -> [ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, Dot_Product_Accelerator:clk, HEX0_1:clk, HEX2_3:clk, HEX4_5:clk, IO_Bridge:clk, Interval_Timer:clk, JTAG_To_FPGA_Bridge:clk_clk, JTAG_To_HPS_Bridge:clk_clk, JTAG_UART_For_ARM0:clk, JTAG_UART_For_ARM1:clk, LEDS:clk, Onchip_SRAM:clk, PushButtons:clk, SDRAM:clk, Slider_Switches:clk, SysID:clock, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, rst_controller:clk, rst_controller_003:clk]
-	wire         dot_product_accelerator_avalon_master_waitrequest;                  // mm_interconnect_0:Dot_Product_Accelerator_avalon_master_waitrequest -> Dot_Product_Accelerator:master_waitrequest
-	wire  [31:0] dot_product_accelerator_avalon_master_readdata;                     // mm_interconnect_0:Dot_Product_Accelerator_avalon_master_readdata -> Dot_Product_Accelerator:master_readdata
-	wire  [31:0] dot_product_accelerator_avalon_master_address;                      // Dot_Product_Accelerator:master_address -> mm_interconnect_0:Dot_Product_Accelerator_avalon_master_address
-	wire         dot_product_accelerator_avalon_master_read;                         // Dot_Product_Accelerator:master_read -> mm_interconnect_0:Dot_Product_Accelerator_avalon_master_read
-	wire         dot_product_accelerator_avalon_master_readdatavalid;                // mm_interconnect_0:Dot_Product_Accelerator_avalon_master_readdatavalid -> Dot_Product_Accelerator:master_readdatavalid
-	wire         dot_product_accelerator_avalon_master_write;                        // Dot_Product_Accelerator:master_write -> mm_interconnect_0:Dot_Product_Accelerator_avalon_master_write
-	wire  [31:0] dot_product_accelerator_avalon_master_writedata;                    // Dot_Product_Accelerator:master_writedata -> mm_interconnect_0:Dot_Product_Accelerator_avalon_master_writedata
+	wire         system_pll_sys_clk_clk;                                             // System_PLL:sys_clk_clk -> [ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, DNN_Accelerator:clk, HEX0_1:clk, HEX2_3:clk, HEX4_5:clk, IO_Bridge:clk, Interval_Timer:clk, JTAG_To_FPGA_Bridge:clk_clk, JTAG_To_HPS_Bridge:clk_clk, JTAG_UART_For_ARM0:clk, JTAG_UART_For_ARM1:clk, LEDS:clk, Onchip_SRAM:clk, PushButtons:clk, SDRAM:clk, Slider_Switches:clk, SysID:clock, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, rst_controller:clk, rst_controller_003:clk]
+	wire         dnn_accelerator_avalon_master_waitrequest;                          // mm_interconnect_0:DNN_Accelerator_avalon_master_waitrequest -> DNN_Accelerator:master_waitrequest
+	wire  [31:0] dnn_accelerator_avalon_master_readdata;                             // mm_interconnect_0:DNN_Accelerator_avalon_master_readdata -> DNN_Accelerator:master_readdata
+	wire  [31:0] dnn_accelerator_avalon_master_address;                              // DNN_Accelerator:master_address -> mm_interconnect_0:DNN_Accelerator_avalon_master_address
+	wire         dnn_accelerator_avalon_master_read;                                 // DNN_Accelerator:master_read -> mm_interconnect_0:DNN_Accelerator_avalon_master_read
+	wire         dnn_accelerator_avalon_master_readdatavalid;                        // mm_interconnect_0:DNN_Accelerator_avalon_master_readdatavalid -> DNN_Accelerator:master_readdatavalid
+	wire         dnn_accelerator_avalon_master_write;                                // DNN_Accelerator:master_write -> mm_interconnect_0:DNN_Accelerator_avalon_master_write
+	wire  [31:0] dnn_accelerator_avalon_master_writedata;                            // DNN_Accelerator:master_writedata -> mm_interconnect_0:DNN_Accelerator_avalon_master_writedata
 	wire   [1:0] arm_a9_hps_h2f_axi_master_awburst;                                  // ARM_A9_HPS:h2f_AWBURST -> mm_interconnect_0:ARM_A9_HPS_h2f_axi_master_awburst
 	wire   [3:0] arm_a9_hps_h2f_axi_master_arlen;                                    // ARM_A9_HPS:h2f_ARLEN -> mm_interconnect_0:ARM_A9_HPS_h2f_axi_master_arlen
 	wire   [7:0] arm_a9_hps_h2f_axi_master_wstrb;                                    // ARM_A9_HPS:h2f_WSTRB -> mm_interconnect_0:ARM_A9_HPS_h2f_axi_master_wstrb
@@ -209,12 +209,12 @@ module TAG_Computer (
 	wire   [1:0] mm_interconnect_0_io_bridge_avalon_slave_byteenable;                // mm_interconnect_0:IO_Bridge_avalon_slave_byteenable -> IO_Bridge:avalon_byteenable
 	wire         mm_interconnect_0_io_bridge_avalon_slave_write;                     // mm_interconnect_0:IO_Bridge_avalon_slave_write -> IO_Bridge:avalon_write
 	wire  [15:0] mm_interconnect_0_io_bridge_avalon_slave_writedata;                 // mm_interconnect_0:IO_Bridge_avalon_slave_writedata -> IO_Bridge:avalon_writedata
-	wire  [31:0] mm_interconnect_0_dot_product_accelerator_avalon_slave_readdata;    // Dot_Product_Accelerator:slave_readdata -> mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_readdata
-	wire         mm_interconnect_0_dot_product_accelerator_avalon_slave_waitrequest; // Dot_Product_Accelerator:slave_waitrequest -> mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_waitrequest
-	wire   [3:0] mm_interconnect_0_dot_product_accelerator_avalon_slave_address;     // mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_address -> Dot_Product_Accelerator:slave_address
-	wire         mm_interconnect_0_dot_product_accelerator_avalon_slave_read;        // mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_read -> Dot_Product_Accelerator:slave_read
-	wire         mm_interconnect_0_dot_product_accelerator_avalon_slave_write;       // mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_write -> Dot_Product_Accelerator:slave_write
-	wire  [31:0] mm_interconnect_0_dot_product_accelerator_avalon_slave_writedata;   // mm_interconnect_0:Dot_Product_Accelerator_avalon_slave_writedata -> Dot_Product_Accelerator:slave_writedata
+	wire  [31:0] mm_interconnect_0_dnn_accelerator_avalon_slave_readdata;            // DNN_Accelerator:slave_readdata -> mm_interconnect_0:DNN_Accelerator_avalon_slave_readdata
+	wire         mm_interconnect_0_dnn_accelerator_avalon_slave_waitrequest;         // DNN_Accelerator:slave_waitrequest -> mm_interconnect_0:DNN_Accelerator_avalon_slave_waitrequest
+	wire   [3:0] mm_interconnect_0_dnn_accelerator_avalon_slave_address;             // mm_interconnect_0:DNN_Accelerator_avalon_slave_address -> DNN_Accelerator:slave_address
+	wire         mm_interconnect_0_dnn_accelerator_avalon_slave_read;                // mm_interconnect_0:DNN_Accelerator_avalon_slave_read -> DNN_Accelerator:slave_read
+	wire         mm_interconnect_0_dnn_accelerator_avalon_slave_write;               // mm_interconnect_0:DNN_Accelerator_avalon_slave_write -> DNN_Accelerator:slave_write
+	wire  [31:0] mm_interconnect_0_dnn_accelerator_avalon_slave_writedata;           // mm_interconnect_0:DNN_Accelerator_avalon_slave_writedata -> DNN_Accelerator:slave_writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                     // SysID:readdata -> mm_interconnect_0:SysID_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                      // mm_interconnect_0:SysID_control_slave_address -> SysID:address
 	wire         mm_interconnect_0_onchip_sram_s1_chipselect;                        // mm_interconnect_0:Onchip_SRAM_s1_chipselect -> Onchip_SRAM:chipselect
@@ -323,7 +323,7 @@ module TAG_Computer (
 	wire  [31:0] arm_a9_hps_f2h_irq0_irq;                                            // irq_mapper:sender_irq -> ARM_A9_HPS:f2h_irq_p0
 	wire         irq_mapper_001_receiver0_irq;                                       // JTAG_UART_For_ARM1:av_irq -> irq_mapper_001:receiver0_irq
 	wire  [31:0] arm_a9_hps_f2h_irq1_irq;                                            // irq_mapper_001:sender_irq -> ARM_A9_HPS:f2h_irq_p1
-	wire         rst_controller_reset_out_reset;                                     // rst_controller:reset_out -> [Dot_Product_Accelerator:rst_n, HEX0_1:reset_n, HEX2_3:reset_n, HEX4_5:reset_n, IO_Bridge:reset, Interval_Timer:reset_n, JTAG_UART_For_ARM0:rst_n, JTAG_UART_For_ARM1:rst_n, LEDS:reset_n, Onchip_SRAM:reset, PushButtons:reset_n, SDRAM:reset_n, Slider_Switches:reset_n, SysID:reset_n, mm_interconnect_0:Dot_Product_Accelerator_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_To_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_To_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_To_HPS_Bridge_master_translator_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                     // rst_controller:reset_out -> [DNN_Accelerator:rst_n, HEX0_1:reset_n, HEX2_3:reset_n, HEX4_5:reset_n, IO_Bridge:reset, Interval_Timer:reset_n, JTAG_UART_For_ARM0:rst_n, JTAG_UART_For_ARM1:rst_n, LEDS:reset_n, Onchip_SRAM:reset, PushButtons:reset_n, SDRAM:reset_n, Slider_Switches:reset_n, SysID:reset_n, mm_interconnect_0:DNN_Accelerator_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_To_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_To_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_To_HPS_Bridge_master_translator_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                                 // rst_controller:reset_req -> [Onchip_SRAM:reset_req, rst_translator:reset_req_in]
 	wire         arm_a9_hps_h2f_reset_reset;                                         // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0]
 	wire         system_pll_reset_source_reset;                                      // System_PLL:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in1]
@@ -529,22 +529,22 @@ module TAG_Computer (
 		.f2h_irq_p1               (arm_a9_hps_f2h_irq1_irq)                             //          f2h_irq1.irq
 	);
 
-	dp_accelerator dot_product_accelerator (
-		.clk                  (system_pll_sys_clk_clk),                                             //         clock.clk
-		.master_waitrequest   (dot_product_accelerator_avalon_master_waitrequest),                  // avalon_master.waitrequest
-		.master_address       (dot_product_accelerator_avalon_master_address),                      //              .address
-		.master_read          (dot_product_accelerator_avalon_master_read),                         //              .read
-		.master_readdata      (dot_product_accelerator_avalon_master_readdata),                     //              .readdata
-		.master_readdatavalid (dot_product_accelerator_avalon_master_readdatavalid),                //              .readdatavalid
-		.master_write         (dot_product_accelerator_avalon_master_write),                        //              .write
-		.master_writedata     (dot_product_accelerator_avalon_master_writedata),                    //              .writedata
-		.slave_waitrequest    (mm_interconnect_0_dot_product_accelerator_avalon_slave_waitrequest), //  avalon_slave.waitrequest
-		.slave_address        (mm_interconnect_0_dot_product_accelerator_avalon_slave_address),     //              .address
-		.slave_read           (mm_interconnect_0_dot_product_accelerator_avalon_slave_read),        //              .read
-		.slave_readdata       (mm_interconnect_0_dot_product_accelerator_avalon_slave_readdata),    //              .readdata
-		.slave_write          (mm_interconnect_0_dot_product_accelerator_avalon_slave_write),       //              .write
-		.slave_writedata      (mm_interconnect_0_dot_product_accelerator_avalon_slave_writedata),   //              .writedata
-		.rst_n                (~rst_controller_reset_out_reset)                                     //         reset.reset_n
+	dnn_accelerator dnn_accelerator (
+		.clk                  (system_pll_sys_clk_clk),                                     //         clock.clk
+		.master_waitrequest   (dnn_accelerator_avalon_master_waitrequest),                  // avalon_master.waitrequest
+		.master_address       (dnn_accelerator_avalon_master_address),                      //              .address
+		.master_read          (dnn_accelerator_avalon_master_read),                         //              .read
+		.master_readdata      (dnn_accelerator_avalon_master_readdata),                     //              .readdata
+		.master_readdatavalid (dnn_accelerator_avalon_master_readdatavalid),                //              .readdatavalid
+		.master_write         (dnn_accelerator_avalon_master_write),                        //              .write
+		.master_writedata     (dnn_accelerator_avalon_master_writedata),                    //              .writedata
+		.rst_n                (~rst_controller_reset_out_reset),                            //         reset.reset_n
+		.slave_waitrequest    (mm_interconnect_0_dnn_accelerator_avalon_slave_waitrequest), //  avalon_slave.waitrequest
+		.slave_address        (mm_interconnect_0_dnn_accelerator_avalon_slave_address),     //              .address
+		.slave_read           (mm_interconnect_0_dnn_accelerator_avalon_slave_read),        //              .read
+		.slave_readdata       (mm_interconnect_0_dnn_accelerator_avalon_slave_readdata),    //              .readdata
+		.slave_write          (mm_interconnect_0_dnn_accelerator_avalon_slave_write),       //              .write
+		.slave_writedata      (mm_interconnect_0_dnn_accelerator_avalon_slave_writedata)    //              .writedata
 	);
 
 	TAG_Computer_HEX0_1 hex0_1 (
@@ -839,15 +839,15 @@ module TAG_Computer (
 		.ARM_A9_HPS_h2f_lw_axi_master_rready                                   (arm_a9_hps_h2f_lw_axi_master_rready),                                //                                                                .rready
 		.System_PLL_sys_clk_clk                                                (system_pll_sys_clk_clk),                                             //                                              System_PLL_sys_clk.clk
 		.ARM_A9_HPS_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),                                 // ARM_A9_HPS_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
-		.Dot_Product_Accelerator_reset_reset_bridge_in_reset_reset             (rst_controller_reset_out_reset),                                     //             Dot_Product_Accelerator_reset_reset_bridge_in_reset.reset
+		.DNN_Accelerator_reset_reset_bridge_in_reset_reset                     (rst_controller_reset_out_reset),                                     //                     DNN_Accelerator_reset_reset_bridge_in_reset.reset
 		.JTAG_To_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset             (rst_controller_reset_out_reset),                                     //             JTAG_To_FPGA_Bridge_clk_reset_reset_bridge_in_reset.reset
-		.Dot_Product_Accelerator_avalon_master_address                         (dot_product_accelerator_avalon_master_address),                      //                           Dot_Product_Accelerator_avalon_master.address
-		.Dot_Product_Accelerator_avalon_master_waitrequest                     (dot_product_accelerator_avalon_master_waitrequest),                  //                                                                .waitrequest
-		.Dot_Product_Accelerator_avalon_master_read                            (dot_product_accelerator_avalon_master_read),                         //                                                                .read
-		.Dot_Product_Accelerator_avalon_master_readdata                        (dot_product_accelerator_avalon_master_readdata),                     //                                                                .readdata
-		.Dot_Product_Accelerator_avalon_master_readdatavalid                   (dot_product_accelerator_avalon_master_readdatavalid),                //                                                                .readdatavalid
-		.Dot_Product_Accelerator_avalon_master_write                           (dot_product_accelerator_avalon_master_write),                        //                                                                .write
-		.Dot_Product_Accelerator_avalon_master_writedata                       (dot_product_accelerator_avalon_master_writedata),                    //                                                                .writedata
+		.DNN_Accelerator_avalon_master_address                                 (dnn_accelerator_avalon_master_address),                              //                                   DNN_Accelerator_avalon_master.address
+		.DNN_Accelerator_avalon_master_waitrequest                             (dnn_accelerator_avalon_master_waitrequest),                          //                                                                .waitrequest
+		.DNN_Accelerator_avalon_master_read                                    (dnn_accelerator_avalon_master_read),                                 //                                                                .read
+		.DNN_Accelerator_avalon_master_readdata                                (dnn_accelerator_avalon_master_readdata),                             //                                                                .readdata
+		.DNN_Accelerator_avalon_master_readdatavalid                           (dnn_accelerator_avalon_master_readdatavalid),                        //                                                                .readdatavalid
+		.DNN_Accelerator_avalon_master_write                                   (dnn_accelerator_avalon_master_write),                                //                                                                .write
+		.DNN_Accelerator_avalon_master_writedata                               (dnn_accelerator_avalon_master_writedata),                            //                                                                .writedata
 		.JTAG_To_FPGA_Bridge_master_address                                    (jtag_to_fpga_bridge_master_address),                                 //                                      JTAG_To_FPGA_Bridge_master.address
 		.JTAG_To_FPGA_Bridge_master_waitrequest                                (jtag_to_fpga_bridge_master_waitrequest),                             //                                                                .waitrequest
 		.JTAG_To_FPGA_Bridge_master_byteenable                                 (jtag_to_fpga_bridge_master_byteenable),                              //                                                                .byteenable
@@ -856,12 +856,12 @@ module TAG_Computer (
 		.JTAG_To_FPGA_Bridge_master_readdatavalid                              (jtag_to_fpga_bridge_master_readdatavalid),                           //                                                                .readdatavalid
 		.JTAG_To_FPGA_Bridge_master_write                                      (jtag_to_fpga_bridge_master_write),                                   //                                                                .write
 		.JTAG_To_FPGA_Bridge_master_writedata                                  (jtag_to_fpga_bridge_master_writedata),                               //                                                                .writedata
-		.Dot_Product_Accelerator_avalon_slave_address                          (mm_interconnect_0_dot_product_accelerator_avalon_slave_address),     //                            Dot_Product_Accelerator_avalon_slave.address
-		.Dot_Product_Accelerator_avalon_slave_write                            (mm_interconnect_0_dot_product_accelerator_avalon_slave_write),       //                                                                .write
-		.Dot_Product_Accelerator_avalon_slave_read                             (mm_interconnect_0_dot_product_accelerator_avalon_slave_read),        //                                                                .read
-		.Dot_Product_Accelerator_avalon_slave_readdata                         (mm_interconnect_0_dot_product_accelerator_avalon_slave_readdata),    //                                                                .readdata
-		.Dot_Product_Accelerator_avalon_slave_writedata                        (mm_interconnect_0_dot_product_accelerator_avalon_slave_writedata),   //                                                                .writedata
-		.Dot_Product_Accelerator_avalon_slave_waitrequest                      (mm_interconnect_0_dot_product_accelerator_avalon_slave_waitrequest), //                                                                .waitrequest
+		.DNN_Accelerator_avalon_slave_address                                  (mm_interconnect_0_dnn_accelerator_avalon_slave_address),             //                                    DNN_Accelerator_avalon_slave.address
+		.DNN_Accelerator_avalon_slave_write                                    (mm_interconnect_0_dnn_accelerator_avalon_slave_write),               //                                                                .write
+		.DNN_Accelerator_avalon_slave_read                                     (mm_interconnect_0_dnn_accelerator_avalon_slave_read),                //                                                                .read
+		.DNN_Accelerator_avalon_slave_readdata                                 (mm_interconnect_0_dnn_accelerator_avalon_slave_readdata),            //                                                                .readdata
+		.DNN_Accelerator_avalon_slave_writedata                                (mm_interconnect_0_dnn_accelerator_avalon_slave_writedata),           //                                                                .writedata
+		.DNN_Accelerator_avalon_slave_waitrequest                              (mm_interconnect_0_dnn_accelerator_avalon_slave_waitrequest),         //                                                                .waitrequest
 		.HEX0_1_s1_address                                                     (mm_interconnect_0_hex0_1_s1_address),                                //                                                       HEX0_1_s1.address
 		.HEX0_1_s1_write                                                       (mm_interconnect_0_hex0_1_s1_write),                                  //                                                                .write
 		.HEX0_1_s1_readdata                                                    (mm_interconnect_0_hex0_1_s1_readdata),                               //                                                                .readdata

@@ -24,8 +24,4 @@ Info (10281): Verilog HDL Declaration information at TAG_Computer_mm_interconnec
 Info (10281): Verilog HDL Declaration information at TAG_Computer_mm_interconnect_0_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
 Warning (10273): Verilog HDL warning at TAG_Computer_SDRAM_test_component.v(234): extended using "x" or "z"
 Warning (10273): Verilog HDL warning at TAG_Computer_SDRAM_test_component.v(235): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at dp_accelerator.sv(75): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at dp_accelerator.sv(87): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at dp_accelerator.sv(94): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at dp_accelerator.sv(161): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at dp_accelerator.sv(175): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at dnn_accelerator.sv(13): object "relu" differs only in case from object "RELU" in the same scope

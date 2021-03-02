@@ -3,18 +3,18 @@
 
 #include "bluetooth.h"
 
-#define BT_ReceiverFifo                  (*(volatile unsigned char *)(0xFF210210))
-#define BT_TransmitterFifo               (*(volatile unsigned char *)(0xFF210210))
-#define BT_InterruptEnableReg            (*(volatile unsigned char *)(0xFF210212))
-#define BT_InterruptIdentificationReg    (*(volatile unsigned char *)(0xFF210214))
-#define BT_FifoControlReg                (*(volatile unsigned char *)(0xFF210214))
-#define BT_LineControlReg                (*(volatile unsigned char *)(0xFF210216))
-#define BT_ModemControlReg               (*(volatile unsigned char *)(0xFF210218))
-#define BT_LineStatusReg                 (*(volatile unsigned char *)(0xFF21021A))
-#define BT_ModemStatusReg                (*(volatile unsigned char *)(0xFF21021C))
-#define BT_ScratchReg                    (*(volatile unsigned char *)(0xFF21021E))
-#define BT_DivisorLatchLSB               (*(volatile unsigned char *)(0xFF210210))
-#define BT_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210212))
+#define BT_ReceiverFifo                  (*(volatile unsigned char *)(0xFF210220))
+#define BT_TransmitterFifo               (*(volatile unsigned char *)(0xFF210220))
+#define BT_InterruptEnableReg            (*(volatile unsigned char *)(0xFF210222))
+#define BT_InterruptIdentificationReg    (*(volatile unsigned char *)(0xFF210224))
+#define BT_FifoControlReg                (*(volatile unsigned char *)(0xFF210224))
+#define BT_LineControlReg                (*(volatile unsigned char *)(0xFF210226))
+#define BT_ModemControlReg               (*(volatile unsigned char *)(0xFF210228))
+#define BT_LineStatusReg                 (*(volatile unsigned char *)(0xFF21022A))
+#define BT_ModemStatusReg                (*(volatile unsigned char *)(0xFF21022C))
+#define BT_ScratchReg                    (*(volatile unsigned char *)(0xFF21022E))
+#define BT_DivisorLatchLSB               (*(volatile unsigned char *)(0xFF210220))
+#define BT_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210222))
 
 #define BR_CLK_FREQ  50000000
 #define BT_BAUD_RATE 38400

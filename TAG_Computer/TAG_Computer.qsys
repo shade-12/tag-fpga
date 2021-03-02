@@ -30,7 +30,7 @@
          type = "boolean";
       }
    }
-   element Dot_Product_Accelerator
+   element DNN_Accelerator
    {
       datum _sortIndex
       {
@@ -177,7 +177,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -239,6 +239,14 @@
       {
          value = "0";
          type = "int";
+      }
+   }
+   element TAG_Computer
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element TAG_Computer
@@ -858,8 +866,8 @@
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
  <module
-   name="Dot_Product_Accelerator"
-   kind="dp_accelerator"
+   name="DNN_Accelerator"
+   kind="dnn_accelerator"
    version="1.0"
    enabled="1" />
  <module name="HEX0_1" kind="altera_avalon_pio" version="15.0" enabled="1">
@@ -1131,7 +1139,7 @@
  <connection
    kind="avalon"
    version="15.0"
-   start="Dot_Product_Accelerator.avalon_master"
+   start="DNN_Accelerator.avalon_master"
    end="SDRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -1186,7 +1194,7 @@
    kind="avalon"
    version="15.0"
    start="ARM_A9_HPS.h2f_lw_axi_master"
-   end="Dot_Product_Accelerator.avalon_slave">
+   end="DNN_Accelerator.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x2040" />
   <parameter name="defaultConnection" value="false" />
@@ -1276,7 +1284,7 @@
    kind="avalon"
    version="15.0"
    start="JTAG_To_FPGA_Bridge.master"
-   end="Dot_Product_Accelerator.avalon_slave">
+   end="DNN_Accelerator.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0xff202040" />
   <parameter name="defaultConnection" value="false" />
@@ -1455,7 +1463,7 @@
    kind="clock"
    version="15.0"
    start="System_PLL.sys_clk"
-   end="Dot_Product_Accelerator.clock" />
+   end="DNN_Accelerator.clock" />
  <connection
    kind="clock"
    version="15.0"
@@ -1580,7 +1588,7 @@
    kind="reset"
    version="15.0"
    start="ARM_A9_HPS.h2f_reset"
-   end="Dot_Product_Accelerator.reset" />
+   end="DNN_Accelerator.reset" />
  <connection
    kind="reset"
    version="15.0"
@@ -1660,7 +1668,7 @@
    kind="reset"
    version="15.0"
    start="System_PLL.reset_source"
-   end="Dot_Product_Accelerator.reset" />
+   end="DNN_Accelerator.reset" />
  <connection
    kind="reset"
    version="15.0"

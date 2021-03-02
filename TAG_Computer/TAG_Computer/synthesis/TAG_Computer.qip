@@ -2,7 +2,7 @@ set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_TO
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_TOOL_VERSION "15.0"
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "TAG_Computer" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../TAG_Computer.sopcinfo"]
-set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name SLD_INFO "QSYS_NAME TAG_Computer HAS_SOPCINFO 1 GENERATION_ID 1614655942"
+set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name SLD_INFO "QSYS_NAME TAG_Computer HAS_SOPCINFO 1 GENERATION_ID 1614719390"
 set_global_assignment -library "TAG_Computer" -name MISC_FILE [file join $::quartus(qip_path) "../TAG_Computer.cmp"]
 set_global_assignment -library "TAG_Computer" -name SLD_FILE [file join $::quartus(qip_path) "TAG_Computer.regmap"]
 set_global_assignment -library "TAG_Computer" -name MISC_FILE [file join $::quartus(qip_path) "../../D"]
@@ -18,7 +18,7 @@ set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_CO
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTYxNDY1NTk0Mg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTYxNDcxOTM5MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "TAG_Computer" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -1989,12 +1989,12 @@ set_global_assignment -entity "TAG_Computer_HEX0_1" -library "TAG_Computer" -nam
 set_global_assignment -entity "TAG_Computer_HEX0_1" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9lZGdlX3R5cGU=::Tk9ORQ==::ZGVyaXZlZF9lZGdlX3R5cGU="
 set_global_assignment -entity "TAG_Computer_HEX0_1" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9pcnFfdHlwZQ==::Tk9ORQ==::ZGVyaXZlZF9pcnFfdHlwZQ=="
 set_global_assignment -entity "TAG_Computer_HEX0_1" -library "TAG_Computer" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx"
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_NAME "ZHBfYWNjZWxlcmF0b3I="
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_DISPLAY_NAME "ZHBfYWNjZWxlcmF0b3I="
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "dp_accelerator" -library "TAG_Computer" -name IP_COMPONENT_DESCRIPTION "RG90IHByb2R1Y3QgYWNjZWxlcmF0b3Iu"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_NAME "ZG5uX2FjY2VsZXJhdG9y"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_DISPLAY_NAME "ZG5uX2FjY2VsZXJhdG9y"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "dnn_accelerator" -library "TAG_Computer" -name IP_COMPONENT_DESCRIPTION "RGVlcCBuZXVyYWwgbmV0d29yayBhY2NlbGVyYXRvci4="
 set_instance_assignment -name HPS_LOCATION PIN_P19A0T -entity TAG_Computer_ARM_A9_HPS -to hps_io|border|hps_io_emac1_inst_TX_CLK[0]
 set_instance_assignment -name HPS_LOCATION PIN_P19B0T -entity TAG_Computer_ARM_A9_HPS -to hps_io|border|hps_io_emac1_inst_TXD0[0]
 set_instance_assignment -name HPS_LOCATION PIN_P19A1T -entity TAG_Computer_ARM_A9_HPS -to hps_io|border|hps_io_emac1_inst_TXD1[0]
@@ -7850,7 +7850,7 @@ set_global_assignment -library "TAG_Computer" -name SDC_FILE [file join $::quart
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/TAG_Computer_Interval_Timer.v"]
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/TAG_Computer_IO_Bridge.v"]
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/TAG_Computer_HEX0_1.v"]
-set_global_assignment -library "TAG_Computer" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/dp_accelerator.sv"]
+set_global_assignment -library "TAG_Computer" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/dnn_accelerator.sv"]
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/TAG_Computer_ARM_A9_HPS.v"]
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/TAG_Computer_ARM_A9_HPS_hps_io.v"]
 set_global_assignment -library "TAG_Computer" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/hps_sdram.v"]

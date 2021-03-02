@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="TAG_Computer" kind="TAG_Computer" version="1.0" fabric="QSYS">
  <!-- Format version 15.0 145 (Future versions may contain additional information.) -->
- <!-- 2021.03.01.19:32:23 -->
+ <!-- 2021.03.02.13:09:52 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1614655942</value>
+  <value>1614719390</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -16580,9 +16580,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>avalon_slave</slaveName>
-    <name>Dot_Product_Accelerator.avalon_slave</name>
+    <name>DNN_Accelerator.avalon_slave</name>
     <baseAddress>8256</baseAddress>
     <span>64</span>
    </memoryBlock>
@@ -43478,9 +43478,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>avalon_slave</slaveName>
-    <name>Dot_Product_Accelerator.avalon_slave</name>
+    <name>DNN_Accelerator.avalon_slave</name>
     <baseAddress>8256</baseAddress>
     <span>64</span>
    </memoryBlock>
@@ -45109,9 +45109,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>avalon_slave</slaveName>
-    <name>Dot_Product_Accelerator.avalon_slave</name>
+    <name>DNN_Accelerator.avalon_slave</name>
     <baseAddress>4280295488</baseAddress>
     <span>64</span>
    </memoryBlock>
@@ -46036,9 +46036,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>avalon_slave</slaveName>
-    <name>Dot_Product_Accelerator.avalon_slave</name>
+    <name>DNN_Accelerator.avalon_slave</name>
     <baseAddress>4280295488</baseAddress>
     <span>64</span>
    </memoryBlock>
@@ -73198,10 +73198,10 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="Dot_Product_Accelerator"
-   kind="dp_accelerator"
+   name="DNN_Accelerator"
+   kind="dnn_accelerator"
    version="1.0"
-   path="Dot_Product_Accelerator">
+   path="DNN_Accelerator">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
   <parameter name="deviceFamily">
@@ -73578,6 +73578,51 @@ parameters are a RESULT of the module parameters. -->
     <span>67108864</span>
    </memoryBlock>
   </interface>
+  <interface name="reset" kind="reset_sink" version="15.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>rst_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset_n</role>
+   </port>
+  </interface>
   <interface name="avalon_slave" kind="avalon_slave" version="15.0">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
@@ -73947,51 +73992,6 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>32</width>
     <role>writedata</role>
-   </port>
-  </interface>
-  <interface name="reset" kind="reset_sink" version="15.0">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value>clock</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="synchronousEdges">
-    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
-    <value>DEASSERT</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>reset</type>
-   <isStart>false</isStart>
-   <port>
-    <name>rst_n</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>reset_n</role>
    </port>
   </interface>
  </module>
@@ -78343,9 +78343,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>avalon_slave</slaveName>
-    <name>Dot_Product_Accelerator.avalon_slave</name>
+    <name>DNN_Accelerator.avalon_slave</name>
     <baseAddress>4280295488</baseAddress>
     <span>64</span>
    </memoryBlock>
@@ -85480,7 +85480,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1614655942</value>
+   <value>1614719390</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -85500,7 +85500,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1614655942</value>
+   <value>1614719390</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -85516,7 +85516,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1614655942</value>
+   <value>1614719390</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -86359,9 +86359,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>Dot_Product_Accelerator</moduleName>
+    <moduleName>DNN_Accelerator</moduleName>
     <slaveName>clock</slaveName>
-    <name>Dot_Product_Accelerator.clock</name>
+    <name>DNN_Accelerator.clock</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -96484,10 +96484,10 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>axi_slave0</endConnectionPoint>
  </connection>
  <connection
-   name="Dot_Product_Accelerator.avalon_master/SDRAM.s1"
+   name="DNN_Accelerator.avalon_master/SDRAM.s1"
    kind="avalon"
    version="15.0"
-   start="Dot_Product_Accelerator.avalon_master"
+   start="DNN_Accelerator.avalon_master"
    end="SDRAM.s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
@@ -96529,7 +96529,7 @@ parameters are a RESULT of the module parameters. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <startModule>Dot_Product_Accelerator</startModule>
+  <startModule>DNN_Accelerator</startModule>
   <startConnectionPoint>avalon_master</startConnectionPoint>
   <endModule>SDRAM</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
@@ -96790,11 +96790,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_slave</endConnectionPoint>
  </connection>
  <connection
-   name="ARM_A9_HPS_bridges.h2f_lw/Dot_Product_Accelerator.avalon_slave"
+   name="ARM_A9_HPS_bridges.h2f_lw/DNN_Accelerator.avalon_slave"
    kind="avalon"
    version="15.0"
    start="ARM_A9_HPS_bridges.h2f_lw"
-   end="Dot_Product_Accelerator.avalon_slave">
+   end="DNN_Accelerator.avalon_slave">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -96837,7 +96837,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>ARM_A9_HPS_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>Dot_Product_Accelerator</endModule>
+  <endModule>DNN_Accelerator</endModule>
   <endConnectionPoint>avalon_slave</endConnectionPoint>
  </connection>
  <connection
@@ -97300,11 +97300,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_slave</endConnectionPoint>
  </connection>
  <connection
-   name="JTAG_To_FPGA_Bridge.master/Dot_Product_Accelerator.avalon_slave"
+   name="JTAG_To_FPGA_Bridge.master/DNN_Accelerator.avalon_slave"
    kind="avalon"
    version="15.0"
    start="JTAG_To_FPGA_Bridge.master"
-   end="Dot_Product_Accelerator.avalon_slave">
+   end="DNN_Accelerator.avalon_slave">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -97347,7 +97347,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>JTAG_To_FPGA_Bridge</startModule>
   <startConnectionPoint>master</startConnectionPoint>
-  <endModule>Dot_Product_Accelerator</endModule>
+  <endModule>DNN_Accelerator</endModule>
   <endConnectionPoint>avalon_slave</endConnectionPoint>
  </connection>
  <connection
@@ -98317,11 +98317,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
-   name="System_PLL.sys_clk/Dot_Product_Accelerator.clock"
+   name="System_PLL.sys_clk/DNN_Accelerator.clock"
    kind="clock"
    version="15.0"
    start="System_PLL.sys_clk"
-   end="Dot_Product_Accelerator.clock">
+   end="DNN_Accelerator.clock">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -98340,7 +98340,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>System_PLL</startModule>
   <startConnectionPoint>sys_clk</startConnectionPoint>
-  <endModule>Dot_Product_Accelerator</endModule>
+  <endModule>DNN_Accelerator</endModule>
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
@@ -98978,11 +98978,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="ARM_A9_HPS_bridges.h2f_reset/Dot_Product_Accelerator.reset"
+   name="ARM_A9_HPS_bridges.h2f_reset/DNN_Accelerator.reset"
    kind="reset"
    version="15.0"
    start="ARM_A9_HPS_bridges.h2f_reset"
-   end="Dot_Product_Accelerator.reset">
+   end="DNN_Accelerator.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -99001,7 +99001,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>ARM_A9_HPS_bridges</startModule>
   <startConnectionPoint>h2f_reset</startConnectionPoint>
-  <endModule>Dot_Product_Accelerator</endModule>
+  <endModule>DNN_Accelerator</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -99410,11 +99410,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="System_PLL.reset_source/Dot_Product_Accelerator.reset"
+   name="System_PLL.reset_source/DNN_Accelerator.reset"
    kind="reset"
    version="15.0"
    start="System_PLL.reset_source"
-   end="Dot_Product_Accelerator.reset">
+   end="DNN_Accelerator.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -99433,7 +99433,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>System_PLL</startModule>
   <startConnectionPoint>reset_source</startConnectionPoint>
-  <endModule>Dot_Product_Accelerator</endModule>
+  <endModule>DNN_Accelerator</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -99793,10 +99793,10 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>dp_accelerator</name>
+  <name>dnn_accelerator</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>dp_accelerator</displayName>
+  <displayName>dnn_accelerator</displayName>
   <version>1.0</version>
  </plugin>
  <plugin>
