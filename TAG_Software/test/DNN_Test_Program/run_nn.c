@@ -1,5 +1,7 @@
 // Adapted from CPEN 391 Lab 4 assignment
 
+#include <stdio.h>
+
 #define L1_IN  784
 #define L1_OUT 1000
 #define L2_IN L1_OUT
@@ -25,13 +27,18 @@ int hex7seg(unsigned d) {
 
 /* apply fully-connected layer: matrix-vector multiplication w/ optional ReLU activation */
 void apply_layer(int n_in, int n_out, volatile int *b, volatile int *w, int use_relu, volatile int *ifmap, volatile int *ofmap) {
-    for (unsigned o = 0, wo = 0; o < n_out; ++o, wo += n_in) {
+    unsigned o = 0, wo = 0;
+    while (o < n_out) {
         int sum = b[o]; /* bias for the current output index */
-        for (unsigned i = 0; i < n_in; ++i) { /* Q16 dot product */
+        unsigned i = 0;
+        while (i < n_in) { /* Q16 dot product */
             sum += (int) (((long long) w[wo + i] * (long long) ifmap[i]) >> 16);
+            ++i;
         }
         if (use_relu) sum = (sum < 0) ? 0 : sum; /* ReLU activation */
         ofmap[o] = sum;
+        ++o;
+        wo += n_in;
     }
 }
 
@@ -40,19 +47,24 @@ void apply_layer_acc(int n_in, int n_out, volatile int *b, volatile int *w, int 
     *(dnn_acc + 3) = (unsigned) ifmap;
     *(dnn_acc + 5) = (unsigned) n_in;
     *(dnn_acc + 7) = (unsigned) use_relu;
-    for (unsigned o = 0, wo = 0; o < n_out; ++o, wo += n_in) {
+    unsigned o = 0, wo = 0;
+    while (o < n_out) {
         *(dnn_acc + 1) = (unsigned) (b + o);
         *(dnn_acc + 2) = (unsigned) (w + wo);
         *(dnn_acc + 4) = (unsigned) (ofmap + o);
         *dnn_acc = 0; /* start */
+        ++o;
+        wo += n_in;
     }
     *dnn_acc; /* make sure the accelerator is finished */
 }
 
 int max_index(int n_in, volatile int *ifmap) {
     int max_sofar = 0;
-    for (int i = 1; i < n_in; ++i) {
+    int i = 1;
+    while (i < n_in) {
         if (ifmap[i] > ifmap[max_sofar]) max_sofar = i;
+        ++i;
     }
     return max_sofar;
 }
@@ -76,6 +88,7 @@ void main() {
     apply_layer_acc(L3_IN, L3_OUT, l3_b, l3_w, 0, l2_acts, l3_acts);
     */
     int result = max_index(L3_OUT, l3_acts);
+    printf("Predicted digit: %d\n", result);
     *hex = hex7seg(result);
     return;
 }
