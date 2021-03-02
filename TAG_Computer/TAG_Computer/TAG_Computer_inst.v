@@ -58,6 +58,14 @@
 		.hps_io_hps_io_gpio_inst_GPIO53  (<connected-to-hps_io_hps_io_gpio_inst_GPIO53>),  //                     .hps_io_gpio_inst_GPIO53
 		.hps_io_hps_io_gpio_inst_GPIO54  (<connected-to-hps_io_hps_io_gpio_inst_GPIO54>),  //                     .hps_io_gpio_inst_GPIO54
 		.hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_io_hps_io_gpio_inst_GPIO61>),  //                     .hps_io_gpio_inst_GPIO61
+		.io_acknowledge                  (<connected-to-io_acknowledge>),                  //                   io.acknowledge
+		.io_irq                          (<connected-to-io_irq>),                          //                     .irq
+		.io_address                      (<connected-to-io_address>),                      //                     .address
+		.io_bus_enable                   (<connected-to-io_bus_enable>),                   //                     .bus_enable
+		.io_byte_enable                  (<connected-to-io_byte_enable>),                  //                     .byte_enable
+		.io_rw                           (<connected-to-io_rw>),                           //                     .rw
+		.io_write_data                   (<connected-to-io_write_data>),                   //                     .write_data
+		.io_read_data                    (<connected-to-io_read_data>),                    //                     .read_data
 		.leds_export                     (<connected-to-leds_export>),                     //                 leds.export
 		.memory_mem_a                    (<connected-to-memory_mem_a>),                    //               memory.mem_a
 		.memory_mem_ba                   (<connected-to-memory_mem_ba>),                   //                     .mem_ba
@@ -88,14 +96,6 @@
 		.sdram_clk_clk                   (<connected-to-sdram_clk_clk>),                   //            sdram_clk.clk
 		.slider_switches_export          (<connected-to-slider_switches_export>),          //      slider_switches.export
 		.system_pll_ref_clk_clk          (<connected-to-system_pll_ref_clk_clk>),          //   system_pll_ref_clk.clk
-		.system_pll_ref_reset_reset      (<connected-to-system_pll_ref_reset_reset>),      // system_pll_ref_reset.reset
-		.io_acknowledge                  (<connected-to-io_acknowledge>),                  //                   io.acknowledge
-		.io_irq                          (<connected-to-io_irq>),                          //                     .irq
-		.io_address                      (<connected-to-io_address>),                      //                     .address
-		.io_bus_enable                   (<connected-to-io_bus_enable>),                   //                     .bus_enable
-		.io_byte_enable                  (<connected-to-io_byte_enable>),                  //                     .byte_enable
-		.io_rw                           (<connected-to-io_rw>),                           //                     .rw
-		.io_write_data                   (<connected-to-io_write_data>),                   //                     .write_data
-		.io_read_data                    (<connected-to-io_read_data>)                     //                     .read_data
+		.system_pll_ref_reset_reset      (<connected-to-system_pll_ref_reset_reset>)       // system_pll_ref_reset.reset
 	);
 

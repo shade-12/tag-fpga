@@ -59,6 +59,14 @@
 			hps_io_hps_io_gpio_inst_GPIO53  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO53
 			hps_io_hps_io_gpio_inst_GPIO54  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
 			hps_io_hps_io_gpio_inst_GPIO61  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO61
+			io_acknowledge                  : in    std_logic                     := 'X';             -- acknowledge
+			io_irq                          : in    std_logic                     := 'X';             -- irq
+			io_address                      : out   std_logic_vector(15 downto 0);                    -- address
+			io_bus_enable                   : out   std_logic;                                        -- bus_enable
+			io_byte_enable                  : out   std_logic_vector(1 downto 0);                     -- byte_enable
+			io_rw                           : out   std_logic;                                        -- rw
+			io_write_data                   : out   std_logic_vector(15 downto 0);                    -- write_data
+			io_read_data                    : in    std_logic_vector(15 downto 0) := (others => 'X'); -- read_data
 			leds_export                     : out   std_logic_vector(9 downto 0);                     -- export
 			memory_mem_a                    : out   std_logic_vector(14 downto 0);                    -- mem_a
 			memory_mem_ba                   : out   std_logic_vector(2 downto 0);                     -- mem_ba
@@ -89,15 +97,7 @@
 			sdram_clk_clk                   : out   std_logic;                                        -- clk
 			slider_switches_export          : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
 			system_pll_ref_clk_clk          : in    std_logic                     := 'X';             -- clk
-			system_pll_ref_reset_reset      : in    std_logic                     := 'X';             -- reset
-			io_acknowledge                  : in    std_logic                     := 'X';             -- acknowledge
-			io_irq                          : in    std_logic                     := 'X';             -- irq
-			io_address                      : out   std_logic_vector(15 downto 0);                    -- address
-			io_bus_enable                   : out   std_logic;                                        -- bus_enable
-			io_byte_enable                  : out   std_logic_vector(1 downto 0);                     -- byte_enable
-			io_rw                           : out   std_logic;                                        -- rw
-			io_write_data                   : out   std_logic_vector(15 downto 0);                    -- write_data
-			io_read_data                    : in    std_logic_vector(15 downto 0) := (others => 'X')  -- read_data
+			system_pll_ref_reset_reset      : in    std_logic                     := 'X'              -- reset
 		);
 	end component TAG_Computer;
 
@@ -162,6 +162,14 @@
 			hps_io_hps_io_gpio_inst_GPIO53  => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO53,  --                     .hps_io_gpio_inst_GPIO53
 			hps_io_hps_io_gpio_inst_GPIO54  => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO54,  --                     .hps_io_gpio_inst_GPIO54
 			hps_io_hps_io_gpio_inst_GPIO61  => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO61,  --                     .hps_io_gpio_inst_GPIO61
+			io_acknowledge                  => CONNECTED_TO_io_acknowledge,                  --                   io.acknowledge
+			io_irq                          => CONNECTED_TO_io_irq,                          --                     .irq
+			io_address                      => CONNECTED_TO_io_address,                      --                     .address
+			io_bus_enable                   => CONNECTED_TO_io_bus_enable,                   --                     .bus_enable
+			io_byte_enable                  => CONNECTED_TO_io_byte_enable,                  --                     .byte_enable
+			io_rw                           => CONNECTED_TO_io_rw,                           --                     .rw
+			io_write_data                   => CONNECTED_TO_io_write_data,                   --                     .write_data
+			io_read_data                    => CONNECTED_TO_io_read_data,                    --                     .read_data
 			leds_export                     => CONNECTED_TO_leds_export,                     --                 leds.export
 			memory_mem_a                    => CONNECTED_TO_memory_mem_a,                    --               memory.mem_a
 			memory_mem_ba                   => CONNECTED_TO_memory_mem_ba,                   --                     .mem_ba
@@ -192,14 +200,6 @@
 			sdram_clk_clk                   => CONNECTED_TO_sdram_clk_clk,                   --            sdram_clk.clk
 			slider_switches_export          => CONNECTED_TO_slider_switches_export,          --      slider_switches.export
 			system_pll_ref_clk_clk          => CONNECTED_TO_system_pll_ref_clk_clk,          --   system_pll_ref_clk.clk
-			system_pll_ref_reset_reset      => CONNECTED_TO_system_pll_ref_reset_reset,      -- system_pll_ref_reset.reset
-			io_acknowledge                  => CONNECTED_TO_io_acknowledge,                  --                   io.acknowledge
-			io_irq                          => CONNECTED_TO_io_irq,                          --                     .irq
-			io_address                      => CONNECTED_TO_io_address,                      --                     .address
-			io_bus_enable                   => CONNECTED_TO_io_bus_enable,                   --                     .bus_enable
-			io_byte_enable                  => CONNECTED_TO_io_byte_enable,                  --                     .byte_enable
-			io_rw                           => CONNECTED_TO_io_rw,                           --                     .rw
-			io_write_data                   => CONNECTED_TO_io_write_data,                   --                     .write_data
-			io_read_data                    => CONNECTED_TO_io_read_data                     --                     .read_data
+			system_pll_ref_reset_reset      => CONNECTED_TO_system_pll_ref_reset_reset       -- system_pll_ref_reset.reset
 		);
 
