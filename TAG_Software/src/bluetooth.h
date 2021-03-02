@@ -22,6 +22,14 @@ void bluetoothInit(void);
 int bluetoothPutChar(int c);
 
 /**
+ * Writes an array of characters to the bluetooth serial port
+ *
+ * @param msg - the address of an array containing characters
+ * @return The length of msg being written into the serial port
+ */
+int bluetoothPutChars(const unsigned char * msg);
+
+/**
  * Reads a single character from the bluetooth serial port
  */
 int bluetoothGetChar(void);

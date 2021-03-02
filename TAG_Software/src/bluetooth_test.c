@@ -16,6 +16,13 @@ void main(void)
     bluetoothFlush();
     printf("Flush done.\n");
 
+    // Ref: http://compsci.ca/v3/viewtopic.php?t=25995
+    const unsigned char *HC05_CONFIG;
+    HC05_CONFIG = 'AT+ROLE=1\r\n';
+
+    int d = bluetoothPutChars(HC05_CONFIG);
+    printf("Set to master role success - length of chars put: %s\n", d);
+
     int c, ready;
 
     while(1) {

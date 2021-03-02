@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "bluetooth.h"
 
@@ -16,7 +17,7 @@
 #define BT_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210212))
 
 #define BR_CLK_FREQ  50000000
-#define BT_BAUD_RATE 112500
+#define BT_BAUD_RATE 38400
 
 
 void bluetoothInit(void)
@@ -58,6 +59,18 @@ int bluetoothPutChar(int c)
 
     // return the character we printed
     return c;
+}
+
+
+int bluetoothPutChars(const unsigned char * msg)
+{
+    int count;
+
+	for (count = 0; count < strlen(msg); count++) {
+		bluetoothPutChar(msg[count]);
+	}
+
+    return count + 1;
 }
 
 
