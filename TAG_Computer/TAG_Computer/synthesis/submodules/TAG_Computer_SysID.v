@@ -36,7 +36,7 @@ module TAG_Computer_SysID (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1614719390 : 0;
+  assign readdata = address ? 1615146765 : 0;
 
 endmodule
 
