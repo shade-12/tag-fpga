@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 #include "bluetooth.h"
 
@@ -27,8 +28,8 @@ void bluetoothInit(void)
 
     // set Divisor latch (LSB and MSB) with correct value for required baud rate
     // baud rate divisor value = (freq of BR_clk) / (desired baud rate * 16)
-    BT_DivisorLatchLSB = BR_CLK_FREQ / (BT_BAUD_RATE * 16);
-    BT_DivisorLatchMSB = BR_CLK_FREQ / (BT_BAUD_RATE * 16);
+    BT_DivisorLatchLSB = floor(BR_CLK_FREQ / (BT_BAUD_RATE * 16));
+    BT_DivisorLatchMSB = floor(BR_CLK_FREQ / (BT_BAUD_RATE * 16));
 
     // set bit 7 of Line control register back to 0 and
     // program other bits in that reg for 8 bit data, 1 stop bit, no parity etc
@@ -62,7 +63,7 @@ unsigned char bluetoothPutChar(unsigned char c)
 }
 
 
-int bluetoothPutChars(char * msg, const int len)
+int bluetoothPutChars(char msg[], const int len)
 {
     int count;
 
@@ -112,15 +113,30 @@ void bluetoothFlush(void)
 
 int bluetoothConfig()
 {
-    char *HC05_CONFIG;
-    HC05_CONFIG = "AT+ROLE=0\r\n";  // Set HC05 to slave mode
+    // char *HC05_CONFIG;
+    // HC05_CONFIG = "AT+ROLE=0\r\n";  // Set HC05 to slave mode
 
-    int d = bluetoothPutChars(HC05_CONFIG, 11); // Write to serial port
-    if (d != 11) return 0;
+    char HC05_CONFIG[] = "AT\r\n";
+    int d = bluetoothPutChars(HC05_CONFIG, strlen(HC05_CONFIG)); // Write to serial port
+
+    if (d != strlen(HC05_CONFIG)) {
+        printf("Error occured when writing to serial port.\n");
+        return 0;
+    }
 
     unsigned char response[] = "";
-    bluetoothGetChars(response, 2); // Check if OK is received
-    if (response != 'OK') return 0;
+    int ready = bluetoothTestForReceivedData();
+    if (!ready) {
+        printf("No available character(s) in buffer.\n");
+        return 0;
+    }
+
+    bluetoothGetChars(response, strlen(HC05_CONFIG)); // Check if OK is received
+    unsigned char expectedRes[] = "OK\r\n";
+    if (response != expectedRes) {
+        printf("Response should be 'OK\r\n', but received: %s.\n", response);
+        return 0;
+    }
 
     return 1;
 }

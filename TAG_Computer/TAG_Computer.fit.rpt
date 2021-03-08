@@ -1,5 +1,5 @@
 Fitter report for TAG_Computer
-Sun Mar 07 12:03:17 2021
+Mon Mar 08 00:18:40 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -71,7 +71,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Sun Mar 07 12:03:17 2021      ;
+; Fitter Status                   ; Successful - Mon Mar 08 00:18:39 2021      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; TAG_Computer                               ;
 ; Top-level Entity Name           ; TAG_Computer_Verilog                       ;
@@ -5817,7 +5817,7 @@ Info (11191): Automatically promoted 2 clocks (2 global)
     Info (11162): CLOCK_50~inputCLKENA0 with 1197 fanout uses global clock CLKCTRL_G5
     Info (11162): TAG_Computer:u0|altera_reset_controller:rst_controller|r_sync_rst~CLKENA0 with 3752 fanout uses global clock CLKCTRL_G3
         Info (12525): This signal is driven by core routing -- it may be moved during placement to reduce routing delays
-Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:02
+Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:03
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity alt_jtag_atlantic
         Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}] 
@@ -6398,29 +6398,29 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:35
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:38
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Warning (170052): Fitter has implemented the following 76 RAMs using MLAB locations, which can behave differently during power up than dedicated RAM locations
     Info (170241): For more information about RAMs, refer to the Fitter RAM Summary report.
 Info (170056): Fitter has implemented the following 76 RAMs using MLAB locations, which will have the same paused read capabilities as dedicated RAM locations
     Info (170241): For more information about RAMs, refer to the Fitter RAM Summary report.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:39
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:44
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:30
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:39
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 5% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 27% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:44
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:48
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 35.57 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 39.30 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:06
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:21
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 73 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin GPIO_1[14] has a permanently enabled output enable
@@ -6579,10 +6579,10 @@ Info (169186): Following groups of pins have the same dynamic on-chip terminatio
         Info (169066): Type bi-directional pin HPS_DDR3_DQS_P[3] uses the Differential 1.5-V SSTL Class I I/O standard
 Info (144001): Generated suppressed messages file D:/tag2/TAG_Computer/TAG_Computer.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 279 warnings
-    Info: Peak virtual memory: 7487 megabytes
-    Info: Processing ended: Sun Mar 07 12:03:22 2021
-    Info: Elapsed time: 00:04:35
-    Info: Total CPU time (on all processors): 00:04:55
+    Info: Peak virtual memory: 7492 megabytes
+    Info: Processing ended: Mon Mar 08 00:18:45 2021
+    Info: Elapsed time: 00:05:23
+    Info: Total CPU time (on all processors): 00:05:56
 
 
 +----------------------------+

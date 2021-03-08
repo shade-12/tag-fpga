@@ -28,7 +28,7 @@ unsigned char bluetoothPutChar(unsigned char c);
  * @param len - the number of characters to write into the buffer
  * @return The length of msg being written into the serial port
  */
-int bluetoothPutChars(char * msg, const int len);
+int bluetoothPutChars(char msg[], const int len);
 
 /**
  * Reads a single character from the bluetooth serial port

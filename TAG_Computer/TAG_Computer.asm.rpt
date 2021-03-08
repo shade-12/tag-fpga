@@ -1,5 +1,5 @@
 Assembler report for TAG_Computer
-Sun Mar 07 12:03:43 2021
+Mon Mar 08 00:19:10 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Mar 07 12:03:43 2021 ;
+; Assembler Status      ; Successful - Mon Mar 08 00:19:10 2021 ;
 ; Revision Name         ; TAG_Computer                          ;
 ; Top-level Entity Name ; TAG_Computer_Verilog                  ;
 ; Family                ; Cyclone V                             ;
@@ -90,14 +90,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sun Mar 07 12:03:25 2021
+    Info: Processing started: Mon Mar 08 00:18:49 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off TAG_Computer -c TAG_Computer
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 5006 megabytes
-    Info: Processing ended: Sun Mar 07 12:03:44 2021
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Mon Mar 08 00:19:11 2021
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:22
 
 

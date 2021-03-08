@@ -19,7 +19,6 @@ void main(void)
 
     while(1) {
         ready = bluetoothTestForReceivedData();
-        printf("Ready to read char: %d\n", ready);
 
         if (ready) {
             c = bluetoothGetChar();
