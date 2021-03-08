@@ -48,7 +48,7 @@ void bluetoothInit(void)
 }
 
 
-int bluetoothPutChar(int c)
+unsigned char bluetoothPutChar(unsigned char c)
 {
     // wait for Transmitter Holding Register bit (5) of line status register to be '1'
     while ((BT_LineStatusReg & 0b100000) == 0) {}
@@ -62,19 +62,18 @@ int bluetoothPutChar(int c)
 }
 
 
-int bluetoothPutChars(const unsigned char * msg)
+int bluetoothPutChars(char * msg, const int len)
 {
     int count;
 
-	for (count = 0; count < strlen(msg); count++) {
+	for (count = 0; count < len; count++) {
 		bluetoothPutChar(msg[count]);
 	}
-
-    return count + 1;
+    return count;
 }
 
 
-int bluetoothGetChar(void)
+unsigned char bluetoothGetChar(void)
 {
     // wait for Data Ready bit (0) of line status register to be '1'
     while ((BT_LineStatusReg & 0b1) == 0) {}
@@ -82,6 +81,15 @@ int bluetoothGetChar(void)
     // read new character from ReceiverFiFo register
     // return new character
     return BT_ReceiverFifo;
+}
+
+void bluetoothGetChars(unsigned char * msg, const int len)
+{
+    int count;
+
+    for (count = 0; count < len; count++) {
+		msg[count] = bluetoothGetChar();
+	}
 }
 
 
@@ -100,4 +108,19 @@ void bluetoothFlush(void)
         bluetoothGetChar();
     }
     return; // no more characters so return
+}
+
+int bluetoothConfig()
+{
+    char *HC05_CONFIG;
+    HC05_CONFIG = "AT+ROLE=0\r\n";  // Set HC05 to slave mode
+
+    int d = bluetoothPutChars(HC05_CONFIG, 11); // Write to serial port
+    if (d != 11) return 0;
+
+    unsigned char response[] = "";
+    bluetoothGetChars(response, 2); // Check if OK is received
+    if (response != 'OK') return 0;
+
+    return 1;
 }
