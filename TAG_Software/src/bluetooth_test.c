@@ -1,7 +1,29 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "bluetooth.h"
 
+
+// void main(void)
+// {
+//     printf("UART Bluetooth Serial Port Test Program\n");
+
+//     bluetoothInit();
+//     bluetoothFlush();
+//     printf("Flush done.\n");
+
+//     int ready, d;
+//     unsigned char c;
+
+//     while(1) {
+//         ready = bluetoothTestForReceivedData();
+
+//         if (ready) {
+//             c = bluetoothGetChar();
+//             printf("Char received: %c\n", c);
+//         }   
+//     }
+// }
 
 void main(void)
 {
@@ -11,20 +33,26 @@ void main(void)
     bluetoothFlush();
     printf("Flush done.\n");
 
-    int isConfigSuccess = bluetoothConfig();
-    printf("BT config - Success(1), Fail(0): %d\n", isConfigSuccess);
+    // Put single char
+    unsigned char d = bluetoothPutChar('A');
+    printf("Put char: %c\n", d);
 
-    int ready;
-    unsigned char c;
+    int ready = bluetoothTestForReceivedData();
+    printf("Ready to read char: %d\n", ready);
 
-    while(1) {
-        ready = bluetoothTestForReceivedData();
+    unsigned char c = bluetoothGetChar();
+    printf("Received char: %c\n", c);
 
-        if (ready) {
-            c = bluetoothGetChar();
-            printf("Char received: %c\n", c);
-        }
-    }
+
+    // Put multiple chars
+    char msg[] = "Hello from UART";
+    int len = bluetoothPutChars(msg, strlen(msg));
+    printf("Put chars of length: %d\n", len);
+
+    unsigned char res[len];
+    bluetoothGetChars(res, len);
+    printf("Received chars: %s\n", res);
 
     printf("Exit.");
+    return;
 }

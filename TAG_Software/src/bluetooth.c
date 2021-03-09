@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 
 #include "bluetooth.h"
 
@@ -18,7 +16,8 @@
 #define BT_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210222))
 
 #define BR_CLK_FREQ  50000000
-#define BT_BAUD_RATE 38400
+// #define BT_BAUD_RATE 38400 // AT mode
+#define BT_BAUD_RATE 115200 // Connection mode
 
 
 void bluetoothInit(void)
@@ -28,8 +27,8 @@ void bluetoothInit(void)
 
     // set Divisor latch (LSB and MSB) with correct value for required baud rate
     // baud rate divisor value = (freq of BR_clk) / (desired baud rate * 16)
-    BT_DivisorLatchLSB = floor(BR_CLK_FREQ / (BT_BAUD_RATE * 16));
-    BT_DivisorLatchMSB = floor(BR_CLK_FREQ / (BT_BAUD_RATE * 16));
+    BT_DivisorLatchLSB = BR_CLK_FREQ / (BT_BAUD_RATE * 16);
+    BT_DivisorLatchMSB = BR_CLK_FREQ / (BT_BAUD_RATE * 16);
 
     // set bit 7 of Line control register back to 0 and
     // program other bits in that reg for 8 bit data, 1 stop bit, no parity etc
@@ -68,7 +67,7 @@ int bluetoothPutChars(char msg[], const int len)
     int count;
 
 	for (count = 0; count < len; count++) {
-		bluetoothPutChar(msg[count]);
+		bluetoothPutChar((unsigned char) msg[count]);
 	}
     return count;
 }
@@ -109,34 +108,4 @@ void bluetoothFlush(void)
         bluetoothGetChar();
     }
     return; // no more characters so return
-}
-
-int bluetoothConfig()
-{
-    // char *HC05_CONFIG;
-    // HC05_CONFIG = "AT+ROLE=0\r\n";  // Set HC05 to slave mode
-
-    char HC05_CONFIG[] = "AT\r\n";
-    int d = bluetoothPutChars(HC05_CONFIG, strlen(HC05_CONFIG)); // Write to serial port
-
-    if (d != strlen(HC05_CONFIG)) {
-        printf("Error occured when writing to serial port.\n");
-        return 0;
-    }
-
-    unsigned char response[] = "";
-    int ready = bluetoothTestForReceivedData();
-    if (!ready) {
-        printf("No available character(s) in buffer.\n");
-        return 0;
-    }
-
-    bluetoothGetChars(response, strlen(HC05_CONFIG)); // Check if OK is received
-    unsigned char expectedRes[] = "OK\r\n";
-    if (response != expectedRes) {
-        printf("Response should be 'OK\r\n', but received: %s.\n", response);
-        return 0;
-    }
-
-    return 1;
 }

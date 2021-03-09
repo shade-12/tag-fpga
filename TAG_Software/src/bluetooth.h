@@ -56,13 +56,4 @@ int bluetoothTestForReceivedData(void);
  */
 void bluetoothFlush(void);
 
-/**
- * Set HC05 module to be the slave role by sending 
- * the characters “AT+ROLE=0\r\n” through serial.
- * Slave role is used here so that the BT chip in RFS is able to receive
- * data from other connected BT devices.
- * @return True if config success, false otherwise
- */
-int bluetoothConfig(void);
-
 #endif /* BLUETOOTH_H_ */
