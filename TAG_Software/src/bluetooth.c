@@ -89,6 +89,7 @@ void bluetoothGetChars(unsigned char * msg, const int len)
 
     for (count = 0; count < len; count++) {
 		msg[count] = bluetoothGetChar();
+        printf("Index: %i, char: %c\n", count, msg[count]);
 	}
 }
 

@@ -1,5 +1,5 @@
 Fitter report for TAG_Computer
-Mon Mar 08 00:18:40 2021
+Fri Mar 19 16:29:37 2021
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -71,7 +71,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Mon Mar 08 00:18:39 2021      ;
+; Fitter Status                   ; Successful - Fri Mar 19 16:29:37 2021      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; TAG_Computer                               ;
 ; Top-level Entity Name           ; TAG_Computer_Verilog                       ;
@@ -6398,29 +6398,29 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:38
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:42
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Warning (170052): Fitter has implemented the following 76 RAMs using MLAB locations, which can behave differently during power up than dedicated RAM locations
     Info (170241): For more information about RAMs, refer to the Fitter RAM Summary report.
 Info (170056): Fitter has implemented the following 76 RAMs using MLAB locations, which will have the same paused read capabilities as dedicated RAM locations
     Info (170241): For more information about RAMs, refer to the Fitter RAM Summary report.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:44
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:42
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:39
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:35
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 5% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 27% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:48
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:47
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 39.30 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 38.02 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:21
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:01:16
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 73 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin GPIO_1[14] has a permanently enabled output enable
@@ -6579,10 +6579,10 @@ Info (169186): Following groups of pins have the same dynamic on-chip terminatio
         Info (169066): Type bi-directional pin HPS_DDR3_DQS_P[3] uses the Differential 1.5-V SSTL Class I I/O standard
 Info (144001): Generated suppressed messages file D:/tag2/TAG_Computer/TAG_Computer.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 279 warnings
-    Info: Peak virtual memory: 7492 megabytes
-    Info: Processing ended: Mon Mar 08 00:18:45 2021
-    Info: Elapsed time: 00:05:23
-    Info: Total CPU time (on all processors): 00:05:56
+    Info: Peak virtual memory: 7483 megabytes
+    Info: Processing ended: Fri Mar 19 16:29:42 2021
+    Info: Elapsed time: 00:05:09
+    Info: Total CPU time (on all processors): 00:05:36
 
 
 +----------------------------+

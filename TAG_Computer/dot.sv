@@ -12,11 +12,15 @@ module dot(input logic clk, input logic rst_n,
 
     
     /**
+     * This DNN accelerator will accept memory addresses as direct arguments, 
+     * but will then need to read the values (inputs, weights, inputs length) 
+     * from memory over the Avalon master interface.
+     *
      * To set up the computation, the ARM CPU will write addresses of the 
      * weight matrix, input activations, and the input activation vector length 
      * to the following word offsets in the accelerator component's address range:
     */
-    
+
     // |--------|-------------------------------------------------------------|
     // |  Word  |                          Meaning                            |
     // |--------|-------------------------------------------------------------|
@@ -26,6 +30,8 @@ module dot(input logic clk, input logic rst_n,
     // |   3    | input activations vector byte address                       |
     // |   4    | reserved                                                    |
     // |   5    | input activations vector length                             |
+    // |   6    | reserved                                                    |
+    // |   7    | reserved                                                    |
     // |--------|-------------------------------------------------------------|
 
     logic done_dot, slave_waitrequest_out;

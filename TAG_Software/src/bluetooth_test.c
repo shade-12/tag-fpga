@@ -49,7 +49,7 @@ void main(void)
     int len = bluetoothPutChars(msg, strlen(msg));
     printf("Put chars of length: %d\n", len);
 
-    unsigned char res[len];
+    unsigned char res[15] = {'\0'};
     bluetoothGetChars(res, len);
     printf("Received chars: %s\n", res);
 
