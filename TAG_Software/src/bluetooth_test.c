@@ -3,28 +3,6 @@
 
 #include "bluetooth.h"
 
-
-// void main(void)
-// {
-//     printf("UART Bluetooth Serial Port Test Program\n");
-
-//     bluetoothInit();
-//     bluetoothFlush();
-//     printf("Flush done.\n");
-
-//     int ready, d;
-//     unsigned char c;
-
-//     while(1) {
-//         ready = bluetoothTestForReceivedData();
-
-//         if (ready) {
-//             c = bluetoothGetChar();
-//             printf("Char received: %c\n", c);
-//         }   
-//     }
-// }
-
 void main(void)
 {
     printf("UART Bluetooth Serial Port Test Program\n");
