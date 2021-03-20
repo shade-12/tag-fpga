@@ -52,7 +52,7 @@ Disassembly of section .text:
       d0:	1affffe3 	bne	64 <__cs3_start_c+0x20>
       d4:	eb002a34 	bl	a9ac <__cs3_premain>
       d8:	00000001 	.word	0x00000001
-      dc:	0000b398 	.word	0x0000b398
+      dc:	0000b3a0 	.word	0x0000b3a0
 
 000000e0 <__cs3_start_asm_sim>:
       e0:	e28f103c 	add	r1, pc, #60	; 0x3c
@@ -71,10 +71,10 @@ Disassembly of section .text:
      114:	15810000 	strne	r0, [r1]
      118:	eaffffc9 	b	44 <__cs3_start_c>
      11c:	3ffffffc 	.word	0x3ffffffc
-     120:	0000bc60 	.word	0x0000bc60
+     120:	0000bc68 	.word	0x0000bc68
 
 00000124 <__cs3_heap_start_ptr>:
-     124:	0000bd78 	.word	0x0000bd78
+     124:	0000bd80 	.word	0x0000bd80
 
 00000128 <_start>:
      128:	e51fd000 	ldr	sp, [pc, #-0]	; 130 <_start+0x8>
@@ -96,8 +96,8 @@ Disassembly of section .text:
      160:	e1a0e00f 	mov	lr, pc
      164:	e12fff13 	bx	r3
      168:	eafffff7 	b	14c <deregister_tm_clones+0x18>
-     16c:	0000bc68 	.word	0x0000bc68
-     170:	0000bc6b 	.word	0x0000bc6b
+     16c:	0000bc70 	.word	0x0000bc70
+     170:	0000bc73 	.word	0x0000bc73
      174:	00000000 	.word	0x00000000
 
 00000178 <register_tm_clones>:
@@ -117,8 +117,8 @@ Disassembly of section .text:
      1ac:	e1a0e00f 	mov	lr, pc
      1b0:	e12fff12 	bx	r2
      1b4:	eafffff7 	b	198 <register_tm_clones+0x20>
-     1b8:	0000bc68 	.word	0x0000bc68
-     1bc:	0000bc68 	.word	0x0000bc68
+     1b8:	0000bc70 	.word	0x0000bc70
+     1bc:	0000bc70 	.word	0x0000bc70
      1c0:	00000000 	.word	0x00000000
 
 000001c4 <__do_global_dtors_aux>:
@@ -136,7 +136,7 @@ Disassembly of section .text:
      1f0:	e5c43000 	strb	r3, [r4]
      1f4:	e8bd4010 	pop	{r4, lr}
      1f8:	e12fff1e 	bx	lr
-     1fc:	0000bc68 	.word	0x0000bc68
+     1fc:	0000bc70 	.word	0x0000bc70
      200:	00000000 	.word	0x00000000
      204:	0000b0d4 	.word	0x0000b0d4
 
@@ -159,8 +159,8 @@ Disassembly of section .text:
      244:	eaffffcb 	b	178 <register_tm_clones>
      248:	00000000 	.word	0x00000000
      24c:	0000b0d4 	.word	0x0000b0d4
-     250:	0000bc6c 	.word	0x0000bc6c
-     254:	0000b398 	.word	0x0000b398
+     250:	0000bc74 	.word	0x0000bc74
+     254:	0000b3a0 	.word	0x0000b3a0
      258:	00000000 	.word	0x00000000
 
 0000025c <main>:
@@ -171,7 +171,7 @@ Disassembly of section .text:
 void main(void)
 {
      25c:	e92d4008 	push	{r3, lr}
-    printf("UART Serial Port Test Program\n");
+    printf("UART RS232 Serial Port Test Program\n");
      260:	e30b00e0 	movw	r0, #45280	; 0xb0e0
      264:	e3400000 	movt	r0, #0
      268:	eb0000b9 	bl	554 <puts>
@@ -181,7 +181,7 @@ void main(void)
     rs232Flush();
      270:	eb000055 	bl	3cc <rs232Flush>
     printf("Flush done.\n");
-     274:	e30b0100 	movw	r0, #45312	; 0xb100
+     274:	e30b0104 	movw	r0, #45316	; 0xb104
      278:	e3400000 	movt	r0, #0
      27c:	eb0000b4 	bl	554 <puts>
 
@@ -190,7 +190,7 @@ void main(void)
      284:	eb000036 	bl	364 <rs232PutChar>
      288:	e1a01000 	mov	r1, r0
     printf("Put char: %d\n", d);
-     28c:	e30b010c 	movw	r0, #45324	; 0xb10c
+     28c:	e30b0110 	movw	r0, #45328	; 0xb110
      290:	e3400000 	movt	r0, #0
      294:	eb000075 	bl	470 <printf>
 
@@ -198,7 +198,7 @@ void main(void)
      298:	eb000046 	bl	3b8 <rs232TestForReceivedData>
      29c:	e1a01000 	mov	r1, r0
     printf("Ready to read char: %d\n", ready);
-     2a0:	e30b011c 	movw	r0, #45340	; 0xb11c
+     2a0:	e30b0120 	movw	r0, #45344	; 0xb120
      2a4:	e3400000 	movt	r0, #0
      2a8:	eb000070 	bl	470 <printf>
 
@@ -215,12 +215,12 @@ void main(void)
     *HEX4_5 = c;
      2c4:	e5830050 	str	r0, [r3, #80]	; 0x50
     printf("You should see number 2 appears on the HEX display now.\n");
-     2c8:	e30b0134 	movw	r0, #45364	; 0xb134
+     2c8:	e30b0138 	movw	r0, #45368	; 0xb138
      2cc:	e3400000 	movt	r0, #0
      2d0:	eb00009f 	bl	554 <puts>
 
     printf("Exit.");
-     2d4:	e30b016c 	movw	r0, #45420	; 0xb16c
+     2d4:	e30b0170 	movw	r0, #45424	; 0xb170
      2d8:	e3400000 	movt	r0, #0
      2dc:	eb000063 	bl	470 <printf>
      2e0:	e8bd8008 	pop	{r3, pc}
@@ -400,7 +400,7 @@ void rs232Flush(void)
      42c:	112fff13 	bxne	r3
      430:	e1a00004 	mov	r0, r4
      434:	eb00298d 	bl	aa70 <_exit>
-     438:	0000b174 	.word	0x0000b174
+     438:	0000b178 	.word	0x0000b178
 
 0000043c <_printf_r>:
      43c:	e92d000e 	push	{r1, r2, r3}
@@ -433,7 +433,7 @@ void rs232Flush(void)
      4a0:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
      4a4:	e28dd010 	add	sp, sp, #16
      4a8:	e12fff1e 	bx	lr
-     4ac:	0000b3a0 	.word	0x0000b3a0
+     4ac:	0000b3a8 	.word	0x0000b3a8
 
 000004b0 <_puts_r>:
      4b0:	e92d4030 	push	{r4, r5, lr}
@@ -475,15 +475,15 @@ void rs232Flush(void)
      540:	e28dd024 	add	sp, sp, #36	; 0x24
      544:	e8bd4030 	pop	{r4, r5, lr}
      548:	e12fff1e 	bx	lr
-     54c:	0000b3a0 	.word	0x0000b3a0
-     550:	0000b118 	.word	0x0000b118
+     54c:	0000b3a8 	.word	0x0000b3a8
+     550:	0000b11c 	.word	0x0000b11c
 
 00000554 <puts>:
      554:	e59f3008 	ldr	r3, [pc, #8]	; 564 <puts+0x10>
      558:	e1a01000 	mov	r1, r0
      55c:	e5930000 	ldr	r0, [r3]
      560:	eaffffd2 	b	4b0 <_puts_r>
-     564:	0000b3a0 	.word	0x0000b3a0
+     564:	0000b3a8 	.word	0x0000b3a8
 
 00000568 <strlen>:
      568:	e3c01003 	bic	r1, r0, #3
@@ -1757,16 +1757,16 @@ void rs232Flush(void)
     1930:	e28d5d05 	add	r5, sp, #320	; 0x140
     1934:	eaffffea 	b	18e4 <_vfprintf_r+0x131c>
     1938:	fffffba4 	.word	0xfffffba4
-    193c:	0000b17c 	.word	0x0000b17c
-    1940:	0000b19c 	.word	0x0000b19c
-    1944:	0000b1a0 	.word	0x0000b1a0
-    1948:	0000b1ac 	.word	0x0000b1ac
-    194c:	0000b1c0 	.word	0x0000b1c0
-    1950:	0000b1dc 	.word	0x0000b1dc
-    1954:	0000b18c 	.word	0x0000b18c
-    1958:	0000b1a4 	.word	0x0000b1a4
-    195c:	0000b1a8 	.word	0x0000b1a8
-    1960:	0000b1d4 	.word	0x0000b1d4
+    193c:	0000b180 	.word	0x0000b180
+    1940:	0000b1a0 	.word	0x0000b1a0
+    1944:	0000b1a4 	.word	0x0000b1a4
+    1948:	0000b1b0 	.word	0x0000b1b0
+    194c:	0000b1c4 	.word	0x0000b1c4
+    1950:	0000b1e0 	.word	0x0000b1e0
+    1954:	0000b190 	.word	0x0000b190
+    1958:	0000b1a8 	.word	0x0000b1a8
+    195c:	0000b1ac 	.word	0x0000b1ac
+    1960:	0000b1d8 	.word	0x0000b1d8
     1964:	66666667 	.word	0x66666667
     1968:	e59d9074 	ldr	r9, [sp, #116]	; 0x74
     196c:	e3a0000f 	mov	r0, #15
@@ -2657,7 +2657,7 @@ void rs232Flush(void)
     2738:	e1a0200c 	mov	r2, r12
     273c:	e8bd0010 	ldmfd	sp!, {r4}
     2740:	eafff7a0 	b	5c8 <_vfprintf_r>
-    2744:	0000b3a0 	.word	0x0000b3a0
+    2744:	0000b3a8 	.word	0x0000b3a8
 
 00002748 <__swsetup_r>:
     2748:	e92d4038 	push	{r3, r4, r5, lr}
@@ -2737,7 +2737,7 @@ void rs232Flush(void)
     2870:	e5841004 	str	r1, [r4, #4]
     2874:	e5842000 	str	r2, [r4]
     2878:	eaffffd2 	b	27c8 <__swsetup_r+0x80>
-    287c:	0000b3a0 	.word	0x0000b3a0
+    287c:	0000b3a8 	.word	0x0000b3a8
 
 00002880 <__register_exitproc>:
     2880:	e59fc0e4 	ldr	r12, [pc, #228]	; 296c <__register_exitproc+0xec>
@@ -2799,7 +2799,7 @@ void rs232Flush(void)
     2960:	e58c7188 	str	r7, [r12, #392]	; 0x188
     2964:	058c018c 	streq	r0, [r12, #396]	; 0x18c
     2968:	eaffffe9 	b	2914 <__register_exitproc+0x94>
-    296c:	0000b174 	.word	0x0000b174
+    296c:	0000b178 	.word	0x0000b178
     2970:	00000000 	.word	0x00000000
 
 00002974 <__call_exitprocs>:
@@ -2896,7 +2896,7 @@ void rs232Flush(void)
     2adc:	e1a0b006 	mov	r11, r6
     2ae0:	e1a06003 	mov	r6, r3
     2ae4:	eafffff9 	b	2ad0 <__call_exitprocs+0x15c>
-    2ae8:	0000b174 	.word	0x0000b174
+    2ae8:	0000b178 	.word	0x0000b178
     2aec:	00000000 	.word	0x00000000
 
 00002af0 <register_fini>:
@@ -2907,7 +2907,7 @@ void rs232Flush(void)
     2b00:	1bfff638 	blne	3e8 <atexit>
     2b04:	e8bd4008 	pop	{r3, lr}
     2b08:	e12fff1e 	bx	lr
-    2b0c:	0000b368 	.word	0x0000b368
+    2b0c:	0000b370 	.word	0x0000b370
     2b10:	000048f0 	.word	0x000048f0
     2b14:	00000000 	.word	0x00000000
 
@@ -3396,16 +3396,16 @@ void rs232Flush(void)
     3294:	3fc68a28 	.word	0x3fc68a28
     3298:	509f79fb 	.word	0x509f79fb
     329c:	3fd34413 	.word	0x3fd34413
-    32a0:	0000b1dd 	.word	0x0000b1dd
+    32a0:	0000b1e1 	.word	0x0000b1e1
     32a4:	0000270f 	.word	0x0000270f
-    32a8:	0000b1ec 	.word	0x0000b1ec
+    32a8:	0000b1f0 	.word	0x0000b1f0
     32ac:	3ff80000 	.word	0x3ff80000
-    32b0:	0000b1e0 	.word	0x0000b1e0
-    32b4:	0000b1dc 	.word	0x0000b1dc
+    32b0:	0000b1e4 	.word	0x0000b1e4
+    32b4:	0000b1e0 	.word	0x0000b1e0
     32b8:	fffffbee 	.word	0xfffffbee
     32bc:	3ff00000 	.word	0x3ff00000
-    32c0:	0000b2f8 	.word	0x0000b2f8
-    32c4:	0000b208 	.word	0x0000b208
+    32c0:	0000b300 	.word	0x0000b300
+    32c4:	0000b210 	.word	0x0000b210
     32c8:	40140000 	.word	0x40140000
     32cc:	7ff00000 	.word	0x7ff00000
     32d0:	40240000 	.word	0x40240000
@@ -4648,8 +4648,8 @@ void rs232Flush(void)
     4614:	eb0002f3 	bl	51e8 <_fwalk_reent>
     4618:	e8bd4008 	pop	{r3, lr}
     461c:	e12fff1e 	bx	lr
-    4620:	0000b3a0 	.word	0x0000b3a0
-    4624:	0000b174 	.word	0x0000b174
+    4620:	0000b3a8 	.word	0x0000b3a8
+    4624:	0000b178 	.word	0x0000b178
     4628:	000043c0 	.word	0x000043c0
 
 0000462c <__fp_lock>:
@@ -4725,7 +4725,7 @@ void rs232Flush(void)
     4718:	e59f3004 	ldr	r3, [pc, #4]	; 4724 <_cleanup+0xc>
     471c:	e5930000 	ldr	r0, [r3]
     4720:	eaffffc5 	b	463c <_cleanup_r>
-    4724:	0000b174 	.word	0x0000b174
+    4724:	0000b178 	.word	0x0000b178
 
 00004728 <__sinit>:
     4728:	e92d4038 	push	{r3, r4, r5, lr}
@@ -4821,7 +4821,7 @@ void rs232Flush(void)
     4888:	e5863000 	str	r3, [r6]
     488c:	e1a04000 	mov	r4, r0
     4890:	eaffffea 	b	4840 <__sfp+0xa0>
-    4894:	0000b174 	.word	0x0000b174
+    4894:	0000b178 	.word	0x0000b178
 
 00004898 <__sfp_lock_acquire>:
     4898:	e12fff1e 	bx	lr
@@ -4843,7 +4843,7 @@ void rs232Flush(void)
     48b8:	eb000228 	bl	5160 <_fwalk>
     48bc:	e8bd4008 	pop	{r3, lr}
     48c0:	e12fff1e 	bx	lr
-    48c4:	0000b3a0 	.word	0x0000b3a0
+    48c4:	0000b3a8 	.word	0x0000b3a8
     48c8:	0000462c 	.word	0x0000462c
 
 000048cc <__fp_unlock_all>:
@@ -4854,7 +4854,7 @@ void rs232Flush(void)
     48dc:	eb00021f 	bl	5160 <_fwalk>
     48e0:	e8bd4008 	pop	{r3, lr}
     48e4:	e12fff1e 	bx	lr
-    48e8:	0000b3a0 	.word	0x0000b3a0
+    48e8:	0000b3a8 	.word	0x0000b3a8
     48ec:	00004634 	.word	0x00004634
 
 000048f0 <__libc_fini_array>:
@@ -4870,11 +4870,11 @@ void rs232Flush(void)
     4914:	e12fff13 	bx	r3
     4918:	e2544001 	subs	r4, r4, #1
     491c:	1afffffa 	bne	490c <__libc_fini_array+0x1c>
-    4920:	eb001a90 	bl	b368 <__libc_fini>
+    4920:	eb001a92 	bl	b370 <__libc_fini>
     4924:	e8bd4038 	pop	{r3, r4, r5, lr}
     4928:	e12fff1e 	bx	lr
-    492c:	0000b380 	.word	0x0000b380
-    4930:	0000b384 	.word	0x0000b384
+    492c:	0000b388 	.word	0x0000b388
+    4930:	0000b38c 	.word	0x0000b38c
 
 00004934 <_malloc_trim_r>:
     4934:	e92d40f8 	push	{r3, r4, r5, r6, r7, lr}
@@ -4937,9 +4937,9 @@ void rs232Flush(void)
     4a18:	e5810000 	str	r0, [r1]
     4a1c:	e5832004 	str	r2, [r3, #4]
     4a20:	eaffffda 	b	4990 <_malloc_trim_r+0x5c>
-    4a24:	0000b84c 	.word	0x0000b84c
-    4a28:	0000bc94 	.word	0x0000bc94
-    4a2c:	0000bc54 	.word	0x0000bc54
+    4a24:	0000b854 	.word	0x0000b854
+    4a28:	0000bc9c 	.word	0x0000bc9c
+    4a2c:	0000bc5c 	.word	0x0000bc5c
 
 00004a30 <_free_r>:
     4a30:	e92d40f8 	push	{r3, r4, r5, r6, r7, lr}
@@ -5092,10 +5092,10 @@ void rs232Flush(void)
     4c7c:	83a000fc 	movhi	r0, #252	; 0xfc
     4c80:	83a0e07e 	movhi	lr, #126	; 0x7e
     4c84:	eaffffa1 	b	4b10 <_free_r+0xe0>
-    4c88:	0000b84c 	.word	0x0000b84c
-    4c8c:	0000b854 	.word	0x0000b854
-    4c90:	0000bc58 	.word	0x0000bc58
-    4c94:	0000bc90 	.word	0x0000bc90
+    4c88:	0000b854 	.word	0x0000b854
+    4c8c:	0000b85c 	.word	0x0000b85c
+    4c90:	0000bc60 	.word	0x0000bc60
+    4c94:	0000bc98 	.word	0x0000bc98
     4c98:	00000554 	.word	0x00000554
 
 00004c9c <__sfvwrite_r>:
@@ -5503,25 +5503,25 @@ void rs232Flush(void)
     52c8:	01a00003 	moveq	r0, r3
     52cc:	13a00000 	movne	r0, #0
     52d0:	eafffff0 	b	5298 <_setlocale_r+0x24>
-    52d4:	0000b1f0 	.word	0x0000b1f0
-    52d8:	0000b178 	.word	0x0000b178
-    52dc:	0000b1bc 	.word	0x0000b1bc
+    52d4:	0000b1f4 	.word	0x0000b1f4
+    52d8:	0000b17c 	.word	0x0000b17c
+    52dc:	0000b1c0 	.word	0x0000b1c0
 
 000052e0 <__locale_charset>:
     52e0:	e59f0000 	ldr	r0, [pc]	; 52e8 <__locale_charset+0x8>
     52e4:	e12fff1e 	bx	lr
-    52e8:	0000b7d0 	.word	0x0000b7d0
+    52e8:	0000b7d8 	.word	0x0000b7d8
 
 000052ec <__locale_mb_cur_max>:
     52ec:	e59f3004 	ldr	r3, [pc, #4]	; 52f8 <__locale_mb_cur_max+0xc>
     52f0:	e5930020 	ldr	r0, [r3, #32]
     52f4:	e12fff1e 	bx	lr
-    52f8:	0000b7d0 	.word	0x0000b7d0
+    52f8:	0000b7d8 	.word	0x0000b7d8
 
 000052fc <__locale_msgcharset>:
     52fc:	e59f0000 	ldr	r0, [pc]	; 5304 <__locale_msgcharset+0x8>
     5300:	e12fff1e 	bx	lr
-    5304:	0000b7f4 	.word	0x0000b7f4
+    5304:	0000b7fc 	.word	0x0000b7fc
 
 00005308 <__locale_cjk_lang>:
     5308:	e3a00000 	mov	r0, #0
@@ -5530,7 +5530,7 @@ void rs232Flush(void)
 00005310 <_localeconv_r>:
     5310:	e59f0000 	ldr	r0, [pc]	; 5318 <_localeconv_r+0x8>
     5314:	e12fff1e 	bx	lr
-    5318:	0000b814 	.word	0x0000b814
+    5318:	0000b81c 	.word	0x0000b81c
 
 0000531c <setlocale>:
     531c:	e1a02001 	mov	r2, r1
@@ -5539,12 +5539,12 @@ void rs232Flush(void)
     5328:	e5910000 	ldr	r0, [r1]
     532c:	e1a01003 	mov	r1, r3
     5330:	eaffffcf 	b	5274 <_setlocale_r>
-    5334:	0000b3a0 	.word	0x0000b3a0
+    5334:	0000b3a8 	.word	0x0000b3a8
 
 00005338 <localeconv>:
     5338:	e59f0000 	ldr	r0, [pc]	; 5340 <localeconv+0x8>
     533c:	e12fff1e 	bx	lr
-    5340:	0000b814 	.word	0x0000b814
+    5340:	0000b81c 	.word	0x0000b81c
 
 00005344 <__smakebuf_r>:
     5344:	e92d40f0 	push	{r4, r5, r6, r7, lr}
@@ -6088,8 +6088,8 @@ void rs232Flush(void)
     5ba4:	e2844004 	add	r4, r4, #4
     5ba8:	1affffa0 	bne	5a30 <_malloc_r+0x590>
     5bac:	eafffffa 	b	5b9c <_malloc_r+0x6fc>
-    5bb0:	0000b84c 	.word	0x0000b84c
-    5bb4:	0000bc90 	.word	0x0000bc90
+    5bb0:	0000b854 	.word	0x0000b854
+    5bb4:	0000bc98 	.word	0x0000bc98
     5bb8:	00000554 	.word	0x00000554
 
 00005bbc <memchr>:
@@ -6882,7 +6882,7 @@ void rs232Flush(void)
     6794:	e1a06000 	mov	r6, r0
     6798:	e5803000 	str	r3, [r0]
     679c:	eaffffd6 	b	66fc <__pow5mult+0x48>
-    67a0:	0000b1f8 	.word	0x0000b1f8
+    67a0:	0000b200 	.word	0x0000b200
     67a4:	00000271 	.word	0x00000271
 
 000067a8 <__lshift>:
@@ -7271,7 +7271,7 @@ void rs232Flush(void)
     6d68:	eafffff8 	b	6d50 <_mprec_log10+0x2c>
     6d6c:	3ff00000 	.word	0x3ff00000
     6d70:	40240000 	.word	0x40240000
-    6d74:	0000b1f8 	.word	0x0000b1f8
+    6d74:	0000b200 	.word	0x0000b200
 
 00006d78 <__copybits>:
     6d78:	e92d0030 	push	{r4, r5}
@@ -7689,7 +7689,7 @@ void rs232Flush(void)
     73d8:	ebfffac1 	bl	5ee4 <memmove>
     73dc:	e59d3004 	ldr	r3, [sp, #4]
     73e0:	eaffffe1 	b	736c <_realloc_r+0x4f8>
-    73e4:	0000b84c 	.word	0x0000b84c
+    73e4:	0000b854 	.word	0x0000b854
 
 000073e8 <__fpclassifyd>:
     73e8:	e1902001 	orrs	r2, r0, r1
@@ -7736,7 +7736,7 @@ void rs232Flush(void)
     7484:	e3530000 	cmp	r3, #0
     7488:	15853000 	strne	r3, [r5]
     748c:	eafffff9 	b	7478 <_sbrk_r+0x24>
-    7490:	0000bcc4 	.word	0x0000bcc4
+    7490:	0000bccc 	.word	0x0000bccc
 
 00007494 <__sread>:
     7494:	e92d4010 	push	{r4, lr}
@@ -9134,12 +9134,12 @@ void rs232Flush(void)
     8a14:	e1a0b000 	mov	r11, r0
     8a18:	b3e0c000 	mvnlt	r12, #0
     8a1c:	eafffbdf 	b	79a0 <_vfiprintf_r+0x144>
-    8a20:	0000b1c0 	.word	0x0000b1c0
-    8a24:	0000b320 	.word	0x0000b320
-    8a28:	0000b1ac 	.word	0x0000b1ac
-    8a2c:	0000b330 	.word	0x0000b330
+    8a20:	0000b1c4 	.word	0x0000b1c4
+    8a24:	0000b328 	.word	0x0000b328
+    8a28:	0000b1b0 	.word	0x0000b1b0
+    8a2c:	0000b338 	.word	0x0000b338
     8a30:	fffffba4 	.word	0xfffffba4
-    8a34:	0000b1d4 	.word	0x0000b1d4
+    8a34:	0000b1d8 	.word	0x0000b1d8
 
 00008a38 <vfiprintf>:
     8a38:	e52d4004 	push	{r4}		; (str r4, [sp, #-4]!)
@@ -9152,7 +9152,7 @@ void rs232Flush(void)
     8a54:	e1a0200c 	mov	r2, r12
     8a58:	e8bd0010 	ldmfd	sp!, {r4}
     8a5c:	eafffb7e 	b	785c <_vfiprintf_r>
-    8a60:	0000b3a0 	.word	0x0000b3a0
+    8a60:	0000b3a8 	.word	0x0000b3a8
 
 00008a64 <_write_r>:
     8a64:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9171,7 +9171,7 @@ void rs232Flush(void)
     8a98:	15853000 	strne	r3, [r5]
     8a9c:	e8bd4038 	pop	{r3, r4, r5, lr}
     8aa0:	e12fff1e 	bx	lr
-    8aa4:	0000bcc4 	.word	0x0000bcc4
+    8aa4:	0000bccc 	.word	0x0000bccc
 
 00008aa8 <_calloc_r>:
     8aa8:	e92d4010 	push	{r4, lr}
@@ -9227,7 +9227,7 @@ void rs232Flush(void)
     8b68:	15853000 	strne	r3, [r5]
     8b6c:	e8bd4038 	pop	{r3, r4, r5, lr}
     8b70:	e12fff1e 	bx	lr
-    8b74:	0000bcc4 	.word	0x0000bcc4
+    8b74:	0000bccc 	.word	0x0000bccc
 
 00008b78 <_fclose_r>:
     8b78:	e92d4070 	push	{r4, r5, r6, lr}
@@ -9298,7 +9298,7 @@ void rs232Flush(void)
     8c74:	e1a01000 	mov	r1, r0
     8c78:	e5930000 	ldr	r0, [r3]
     8c7c:	eaffffbd 	b	8b78 <_fclose_r>
-    8c80:	0000b3a0 	.word	0x0000b3a0
+    8c80:	0000b3a8 	.word	0x0000b3a8
 
 00008c84 <_fputwc_r>:
     8c84:	e1d230bc 	ldrh	r3, [r2, #12]
@@ -9405,7 +9405,7 @@ void rs232Flush(void)
     8e10:	e1a02005 	mov	r2, r5
     8e14:	e8bd4070 	pop	{r4, r5, r6, lr}
     8e18:	eaffff99 	b	8c84 <_fputwc_r>
-    8e1c:	0000b3a0 	.word	0x0000b3a0
+    8e1c:	0000b3a8 	.word	0x0000b3a8
 
 00008e20 <_fstat_r>:
     8e20:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9423,7 +9423,7 @@ void rs232Flush(void)
     8e50:	15853000 	strne	r3, [r5]
     8e54:	e8bd4038 	pop	{r3, r4, r5, lr}
     8e58:	e12fff1e 	bx	lr
-    8e5c:	0000bcc4 	.word	0x0000bcc4
+    8e5c:	0000bccc 	.word	0x0000bccc
 
 00008e60 <_isatty_r>:
     8e60:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9440,7 +9440,7 @@ void rs232Flush(void)
     8e8c:	15853000 	strne	r3, [r5]
     8e90:	e8bd4038 	pop	{r3, r4, r5, lr}
     8e94:	e12fff1e 	bx	lr
-    8e98:	0000bcc4 	.word	0x0000bcc4
+    8e98:	0000bccc 	.word	0x0000bccc
 
 00008e9c <_lseek_r>:
     8e9c:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9459,7 +9459,7 @@ void rs232Flush(void)
     8ed0:	15853000 	strne	r3, [r5]
     8ed4:	e8bd4038 	pop	{r3, r4, r5, lr}
     8ed8:	e12fff1e 	bx	lr
-    8edc:	0000bcc4 	.word	0x0000bcc4
+    8edc:	0000bccc 	.word	0x0000bccc
 
 00008ee0 <_read_r>:
     8ee0:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9478,7 +9478,7 @@ void rs232Flush(void)
     8f14:	15853000 	strne	r3, [r5]
     8f18:	e8bd4038 	pop	{r3, r4, r5, lr}
     8f1c:	e12fff1e 	bx	lr
-    8f20:	0000bcc4 	.word	0x0000bcc4
+    8f20:	0000bccc 	.word	0x0000bccc
 
 00008f24 <cleanup_glue>:
     8f24:	e92d4038 	push	{r3, r4, r5, lr}
@@ -9556,7 +9556,7 @@ void rs232Flush(void)
     903c:	e1a00005 	mov	r0, r5
     9040:	e8bd4070 	pop	{r4, r5, r6, lr}
     9044:	eaffffb6 	b	8f24 <cleanup_glue>
-    9048:	0000b3a0 	.word	0x0000b3a0
+    9048:	0000b3a8 	.word	0x0000b3a8
 
 0000904c <_wrapup_reent>:
     904c:	e92d40f8 	push	{r3, r4, r5, r6, r7, lr}
@@ -9587,7 +9587,7 @@ void rs232Flush(void)
     90b0:	112fff13 	bxne	r3
     90b4:	e8bd40f8 	pop	{r3, r4, r5, r6, r7, lr}
     90b8:	e12fff1e 	bx	lr
-    90bc:	0000b3a0 	.word	0x0000b3a0
+    90bc:	0000b3a8 	.word	0x0000b3a8
 
 000090c0 <__swbuf_r>:
     90c0:	e92d4070 	push	{r4, r5, r6, lr}
@@ -9674,7 +9674,7 @@ void rs232Flush(void)
     91fc:	e5910000 	ldr	r0, [r1]
     9200:	e1a01003 	mov	r1, r3
     9204:	eaffffad 	b	90c0 <__swbuf_r>
-    9208:	0000b3a0 	.word	0x0000b3a0
+    9208:	0000b3a8 	.word	0x0000b3a8
 
 0000920c <_wcrtomb_r>:
     920c:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -9712,7 +9712,7 @@ void rs232Flush(void)
     928c:	e1a0e00f 	mov	lr, pc
     9290:	e12fff17 	bx	r7
     9294:	eaffffed 	b	9250 <_wcrtomb_r+0x44>
-    9298:	0000bc5c 	.word	0x0000bc5c
+    9298:	0000bc64 	.word	0x0000bc64
 
 0000929c <wcrtomb>:
     929c:	e92d45f0 	push	{r4, r5, r6, r7, r8, r10, lr}
@@ -9754,8 +9754,8 @@ void rs232Flush(void)
     932c:	e1a0e00f 	mov	lr, pc
     9330:	e12fff17 	bx	r7
     9334:	eaffffea 	b	92e4 <wcrtomb+0x48>
-    9338:	0000b3a0 	.word	0x0000b3a0
-    933c:	0000bc5c 	.word	0x0000bc5c
+    9338:	0000b3a8 	.word	0x0000b3a8
+    933c:	0000bc64 	.word	0x0000bc64
 
 00009340 <__ascii_wctomb>:
     9340:	e3510000 	cmp	r1, #0
@@ -9790,7 +9790,7 @@ void rs232Flush(void)
     93ac:	e28dd008 	add	sp, sp, #8
     93b0:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}
     93b4:	e12fff1e 	bx	lr
-    93b8:	0000bc5c 	.word	0x0000bc5c
+    93b8:	0000bc64 	.word	0x0000bc64
 
 000093bc <__aeabi_uidiv>:
     93bc:	e2512001 	subs	r2, r1, #1
@@ -11272,8 +11272,8 @@ void rs232Flush(void)
     a9e0:	e3530000 	cmp	r3, #0
     a9e4:	1bffd687 	blne	408 <exit>
     a9e8:	eafffffe 	b	a9e8 <__cs3_premain+0x3c>
-    a9ec:	0000bd6c 	.word	0x0000bd6c
-    a9f0:	0000bd70 	.word	0x0000bd70
+    a9ec:	0000bd74 	.word	0x0000bd74
+    a9f0:	0000bd78 	.word	0x0000bd78
     a9f4:	00000408 	.word	0x00000408
 
 0000a9f8 <_close>:
@@ -11479,8 +11479,8 @@ void rs232Flush(void)
     acdc:	e5803000 	str	r3, [r0]
     ace0:	e3e03000 	mvn	r3, #0
     ace4:	eafffff7 	b	acc8 <_sbrk+0x48>
-    ace8:	0000bc60 	.word	0x0000bc60
-    acec:	0000bc64 	.word	0x0000bc64
+    ace8:	0000bc68 	.word	0x0000bc68
+    acec:	0000bc6c 	.word	0x0000bc6c
 
 0000acf0 <initialize_monitor_handles.part.0>:
     acf0:	e92d40f0 	push	{r4, r5, r6, r7, lr}
@@ -11527,8 +11527,8 @@ void rs232Flush(void)
     ad94:	e28dd014 	add	sp, sp, #20
     ad98:	e8bd40f0 	pop	{r4, r5, r6, r7, lr}
     ad9c:	e12fff1e 	bx	lr
-    ada0:	0000bcc8 	.word	0x0000bcc8
-    ada4:	0000b340 	.word	0x0000b340
+    ada0:	0000bcd0 	.word	0x0000bcd0
+    ada4:	0000b348 	.word	0x0000b348
 
 0000ada8 <__cs3_openslot>:
     ada8:	e92d4038 	push	{r3, r4, r5, lr}
@@ -11551,7 +11551,7 @@ void rs232Flush(void)
     adec:	e5803000 	str	r3, [r0]
     adf0:	e3a00000 	mov	r0, #0
     adf4:	eafffff8 	b	addc <__cs3_openslot+0x34>
-    adf8:	0000bcc8 	.word	0x0000bcc8
+    adf8:	0000bcd0 	.word	0x0000bcd0
 
 0000adfc <__cs3_newslot>:
     adfc:	e92d4038 	push	{r3, r4, r5, lr}
@@ -11578,7 +11578,7 @@ void rs232Flush(void)
     ae50:	e5853000 	str	r3, [r5]
     ae54:	e0800002 	add	r0, r0, r2
     ae58:	eafffff9 	b	ae44 <__cs3_newslot+0x48>
-    ae5c:	0000bcc8 	.word	0x0000bcc8
+    ae5c:	0000bcd0 	.word	0x0000bcd0
 
 0000ae60 <__cs3_checkerror>:
     ae60:	e3700001 	cmn	r0, #1
@@ -11694,7 +11694,7 @@ void rs232Flush(void)
     b010:	eaffffb3 	b	aee4 <initialize_argv+0x4c>
     b014:	e1a04002 	mov	r4, r2
     b018:	eaffffd6 	b	af78 <initialize_argv+0xe0>
-    b01c:	0000bcc8 	.word	0x0000bcc8
+    b01c:	0000bcd0 	.word	0x0000bcd0
 
 0000b020 <__cs3_isr_interrupt>:
     b020:	eafffffe 	b	b020 <__cs3_isr_interrupt>
@@ -11721,7 +11721,7 @@ void rs232Flush(void)
     b03c:	e59f3004 	ldr	r3, [pc, #4]	; b048 <__errno+0xc>
     b040:	e5930000 	ldr	r0, [r3]
     b044:	e12fff1e 	bx	lr
-    b048:	0000b3a0 	.word	0x0000b3a0
+    b048:	0000b3a8 	.word	0x0000b3a8
 
 0000b04c <__libc_init_array>:
     b04c:	e92d4070 	push	{r4, r5, r6, lr}
@@ -11741,7 +11741,7 @@ void rs232Flush(void)
     b084:	e59f5040 	ldr	r5, [pc, #64]	; b0cc <__libc_init_array+0x80>
     b088:	e59f6040 	ldr	r6, [pc, #64]	; b0d0 <__libc_init_array+0x84>
     b08c:	e0656006 	rsb	r6, r5, r6
-    b090:	eb0000ab 	bl	b344 <_init>
+    b090:	eb0000ad 	bl	b34c <_init>
     b094:	e1b06146 	asrs	r6, r6, #2
     b098:	12455004 	subne	r5, r5, #4
     b09c:	13a04000 	movne	r4, #0
@@ -11754,128 +11754,129 @@ void rs232Flush(void)
     b0b8:	1afffff9 	bne	b0a4 <__libc_init_array+0x58>
     b0bc:	e8bd4070 	pop	{r4, r5, r6, lr}
     b0c0:	e12fff1e 	bx	lr
-    b0c4:	0000b35c 	.word	0x0000b35c
-    b0c8:	0000b35c 	.word	0x0000b35c
-    b0cc:	0000b35c 	.word	0x0000b35c
-    b0d0:	0000b368 	.word	0x0000b368
+    b0c4:	0000b364 	.word	0x0000b364
+    b0c8:	0000b364 	.word	0x0000b364
+    b0cc:	0000b364 	.word	0x0000b364
+    b0d0:	0000b370 	.word	0x0000b370
 
 Disassembly of section .rodata:
 
-0000b0e0 <_global_impure_ptr-0x94>:
+0000b0e0 <_global_impure_ptr-0x98>:
     b0e0:	54524155 	.word	0x54524155
-    b0e4:	72655320 	.word	0x72655320
-    b0e8:	206c6169 	.word	0x206c6169
-    b0ec:	74726f50 	.word	0x74726f50
-    b0f0:	73655420 	.word	0x73655420
-    b0f4:	72502074 	.word	0x72502074
-    b0f8:	6172676f 	.word	0x6172676f
-    b0fc:	0000006d 	.word	0x0000006d
-    b100:	73756c46 	.word	0x73756c46
-    b104:	6f642068 	.word	0x6f642068
-    b108:	002e656e 	.word	0x002e656e
-    b10c:	20747550 	.word	0x20747550
-    b110:	72616863 	.word	0x72616863
-    b114:	6425203a 	.word	0x6425203a
-    b118:	0000000a 	.word	0x0000000a
-    b11c:	64616552 	.word	0x64616552
-    b120:	6f742079 	.word	0x6f742079
-    b124:	61657220 	.word	0x61657220
-    b128:	68632064 	.word	0x68632064
-    b12c:	203a7261 	.word	0x203a7261
-    b130:	000a6425 	.word	0x000a6425
-    b134:	20756f59 	.word	0x20756f59
-    b138:	756f6873 	.word	0x756f6873
-    b13c:	7320646c 	.word	0x7320646c
-    b140:	6e206565 	.word	0x6e206565
-    b144:	65626d75 	.word	0x65626d75
-    b148:	20322072 	.word	0x20322072
-    b14c:	65707061 	.word	0x65707061
-    b150:	20737261 	.word	0x20737261
-    b154:	74206e6f 	.word	0x74206e6f
-    b158:	48206568 	.word	0x48206568
-    b15c:	64205845 	.word	0x64205845
-    b160:	6c707369 	.word	0x6c707369
-    b164:	6e207961 	.word	0x6e207961
-    b168:	002e776f 	.word	0x002e776f
-    b16c:	74697845 	.word	0x74697845
-    b170:	0000002e 	.word	0x0000002e
+    b0e4:	32535220 	.word	0x32535220
+    b0e8:	53203233 	.word	0x53203233
+    b0ec:	61697265 	.word	0x61697265
+    b0f0:	6f50206c 	.word	0x6f50206c
+    b0f4:	54207472 	.word	0x54207472
+    b0f8:	20747365 	.word	0x20747365
+    b0fc:	676f7250 	.word	0x676f7250
+    b100:	006d6172 	.word	0x006d6172
+    b104:	73756c46 	.word	0x73756c46
+    b108:	6f642068 	.word	0x6f642068
+    b10c:	002e656e 	.word	0x002e656e
+    b110:	20747550 	.word	0x20747550
+    b114:	72616863 	.word	0x72616863
+    b118:	6425203a 	.word	0x6425203a
+    b11c:	0000000a 	.word	0x0000000a
+    b120:	64616552 	.word	0x64616552
+    b124:	6f742079 	.word	0x6f742079
+    b128:	61657220 	.word	0x61657220
+    b12c:	68632064 	.word	0x68632064
+    b130:	203a7261 	.word	0x203a7261
+    b134:	000a6425 	.word	0x000a6425
+    b138:	20756f59 	.word	0x20756f59
+    b13c:	756f6873 	.word	0x756f6873
+    b140:	7320646c 	.word	0x7320646c
+    b144:	6e206565 	.word	0x6e206565
+    b148:	65626d75 	.word	0x65626d75
+    b14c:	20322072 	.word	0x20322072
+    b150:	65707061 	.word	0x65707061
+    b154:	20737261 	.word	0x20737261
+    b158:	74206e6f 	.word	0x74206e6f
+    b15c:	48206568 	.word	0x48206568
+    b160:	64205845 	.word	0x64205845
+    b164:	6c707369 	.word	0x6c707369
+    b168:	6e207961 	.word	0x6e207961
+    b16c:	002e776f 	.word	0x002e776f
+    b170:	74697845 	.word	0x74697845
+    b174:	0000002e 	.word	0x0000002e
 
-0000b174 <_global_impure_ptr>:
-    b174:	0000b3a8 00000043                       ....C...
+0000b178 <_global_impure_ptr>:
+    b178:	0000b3b0 00000043                       ....C...
 
-0000b17c <blanks.6742>:
-    b17c:	20202020 20202020 20202020 20202020                     
+0000b180 <blanks.6742>:
+    b180:	20202020 20202020 20202020 20202020                     
 
-0000b18c <zeroes.6743>:
-    b18c:	30303030 30303030 30303030 30303030     0000000000000000
-    b19c:	00464e49 00666e69 004e414e 006e616e     INF.inf.NAN.nan.
-    b1ac:	33323130 37363534 42413938 46454443     0123456789ABCDEF
-    b1bc:	00000000 33323130 37363534 62613938     ....0123456789ab
-    b1cc:	66656463 00000000 6c756e28 0000296c     cdef....(null)..
-    b1dc:	00000030 69666e49 7974696e 00000000     0...Infinity....
-    b1ec:	004e614e 49534f50 00000058              NaN.POSIX...
+0000b190 <zeroes.6743>:
+    b190:	30303030 30303030 30303030 30303030     0000000000000000
+    b1a0:	00464e49 00666e69 004e414e 006e616e     INF.inf.NAN.nan.
+    b1b0:	33323130 37363534 42413938 46454443     0123456789ABCDEF
+    b1c0:	00000000 33323130 37363534 62613938     ....0123456789ab
+    b1d0:	66656463 00000000 6c756e28 0000296c     cdef....(null)..
+    b1e0:	00000030 69666e49 7974696e 00000000     0...Infinity....
+    b1f0:	004e614e 49534f50 00000058 00000000     NaN.POSIX.......
 
-0000b1f8 <p05.5249>:
-    b1f8:	00000005 00000019 0000007d 00000000     ........}.......
+0000b200 <p05.5249>:
+    b200:	00000005 00000019 0000007d 00000000     ........}.......
 
-0000b208 <__mprec_tens>:
-    b208:	00000000 3ff00000 00000000 40240000     .......?......$@
-    b218:	00000000 40590000 00000000 408f4000     ......Y@.....@.@
-    b228:	00000000 40c38800 00000000 40f86a00     .......@.....j.@
-    b238:	00000000 412e8480 00000000 416312d0     .......A......cA
-    b248:	00000000 4197d784 00000000 41cdcd65     .......A....e..A
-    b258:	20000000 4202a05f e8000000 42374876     ... _..B....vH7B
-    b268:	a2000000 426d1a94 e5400000 42a2309c     ......mB..@..0.B
-    b278:	1e900000 42d6bcc4 26340000 430c6bf5     .......B..4&.k.C
-    b288:	37e08000 4341c379 85d8a000 43763457     ...7y.AC....W4vC
-    b298:	674ec800 43abc16d 60913d00 43e158e4     ..Ngm..C.=.`.X.C
-    b2a8:	78b58c40 4415af1d d6e2ef50 444b1ae4     @..x...DP.....KD
-    b2b8:	064dd592 4480f0cf c7e14af6 44b52d02     ..M....D.J...-.D
-    b2c8:	79d99db4 44ea7843                       ...yCx.D
+0000b210 <__mprec_tens>:
+    b210:	00000000 3ff00000 00000000 40240000     .......?......$@
+    b220:	00000000 40590000 00000000 408f4000     ......Y@.....@.@
+    b230:	00000000 40c38800 00000000 40f86a00     .......@.....j.@
+    b240:	00000000 412e8480 00000000 416312d0     .......A......cA
+    b250:	00000000 4197d784 00000000 41cdcd65     .......A....e..A
+    b260:	20000000 4202a05f e8000000 42374876     ... _..B....vH7B
+    b270:	a2000000 426d1a94 e5400000 42a2309c     ......mB..@..0.B
+    b280:	1e900000 42d6bcc4 26340000 430c6bf5     .......B..4&.k.C
+    b290:	37e08000 4341c379 85d8a000 43763457     ...7y.AC....W4vC
+    b2a0:	674ec800 43abc16d 60913d00 43e158e4     ..Ngm..C.=.`.X.C
+    b2b0:	78b58c40 4415af1d d6e2ef50 444b1ae4     @..x...DP.....KD
+    b2c0:	064dd592 4480f0cf c7e14af6 44b52d02     ..M....D.J...-.D
+    b2d0:	79d99db4 44ea7843                       ...yCx.D
 
-0000b2d0 <__mprec_tinytens>:
-    b2d0:	97d889bc 3c9cd2b2 d5a8a733 3949f623     .......<3...#.I9
-    b2e0:	44f4a73d 32a50ffd cf8c979d 255bba08     =..D...2......[%
-    b2f0:	64ac6f43 0ac80628                       Co.d(...
+0000b2d8 <__mprec_tinytens>:
+    b2d8:	97d889bc 3c9cd2b2 d5a8a733 3949f623     .......<3...#.I9
+    b2e8:	44f4a73d 32a50ffd cf8c979d 255bba08     =..D...2......[%
+    b2f8:	64ac6f43 0ac80628                       Co.d(...
 
-0000b2f8 <__mprec_bigtens>:
-    b2f8:	37e08000 4341c379 b5056e17 4693b8b5     ...7y.AC.n.....F
-    b308:	e93ff9f5 4d384f03 f9301d32 5a827748     ..?..O8M2.0.Hw.Z
-    b318:	7f73bf3c 75154fdd                       <.s..O.u
+0000b300 <__mprec_bigtens>:
+    b300:	37e08000 4341c379 b5056e17 4693b8b5     ...7y.AC.n.....F
+    b310:	e93ff9f5 4d384f03 f9301d32 5a827748     ..?..O8M2.0.Hw.Z
+    b320:	7f73bf3c 75154fdd                       <.s..O.u
 
-0000b320 <blanks.6685>:
-    b320:	20202020 20202020 20202020 20202020                     
+0000b328 <blanks.6685>:
+    b328:	20202020 20202020 20202020 20202020                     
 
-0000b330 <zeroes.6686>:
-    b330:	30303030 30303030 30303030 30303030     0000000000000000
-    b340:	0074743a                                :tt.
+0000b338 <zeroes.6686>:
+    b338:	30303030 30303030 30303030 30303030     0000000000000000
+    b348:	0074743a                                :tt.
 
-0000b344 <_init>:
-    b344:	e1a0c00d 	mov	r12, sp
-    b348:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
-    b34c:	e24cb004 	sub	r11, r12, #4
-    b350:	e24bd028 	sub	sp, r11, #40	; 0x28
-    b354:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
-    b358:	e12fff1e 	bx	lr
+0000b34c <_init>:
+    b34c:	e1a0c00d 	mov	r12, sp
+    b350:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+    b354:	e24cb004 	sub	r11, r12, #4
+    b358:	e24bd028 	sub	sp, r11, #40	; 0x28
+    b35c:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+    b360:	e12fff1e 	bx	lr
 
-0000b35c <__init_array_start>:
-    b35c:	00002af0 	.word	0x00002af0
+0000b364 <__init_array_start>:
+    b364:	00002af0 	.word	0x00002af0
 
-0000b360 <__frame_dummy_init_array_entry>:
-    b360:	00000208 0000ae98                       ........
+0000b368 <__frame_dummy_init_array_entry>:
+    b368:	00000208 0000ae98                       ........
 
-0000b368 <__libc_fini>:
-    b368:	e1a0c00d 	mov	r12, sp
-    b36c:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
-    b370:	e24cb004 	sub	r11, r12, #4
-    b374:	e24bd028 	sub	sp, r11, #40	; 0x28
-    b378:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
-    b37c:	e12fff1e 	bx	lr
+0000b370 <__libc_fini>:
+    b370:	e1a0c00d 	mov	r12, sp
+    b374:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+    b378:	e24cb004 	sub	r11, r12, #4
+    b37c:	e24bd028 	sub	sp, r11, #40	; 0x28
+    b380:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+    b384:	e12fff1e 	bx	lr
 
-0000b380 <__fini_array_start>:
-    b380:	000001c4 	.word	0x000001c4
+0000b388 <__fini_array_start>:
+    b388:	000001c4 	.word	0x000001c4
 
-0000b384 <__cs3_regions>:
+0000b38c <__cs3_regions>:
 	...
-    b390:	0000bc68 	.word	0x0000bc68
-    b394:	00000110 	.word	0x00000110
+    b398:	0000bc70 	.word	0x0000bc70
+    b39c:	00000110 	.word	0x00000110

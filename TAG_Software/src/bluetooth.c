@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 #include "bluetooth.h"
 
@@ -17,7 +16,8 @@
 #define BT_DivisorLatchMSB               (*(volatile unsigned char *)(0xFF210222))
 
 #define BR_CLK_FREQ  50000000
-#define BT_BAUD_RATE 38400
+// #define BT_BAUD_RATE 38400 // AT mode
+#define BT_BAUD_RATE 115200 // Connection mode
 
 
 void bluetoothInit(void)
@@ -48,7 +48,7 @@ void bluetoothInit(void)
 }
 
 
-int bluetoothPutChar(int c)
+unsigned char bluetoothPutChar(unsigned char c)
 {
     // wait for Transmitter Holding Register bit (5) of line status register to be '1'
     while ((BT_LineStatusReg & 0b100000) == 0) {}
@@ -62,19 +62,18 @@ int bluetoothPutChar(int c)
 }
 
 
-int bluetoothPutChars(const unsigned char * msg)
+int bluetoothPutChars(char msg[], const int len)
 {
     int count;
 
-	for (count = 0; count < strlen(msg); count++) {
-		bluetoothPutChar(msg[count]);
+	for (count = 0; count < len; count++) {
+		bluetoothPutChar((unsigned char) msg[count]);
 	}
-
-    return count + 1;
+    return count;
 }
 
 
-int bluetoothGetChar(void)
+unsigned char bluetoothGetChar(void)
 {
     // wait for Data Ready bit (0) of line status register to be '1'
     while ((BT_LineStatusReg & 0b1) == 0) {}
@@ -82,6 +81,15 @@ int bluetoothGetChar(void)
     // read new character from ReceiverFiFo register
     // return new character
     return BT_ReceiverFifo;
+}
+
+void bluetoothGetChars(unsigned char * msg, const int len)
+{
+    int count;
+
+    for (count = 0; count < len; count++) {
+		msg[count] = bluetoothGetChar();
+	}
 }
 
 

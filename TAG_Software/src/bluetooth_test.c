@@ -1,12 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "bluetooth.h"
-
-#define LEDS        (volatile unsigned int *)(0xFF200020)
-#define HEX0_1      (volatile unsigned int *)(0xFF200030)
-#define HEX2_3      (volatile unsigned int *)(0xFF200040)
-#define HEX4_5      (volatile unsigned int *)(0xFF200050)
-
 
 void main(void)
 {
@@ -16,27 +11,25 @@ void main(void)
     bluetoothFlush();
     printf("Flush done.\n");
 
-    // Ref: http://compsci.ca/v3/viewtopic.php?t=25995
-    const unsigned char *HC05_CONFIG;
-    HC05_CONFIG = 'AT+ROLE=1\r\n';
+    // Put single char
+    unsigned char d = bluetoothPutChar('A');
+    printf("Put char: %c\n", d);
 
-    int d = bluetoothPutChars(HC05_CONFIG);
-    printf("Set to master role success - length of chars put: %s\n", d);
+    int ready = bluetoothTestForReceivedData();
+    printf("Ready to read char: %d\n", ready);
 
-    int c, ready;
+    unsigned char c = bluetoothGetChar();
+    printf("Received char: %c\n", c);
 
-    while(1) {
-        ready = bluetoothTestForReceivedData();
-        printf("Ready to read char: %d\n", ready);
 
-        if (ready) {
-            c = bluetoothGetChar();
-            *LEDS = c;
-            *HEX0_1 = c;
-            *HEX2_3 = c;
-            *HEX4_5 = c;
-        }
-    }
+    // Put multiple chars
+    char msg[] = "Hello from UART";
+    int len = bluetoothPutChars(msg, strlen(msg));
+    printf("Put chars of length: %d\n", len);
+
+    unsigned char res[15] = {'\0'};
+    bluetoothGetChars(res, len);
+    printf("Received chars: %s\n", res);
 
     printf("Exit.");
     return;

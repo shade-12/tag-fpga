@@ -19,20 +19,29 @@ void bluetoothInit(void);
 /**
  * Writes a single character to the bluetooth serial port
  */
-int bluetoothPutChar(int c);
+unsigned char bluetoothPutChar(unsigned char c);
 
 /**
  * Writes an array of characters to the bluetooth serial port
  *
  * @param msg - the address of an array containing characters
+ * @param len - the number of characters to write into the buffer
  * @return The length of msg being written into the serial port
  */
-int bluetoothPutChars(const unsigned char * msg);
+int bluetoothPutChars(char msg[], const int len);
 
 /**
  * Reads a single character from the bluetooth serial port
  */
-int bluetoothGetChar(void);
+unsigned char bluetoothGetChar(void);
+
+/**
+ * Reads a sequence of characters from the serial port.
+ *
+ * @param msg - a buffer to store all received characters
+ * @param len - the number of characters to read into the buffer
+ */
+void bluetoothGetChars(unsigned char * msg, const int len);
 
 /**
  * Poll the UART to determine if any character has been received.

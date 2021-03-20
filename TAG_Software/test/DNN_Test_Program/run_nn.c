@@ -14,11 +14,11 @@ volatile unsigned *hex = (volatile unsigned *) 0xFF200030; /* hex display PIO */
 volatile unsigned *dnn_acc = (volatile unsigned *) 0xFF202040; /* DNN accelerator */
 
 /* normally these would be contiguous but it's nice to know where they are for debugging */
-volatile int *nn      = (volatile int *) 0x0a000000; /* neural network biases and weights */
-volatile int *input   = (volatile int *) 0x0a800000; /* input image */
-volatile int *l1_acts = (volatile int *) 0x0a801000; /* activations of layer 1 */
-volatile int *l2_acts = (volatile int *) 0x0a802000; /* activations of layer 2 */
-volatile int *l3_acts = (volatile int *) 0x0a803000; /* activations of layer 3 (outputs) */
+volatile int *nn      = (volatile int *) 0x01000000; /* neural network biases and weights */
+volatile int *input   = (volatile int *) 0x01800000; /* input image */
+volatile int *l1_acts = (volatile int *) 0x01801000; /* activations of layer 1 */
+volatile int *l2_acts = (volatile int *) 0x01802000; /* activations of layer 2 */
+volatile int *l3_acts = (volatile int *) 0x01803000; /* activations of layer 3 (outputs) */
 
 // Set to 1 to use hardware accelerator, 0 to use software
 #define USE_HW 1
