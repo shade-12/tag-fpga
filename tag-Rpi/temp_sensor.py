@@ -13,11 +13,6 @@ GPIO_DHT = 18
 # Create a DHT11 instance
 ts = dht11.DHT11(pin = GPIO_DHT)
 
-# Truncate values to two decimal places
-def truncate(n, decimals =2):
-    multiplier = 10 ** decimals
-    return (n * multiplier) / multiplier
-
 
 # Get temperature in °C from DHT11
 def temp():

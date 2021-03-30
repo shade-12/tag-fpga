@@ -15,8 +15,9 @@ def measure_speed():
         print("x-accel",x)
         print("y-accel",y)
         print("z-accel",z)
+        return x,y,z
         time.sleep(1)
     finally:
         GPIO.cleanup()
         
-measure_speed()
+#measure_speed()
