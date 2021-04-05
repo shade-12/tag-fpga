@@ -15,10 +15,13 @@ def measure_speed():
         print("x-accel",x)
         print("y-accel",y)
         print("z-accel",z)
+        return x,y,z
         time.sleep(1)
     finally:
         GPIO.cleanup()
+
 while True:
     print(adafruit_adxl34x.Range.RANGE_2_G)
     print(accelerometer.range)
     measure_speed()
+    

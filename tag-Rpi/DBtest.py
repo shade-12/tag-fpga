@@ -10,7 +10,7 @@ dynamodb = boto3.resource('dynamodb')
 
 # Create the DynamoDB table.
 table = dynamodb.create_table(
-    TableName='users',
+    TableName='test',
     KeySchema=[
         {
             'AttributeName': 'username',
@@ -40,14 +40,14 @@ table = dynamodb.create_table(
 print("creating table")
 
 # Wait until the table exists.
-table.meta.client.get_waiter('table_exists').wait(TableName='users')
+table.meta.client.get_waiter('table_exists').wait(TableName='test')
 print("!!! created table !!!")
 print(table.creation_date_time)
 # Print out some data about the table.
 print(table.item_count)
 
 # Instantiate a table resource object
-table = dynamodb.Table('users')
+table = dynamodb.Table('test')
 print(table.creation_date_time)
 
 table.put_item(
