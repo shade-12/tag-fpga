@@ -27,6 +27,7 @@ def measure_speed():
 
 for i in range(100):
     file = open("log_Walk.txt","a")
+    time.sleep(1)
     ax,ay,az = measure_speed()
-	file.write("ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az))
+    file.write("ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
     file.close()
