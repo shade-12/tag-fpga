@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-print("script starts 1")
 import time
 import RPi.GPIO as GPIO
 import board
@@ -29,11 +26,10 @@ accelerometer = adafruit_adxl34x.ADXL345(i2c) # instanciate ADXL object
     print(accelerometer.range)
     measure_speed() """
 
-print("script starts2")
+print("script starts")
 try: 
     for i in range(110):
-        file = open("/home/pi/tag-fpga/tag-Rpi/log_Walk.txt","a")
-        time.sleep(1)
+        file = open("log_Walk.txt","a")
         ax,ay,az = accelerometer.acceleration
         file.write("ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
         time.sleep(1)
