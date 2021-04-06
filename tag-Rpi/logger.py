@@ -1,4 +1,5 @@
 import time
+import random
 import RPi.GPIO as GPIO
 import board
 import busio # library to handle i2c serial protocol
@@ -27,15 +28,22 @@ accelerometer = adafruit_adxl34x.ADXL345(i2c) # instanciate ADXL object
     measure_speed() """
 
 print("script starts")
-try: 
-    for i in range(2):
-        h = 129 + random.randint(0, 56)
-        file = open("log_Run.txt","a")
+try:
+    file = open("log_Run.txt","a")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    print("run!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111")
+    for i in range(15):
+        h = 129 + random.randint(4+9,66)
+        print(i+1)
+        time.sleep(1)
         ax,ay,az = accelerometer.acceleration
         file.write("h= "+ str(h)+", ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
-        time.sleep(1)
-        print(i)
-        file.close()
+    file.write("------------------------------------------------------------------------------\n")
+    file.close()
 finally:
     GPIO.cleanup()
     
