@@ -1,7 +1,7 @@
 
 module tag_nios_system (
-	bt_uart_rxd,
-	bt_uart_txd,
+	bt_uart_RXD,
+	bt_uart_TXD,
 	clk_clk,
 	hex_export,
 	pll_locked_export,
@@ -15,10 +15,16 @@ module tag_nios_system (
 	sdram_dqm,
 	sdram_ras_n,
 	sdram_we_n,
-	sdram_clk_clk);	
+	sdram_clk_clk,
+	wifi_uart_RXD,
+	wifi_uart_TXD,
+	sd_card_b_SD_cmd,
+	sd_card_b_SD_dat,
+	sd_card_b_SD_dat3,
+	sd_card_o_SD_clock);	
 
-	input		bt_uart_rxd;
-	output		bt_uart_txd;
+	input		bt_uart_RXD;
+	output		bt_uart_TXD;
 	input		clk_clk;
 	output	[6:0]	hex_export;
 	output		pll_locked_export;
@@ -33,4 +39,10 @@ module tag_nios_system (
 	output		sdram_ras_n;
 	output		sdram_we_n;
 	output		sdram_clk_clk;
+	input		wifi_uart_RXD;
+	output		wifi_uart_TXD;
+	inout		sd_card_b_SD_cmd;
+	inout		sd_card_b_SD_dat;
+	inout		sd_card_b_SD_dat3;
+	output		sd_card_o_SD_clock;
 endmodule

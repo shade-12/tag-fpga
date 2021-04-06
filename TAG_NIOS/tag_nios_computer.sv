@@ -66,7 +66,10 @@ module tag_nios_computer(
 		.sdram_ras_n       (DRAM_RAS_N),
 		.sdram_we_n        (DRAM_WE_N),
 		.hex_export        (HEX0),
-		.bt_uart_rxd       (GPIO_1[18]),
-		.bt_uart_txd       (GPIO_1[19]));
+		.bt_uart_RXD       (GPIO_1[18]),
+		.bt_uart_TXD       (GPIO_1[19]),
+        .wifi_uart_RXD     (GPIO_1[15]),
+		.wifi_uart_TXD     (GPIO_1[14])
+    );
 
 endmodule: tag_nios_computer
