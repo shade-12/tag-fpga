@@ -83,7 +83,7 @@ int BTUart::write_m(char data[], int length)
     int count;
 
 	for (count = 0; count < length; count++) {
-        printf("Write from m: %c\n", data[count]);
+        // printf("Write from m: %c\n", data[count]);
 		write_s(data[count]);
 	}
     return count;
