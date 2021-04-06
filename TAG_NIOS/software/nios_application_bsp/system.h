@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: ../../tag_nios_system.sopcinfo
  *
- * Generated: Tue Apr 06 11:45:08 PDT 2021
+ * Generated: Tue Apr 06 15:56:13 PDT 2021
  */
 
 /*
@@ -244,8 +244,8 @@
 #define ONCHIP_MEMORY2_0_READ_DURING_WRITE_MODE "DONT_CARE"
 #define ONCHIP_MEMORY2_0_SINGLE_CLOCK_OP 0
 #define ONCHIP_MEMORY2_0_SIZE_MULTIPLE 1
-#define ONCHIP_MEMORY2_0_SIZE_VALUE 32768
-#define ONCHIP_MEMORY2_0_SPAN 32768
+#define ONCHIP_MEMORY2_0_SIZE_VALUE 49152
+#define ONCHIP_MEMORY2_0_SPAN 49152
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
 
@@ -328,35 +328,6 @@
 #define SDRAM_CONTROLLER_T_RFC 70.0
 #define SDRAM_CONTROLLER_T_RP 15.0
 #define SDRAM_CONTROLLER_T_WR 14.0
-
-
-/*
- * sram_img configuration
- *
- */
-
-#define ALT_MODULE_CLASS_sram_img altera_avalon_onchip_memory2
-#define SRAM_IMG_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
-#define SRAM_IMG_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define SRAM_IMG_BASE 0x10000
-#define SRAM_IMG_CONTENTS_INFO ""
-#define SRAM_IMG_DUAL_PORT 0
-#define SRAM_IMG_GUI_RAM_BLOCK_TYPE "AUTO"
-#define SRAM_IMG_INIT_CONTENTS_FILE "tag_nios_system_sram_img"
-#define SRAM_IMG_INIT_MEM_CONTENT 1
-#define SRAM_IMG_INSTANCE_ID "NONE"
-#define SRAM_IMG_IRQ -1
-#define SRAM_IMG_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SRAM_IMG_NAME "/dev/sram_img"
-#define SRAM_IMG_NON_DEFAULT_INIT_FILE_ENABLED 0
-#define SRAM_IMG_RAM_BLOCK_TYPE "AUTO"
-#define SRAM_IMG_READ_DURING_WRITE_MODE "DONT_CARE"
-#define SRAM_IMG_SINGLE_CLOCK_OP 0
-#define SRAM_IMG_SIZE_MULTIPLE 1
-#define SRAM_IMG_SIZE_VALUE 32768
-#define SRAM_IMG_SPAN 32768
-#define SRAM_IMG_TYPE "altera_avalon_onchip_memory2"
-#define SRAM_IMG_WRITABLE 1
 
 
 /*

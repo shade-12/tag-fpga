@@ -17,9 +17,7 @@ obj/default/main.o: main.cpp terasic_includes.h \
  ../nios_application_bsp//HAL/inc/sys/alt_alarm.h \
  ../nios_application_bsp//HAL/inc/sys/alt_llist.h \
  ../nios_application_bsp//HAL/inc/priv/alt_alarm.h \
- ../nios_application_bsp//HAL/inc/sys/alt_stdio.h BTUart.h \
- ../nios_application_bsp//drivers/inc/altera_up_avalon_rs232.h \
- ../nios_application_bsp//HAL/inc/sys/alt_dev.h
+ ../nios_application_bsp//HAL/inc/sys/alt_stdio.h tasks.h
 
 terasic_includes.h:
 
@@ -63,8 +61,4 @@ terasic_includes.h:
 
 ../nios_application_bsp//HAL/inc/sys/alt_stdio.h:
 
-BTUart.h:
-
-../nios_application_bsp//drivers/inc/altera_up_avalon_rs232.h:
-
-../nios_application_bsp//HAL/inc/sys/alt_dev.h:
+tasks.h:

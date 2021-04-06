@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: ../../tag_nios_system.sopcinfo
  *
- * Generated: Tue Apr 06 11:45:08 PDT 2021
+ * Generated: Tue Apr 06 15:56:13 PDT 2021
  */
 
 /*
@@ -50,14 +50,12 @@
 
 MEMORY
 {
-    sram_img : ORIGIN = 0x10000, LENGTH = 32768
     reset : ORIGIN = 0x20000, LENGTH = 32
-    onchip_memory2_0 : ORIGIN = 0x20020, LENGTH = 32736
+    onchip_memory2_0 : ORIGIN = 0x20020, LENGTH = 49120
     sdram_controller : ORIGIN = 0x8000000, LENGTH = 67108864
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_sram_img = 0x10000;
 __alt_mem_onchip_memory2_0 = 0x20000;
 __alt_mem_sdram_controller = 0x8000000;
 
@@ -88,14 +86,7 @@ SECTIONS
         KEEP (*(.entry))
     } > reset
 
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .exceptions : AT ( 0x10000 )
+    .exceptions :
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -126,14 +117,7 @@ SECTIONS
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .text LOADADDR (.exceptions) + SIZEOF (.exceptions) : AT ( LOADADDR (.exceptions) + SIZEOF (.exceptions) )
+    .text :
     {
         /*
          * All code sections are merged into the text output section, along with
@@ -225,7 +209,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > sram_img = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
+    } > onchip_memory2_0 = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
     /*
      *
@@ -321,24 +305,7 @@ SECTIONS
      *
      */
 
-    .sram_img LOADADDR (.rwdata) + SIZEOF (.rwdata) : AT ( LOADADDR (.rwdata) + SIZEOF (.rwdata) )
-    {
-        PROVIDE (_alt_partition_sram_img_start = ABSOLUTE(.));
-        *(.sram_img .sram_img. sram_img.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_sram_img_end = ABSOLUTE(.));
-    } > sram_img
-
-    PROVIDE (_alt_partition_sram_img_load_addr = LOADADDR(.sram_img));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .onchip_memory2_0 : AT ( LOADADDR (.sram_img) + SIZEOF (.sram_img) )
+    .onchip_memory2_0 LOADADDR (.rwdata) + SIZEOF (.rwdata) : AT ( LOADADDR (.rwdata) + SIZEOF (.rwdata) )
     {
         PROVIDE (_alt_partition_onchip_memory2_0_start = ABSOLUTE(.));
         *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)

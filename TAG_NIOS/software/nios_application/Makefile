@@ -145,7 +145,11 @@ ELF := nios_application.elf
 C_SRCS :=
 CXX_SRCS += BTUart.cpp
 CXX_SRCS += SDCard.cpp
+CXX_SRCS += WiFiUart.cpp
+CXX_SRCS += bt_task.cpp
 CXX_SRCS += main.cpp
+CXX_SRCS += sd_task.cpp
+CXX_SRCS += wifi_task.cpp
 ASM_SRCS :=
 
 

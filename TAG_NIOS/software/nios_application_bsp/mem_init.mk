@@ -181,8 +181,8 @@ HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
 $(MEM_0)_START := 0x00020000
-$(MEM_0)_END := 0x00027fff
-$(MEM_0)_SPAN := 0x00008000
+$(MEM_0)_END := 0x0002bfff
+$(MEM_0)_SPAN := 0x0000c000
 $(MEM_0)_HIERARCHICAL_PATH := onchip_memory2_0
 $(MEM_0)_WIDTH := 32
 $(MEM_0)_HEX_DATA_WIDTH := 32
@@ -211,28 +211,6 @@ $(MEM_1)_CREATE_LANES := 0
 
 .PHONY: sdram_controller
 sdram_controller: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
-
-# Memory: sram_img
-MEM_2 := tag_nios_system_sram_img
-$(MEM_2)_NAME := sram_img
-$(MEM_2)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
-HEX_FILES += $(MEM_INIT_DIR)/$(MEM_2).hex
-MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_2).hex
-DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
-HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).dat
-SYM_FILES += $(HDL_SIM_DIR)/$(MEM_2).sym
-HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).sym
-$(MEM_2)_START := 0x00010000
-$(MEM_2)_END := 0x00017fff
-$(MEM_2)_SPAN := 0x00008000
-$(MEM_2)_HIERARCHICAL_PATH := sram_img
-$(MEM_2)_WIDTH := 32
-$(MEM_2)_HEX_DATA_WIDTH := 32
-$(MEM_2)_ENDIANNESS := --little-endian-mem
-$(MEM_2)_CREATE_LANES := 0
-
-.PHONY: sram_img
-sram_img: check_elf_exists $(MEM_INIT_DIR)/$(MEM_2).hex $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym
 
 
 #END OF BSP SPECIFIC

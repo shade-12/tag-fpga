@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "terasic_includes.h"
 #include "BTUart.h"
+#include "tasks.h"
 
 #define BT_UART_NAME (const char *)("/dev/bt_rs232_uart") // Qsys component name
 

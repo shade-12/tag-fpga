@@ -14,16 +14,16 @@ This application exercises the following peripherals:
 
 ###  Software Source Files
 This application includes the following software source files:
-- main.cpp: Runs the main application program.
-- bt_task.cpp: Runs program that receive image from RaspberryPi via Bluetooth.
-- sd_task.cpp: Runs program that save image into SD card and read image from SD card.
-- wifi_task.cpp: Runs program that send DNN human detection result to cloud database.
-- BTUart.h: Header file
-- BTUart.cpp: 
-- SDCard.h:
-- SDCard.cpp:
-- WiFiUart.h:
-- WiFiUart.cpp:
+- `main.cpp`: Runs the main application program.
+- `bt_task.cpp`: Runs program that receive image from RaspberryPi via Bluetooth.
+- `sd_task.cpp`: Runs program that save image into SD card and read image from SD card.
+- `wifi_task.cpp`: Runs program that send DNN human detection result to cloud database.
+- `BTUart.h`: Header file
+- `BTUart.cpp`: 
+- `SDCard.h`:
+- `SDCard.cpp`:
+- `WiFiUart.h`:
+- `WiFiUart.cpp`:
 
 
 ### Board/Host Requirements

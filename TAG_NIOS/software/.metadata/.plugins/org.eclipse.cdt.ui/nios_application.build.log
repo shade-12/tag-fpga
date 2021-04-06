@@ -1,9 +1,9 @@
-12:02:49 **** Incremental Build of configuration Nios II for project nios_application ****
+15:56:53 **** Incremental Build of configuration Nios II for project nios_application ****
 make all 
 Info: Building ../nios_application_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_application_bsp/
 [BSP build complete]
 [nios_application build complete]
 
-12:02:49 Build Finished (took 542ms)
+15:56:53 Build Finished (took 600ms)
 

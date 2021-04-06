@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: ../../tag_nios_system.sopcinfo
  *
- * Generated: Tue Apr 06 11:45:08 PDT 2021
+ * Generated: Tue Apr 06 15:56:13 PDT 2021
  */
 
 /*
@@ -66,13 +66,11 @@
  */
 
 #define ONCHIP_MEMORY2_0_REGION_BASE 0x20020
-#define ONCHIP_MEMORY2_0_REGION_SPAN 32736
+#define ONCHIP_MEMORY2_0_REGION_SPAN 49120
 #define RESET_REGION_BASE 0x20000
 #define RESET_REGION_SPAN 32
 #define SDRAM_CONTROLLER_REGION_BASE 0x8000000
 #define SDRAM_CONTROLLER_REGION_SPAN 67108864
-#define SRAM_IMG_REGION_BASE 0x10000
-#define SRAM_IMG_REGION_SPAN 32768
 
 
 /*
@@ -84,7 +82,7 @@
 #define ALT_RESET_DEVICE ONCHIP_MEMORY2_0
 #define ALT_RODATA_DEVICE SDRAM_CONTROLLER
 #define ALT_RWDATA_DEVICE SDRAM_CONTROLLER
-#define ALT_TEXT_DEVICE SRAM_IMG
+#define ALT_TEXT_DEVICE ONCHIP_MEMORY2_0
 
 
 /*
@@ -100,7 +98,6 @@
  *
  */
 
-#define ALT_LOAD_COPY_EXCEPTIONS
 #define ALT_LOAD_COPY_RODATA
 #define ALT_LOAD_COPY_RWDATA
 

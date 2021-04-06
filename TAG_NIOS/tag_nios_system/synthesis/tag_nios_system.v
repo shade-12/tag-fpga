@@ -28,7 +28,7 @@ module tag_nios_system (
 		output wire        wifi_uart_TXD       //           .TXD
 	);
 
-	wire         pll_0_outclk0_clk;                                               // pll_0:outclk_0 -> [bt_rs232_uart:clk, irq_mapper:clk, jtag_uart_0:clk, mm_interconnect_0:pll_0_outclk0_clk, nios2_gen2_0:clk, onchip_memory2_0:clk, pio_0:clk, rst_controller:clk, sd_card_ic:i_clock, sdram_controller:clk, sram_img:clk, wifi_rs232_uart:clk]
+	wire         pll_0_outclk0_clk;                                               // pll_0:outclk_0 -> [bt_rs232_uart:clk, irq_mapper:clk, jtag_uart_0:clk, mm_interconnect_0:pll_0_outclk0_clk, nios2_gen2_0:clk, onchip_memory2_0:clk, pio_0:clk, rst_controller:clk, sd_card_ic:i_clock, sdram_controller:clk, wifi_rs232_uart:clk]
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                               // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                            // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                            // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -80,7 +80,7 @@ module tag_nios_system (
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata;        // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_writedata -> nios2_gen2_0:debug_mem_slave_writedata
 	wire         mm_interconnect_0_onchip_memory2_0_s1_chipselect;                // mm_interconnect_0:onchip_memory2_0_s1_chipselect -> onchip_memory2_0:chipselect
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_readdata;                  // onchip_memory2_0:readdata -> mm_interconnect_0:onchip_memory2_0_s1_readdata
-	wire  [12:0] mm_interconnect_0_onchip_memory2_0_s1_address;                   // mm_interconnect_0:onchip_memory2_0_s1_address -> onchip_memory2_0:address
+	wire  [13:0] mm_interconnect_0_onchip_memory2_0_s1_address;                   // mm_interconnect_0:onchip_memory2_0_s1_address -> onchip_memory2_0:address
 	wire   [3:0] mm_interconnect_0_onchip_memory2_0_s1_byteenable;                // mm_interconnect_0:onchip_memory2_0_s1_byteenable -> onchip_memory2_0:byteenable
 	wire         mm_interconnect_0_onchip_memory2_0_s1_write;                     // mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_writedata;                 // mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
@@ -99,19 +99,12 @@ module tag_nios_system (
 	wire         mm_interconnect_0_sdram_controller_s1_readdatavalid;             // sdram_controller:za_valid -> mm_interconnect_0:sdram_controller_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_controller_s1_write;                     // mm_interconnect_0:sdram_controller_s1_write -> sdram_controller:az_wr_n
 	wire  [15:0] mm_interconnect_0_sdram_controller_s1_writedata;                 // mm_interconnect_0:sdram_controller_s1_writedata -> sdram_controller:az_data
-	wire         mm_interconnect_0_sram_img_s1_chipselect;                        // mm_interconnect_0:sram_img_s1_chipselect -> sram_img:chipselect
-	wire  [31:0] mm_interconnect_0_sram_img_s1_readdata;                          // sram_img:readdata -> mm_interconnect_0:sram_img_s1_readdata
-	wire  [12:0] mm_interconnect_0_sram_img_s1_address;                           // mm_interconnect_0:sram_img_s1_address -> sram_img:address
-	wire   [3:0] mm_interconnect_0_sram_img_s1_byteenable;                        // mm_interconnect_0:sram_img_s1_byteenable -> sram_img:byteenable
-	wire         mm_interconnect_0_sram_img_s1_write;                             // mm_interconnect_0:sram_img_s1_write -> sram_img:write
-	wire  [31:0] mm_interconnect_0_sram_img_s1_writedata;                         // mm_interconnect_0:sram_img_s1_writedata -> sram_img:writedata
-	wire         mm_interconnect_0_sram_img_s1_clken;                             // mm_interconnect_0:sram_img_s1_clken -> sram_img:clken
 	wire         irq_mapper_receiver0_irq;                                        // bt_rs232_uart:irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                        // wifi_rs232_uart:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                        // jtag_uart_0:av_irq -> irq_mapper:receiver2_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                            // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> [bt_rs232_uart:reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, pio_0:reset_n, rst_translator:in_reset, sd_card_ic:i_reset_n, sdram_controller:reset_n, sram_img:reset, wifi_rs232_uart:reset]
-	wire         rst_controller_reset_out_reset_req;                              // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in, sram_img:reset_req]
+	wire         rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> [bt_rs232_uart:reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, pio_0:reset_n, rst_translator:in_reset, sd_card_ic:i_reset_n, sdram_controller:reset_n, wifi_rs232_uart:reset]
+	wire         rst_controller_reset_out_reset_req;                              // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_gen2_0_debug_reset_request_reset;                          // nios2_gen2_0:debug_reset_request -> rst_controller:reset_in1
 
 	tag_nios_system_bt_rs232_uart bt_rs232_uart (
@@ -243,19 +236,6 @@ module tag_nios_system (
 		.zs_we_n        (sdram_we_n)                                           //      .export
 	);
 
-	tag_nios_system_sram_img sram_img (
-		.clk        (pll_0_outclk0_clk),                        //   clk1.clk
-		.address    (mm_interconnect_0_sram_img_s1_address),    //     s1.address
-		.clken      (mm_interconnect_0_sram_img_s1_clken),      //       .clken
-		.chipselect (mm_interconnect_0_sram_img_s1_chipselect), //       .chipselect
-		.write      (mm_interconnect_0_sram_img_s1_write),      //       .write
-		.readdata   (mm_interconnect_0_sram_img_s1_readdata),   //       .readdata
-		.writedata  (mm_interconnect_0_sram_img_s1_writedata),  //       .writedata
-		.byteenable (mm_interconnect_0_sram_img_s1_byteenable), //       .byteenable
-		.reset      (rst_controller_reset_out_reset),           // reset1.reset
-		.reset_req  (rst_controller_reset_out_reset_req)        //       .reset_req
-	);
-
 	tag_nios_system_bt_rs232_uart wifi_rs232_uart (
 		.clk        (pll_0_outclk0_clk),                                               //                clk.clk
 		.reset      (rst_controller_reset_out_reset),                                  //              reset.reset
@@ -337,13 +317,6 @@ module tag_nios_system (
 		.sdram_controller_s1_readdatavalid              (mm_interconnect_0_sdram_controller_s1_readdatavalid),             //                                         .readdatavalid
 		.sdram_controller_s1_waitrequest                (mm_interconnect_0_sdram_controller_s1_waitrequest),               //                                         .waitrequest
 		.sdram_controller_s1_chipselect                 (mm_interconnect_0_sdram_controller_s1_chipselect),                //                                         .chipselect
-		.sram_img_s1_address                            (mm_interconnect_0_sram_img_s1_address),                           //                              sram_img_s1.address
-		.sram_img_s1_write                              (mm_interconnect_0_sram_img_s1_write),                             //                                         .write
-		.sram_img_s1_readdata                           (mm_interconnect_0_sram_img_s1_readdata),                          //                                         .readdata
-		.sram_img_s1_writedata                          (mm_interconnect_0_sram_img_s1_writedata),                         //                                         .writedata
-		.sram_img_s1_byteenable                         (mm_interconnect_0_sram_img_s1_byteenable),                        //                                         .byteenable
-		.sram_img_s1_chipselect                         (mm_interconnect_0_sram_img_s1_chipselect),                        //                                         .chipselect
-		.sram_img_s1_clken                              (mm_interconnect_0_sram_img_s1_clken),                             //                                         .clken
 		.wifi_rs232_uart_avalon_rs232_slave_address     (mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_address),    //       wifi_rs232_uart_avalon_rs232_slave.address
 		.wifi_rs232_uart_avalon_rs232_slave_write       (mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_write),      //                                         .write
 		.wifi_rs232_uart_avalon_rs232_slave_read        (mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_read),       //                                         .read

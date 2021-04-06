@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>6-Apr-2021 11:57:10 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1617735430133</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>6-Apr-2021 3:56:13 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1617749773332</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\tag2\TAG_NIOS\software\nios_application_bsp</BspGeneratedLocation>
-        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <BspSettingsFile>D:\tag2\TAG_NIOS\software\nios_application_bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\tag_nios_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
@@ -110,7 +110,7 @@
                 <SettingName>hal.linker.enable_alt_load_copy_exceptions</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Causes the alt_load() facility to copy the .exceptions section. If true, this setting defines the macro ALT_LOAD_COPY_EXCEPTIONS in linker.h.</Description>
@@ -917,15 +917,9 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sram_img</slaveDescriptor>
-                <addressRange>0x00010000 - 0x00017FFF</addressRange>
-                <addressSpan>32768</addressSpan>
-                <attributes>memory</attributes>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>onchip_memory2_0</slaveDescriptor>
-                <addressRange>0x00020000 - 0x00027FFF</addressRange>
-                <addressSpan>32768</addressSpan>
+                <addressRange>0x00020000 - 0x0002BFFF</addressRange>
+                <addressSpan>49152</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
@@ -936,7 +930,7 @@
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>
-                <regionName>sram_img</regionName>
+                <regionName>onchip_memory2_0</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rodata</sectionName>

@@ -1,29 +1,27 @@
 #include <stdio.h>
 #include "terasic_includes.h"
-#include "BTUart.h"
+#include "tasks.h"
 
-#define BT_UART_NAME (const char *)("/dev/bt_rs232_uart") // Qsys component name
+#define RUN_BT    0
+#define RUN_SD    1
+#define RUN_WIFI  0
 
 int main()
 {
-  BTUart BT_UART;
-  char c;
+  printf("NIOS II SOFTWARE APPLICATION\n");
+  printf("===========================================\n\n");
 
-  int init_success = BT_UART.open(BT_UART_NAME);
-  BT_UART.flush();
+  #if (RUN_BT)
+    bt_task();
+  #endif
 
-  if (init_success)
-    printf("INIT SUCCESS: RS232 UART port.\n");
+  #if (RUN_SD)
+    sd_task();
+  #endif
 
-
-  printf("START READING FROM UART FIFO ...\n");
-
-  while (1) {
-    if (BT_UART.read_ready()) {
-      c = BT_UART.read_s();
-      printf("%c", c);
-    }
-  }
+  #if (RUN_WIFI)
+     wifi_task();
+  #endif
 
   return 0;
 }

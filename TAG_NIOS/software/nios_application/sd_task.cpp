@@ -6,8 +6,11 @@
 **/
 
 #include <stdio.h>
+#include "stdbool.h"
 #include "system.h"
 #include "altera_up_sd_card_avalon_interface.h"
+#include "SDCard.h"
+#include "tasks.h"
 
 #define SDCARD_IFC_NAME (const char *)("/dev/sd_card_ic")
 
