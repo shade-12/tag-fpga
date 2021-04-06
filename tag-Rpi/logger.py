@@ -28,10 +28,11 @@ accelerometer = adafruit_adxl34x.ADXL345(i2c) # instanciate ADXL object
 
 print("script starts")
 try: 
-    for i in range(110):
-        file = open("log_Walk.txt","a")
+    for i in range(2):
+        h = 129 + random.randint(0, 56)
+        file = open("log_Run.txt","a")
         ax,ay,az = accelerometer.acceleration
-        file.write("ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
+        file.write("h= "+ str(h)+", ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
         time.sleep(1)
         print(i)
         file.close()
