@@ -1,0 +1,9 @@
+19:18:34 **** Incremental Build of configuration Nios II for project BT_Config ****
+make all 
+Info: Building ../BT_Config_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../BT_Config_bsp/
+[BSP build complete]
+[BT_Config build complete]
+
+19:18:34 Build Finished (took 609ms)
+
