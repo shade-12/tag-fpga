@@ -1,5 +1,6 @@
 import gps
 import accel345
+import gpsIP
 import temp_sensor
 import string
 import random
@@ -19,9 +20,8 @@ for _ in range(10):
     readingId += (chr(random_integer))
 
 heartRate = 72
-latitude = 49.26586906787906
-longitude = -123.25706776922407
-temperature = 32 # temp()
+latitude,longitude = find_loc()
+temperature = find_temp()
 ax,ay,az = measure_speed()
 
 
