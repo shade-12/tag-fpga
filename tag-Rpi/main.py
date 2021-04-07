@@ -19,12 +19,13 @@ for _ in range(10):
     # Keep appending random characters using chr(x)
     readingId += (chr(random_integer))
 
+# get data from sensor
 heartRate = 72
 latitude,longitude = find_loc()
 temperature = find_temp()
 ax,ay,az = measure_speed()
 
-
+# create json payload with sensor data
 payload = {
     "readingId": readingId,
     "latitude": latitude,
@@ -37,8 +38,8 @@ payload = {
     "time": math.floor(time.time()),
 }
 
+
 res = requests.post(
     'https://k7t0ap6b0i.execute-api.us-west-2.amazonaws.com/dev/tags/' + tagId + '/sensors', json=payload)
-
 
 print("inserted item")
