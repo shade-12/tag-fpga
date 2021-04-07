@@ -26,3 +26,12 @@ Our MLP consists of several linear layers that first multiply the previous layer
 
 *Traning script for these networks is stored in a separate repository.*
 
+
+### References
+
+1. [Cornell ECE5760 - DE1-SoC: ARM HPS and FPGA Addresses and Communication](https://people.ece.cornell.edu/land/courses/ece5760/DE1_SOC/HPS_peripherials/FPGA_addr_index.html)
+
+2. [SoC-FPGA Design Guide [DE1-SoC Edition]](https://github.com/sahandKashani/SoC-FPGA-Design-Guide/blob/master/DE1_SoC/SoC-FPGA%20Design%20Guide/SoC-FPGA%20Design%20Guide%20%5BDE1-SoC%20Edition%5D.pdf)
+
+3. [DE1-SoC User Manual](https://www.intel.com/content/dam/altera-www/global/en_US/portal/dsn/42/doc-us-dsnbk-42-1004282204-de1-soc-user-manual.pdf)
+
