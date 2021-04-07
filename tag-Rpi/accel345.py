@@ -19,9 +19,9 @@ def measure_speed():
         time.sleep(1)
     finally:
         GPIO.cleanup()
-
+""" 
 while True:
     print(adafruit_adxl34x.Range.RANGE_2_G)
     print(accelerometer.range)
     measure_speed()
-    
+     """
