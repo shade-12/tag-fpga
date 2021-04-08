@@ -9,6 +9,15 @@ This project aims to develop a custom HPS and FPGA system that accelerates the h
 
 ### HPS
 - Custom DNN accelerator IP component to accelerate the dot product calculation
+- DMA controller with three ports:
+    - There is a read-master port connected to the AXI-slave on the HPS which can access all of the HPS address space.
+    - This is used to read the HPS on-chip memory.
+    - There is a write-master port connected to one port of a dual-port SRAM block.
+    - The DMA operation copies the data from the read-master to the write-master.
+    - There is a control port used to set up the DMA transfer connected to the AXI-lightweight-master so that the HPS can set up the transfer.
+- SRAM memory block configured to be 32-bit by 16384 words, which is about 13% of M10K block memory. There are two ports.
+    - The first is attached to the DMA write-master. Data is thus tranferred from the HPS by the DMA read-master to the DMA write-master to the first FPGA sram port.
+    - The second port is attached to the HPS AXI-master at beginning address 0x08000000, so that the data transfer can be checked by reading back to the HPS.
 
 ### FPGA
 - Receive image data from RaspberryPi via Bluetooth
@@ -26,3 +35,15 @@ Our MLP consists of several linear layers that first multiply the previous layer
 
 *Traning script for these networks is stored in a separate repository.*
 
+
+### References
+
+[1] [Cornell ECE5760 - DE1-SoC: ARM HPS and FPGA Addresses and Communication](https://people.ece.cornell.edu/land/courses/ece5760/DE1_SOC/HPS_peripherials/FPGA_addr_index.html)
+
+[2] [SoC-FPGA Design Guide [DE1-SoC Edition]](https://github.com/sahandKashani/SoC-FPGA-Design-Guide/blob/master/DE1_SoC/SoC-FPGA%20Design%20Guide/SoC-FPGA%20Design%20Guide%20%5BDE1-SoC%20Edition%5D.pdf)
+
+[3] [DE1-SoC User Manual](https://www.intel.com/content/dam/altera-www/global/en_US/portal/dsn/42/doc-us-dsnbk-42-1004282204-de1-soc-user-manual.pdf)
+
+[4] [Design of Qsys system showcasing Nios II processor - SD card interface](https://www.youtube.com/watch?v=NmMX80iOAW4&ab_channel=IntelFPGA)
+
+[5] [FPGA-to-HPS bridges Design Example](https://www.intel.com/content/www/us/en/programmable/support/support-resources/design-examples/soc/fpga-to-hps-bridges-design-example.html)

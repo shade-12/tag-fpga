@@ -1,0 +1,41 @@
+23:34:56 **** Build of configuration Nios II for project nios_application ****
+make all 
+Info: Building D:/tag2/TAG_Software/nios/nios_application_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/TAG_Software/nios/nios_application_bsp/
+[BSP build complete]
+Info: Compiling BTUart.cpp to obj/default/BTUart.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/TAG_Software/nios/nios_application_bsp//HAL/inc -ID:/tag2/TAG_Software/nios/nios_application_bsp/ -ID:/tag2/TAG_Software/nios/nios_application_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/BTUart.o BTUart.cpp
+Info: Compiling WiFiUart.cpp to obj/default/WiFiUart.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/TAG_Software/nios/nios_application_bsp//HAL/inc -ID:/tag2/TAG_Software/nios/nios_application_bsp/ -ID:/tag2/TAG_Software/nios/nios_application_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/WiFiUart.o WiFiUart.cpp
+WiFiUart.cpp: In member function 'int WiFiUart::connect()':
+WiFiUart.cpp:49:10: warning: unused variable 'ssid' [-Wunused-variable]
+     char ssid[20], passwd[20];
+          ^
+WiFiUart.cpp:49:20: warning: unused variable 'passwd' [-Wunused-variable]
+     char ssid[20], passwd[20];
+                    ^
+WiFiUart.cpp: In member function 'int WiFiUart::send_command(const char*)':
+WiFiUart.cpp:82:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (count = 0; count < strlen(cmd); count++) {
+                        ^
+WiFiUart.cpp:87:14: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+     c = {'\n'};
+              ^
+WiFiUart.cpp: In member function 'int WiFiUart::write_s(alt_u8)':
+WiFiUart.cpp:163:26: warning: format '%s' expects argument of type 'char*', but argument 2 has type 'int' [-Wformat=]
+         printf("%s", data);
+                          ^
+WiFiUart.cpp:163:26: warning: format '%s' expects argument of type 'char*', but argument 2 has type 'int' [-Wformat=]
+Info: Compiling bt_task.cpp to obj/default/bt_task.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/TAG_Software/nios/nios_application_bsp//HAL/inc -ID:/tag2/TAG_Software/nios/nios_application_bsp/ -ID:/tag2/TAG_Software/nios/nios_application_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/bt_task.o bt_task.cpp
+Info: Compiling main.cpp to obj/default/main.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/TAG_Software/nios/nios_application_bsp//HAL/inc -ID:/tag2/TAG_Software/nios/nios_application_bsp/ -ID:/tag2/TAG_Software/nios/nios_application_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.cpp
+Info: Compiling wifi_task.cpp to obj/default/wifi_task.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/TAG_Software/nios/nios_application_bsp//HAL/inc -ID:/tag2/TAG_Software/nios/nios_application_bsp/ -ID:/tag2/TAG_Software/nios/nios_application_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/wifi_task.o wifi_task.cpp
+Info: Linking nios_application.elf
+nios2-elf-g++  -T'D:/tag2/TAG_Software/nios/nios_application_bsp//linker.x' -msys-crt0='D:/tag2/TAG_Software/nios/nios_application_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/tag2/TAG_Software/nios/nios_application_bsp/  -msmallc  -Wl,-Map=nios_application.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_application.elf obj/default/BTUart.o obj/default/WiFiUart.o obj/default/bt_task.o obj/default/main.o obj/default/wifi_task.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+D:\tag2\TAG_Software\nios\nios_application/main.cpp:17: undefined reference to `setvbuf'
+D:\tag2\TAG_Software\nios\nios_application/main.cpp:18: undefined reference to `setvbuf'
+collect2.exe: error: ld returned 1 exit status
+make: *** [nios_application.elf] Error 1
