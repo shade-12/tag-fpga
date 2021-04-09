@@ -1,0 +1,9 @@
+22:59:34 **** Incremental Build of configuration Nios II for project led_task ****
+make all 
+Info: Building D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+[BSP build complete]
+[led_task build complete]
+
+22:59:34 Build Finished (took 669ms)
+

@@ -1,0 +1,16 @@
+23:07:18 **** Incremental Build of configuration Nios II for project sd_task ****
+make all 
+Info: Building D:/tag2/de1_software/nios/sd_card_db/sd_task_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/sd_card_db/sd_task_bsp/
+[BSP build complete]
+Info: Compiling SDCard.cpp to obj/default/SDCard.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/sd_card_db/sd_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/sd_card_db/sd_task_bsp/ -ID:/tag2/de1_software/nios/sd_card_db/sd_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/SDCard.o SDCard.cpp
+In file included from SDCard.cpp:7:0:
+SDCard.h:11:48: fatal error: altera_up_sd_card_avalon_interface.h: No such file or directory
+ #include "altera_up_sd_card_avalon_interface.h"
+                                                ^
+compilation terminated.
+make: *** [obj/default/SDCard.o] Error 1
+
+23:07:18 Build Finished (took 743ms)
+

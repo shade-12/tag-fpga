@@ -1437,7 +1437,7 @@ module tag_nios_system_mm_interconnect_1 (
 		.src_endofpacket    (router_001_src_endofpacket)                                                //          .endofpacket
 	);
 
-	tag_nios_system_mm_interconnect_1_router_002 router_002 (
+	tag_nios_system_mm_interconnect_1_router router_002 (
 		.sink_ready         (jtag_to_fpga_bridge_master_agent_cp_ready),         //      sink.ready
 		.sink_valid         (jtag_to_fpga_bridge_master_agent_cp_valid),         //          .valid
 		.sink_data          (jtag_to_fpga_bridge_master_agent_cp_data),          //          .data

@@ -92,6 +92,7 @@ module tag_nios_system (
 	sdram_we_n,
 	sdram_clk_clk,
 	switches_export,
+	wifi_reset_export,
 	wifi_uart_RXD,
 	wifi_uart_TXD);	
 
@@ -187,6 +188,7 @@ module tag_nios_system (
 	output		sdram_we_n;
 	output		sdram_clk_clk;
 	input	[9:0]	switches_export;
+	output		wifi_reset_export;
 	input		wifi_uart_RXD;
 	output		wifi_uart_TXD;
 endmodule
