@@ -1,21 +1,14 @@
-import boto3
-
-from datetime import datetime
-import calendar
 import gps
 import accel345
+import gpsIP
 import temp_sensor
 import string
 import random
+import requests
+import time
+import math
 
-# Get the service resource.
-dynamodb = boto3.resource('dynamodb')
-
-# Instantiate a table resource object
-table = dynamodb.Table('sensor-reading')
-print(table.creation_date_time)
-
-tagId = 123
+tagId = '1234'
  
 # The limit for the extended ASCII Character set
 MAX_LIMIT = 255
@@ -26,30 +19,27 @@ for _ in range(10):
     # Keep appending random characters using chr(x)
     readingId += (chr(random_integer))
 
-activity = " " 
+# get data from sensor
 heartRate = 72
-latitude = 49.26586906787906
-longitude = -123.25706776922407
-temperature = 32 # temp()
+latitude,longitude = find_loc()
+temperature = find_temp()
 ax,ay,az = measure_speed()
 
-d = datetime.utcnow()
-unixtime = calendar.timegm(d.utctimetuple())
+# create json payload with sensor data
+payload = {
+    "readingId": readingId,
+    "latitude": latitude,
+    "longitude": longitude,
+    "temperature": temperature,
+    "heartRate": heartRate,
+    "accel_x": ax,
+    "accel_y": ay,
+    "accel_z": az,
+    "time": math.floor(time.time()),
+}
 
-table.put_item(
-   Item={
-        'tagId': tagId,
-        'readingId': readingId,
-        'time': unixtime,
-        'activity': activity,
-        'heartRate': heartRate,
-        'latitude': latitude,
-        'longitude': longitude,
-        'temperature': temperature,
-        'accel_x': ax,
-        'accel_y': ay,
-        'accel_z': az,
-    }
-)
+
+res = requests.post(
+    'https://k7t0ap6b0i.execute-api.us-west-2.amazonaws.com/dev/tags/' + tagId + '/sensors', json=payload)
 
 print("inserted item")

@@ -14,7 +14,7 @@ GPIO_DHT = 18
 ts = dht11.DHT11(pin = GPIO_DHT)
 
 # Get temperature in °C from DHT11
-def temp():
+def find_temp():
     return ts.read().temperature
     
 try:
