@@ -25,6 +25,14 @@
          type = "int";
       }
    }
+   element JTAG_To_FPGA_bridge
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
    element bt_rs232_uart
    {
       datum _sortIndex
@@ -39,6 +47,22 @@
       {
          value = "1";
          type = "boolean";
+      }
+   }
+   element dnn_accelerator
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element dnn_accelerator.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
       }
    }
    element jtag_uart_0
@@ -59,6 +83,38 @@
       datum baseAddress
       {
          value = "4096";
+         type = "String";
+      }
+   }
+   element jtag_uart_arm_0
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element jtag_uart_arm_0.avalon_jtag_slave
+   {
+      datum baseAddress
+      {
+         value = "72";
+         type = "String";
+      }
+   }
+   element jtag_uart_arm_1
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element jtag_uart_arm_1.avalon_jtag_slave
+   {
+      datum baseAddress
+      {
+         value = "64";
          type = "String";
       }
    }
@@ -183,14 +239,6 @@
          type = "String";
       }
    }
-   element sys_sdram_pll_0
-   {
-      datum _sortIndex
-      {
-         value = "0";
-         type = "int";
-      }
-   }
    element sysid
    {
       datum _sortIndex
@@ -205,6 +253,14 @@
       {
          value = "8";
          type = "String";
+      }
+   }
+   element system_pll
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
       }
    }
    element wifi_rs232_uart
@@ -254,7 +310,7 @@
    internal="bt_rs232_uart.external_interface"
    type="conduit"
    dir="end" />
- <interface name="clk" internal="sys_sdram_pll_0.ref_clk" type="clock" dir="end" />
+ <interface name="clk" internal="system_pll.ref_clk" type="clock" dir="end" />
  <interface name="hps_io" internal="ARM_A9_HPS.hps_io" type="conduit" dir="end" />
  <interface
    name="leds"
@@ -262,11 +318,7 @@
    type="conduit"
    dir="end" />
  <interface name="memory" internal="ARM_A9_HPS.memory" type="conduit" dir="end" />
- <interface
-   name="reset"
-   internal="sys_sdram_pll_0.ref_reset"
-   type="reset"
-   dir="end" />
+ <interface name="reset" internal="system_pll.ref_reset" type="reset" dir="end" />
  <interface
    name="sd_card"
    internal="sd_card_ic.conduit_end"
@@ -279,7 +331,7 @@
    dir="end" />
  <interface
    name="sdram_clk"
-   internal="sys_sdram_pll_0.sdram_clk"
+   internal="system_pll.sdram_clk"
    type="clock"
    dir="start" />
  <interface
@@ -819,6 +871,20 @@
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
  <module
+   name="JTAG_To_FPGA_bridge"
+   kind="altera_jtag_avalon_master"
+   version="15.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <parameter name="COMPONENT_CLOCK" value="0" />
+  <parameter name="FAST_VER" value="0" />
+  <parameter name="FIFO_DEPTHS" value="2" />
+  <parameter name="PLI_PORT" value="50000" />
+  <parameter name="USE_PLI" value="0" />
+ </module>
+ <module
    name="bt_rs232_uart"
    kind="altera_up_avalon_rs232"
    version="15.0"
@@ -833,7 +899,50 @@
   <parameter name="stop_bits" value="1" />
  </module>
  <module
+   name="dnn_accelerator"
+   kind="dnn_accelerator"
+   version="1.0"
+   enabled="1" />
+ <module
    name="jtag_uart_0"
+   kind="altera_avalon_jtag_uart"
+   version="15.0"
+   enabled="1">
+  <parameter name="allowMultipleConnections" value="false" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clkFreq" value="50000000" />
+  <parameter name="hubInstanceID" value="0" />
+  <parameter name="readBufferDepth" value="64" />
+  <parameter name="readIRQThreshold" value="8" />
+  <parameter name="simInputCharacterStream" value="" />
+  <parameter name="simInteractiveOptions">NO_INTERACTIVE_WINDOWS</parameter>
+  <parameter name="useRegistersForReadBuffer" value="false" />
+  <parameter name="useRegistersForWriteBuffer" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="writeBufferDepth" value="64" />
+  <parameter name="writeIRQThreshold" value="8" />
+ </module>
+ <module
+   name="jtag_uart_arm_0"
+   kind="altera_avalon_jtag_uart"
+   version="15.0"
+   enabled="1">
+  <parameter name="allowMultipleConnections" value="false" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clkFreq" value="50000000" />
+  <parameter name="hubInstanceID" value="0" />
+  <parameter name="readBufferDepth" value="64" />
+  <parameter name="readIRQThreshold" value="8" />
+  <parameter name="simInputCharacterStream" value="" />
+  <parameter name="simInteractiveOptions">NO_INTERACTIVE_WINDOWS</parameter>
+  <parameter name="useRegistersForReadBuffer" value="false" />
+  <parameter name="useRegistersForWriteBuffer" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="writeBufferDepth" value="64" />
+  <parameter name="writeIRQThreshold" value="8" />
+ </module>
+ <module
+   name="jtag_uart_arm_1"
    kind="altera_avalon_jtag_uart"
    version="15.0"
    enabled="1">
@@ -870,8 +979,8 @@
    kind="altera_nios2_gen2"
    version="15.0"
    enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="6" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="7" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="7" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
@@ -1126,7 +1235,15 @@
   <parameter name="width" value="10" />
  </module>
  <module
-   name="sys_sdram_pll_0"
+   name="sysid"
+   kind="altera_avalon_sysid_qsys"
+   version="15.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="id" value="0" />
+ </module>
+ <module
+   name="system_pll"
    kind="altera_up_avalon_sys_sdram_pll"
    version="15.0"
    enabled="1">
@@ -1139,14 +1256,6 @@
   <parameter name="gui_outclk" value="50.0" />
   <parameter name="gui_refclk" value="50.0" />
   <parameter name="other_boards" value="None" />
- </module>
- <module
-   name="sysid"
-   kind="altera_avalon_sysid_qsys"
-   version="15.0"
-   enabled="1">
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
-  <parameter name="id" value="0" />
  </module>
  <module
    name="wifi_rs232_uart"
@@ -1162,6 +1271,15 @@
   <parameter name="parity" value="None" />
   <parameter name="stop_bits" value="1" />
  </module>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="dnn_accelerator.avalon_master"
+   end="sdram_controller.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x08000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="15.0"
@@ -1255,6 +1373,33 @@
  <connection
    kind="avalon"
    version="15.0"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="jtag_uart_arm_0.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0048" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="jtag_uart_arm_1.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="dnn_accelerator.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
    start="nios2_gen2_0.instruction_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1280,70 +1425,127 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="15.0"
+   start="JTAG_To_FPGA_bridge.master"
+   end="jtag_uart_arm_0.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0xff200048" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="JTAG_To_FPGA_bridge.master"
+   end="jtag_uart_arm_1.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0xff200040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="JTAG_To_FPGA_bridge.master"
+   end="dnn_accelerator.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0xff200000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="nios2_gen2_0.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="jtag_uart_0.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="sdram_controller.clk" />
+ <connection kind="clock" version="15.0" start="system_pll.sys_clk" end="leds.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
-   end="leds.clk" />
- <connection
-   kind="clock"
-   version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="sd_card_ic.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="bt_rs232_uart.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="wifi_rs232_uart.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="switches.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="sysid.clk" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
+   end="JTAG_To_FPGA_bridge.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
+   end="jtag_uart_arm_0.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
+   end="jtag_uart_arm_1.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
    end="onchip_sram.clk1" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
+   end="dnn_accelerator.clock" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
    end="ARM_A9_HPS.f2h_axi_clock" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="ARM_A9_HPS.h2f_axi_clock" />
  <connection
    kind="clock"
    version="15.0"
-   start="sys_sdram_pll_0.sys_clk"
+   start="system_pll.sys_clk"
    end="ARM_A9_HPS.h2f_lw_axi_clock" />
+ <connection
+   kind="interrupt"
+   version="15.0"
+   start="ARM_A9_HPS.f2h_irq0"
+   end="jtag_uart_arm_0.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.0"
+   start="ARM_A9_HPS.f2h_irq1"
+   end="jtag_uart_arm_1.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
  <connection
    kind="interrupt"
    version="15.0"
@@ -1418,52 +1620,92 @@
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="ARM_A9_HPS.h2f_reset"
+   end="JTAG_To_FPGA_bridge.clk_reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_reset"
+   end="dnn_accelerator.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_reset"
+   end="jtag_uart_arm_0.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_reset"
+   end="jtag_uart_arm_1.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
+   end="JTAG_To_FPGA_bridge.clk_reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
    end="nios2_gen2_0.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="jtag_uart_0.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="sdram_controller.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="leds.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="sd_card_ic.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="bt_rs232_uart.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="wifi_rs232_uart.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="switches.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
    end="sysid.reset" />
  <connection
    kind="reset"
    version="15.0"
-   start="sys_sdram_pll_0.reset_source"
+   start="system_pll.reset_source"
+   end="dnn_accelerator.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
+   end="jtag_uart_arm_0.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
+   end="jtag_uart_arm_1.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
    end="onchip_sram.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

@@ -2,26 +2,40 @@
 
 ## Hardware Accelerated DNN on DE1-SoC
 
-This project aims to develop a custom HPS and FPGA system that accelerates the human detection DNN and send the result to cloud database for storage. The system consists of an embedded softcore CPU, *Nios II* and a HPS component that uses the ARM processor on DE1-SoC board.
+This project implements a custom HPS/FPGA system on DE1-SoC that accelerates the human detection DNN and send the result to cloud database for storage. It acts as a remote server to RaspberryPi, where the RaspberryPi sends captured images to the DE1-SoC via Bluetooth, at a constant rate. Our custom embedded system then run the pre-trained DNN with the input image data, finally producing the result of whether or not a person is present in the image and send the final result to cloud database for storage via WiFi.
 
 
 ## HPS & FPGA High-Level Design
 
+The system is created using *Qsys* in Quartus (v15.0).
+
 ### HPS
-- Custom DNN accelerator IP component to accelerate the dot product calculation
-- DMA controller with three ports:
-    - There is a read-master port connected to the AXI-slave on the HPS which can access all of the HPS address space.
-    - This is used to read the HPS on-chip memory.
-    - There is a write-master port connected to one port of a dual-port SRAM block.
-    - The DMA operation copies the data from the read-master to the write-master.
-    - There is a control port used to set up the DMA transfer connected to the AXI-lightweight-master so that the HPS can set up the transfer.
-- SRAM memory block configured to be 32-bit by 16384 words, which is about 13% of M10K block memory. There are two ports.
-    - The first is attached to the DMA write-master. Data is thus tranferred from the HPS by the DMA read-master to the DMA write-master to the first FPGA sram port.
-    - The second port is attached to the HPS AXI-master at beginning address 0x08000000, so that the data transfer can be checked by reading back to the HPS.
+
+System components:
+- Custom DNN Accelerator IP
+- JTAG to FPGA bridge
+- JTAG UART for ARM 0
+- JTAG UART for ARM 1
+
+Main functionalities:
+- Accelerate the dot product calculation for pre-trained DNN
+- Write DNN result to FPGA SRAM
+
 
 ### FPGA
+
+System components:
+- NIOS II Processor
+- System ID Peripheral
+- JTAG UART
+- On-Chip SRAM
+- SDRAM
+- RS232 UART for WiFi chip (ESP8266) on RFS card
+- RS232 UART for Bluetooth chip (HC-05) on RFS card
+- DMA Controller
+
+Main functionalities:
 - Receive image data from RaspberryPi via Bluetooth
-- Write received image data into SD card
 - Copy image data from FPGA memory address to HPS memory address using Altera DMA Controller core
 - Receive DNN result from HPS
 - Send DNN result to cloud database via WiFi

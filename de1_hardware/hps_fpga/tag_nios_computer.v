@@ -124,6 +124,13 @@ module tag_nios_computer(
 	output HPS_USB_STP
 );
 
+	assign HEX0 = 7'b1111111;
+	assign HEX1 = 7'b1111111;
+	assign HEX2 = 7'b1111111;
+	assign HEX3 = 7'b1111111;
+	assign HEX4 = 7'b1111111;
+	assign HEX5 = 7'b1111111;
+
 	// #######################################################
     // sys is an instanace of the QSYS generated computer
 	// map its IO ports as described below
@@ -251,16 +258,7 @@ module tag_nios_computer(
 		.hps_io_hps_io_usb1_inst_CLK	 (HPS_USB_CLKOUT),
 		.hps_io_hps_io_usb1_inst_STP	 (HPS_USB_STP),
 		.hps_io_hps_io_usb1_inst_DIR	 (HPS_USB_DIR),
-		.hps_io_hps_io_usb1_inst_NXT	 (HPS_USB_NXT),
-
-		// HPS-side FPGA peripherals
-		.buttons_export                  (KEY),
-		.hex_0_export                    (HEX0),
-		.hex_1_export                    (HEX1),
-		.hex_2_export                    (HEX2),
-		.hex_3_export                    (HEX3),
-		.hex_4_export                    (HEX4),
-		.hex_5_export                    (HEX5)
+		.hps_io_hps_io_usb1_inst_NXT	 (HPS_USB_NXT)
     );
 
 endmodule
