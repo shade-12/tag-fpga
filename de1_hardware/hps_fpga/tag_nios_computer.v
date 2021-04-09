@@ -124,6 +124,17 @@ module tag_nios_computer(
 	output HPS_USB_STP
 );
 
+	wire wifi_reset, sd_card_b_SD_cmd, sd_card_b_SD_dat, sd_card_b_SD_dat3, sd_card_o_SD_clock;
+
+	assign GPIO_1[1] = KEY[0] & wifi_reset;
+
+	assign HEX0 = 7'b1111111;
+	assign HEX1 = 7'b1111111;
+	assign HEX2 = 7'b1111111;
+	assign HEX3 = 7'b1111111;
+	assign HEX4 = 7'b1111111;
+	assign HEX5 = 7'b1111111;
+
 	// #######################################################
     // sys is an instanace of the QSYS generated computer
 	// map its IO ports as described below
@@ -150,8 +161,13 @@ module tag_nios_computer(
 		.bt_uart_TXD       				 (GPIO_1[19]),
         .wifi_uart_RXD     				 (GPIO_1[15]),
 		.wifi_uart_TXD     				 (GPIO_1[14]),
+		.wifi_reset_export               (wifi_reset),
 		.leds_export                     (LEDR),
 		.switches_export                 (SW),
+		.sd_card_b_SD_cmd                (sd_card_b_SD_cmd),
+		.sd_card_b_SD_dat                (sd_card_b_SD_dat),
+		.sd_card_b_SD_dat3               (sd_card_b_SD_dat3),
+		.sd_card_o_SD_clock              (sd_card_o_SD_clock),
 
 		// ###############################################
 		// HPS side
@@ -251,16 +267,7 @@ module tag_nios_computer(
 		.hps_io_hps_io_usb1_inst_CLK	 (HPS_USB_CLKOUT),
 		.hps_io_hps_io_usb1_inst_STP	 (HPS_USB_STP),
 		.hps_io_hps_io_usb1_inst_DIR	 (HPS_USB_DIR),
-		.hps_io_hps_io_usb1_inst_NXT	 (HPS_USB_NXT),
-
-		// HPS-side FPGA peripherals
-		.buttons_export                  (KEY),
-		.hex_0_export                    (HEX0),
-		.hex_1_export                    (HEX1),
-		.hex_2_export                    (HEX2),
-		.hex_3_export                    (HEX3),
-		.hex_4_export                    (HEX4),
-		.hex_5_export                    (HEX5)
+		.hps_io_hps_io_usb1_inst_NXT	 (HPS_USB_NXT)
     );
 
 endmodule

@@ -1,0 +1,19 @@
+!SESSION 2021-04-08 22:52:03.805 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-04-08 22:53:36.426
+!MESSAGE Indexed 'led_task_bsp' (80 sources, 161 headers) in 3.38 sec: 5,207 declarations; 7,956 references; 19 unresolved inclusions; 2 syntax errors; 62 unresolved names (0.47%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-04-08 22:53:37.989
+!MESSAGE Indexed 'led_task' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-08 22:59:36.245
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x8 --id=0x0 --timestamp=1617943199]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-08 22:59:38.173
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x8 --id=0x0 --timestamp=1617943199 /cygdrive/d/tag2/de1_software/nios/leds_rotation/led_task/led_task.elf]

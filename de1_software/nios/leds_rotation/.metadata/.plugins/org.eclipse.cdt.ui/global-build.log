@@ -1,0 +1,29 @@
+22:59:17 **** Build of configuration Nios II for project led_task ****
+make all 
+Info: Building D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+[BSP build complete]
+Info: Compiling led_task.cpp to obj/default/led_task.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp/ -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/led_task.o led_task.cpp
+Info: Compiling main.cpp to obj/default/main.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp/ -ID:/tag2/de1_software/nios/leds_rotation/led_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.cpp
+Info: Linking led_task.elf
+nios2-elf-g++  -T'D:/tag2/de1_software/nios/leds_rotation/led_task_bsp//linker.x' -msys-crt0='D:/tag2/de1_software/nios/leds_rotation/led_task_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/tag2/de1_software/nios/leds_rotation/led_task_bsp/   -Wl,-Map=led_task.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o led_task.elf obj/default/led_task.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert led_task.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x8 --timestamp 1617943199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name tag_nios_system --quartus_project_dir "d:/tag2/de1_hardware/hps_fpga" --jdi D:/tag2/de1_hardware/hps_fpga//output_files/TAG_Nios_Computer.jdi --sopcinfo D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
+Info: (led_task.elf) 30 KBytes program size (code + initialized data).
+Info:                65528 KBytes free for stack + heap.
+Info: Creating led_task.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source led_task.elf >led_task.objdump
+[led_task build complete]
+22:59:31 **** Build of configuration Nios II for project led_task ****
+make all 
+Info: Building D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+[BSP build complete]
+[led_task build complete]
+22:59:34 **** Incremental Build of configuration Nios II for project led_task ****
+make all 
+Info: Building D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/leds_rotation/led_task_bsp/
+[BSP build complete]
+[led_task build complete]
