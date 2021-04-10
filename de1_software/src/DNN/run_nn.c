@@ -1,5 +1,3 @@
-// Adapted from CPEN 391 Lab 4 assignment
-
 #include <stdio.h>
 
 #define L1_IN  1400
