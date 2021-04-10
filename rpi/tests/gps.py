@@ -38,7 +38,7 @@ def convert_to_degrees(raw_value):
 
 def find_loc():
     
-    gpgga_info = "$GPGGA,"
+    gpgga_info = "$GPGGA"
     ser = serial.Serial ("/dev/ttyS0")              #Open port with baud rate
     GPGGA_buffer = 0
     NMEA_buff = 0

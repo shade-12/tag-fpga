@@ -1,7 +1,10 @@
-import gps
-import accel345
-import gpsIP
-import temp_sensor
+#!/usr/bin/env python
+
+from gps import find_loc
+from accel345 import measure_speed
+from temp_sensor import find_temp
+from heart import heartrate_measure
+
 import string
 import random
 import requests
@@ -20,7 +23,7 @@ for _ in range(10):
     readingId += (chr(random_integer))
 
 # get data from sensor
-heartRate = 72
+heartRate = heartrate_measure()
 latitude,longitude = find_loc()
 temperature = find_temp()
 ax,ay,az = measure_speed()
@@ -37,7 +40,6 @@ payload = {
     "accel_z": az,
     "time": math.floor(time.time()),
 }
-
 
 res = requests.post(
     'https://k7t0ap6b0i.execute-api.us-west-2.amazonaws.com/dev/tags/' + tagId + '/sensors', json=payload)

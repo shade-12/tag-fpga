@@ -34,8 +34,9 @@ try:
     for i in range(110):
         file = open("/home/pi/tag-fpga/tag-Rpi/log_Walk.txt","a")
         time.sleep(5)
+        heartRate = heartrate_measure()
         ax,ay,az = accelerometer.acceleration
-        file.write("ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
+        file.write("h= " + str(heartRate) +", ax= " + str(ax) + ", ay= " + str(ay) + ", az= " + str(az) + "\n")
         time.sleep(5)
         print(i)
         file.close()
