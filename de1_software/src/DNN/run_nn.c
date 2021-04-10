@@ -2,13 +2,15 @@
 
 #include <stdio.h>
 
-#define L1_IN  784
-#define L1_OUT 1000
+#define L1_IN  1400
+#define L1_OUT 900
 #define L2_IN L1_OUT
-#define L2_OUT 1000
+#define L2_OUT 900
 #define L3_IN L2_OUT
-#define L3_OUT 10
-#define NPARAMS (L1_OUT + L1_IN * L1_OUT + L2_OUT + L2_IN * L2_OUT + L3_OUT + L3_IN * L3_OUT)
+#define L3_OUT 900
+#define L4_IN L3_OUT
+#define L4_OUT 2
+#define NPARAMS (L1_OUT + L1_IN * L1_OUT + L2_OUT + L2_IN * L2_OUT + L3_OUT + L3_IN * L3_OUT + L4_OUT + L4_IN * L4_OUT)
 
 volatile unsigned *hex = (volatile unsigned *) 0xFF200030; /* hex display PIO */
 volatile unsigned *dnn_acc = (volatile unsigned *) 0xFF202040; /* DNN accelerator */
@@ -18,7 +20,8 @@ volatile int *nn      = (volatile int *) 0x01000000; /* neural network biases an
 volatile int *input   = (volatile int *) 0x01800000; /* input image */
 volatile int *l1_acts = (volatile int *) 0x01801000; /* activations of layer 1 */
 volatile int *l2_acts = (volatile int *) 0x01802000; /* activations of layer 2 */
-volatile int *l3_acts = (volatile int *) 0x01803000; /* activations of layer 3 (outputs) */
+volatile int *l3_acts = (volatile int *) 0x01803000; /* activations of layer 3 */
+volatile int *l4_acts = (volatile int *) 0x01804000; /* activations of layer 4 (output) */
 
 // Set to 1 to use hardware accelerator, 0 to use software
 #define USE_HW 1
@@ -87,13 +90,16 @@ int main() {
     volatile int *l2_w = l2_b + L2_OUT;         /* layer 2 weights */
     volatile int *l3_b = l2_w + L2_IN * L2_OUT; /* layer 3 bias */
     volatile int *l3_w = l3_b + L3_OUT;         /* layer 3 weights */
+    volatile int *l4_b = l3_w + L3_IN * L3_OUT;
+    volatile int *l4_w = l4_b + L4_OUT;
 
     apply_layer(L1_IN, L1_OUT, l1_b, l1_w, 1, input, l1_acts);
     apply_layer(L2_IN, L2_OUT, l2_b, l2_w, 1, l1_acts, l2_acts);
-    apply_layer(L3_IN, L3_OUT, l3_b, l3_w, 0, l2_acts, l3_acts);
+    apply_layer(L3_IN, L3_OUT, l3_b, l3_w, 1, l2_acts, l3_acts);
+    apply_layer(L4_IN, L4_OUT, l3_b, l3_w, 0, l3_acts, l4_acts);
 
-    int result = max_index(L3_OUT, l3_acts);
-    printf("Predicted digit: %d\n", result);
+    int result = max_index(L4_OUT, l4_acts);
+    printf("Predicted digit: %d\n", result); // 0 means no human , 1 means human
     *hex = hex7seg(result);
     return 0;
 }
