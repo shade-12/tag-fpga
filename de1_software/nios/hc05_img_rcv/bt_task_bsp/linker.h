@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
  *
- * Generated: Sun Apr 11 22:34:17 PDT 2021
+ * Generated: Mon Apr 12 11:04:50 PDT 2021
  */
 
 /*
@@ -65,8 +65,6 @@
  *
  */
 
-#define ONCHIP_SRAM_REGION_BASE 0x20000
-#define ONCHIP_SRAM_REGION_SPAN 53248
 #define RESET_REGION_BASE 0x8000000
 #define RESET_REGION_SPAN 32
 #define SDRAM_CONTROLLER_REGION_BASE 0x8000020

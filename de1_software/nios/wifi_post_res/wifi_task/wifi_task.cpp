@@ -44,7 +44,7 @@ int wifi_task()
 
 volatile int *tagid  = (volatile int *) 0x0a900000; /* tag id */
 volatile int *rid    = (volatile int *) 0x0b001000; /* reading id */
-volatile int *result = (volatile int *) 0x0b000000; /* dnn result */
+volatile int *result = (volatile int *) 0x0b000004; /* dnn result */
 
 const char *server_endpoint = "k7t0ap6b0i.execute-api.us-west-2.amazonaws.com";
 const char *req = "PATCH /dev/sensors HTTP/1.1\r\n\

@@ -19,7 +19,7 @@ System components:
 
 Main functionalities:
 - Accelerate the dot product calculation for pre-trained DNN
-- Write DNN result to FPGA SRAM
+- Write DNN result to SDRAM
 
 
 ### FPGA
@@ -28,7 +28,6 @@ System components:
 - NIOS II Processor
 - System ID Peripheral
 - JTAG UART
-- On-Chip SRAM
 - SDRAM
 - RS232 UART for WiFi chip (ESP8266) on RFS card
 - RS232 UART for Bluetooth chip (HC-05) on RFS card

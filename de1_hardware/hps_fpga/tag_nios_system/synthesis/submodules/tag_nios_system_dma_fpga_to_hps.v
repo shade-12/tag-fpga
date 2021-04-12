@@ -51,7 +51,7 @@ module tag_nios_system_dma_fpga_to_hps_read_data_mux (
   input            hw;
   input   [ 31: 0] read_readdata;
   input            read_readdatavalid;
-  input   [ 17: 0] readaddress;
+  input   [ 27: 0] readaddress;
   input   [  4: 0] readaddress_inc;
   input            reset_n;
   input            word;
@@ -541,7 +541,7 @@ endmodule
 
 //DMA peripheral tag_nios_system_dma_fpga_to_hps
 //Read slaves:
-//onchip_sram.s1; 
+//sdram_controller.s1; 
 //Write slaves:
 //ARM_A9_HPS_sdrctl.axi_slave0,ARM_A9_HPS_uart0.axi_slave0,ARM_A9_HPS_fpgamgr.axi_slave0,ARM_A9_HPS_sysmgr.axi_slave0,ARM_A9_HPS_fpgamgr.axi_slave1,ARM_A9_HPS_i2c1.axi_slave0,ARM_A9_HPS_dcan1.axi_slave0,ARM_A9_HPS_clkmgr.axi_slave0,ARM_A9_HPS_axi_sdram.axi_slave0,ARM_A9_HPS_gmac0.axi_slave0,ARM_A9_HPS_gpio1.axi_slave0,ARM_A9_HPS_l3regs.axi_slave0,ARM_A9_HPS_timer.axi_slave0,ARM_A9_HPS_spim0.axi_slave0,ARM_A9_HPS_i2c3.axi_slave0,ARM_A9_HPS_dma.axi_slave0,ARM_A9_HPS_timer1.axi_slave0,ARM_A9_HPS_usb1.axi_slave0,ARM_A9_HPS_timer3.axi_slave0,ARM_A9_HPS_sdmmc.axi_slave0,ARM_A9_HPS_uart1.axi_slave0,ARM_A9_HPS_qspi.axi_slave0,ARM_A9_HPS_L2.axi_slave0,ARM_A9_HPS_i2c0.axi_slave0,ARM_A9_HPS_dcan0.axi_slave0,ARM_A9_HPS_qspi.axi_slave1,ARM_A9_HPS_rstmgr.axi_slave0,ARM_A9_HPS_gpio0.axi_slave0,ARM_A9_HPS_i2c2.axi_slave0,ARM_A9_HPS_arm_gic_0.axi_slave0,ARM_A9_HPS_timer0.axi_slave0,ARM_A9_HPS_gmac1.axi_slave0,ARM_A9_HPS_gpio2.axi_slave0,ARM_A9_HPS_nand0.axi_slave0,ARM_A9_HPS_arm_gic_0.axi_slave1,ARM_A9_HPS_spim1.axi_slave0,ARM_A9_HPS_nand0.axi_slave1,ARM_A9_HPS_usb0.axi_slave0,ARM_A9_HPS_axi_ocram.axi_slave0,ARM_A9_HPS_timer2.axi_slave0; 
 
@@ -575,7 +575,7 @@ module tag_nios_system_dma_fpga_to_hps (
 
   output           dma_ctl_irq;
   output  [ 31: 0] dma_ctl_readdata;
-  output  [ 17: 0] read_address;
+  output  [ 27: 0] read_address;
   output           read_chipselect;
   output           read_read_n;
   output  [ 31: 0] write_address;
@@ -639,19 +639,19 @@ module tag_nios_system_dma_fpga_to_hps (
   wire    [ 31: 0] p1_length;
   wire             p1_length_eq_0;
   wire             p1_read_got_endofpacket;
-  wire    [ 17: 0] p1_readaddress;
+  wire    [ 27: 0] p1_readaddress;
   wire             p1_write_got_endofpacket;
   wire    [ 31: 0] p1_writeaddress;
   wire    [ 31: 0] p1_writelength;
   wire             p1_writelength_eq_0;
   wire             quadword;
   wire             rcon;
-  wire    [ 17: 0] read_address;
+  wire    [ 27: 0] read_address;
   wire             read_chipselect;
   wire             read_endofpacket;
   reg              read_got_endofpacket;
   wire             read_read_n;
-  reg     [ 17: 0] readaddress;
+  reg     [ 27: 0] readaddress;
   wire    [  4: 0] readaddress_inc;
   wire             reen;
   reg              reop;
@@ -715,7 +715,7 @@ module tag_nios_system_dma_fpga_to_hps (
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          readaddress <= 18'h0;
+          readaddress <= 28'h0;
       else if (clk_en)
           readaddress <= p1_readaddress;
     end

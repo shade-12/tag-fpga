@@ -8,8 +8,7 @@
 ```
 $ sopc-create-header-files \
  de1_hardware/hps_fpga/tag_nios_system.sopcinfo \
- --single de1_software/hps/hps_soc_system.h
- --module ARM_A9_HPS
+ --single de1_software/hps/hps_soc_system.h --module ARM_A9_HPS
 ```
 
 ### Steps to Build Preloader
