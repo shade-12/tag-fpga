@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>9-Apr-2021 12:05:36 AM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>11-Apr-2021 11:06:44 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1617951936986</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1618207604008</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>D:\tag2\de1_software\nios\wifi_post_res\wifi_task_bsp</td>
@@ -50,13 +50,13 @@
 <td>jtag_uart_0</td><td>0x00001000 - 0x0000100F</td><td>16</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sd_card_interface</td><td>0x00000400 - 0x000007FF</td><td>1024</td><td class="listing">&nbsp;</td>
+<td>switches</td><td>0x00000070 - 0x0000008F</td><td>32</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>switches</td><td>0x00000030 - 0x0000004F</td><td>32</td><td class="listing">&nbsp;</td>
+<td>wifi_reset</td><td>0x00000060 - 0x0000007F</td><td>32</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>wifi_reset</td><td>0x00000020 - 0x0000003F</td><td>32</td><td class="listing">&nbsp;</td>
+<td>dma_fpga_to_hps</td><td>0x00000040 - 0x0000007F</td><td>64</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>wifi_rs232_uart</td><td>0x00000010 - 0x00000017</td><td>8</td><td class="listing">&nbsp;</td>
@@ -84,7 +84,7 @@
 <th align="left" width="50%">Section</th><th align="left" width="50%">Region</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.text</td><td>onchip_sram</td>
+<td>.text</td><td>sdram_controller</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>.rodata</td><td>sdram_controller</td>
@@ -384,7 +384,7 @@
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -600,7 +600,7 @@
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>

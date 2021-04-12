@@ -39,7 +39,6 @@ int bt_task()
     if (BT_UART.read_ready()) {
       if (count < INPUT_SIZE) {
         input[count] = BT_UART.read_s();  // Store received image data in 'input' array
-        printf("%i ", input[count]);
         count++;
       } else {
         while (!BT_UART.read_ready()) {} // Wait for next integer (dynamodb entry id: require to store result in the correct entry in db)

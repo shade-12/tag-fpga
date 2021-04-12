@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
 # SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
 #
-# Generated: Fri Apr 09 00:03:46 PDT 2021
+# Generated: Sun Apr 11 23:01:27 PDT 2021
 
 # DO NOT MODIFY THIS FILE
 #

@@ -142,9 +142,10 @@ ACDS_VERSION := 15.0
 ELF := wifi_task.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += esp8266.c
-C_SRCS += main.c
-CXX_SRCS :=
+C_SRCS :=
+CXX_SRCS += WiFiUart.cpp
+CXX_SRCS += main.cpp
+CXX_SRCS += wifi_task.cpp
 ASM_SRCS :=
 
 
