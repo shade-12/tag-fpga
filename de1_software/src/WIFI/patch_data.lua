@@ -22,16 +22,6 @@ db:init({
   aws_region = "us-west-2"
 })
 
---build request payload
-local payload =
-{
-  TableName = "sensor-reading",
-  Key = 
-  {
-    tagID = db:S("123"),
-    poach = db:S("hello")
-  }
-}
 
 --set up listener
 function dbEventListener( evt )
@@ -45,25 +35,33 @@ end
 --add event listener
 db.events:addEventListener( "DynamoDBEvent", dbEventListener )
 
---make DynamoDB request
-db:request("GetItem", payload)
--------------------------------------------------------------------
-p = result from algo 
--------------------------------------------------------------
-payload =
-{
-  TableName = "sensor-reading",
-  Key = 
-  {
-    tagID = db:S("123"),
-    poach = db:S("hello")
-  },
-    UpdateExpression = "SET poach = :val1",\
-    ExpressionAttributeValues = 
-    {
-      [":val1"] = p,
-    },
-    ReturnValues = "ALL_NEW"
-  }
+
+function update_db_entry(tag_id, poach_res)
     
-db:request("UpdateItem", payload)
+    --build request payload
+    payload = {
+        TableName = "sensor-reading",
+        Key = {
+            tagID = db:S(tag_id)
+        },
+        UpdateExpression = "SET poach = :val",
+        ExpressionAttributeValues = {
+            [":val"] = poach_res,
+        },
+        ReturnValues = "ALL_NEW"
+    }
+
+    db:request("UpdateItem", payload)
+end
+
+function check_wifi()
+    ip = wifi.sta.getip()
+
+    if (ip==nil) then
+        print("Connecting...")
+    else
+        tmr.stop(0)
+        print("Connected to AP!")
+        print(ip)
+    end
+end
