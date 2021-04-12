@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 15.0 145 (Future versions may contain additional information.) -->
- <!-- 2021.04.11.19:29:09 -->
+ <!-- 2021.04.11.21:22:16 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1618194548</value>
+  <value>1618201335</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -16678,6 +16678,13 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>irq</slaveName>
     <name>jtag_uart_arm_1.irq</name>
     <interruptNumber>0</interruptNumber>
+   </interrupt>
+   <interrupt>
+    <isBridge>false</isBridge>
+    <moduleName>dma_hps_to_fpga</moduleName>
+    <slaveName>irq</slaveName>
+    <name>dma_hps_to_fpga.irq</name>
+    <interruptNumber>1</interruptNumber>
    </interrupt>
   </interface>
  </module>
@@ -46697,6 +46704,13 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>irq</slaveName>
     <name>jtag_uart_arm_1.irq</name>
     <interruptNumber>0</interruptNumber>
+   </interrupt>
+   <interrupt>
+    <isBridge>false</isBridge>
+    <moduleName>dma_hps_to_fpga</moduleName>
+    <slaveName>irq</slaveName>
+    <name>dma_hps_to_fpga.irq</name>
+    <interruptNumber>1</interruptNumber>
    </interrupt>
   </interface>
   <interface name="irq_rx_offset_104" kind="interrupt_receiver" version="15.0">
@@ -83019,7 +83033,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="internalIrqMaskSystemInfo">
    <type>long</type>
-   <value>7</value>
+   <value>15</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -84052,6 +84066,13 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>irq</slaveName>
     <name>jtag_uart_0.irq</name>
     <interruptNumber>0</interruptNumber>
+   </interrupt>
+   <interrupt>
+    <isBridge>false</isBridge>
+    <moduleName>dma_fpga_to_hps</moduleName>
+    <slaveName>irq</slaveName>
+    <name>dma_fpga_to_hps.irq</name>
+    <interruptNumber>3</interruptNumber>
    </interrupt>
   </interface>
   <interface name="debug_reset_request" kind="reset_source" version="15.0">
@@ -87167,7 +87188,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1618194548</value>
+   <value>1618201335</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -87187,7 +87208,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1618194548</value>
+   <value>1618201335</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -87203,7 +87224,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1618194548</value>
+   <value>1618201335</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -101663,6 +101684,41 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>irq</endConnectionPoint>
  </connection>
  <connection
+   name="ARM_A9_HPS_arm_gic_0.f2h_irq_32_irq_rx_offset_72/dma_hps_to_fpga.irq"
+   kind="interrupt"
+   version="15.0"
+   start="ARM_A9_HPS_arm_gic_0.f2h_irq_32_irq_rx_offset_72"
+   end="dma_hps_to_fpga.irq">
+  <parameter name="irqNumber">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>ARM_A9_HPS_arm_gic_0</startModule>
+  <startConnectionPoint>f2h_irq_32_irq_rx_offset_72</startConnectionPoint>
+  <endModule>dma_hps_to_fpga</endModule>
+  <endConnectionPoint>irq</endConnectionPoint>
+ </connection>
+ <connection
    name="nios2_gen2_0.irq/bt_rs232_uart.interrupt"
    kind="interrupt"
    version="15.0"
@@ -101765,6 +101821,41 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>irq</startConnectionPoint>
   <endModule>jtag_uart_0</endModule>
+  <endConnectionPoint>irq</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_gen2_0.irq/dma_fpga_to_hps.irq"
+   kind="interrupt"
+   version="15.0"
+   start="nios2_gen2_0.irq"
+   end="dma_fpga_to_hps.irq">
+  <parameter name="irqNumber">
+   <type>int</type>
+   <value>3</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>irq</startConnectionPoint>
+  <endModule>dma_fpga_to_hps</endModule>
   <endConnectionPoint>irq</endConnectionPoint>
  </connection>
  <connection
@@ -103042,7 +103133,7 @@ parameters are a RESULT of the module parameters. -->
   <version>15.0</version>
  </plugin>
  <plugin>
-  <instanceCount>37</instanceCount>
+  <instanceCount>39</instanceCount>
   <name>interrupt</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

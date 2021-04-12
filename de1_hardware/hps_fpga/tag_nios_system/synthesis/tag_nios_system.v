@@ -315,10 +315,12 @@ module tag_nios_system (
 	wire         irq_mapper_receiver0_irq;                                        // jtag_uart_arm_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] arm_a9_hps_f2h_irq0_irq;                                         // irq_mapper:sender_irq -> ARM_A9_HPS:f2h_irq_p0
 	wire         irq_mapper_001_receiver0_irq;                                    // jtag_uart_arm_1:av_irq -> irq_mapper_001:receiver0_irq
+	wire         irq_mapper_001_receiver1_irq;                                    // dma_hps_to_fpga:dma_ctl_irq -> irq_mapper_001:receiver1_irq
 	wire  [31:0] arm_a9_hps_f2h_irq1_irq;                                         // irq_mapper_001:sender_irq -> ARM_A9_HPS:f2h_irq_p1
 	wire         irq_mapper_002_receiver0_irq;                                    // bt_rs232_uart:irq -> irq_mapper_002:receiver0_irq
 	wire         irq_mapper_002_receiver1_irq;                                    // wifi_rs232_uart:irq -> irq_mapper_002:receiver1_irq
 	wire         irq_mapper_002_receiver2_irq;                                    // jtag_uart_0:av_irq -> irq_mapper_002:receiver2_irq
+	wire         irq_mapper_002_receiver3_irq;                                    // dma_fpga_to_hps:dma_ctl_irq -> irq_mapper_002:receiver3_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                            // irq_mapper_002:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> JTAG_To_FPGA_bridge:clk_reset_reset
 	wire         arm_a9_hps_h2f_reset_reset;                                      // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_003:reset_in0, rst_controller_004:reset_in0]
@@ -565,7 +567,7 @@ module tag_nios_system (
 		.dma_ctl_readdata   (mm_interconnect_0_dma_fpga_to_hps_control_port_slave_readdata),   //                   .readdata
 		.dma_ctl_write_n    (~mm_interconnect_0_dma_fpga_to_hps_control_port_slave_write),     //                   .write_n
 		.dma_ctl_writedata  (mm_interconnect_0_dma_fpga_to_hps_control_port_slave_writedata),  //                   .writedata
-		.dma_ctl_irq        (),                                                                //                irq.irq
+		.dma_ctl_irq        (irq_mapper_002_receiver3_irq),                                    //                irq.irq
 		.read_address       (dma_fpga_to_hps_read_master_address),                             //        read_master.address
 		.read_chipselect    (dma_fpga_to_hps_read_master_chipselect),                          //                   .chipselect
 		.read_read_n        (dma_fpga_to_hps_read_master_read),                                //                   .read_n
@@ -588,7 +590,7 @@ module tag_nios_system (
 		.dma_ctl_readdata   (mm_interconnect_1_dma_hps_to_fpga_control_port_slave_readdata),   //                   .readdata
 		.dma_ctl_write_n    (~mm_interconnect_1_dma_hps_to_fpga_control_port_slave_write),     //                   .write_n
 		.dma_ctl_writedata  (mm_interconnect_1_dma_hps_to_fpga_control_port_slave_writedata),  //                   .writedata
-		.dma_ctl_irq        (),                                                                //                irq.irq
+		.dma_ctl_irq        (irq_mapper_001_receiver1_irq),                                    //                irq.irq
 		.read_address       (dma_hps_to_fpga_read_master_address),                             //        read_master.address
 		.read_chipselect    (dma_hps_to_fpga_read_master_chipselect),                          //                   .chipselect
 		.read_read_n        (dma_hps_to_fpga_read_master_read),                                //                   .read_n
@@ -1027,10 +1029,11 @@ module tag_nios_system (
 		.sender_irq    (arm_a9_hps_f2h_irq0_irq)   //    sender.irq
 	);
 
-	tag_nios_system_irq_mapper irq_mapper_001 (
+	tag_nios_system_irq_mapper_001 irq_mapper_001 (
 		.clk           (),                             //       clk.clk
 		.reset         (),                             // clk_reset.reset
 		.receiver0_irq (irq_mapper_001_receiver0_irq), // receiver0.irq
+		.receiver1_irq (irq_mapper_001_receiver1_irq), // receiver1.irq
 		.sender_irq    (arm_a9_hps_f2h_irq1_irq)       //    sender.irq
 	);
 
@@ -1040,6 +1043,7 @@ module tag_nios_system (
 		.receiver0_irq (irq_mapper_002_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_002_receiver1_irq),       // receiver1.irq
 		.receiver2_irq (irq_mapper_002_receiver2_irq),       // receiver2.irq
+		.receiver3_irq (irq_mapper_002_receiver3_irq),       // receiver3.irq
 		.sender_irq    (nios2_gen2_0_irq_irq)                //    sender.irq
 	);
 
