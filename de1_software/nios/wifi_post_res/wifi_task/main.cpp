@@ -11,7 +11,7 @@
 
 int main()
 {
-  printf("NIOS II SOFTWARE APPLICATION: BLUETOOTH TEST\n");
+  printf("NIOS II SOFTWARE APPLICATION: WIFI TEST\n");
   printf("===========================================\n\n");
 
   wifi_task();

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
  *
- * Generated: Sun Apr 11 23:10:29 PDT 2021
+ * Generated: Mon Apr 12 11:07:15 PDT 2021
  */
 
 /*
@@ -50,13 +50,11 @@
 
 MEMORY
 {
-    onchip_sram : ORIGIN = 0x20000, LENGTH = 53248
     reset : ORIGIN = 0x8000000, LENGTH = 32
     sdram_controller : ORIGIN = 0x8000020, LENGTH = 67108832
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_onchip_sram = 0x20000;
 __alt_mem_sdram_controller = 0x8000000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
@@ -309,24 +307,7 @@ SECTIONS
      *
      */
 
-    .onchip_sram : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
-    {
-        PROVIDE (_alt_partition_onchip_sram_start = ABSOLUTE(.));
-        *(.onchip_sram .onchip_sram. onchip_sram.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_onchip_sram_end = ABSOLUTE(.));
-    } > onchip_sram
-
-    PROVIDE (_alt_partition_onchip_sram_load_addr = LOADADDR(.onchip_sram));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .sdram_controller LOADADDR (.onchip_sram) + SIZEOF (.onchip_sram) : AT ( LOADADDR (.onchip_sram) + SIZEOF (.onchip_sram) )
+    .sdram_controller LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_sdram_controller_start = ABSOLUTE(.));
         *(.sdram_controller .sdram_controller. sdram_controller.*)

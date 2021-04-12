@@ -15,10 +15,11 @@
 #include "../../src/terasic_includes.h"
 #include "../../src/tasks.h"
 
+// #define INPUT_SIZE 1400
 #define INPUT_SIZE 1400
 
-volatile int *input = (volatile int *) 0x0a800000; /* input image */
-volatile int *id = (volatile int *) 0x0a900000; /* tag id */
+volatile int *input = (volatile int *) 0x0A800000; /* input image */
+volatile int *id = (volatile int *) 0x0A900000; /* tag id */
 
 
 int bt_task()

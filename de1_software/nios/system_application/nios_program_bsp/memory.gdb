@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
 # SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
 #
-# Generated: Sun Apr 11 23:10:29 PDT 2021
+# Generated: Mon Apr 12 11:07:15 PDT 2021
 
 # DO NOT MODIFY THIS FILE
 #
@@ -45,9 +45,6 @@
 # Define memory regions for each memory connected to the CPU.
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
-
-# onchip_sram
-memory 0x20000 0x2d000 cache
 
 # sdram_controller
 memory 0x8000000 0xc000000 cache

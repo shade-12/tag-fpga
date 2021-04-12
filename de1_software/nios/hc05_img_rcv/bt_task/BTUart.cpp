@@ -58,7 +58,6 @@ int BTUart::write_s(alt_u8 data)
 
     if (WRITE_FIFO_SPACE >= WRITE_FIFO_EMPTY) {
         alt_up_rs232_write_data(RS232_DEV, data);
-        alt_printf("write %c to RS232 UART\n", data);
         result = 1;
     }
 

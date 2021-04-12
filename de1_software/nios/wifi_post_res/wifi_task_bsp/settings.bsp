@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>11-Apr-2021 11:06:44 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1618207604008</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>12-Apr-2021 1:13:39 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1618258419797</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\tag2\de1_software\nios\wifi_post_res\wifi_task_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\tag2\de1_hardware\hps_fpga\tag_nios_system.sopcinfo</SopcDesignFile>
@@ -933,12 +933,6 @@
                 <addressRange>0x00001010 - 0x0000102F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>onchip_sram</slaveDescriptor>
-                <addressRange>0x00020000 - 0x0002CFFF</addressRange>
-                <addressSpan>53248</addressSpan>
-                <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram_controller</slaveDescriptor>

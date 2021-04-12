@@ -97,7 +97,7 @@ module tag_nios_system (
 		output wire        wifi_uart_TXD                    //           .TXD
 	);
 
-	wire         system_pll_sys_clk_clk;                                          // system_pll:sys_clk_clk -> [ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, JTAG_To_FPGA_bridge:clk_clk, bt_rs232_uart:clk, dma_fpga_to_hps:clk, dma_hps_to_fpga:clk, dnn_accelerator:clk, irq_mapper_002:clk, jtag_uart_0:clk, jtag_uart_arm_0:clk, jtag_uart_arm_1:clk, leds:clk, mm_interconnect_0:system_pll_sys_clk_clk, mm_interconnect_1:system_pll_sys_clk_clk, mm_interconnect_2:system_pll_sys_clk_clk, nios2_gen2_0:clk, onchip_sram:clk, rst_controller_001:clk, rst_controller_002:clk, rst_controller_003:clk, rst_controller_004:clk, sdram_controller:clk, switches:clk, sysid:clock, wifi_reset:clk, wifi_rs232_uart:clk]
+	wire         system_pll_sys_clk_clk;                                          // system_pll:sys_clk_clk -> [ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, JTAG_To_FPGA_bridge:clk_clk, bt_rs232_uart:clk, dma_fpga_to_hps:clk, dma_hps_to_fpga:clk, dnn_accelerator:clk, irq_mapper_002:clk, jtag_uart_0:clk, jtag_uart_arm_0:clk, jtag_uart_arm_1:clk, leds:clk, mm_interconnect_0:system_pll_sys_clk_clk, mm_interconnect_1:system_pll_sys_clk_clk, mm_interconnect_2:system_pll_sys_clk_clk, nios2_gen2_0:clk, rst_controller_001:clk, rst_controller_002:clk, rst_controller_003:clk, rst_controller_004:clk, sdram_controller:clk, switches:clk, sysid:clock, wifi_reset:clk, wifi_rs232_uart:clk]
 	wire         dnn_accelerator_avalon_master_waitrequest;                       // mm_interconnect_0:dnn_accelerator_avalon_master_waitrequest -> dnn_accelerator:master_waitrequest
 	wire  [31:0] dnn_accelerator_avalon_master_readdata;                          // mm_interconnect_0:dnn_accelerator_avalon_master_readdata -> dnn_accelerator:master_readdata
 	wire  [31:0] dnn_accelerator_avalon_master_address;                           // dnn_accelerator:master_address -> mm_interconnect_0:dnn_accelerator_avalon_master_address
@@ -120,12 +120,12 @@ module tag_nios_system (
 	wire         dma_fpga_to_hps_read_master_chipselect;                          // dma_fpga_to_hps:read_chipselect -> mm_interconnect_0:dma_fpga_to_hps_read_master_chipselect
 	wire  [31:0] dma_fpga_to_hps_read_master_readdata;                            // mm_interconnect_0:dma_fpga_to_hps_read_master_readdata -> dma_fpga_to_hps:read_readdata
 	wire         dma_fpga_to_hps_read_master_waitrequest;                         // mm_interconnect_0:dma_fpga_to_hps_read_master_waitrequest -> dma_fpga_to_hps:read_waitrequest
-	wire  [17:0] dma_fpga_to_hps_read_master_address;                             // dma_fpga_to_hps:read_address -> mm_interconnect_0:dma_fpga_to_hps_read_master_address
+	wire  [27:0] dma_fpga_to_hps_read_master_address;                             // dma_fpga_to_hps:read_address -> mm_interconnect_0:dma_fpga_to_hps_read_master_address
 	wire         dma_fpga_to_hps_read_master_read;                                // dma_fpga_to_hps:read_read_n -> mm_interconnect_0:dma_fpga_to_hps_read_master_read
 	wire         dma_fpga_to_hps_read_master_readdatavalid;                       // mm_interconnect_0:dma_fpga_to_hps_read_master_readdatavalid -> dma_fpga_to_hps:read_readdatavalid
 	wire         dma_hps_to_fpga_write_master_chipselect;                         // dma_hps_to_fpga:write_chipselect -> mm_interconnect_0:dma_hps_to_fpga_write_master_chipselect
 	wire         dma_hps_to_fpga_write_master_waitrequest;                        // mm_interconnect_0:dma_hps_to_fpga_write_master_waitrequest -> dma_hps_to_fpga:write_waitrequest
-	wire  [17:0] dma_hps_to_fpga_write_master_address;                            // dma_hps_to_fpga:write_address -> mm_interconnect_0:dma_hps_to_fpga_write_master_address
+	wire  [27:0] dma_hps_to_fpga_write_master_address;                            // dma_hps_to_fpga:write_address -> mm_interconnect_0:dma_hps_to_fpga_write_master_address
 	wire   [3:0] dma_hps_to_fpga_write_master_byteenable;                         // dma_hps_to_fpga:write_byteenable -> mm_interconnect_0:dma_hps_to_fpga_write_master_byteenable
 	wire         dma_hps_to_fpga_write_master_write;                              // dma_hps_to_fpga:write_write_n -> mm_interconnect_0:dma_hps_to_fpga_write_master_write
 	wire  [31:0] dma_hps_to_fpga_write_master_writedata;                          // dma_hps_to_fpga:write_writedata -> mm_interconnect_0:dma_hps_to_fpga_write_master_writedata
@@ -145,11 +145,6 @@ module tag_nios_system (
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read;            // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_read -> jtag_uart_0:av_read_n
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write;           // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_write -> jtag_uart_0:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;       // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
-	wire         mm_interconnect_0_dma_fpga_to_hps_control_port_slave_chipselect; // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_chipselect -> dma_fpga_to_hps:dma_ctl_chipselect
-	wire  [31:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_readdata;   // dma_fpga_to_hps:dma_ctl_readdata -> mm_interconnect_0:dma_fpga_to_hps_control_port_slave_readdata
-	wire   [2:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_address;    // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_address -> dma_fpga_to_hps:dma_ctl_address
-	wire         mm_interconnect_0_dma_fpga_to_hps_control_port_slave_write;      // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_write -> dma_fpga_to_hps:dma_ctl_write_n
-	wire  [31:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_writedata;  // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_writedata -> dma_fpga_to_hps:dma_ctl_writedata
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;         // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest;      // nios2_gen2_0:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_waitrequest
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess;      // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_debugaccess -> nios2_gen2_0:debug_mem_slave_debugaccess
@@ -172,15 +167,13 @@ module tag_nios_system (
 	wire   [3:0] mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_byteenable; // mm_interconnect_0:wifi_rs232_uart_avalon_rs232_slave_byteenable -> wifi_rs232_uart:byteenable
 	wire         mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_write;      // mm_interconnect_0:wifi_rs232_uart_avalon_rs232_slave_write -> wifi_rs232_uart:write
 	wire  [31:0] mm_interconnect_0_wifi_rs232_uart_avalon_rs232_slave_writedata;  // mm_interconnect_0:wifi_rs232_uart_avalon_rs232_slave_writedata -> wifi_rs232_uart:writedata
+	wire         mm_interconnect_0_dma_fpga_to_hps_control_port_slave_chipselect; // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_chipselect -> dma_fpga_to_hps:dma_ctl_chipselect
+	wire  [31:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_readdata;   // dma_fpga_to_hps:dma_ctl_readdata -> mm_interconnect_0:dma_fpga_to_hps_control_port_slave_readdata
+	wire   [2:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_address;    // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_address -> dma_fpga_to_hps:dma_ctl_address
+	wire         mm_interconnect_0_dma_fpga_to_hps_control_port_slave_write;      // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_write -> dma_fpga_to_hps:dma_ctl_write_n
+	wire  [31:0] mm_interconnect_0_dma_fpga_to_hps_control_port_slave_writedata;  // mm_interconnect_0:dma_fpga_to_hps_control_port_slave_writedata -> dma_fpga_to_hps:dma_ctl_writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                  // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                   // mm_interconnect_0:sysid_control_slave_address -> sysid:address
-	wire         mm_interconnect_0_onchip_sram_s1_chipselect;                     // mm_interconnect_0:onchip_sram_s1_chipselect -> onchip_sram:chipselect
-	wire  [31:0] mm_interconnect_0_onchip_sram_s1_readdata;                       // onchip_sram:readdata -> mm_interconnect_0:onchip_sram_s1_readdata
-	wire  [13:0] mm_interconnect_0_onchip_sram_s1_address;                        // mm_interconnect_0:onchip_sram_s1_address -> onchip_sram:address
-	wire   [3:0] mm_interconnect_0_onchip_sram_s1_byteenable;                     // mm_interconnect_0:onchip_sram_s1_byteenable -> onchip_sram:byteenable
-	wire         mm_interconnect_0_onchip_sram_s1_write;                          // mm_interconnect_0:onchip_sram_s1_write -> onchip_sram:write
-	wire  [31:0] mm_interconnect_0_onchip_sram_s1_writedata;                      // mm_interconnect_0:onchip_sram_s1_writedata -> onchip_sram:writedata
-	wire         mm_interconnect_0_onchip_sram_s1_clken;                          // mm_interconnect_0:onchip_sram_s1_clken -> onchip_sram:clken
 	wire         mm_interconnect_0_leds_s1_chipselect;                            // mm_interconnect_0:leds_s1_chipselect -> leds:chipselect
 	wire  [31:0] mm_interconnect_0_leds_s1_readdata;                              // leds:readdata -> mm_interconnect_0:leds_s1_readdata
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                               // mm_interconnect_0:leds_s1_address -> leds:address
@@ -325,8 +318,8 @@ module tag_nios_system (
 	wire         rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> JTAG_To_FPGA_bridge:clk_reset_reset
 	wire         arm_a9_hps_h2f_reset_reset;                                      // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_003:reset_in0, rst_controller_004:reset_in0]
 	wire         system_pll_reset_source_reset;                                   // system_pll:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in0, rst_controller_003:reset_in1]
-	wire         rst_controller_001_reset_out_reset;                              // rst_controller_001:reset_out -> [bt_rs232_uart:reset, irq_mapper_002:reset, jtag_uart_0:rst_n, leds:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_sram:reset, rst_translator:in_reset, sdram_controller:reset_n, switches:reset_n, sysid:reset_n, wifi_rs232_uart:reset]
-	wire         rst_controller_001_reset_out_reset_req;                          // rst_controller_001:reset_req -> [nios2_gen2_0:reset_req, onchip_sram:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_001_reset_out_reset;                              // rst_controller_001:reset_out -> [bt_rs232_uart:reset, irq_mapper_002:reset, jtag_uart_0:rst_n, leds:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram_controller:reset_n, switches:reset_n, sysid:reset_n, wifi_rs232_uart:reset]
+	wire         rst_controller_001_reset_out_reset_req;                          // rst_controller_001:reset_req -> [nios2_gen2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_gen2_0_debug_reset_request_reset;                          // nios2_gen2_0:debug_reset_request -> rst_controller_001:reset_in0
 	wire         rst_controller_002_reset_out_reset;                              // rst_controller_002:reset_out -> [dma_fpga_to_hps:system_reset_n, mm_interconnect_0:dma_fpga_to_hps_reset_reset_bridge_in_reset_reset, mm_interconnect_2:dma_fpga_to_hps_reset_reset_bridge_in_reset_reset, wifi_reset:reset_n]
 	wire         rst_controller_003_reset_out_reset;                              // rst_controller_003:reset_out -> [dma_hps_to_fpga:system_reset_n, dnn_accelerator:rst_n, jtag_uart_arm_0:rst_n, jtag_uart_arm_1:rst_n, mm_interconnect_0:dnn_accelerator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_To_FPGA_bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:jtag_uart_arm_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:dma_hps_to_fpga_reset_reset_bridge_in_reset_reset]
@@ -702,19 +695,6 @@ module tag_nios_system (
 		.dummy_ci_port                       ()                                                            // custom_instruction_master.readra
 	);
 
-	tag_nios_system_onchip_sram onchip_sram (
-		.clk        (system_pll_sys_clk_clk),                      //   clk1.clk
-		.address    (mm_interconnect_0_onchip_sram_s1_address),    //     s1.address
-		.clken      (mm_interconnect_0_onchip_sram_s1_clken),      //       .clken
-		.chipselect (mm_interconnect_0_onchip_sram_s1_chipselect), //       .chipselect
-		.write      (mm_interconnect_0_onchip_sram_s1_write),      //       .write
-		.readdata   (mm_interconnect_0_onchip_sram_s1_readdata),   //       .readdata
-		.writedata  (mm_interconnect_0_onchip_sram_s1_writedata),  //       .writedata
-		.byteenable (mm_interconnect_0_onchip_sram_s1_byteenable), //       .byteenable
-		.reset      (rst_controller_001_reset_out_reset),          // reset1.reset
-		.reset_req  (rst_controller_001_reset_out_reset_req)       //       .reset_req
-	);
-
 	tag_nios_system_sdram_controller sdram_controller (
 		.clk            (system_pll_sys_clk_clk),                              //   clk.clk
 		.reset_n        (~rst_controller_001_reset_out_reset),                 // reset.reset_n
@@ -855,13 +835,6 @@ module tag_nios_system (
 		.nios2_gen2_0_debug_mem_slave_byteenable           (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable),       //                                            .byteenable
 		.nios2_gen2_0_debug_mem_slave_waitrequest          (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest),      //                                            .waitrequest
 		.nios2_gen2_0_debug_mem_slave_debugaccess          (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess),      //                                            .debugaccess
-		.onchip_sram_s1_address                            (mm_interconnect_0_onchip_sram_s1_address),                        //                              onchip_sram_s1.address
-		.onchip_sram_s1_write                              (mm_interconnect_0_onchip_sram_s1_write),                          //                                            .write
-		.onchip_sram_s1_readdata                           (mm_interconnect_0_onchip_sram_s1_readdata),                       //                                            .readdata
-		.onchip_sram_s1_writedata                          (mm_interconnect_0_onchip_sram_s1_writedata),                      //                                            .writedata
-		.onchip_sram_s1_byteenable                         (mm_interconnect_0_onchip_sram_s1_byteenable),                     //                                            .byteenable
-		.onchip_sram_s1_chipselect                         (mm_interconnect_0_onchip_sram_s1_chipselect),                     //                                            .chipselect
-		.onchip_sram_s1_clken                              (mm_interconnect_0_onchip_sram_s1_clken),                          //                                            .clken
 		.sdram_controller_s1_address                       (mm_interconnect_0_sdram_controller_s1_address),                   //                         sdram_controller_s1.address
 		.sdram_controller_s1_write                         (mm_interconnect_0_sdram_controller_s1_write),                     //                                            .write
 		.sdram_controller_s1_read                          (mm_interconnect_0_sdram_controller_s1_read),                      //                                            .read

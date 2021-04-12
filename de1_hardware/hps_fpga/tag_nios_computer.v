@@ -127,6 +127,8 @@ module tag_nios_computer(
 	wire wifi_reset;
 
 	assign GPIO_1[1] = KEY[0] & wifi_reset;
+	assign GPIO_1[10] = 1'b1;	// WIFI_EN
+	assign GPIO_1[21] = 1'b0;	// WIFI_UART0_RTS
 
 	assign HEX0 = 7'b1111111;
 	assign HEX1 = 7'b1111111;
@@ -159,8 +161,8 @@ module tag_nios_computer(
 		.reset_reset                     (~KEY[3]),
 		.bt_uart_RXD       				 (GPIO_1[18]),
 		.bt_uart_TXD       				 (GPIO_1[19]),
-        .wifi_uart_RXD     				 (GPIO_1[15]),
-		.wifi_uart_TXD     				 (GPIO_1[14]),
+        .wifi_uart_RXD     				 (GPIO_1[14]),
+		.wifi_uart_TXD     				 (GPIO_1[15]),
 		.wifi_reset_export               (wifi_reset),
 		.leds_export                     (LEDR),
 		.switches_export                 (SW),

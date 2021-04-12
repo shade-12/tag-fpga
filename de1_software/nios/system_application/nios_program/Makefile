@@ -143,7 +143,11 @@ ELF := nios_program.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS :=
-CXX_SRCS := main.cpp
+CXX_SRCS += main.cpp
+CXX_SRCS += BTUart.cpp
+CXX_SRCS += WiFiUart.cpp
+CXX_SRCS += dma.cpp
+CXX_SRCS += wifi_task.cpp
 ASM_SRCS :=
 
 
