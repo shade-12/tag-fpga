@@ -9,7 +9,7 @@ This project implements a custom HPS/FPGA system on DE1-SoC that accelerates the
 
 The system is created using *Qsys* in Quartus (v15.0).
 
-[HPS/FPGA High-Level Design](https://github.com/shade-12/tag-fpga/blob/main/docs/img/High_Level_Design.png?raw=true)
+![HPS/FPGA High-Level Design](https://github.com/shade-12/tag-fpga/blob/main/docs/img/High_Level_Design.png?raw=true)
 
 ### HPS
 
