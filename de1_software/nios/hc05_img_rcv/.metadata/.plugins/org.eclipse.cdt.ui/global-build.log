@@ -1,29 +1,31 @@
-22:50:32 **** Build of configuration Nios II for project bt_task ****
+22:45:16 **** Build of configuration Nios II for project bt_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/
 [BSP build complete]
 Info: Compiling BTUart.cpp to obj/default/BTUart.o
-nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/BTUart.o BTUart.cpp
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/BTUart.o BTUart.cpp
 Info: Compiling bt_task.cpp to obj/default/bt_task.o
-nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/bt_task.o bt_task.cpp
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/bt_task.o bt_task.cpp
+Info: Compiling dma.cpp to obj/default/dma.o
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/dma.o dma.cpp
 Info: Compiling main.cpp to obj/default/main.o
-nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.cpp
+nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/ -ID:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.cpp
 Info: Linking bt_task.elf
-nios2-elf-g++  -T'D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//linker.x' -msys-crt0='D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/   -Wl,-Map=bt_task.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o bt_task.elf obj/default/BTUart.o obj/default/bt_task.o obj/default/main.o -lm -msys-lib=m
-nios2-elf-insert bt_task.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x8 --timestamp 1617943199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name tag_nios_system --quartus_project_dir "d:/tag2/de1_hardware/hps_fpga" --jdi D:/tag2/de1_hardware/hps_fpga//output_files/TAG_Nios_Computer.jdi --sopcinfo D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
-Info: (bt_task.elf) 44 KBytes program size (code + initialized data).
-Info:               65525 KBytes free for stack + heap.
+nios2-elf-g++  -T'D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//linker.x' -msys-crt0='D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/  -msmallc  -Wl,-Map=bt_task.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o bt_task.elf obj/default/BTUart.o obj/default/bt_task.o obj/default/dma.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert bt_task.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x8 --timestamp 1618201335 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name tag_nios_system --quartus_project_dir "d:/tag2/de1_hardware/hps_fpga" --jdi D:/tag2/de1_hardware/hps_fpga//output_files/TAG_Nios_Computer.jdi --sopcinfo D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
+Info: (bt_task.elf) 33 KBytes program size (code + initialized data).
+Info:               65500 KBytes free for stack + heap.
 Info: Creating bt_task.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source bt_task.elf >bt_task.objdump
 [bt_task build complete]
-22:50:43 **** Build of configuration Nios II for project bt_task ****
+22:45:25 **** Build of configuration Nios II for project bt_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/
 [BSP build complete]
 [bt_task build complete]
-22:50:46 **** Incremental Build of configuration Nios II for project bt_task ****
+22:45:25 **** Incremental Build of configuration Nios II for project bt_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/

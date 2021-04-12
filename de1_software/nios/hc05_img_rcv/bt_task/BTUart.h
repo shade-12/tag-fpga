@@ -7,7 +7,7 @@
 #ifndef BTUART_H_
 #define BTUART_H_
 
-#include "terasic_includes.h"
+#include "../../src/terasic_includes.h"
 #include "altera_up_avalon_rs232.h"
 
 #define WRITE_FIFO_EMPTY 0x80

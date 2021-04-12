@@ -1,5 +1,4 @@
-obj/default/BTUart.o: BTUart.cpp BTUart.h \
- D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/terasic_includes.h \
+obj/default/BTUart.o: BTUart.cpp BTUart.h ../../src/terasic_includes.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_flash.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/alt_types.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_flash_types.h \
@@ -19,13 +18,12 @@ obj/default/BTUart.o: BTUart.cpp BTUart.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_llist.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/priv/alt_alarm.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_stdio.h \
- D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/system.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc/altera_up_avalon_rs232.h \
  D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_dev.h
 
 BTUart.h:
 
-D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/terasic_includes.h:
+../../src/terasic_includes.h:
 
 D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_flash.h:
 
@@ -64,8 +62,6 @@ D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_llist.h:
 D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/priv/alt_alarm.h:
 
 D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//HAL/inc/sys/alt_stdio.h:
-
-D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp/system.h:
 
 D:/tag2/de1_software/nios/hc05_img_rcv/bt_task_bsp//drivers/inc/altera_up_avalon_rs232.h:
 

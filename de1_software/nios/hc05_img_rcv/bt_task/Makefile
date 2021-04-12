@@ -143,9 +143,10 @@ ELF := bt_task.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS :=
+CXX_SRCS += main.cpp
 CXX_SRCS += BTUart.cpp
 CXX_SRCS += bt_task.cpp
-CXX_SRCS += main.cpp
+CXX_SRCS += dma.cpp
 ASM_SRCS :=
 
 
