@@ -1,4 +1,4 @@
-14:31:46 **** Build of configuration Nios II for project wifi_task ****
+16:03:14 **** Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
@@ -14,7 +14,7 @@ WiFiUart.cpp:53:18: warning: deprecated conversion from string constant to 'char
                   ^
 WiFiUart.cpp: In member function 'int WiFiUart::update_entry(volatile int*, volatile int*)':
 WiFiUart.cpp:75:35: warning: format '%d' expects argument of type 'int', but argument 4 has type 'volatile int*' [-Wformat=]
-  snprintf(tid_str, 8, "%d", tag_id); // covert tag_id from int to string 
+  snprintf(tid_str, 8, "%d", tag_id); // convert tag_id from int to string 
                                    ^
 WiFiUart.cpp:75:35: warning: format '%d' expects argument of type 'int', but argument 4 has type 'volatile int*' [-Wformat=]
 Info: Compiling main.cpp to obj/default/main.o
@@ -22,7 +22,7 @@ nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/wifi_post_res/wifi_t
 Info: Compiling wifi_task.cpp to obj/default/wifi_task.o
 nios2-elf-gcc -xc++ -MP -MMD -c -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/ -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED      -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/wifi_task.o wifi_task.cpp
 wifi_task.cpp: In function 'int wifi_task()':
-wifi_task.cpp:41:21: warning: 'buffer' may be used uninitialized in this function [-Wmaybe-uninitialized]
+wifi_task.cpp:45:21: warning: 'buffer' may be used uninitialized in this function [-Wmaybe-uninitialized]
          buffer[count] = WiFi_UART.read_s();
                      ^
 Info: Linking wifi_task.elf
@@ -33,13 +33,13 @@ Info:                 65427 KBytes free for stack + heap.
 Info: Creating wifi_task.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source wifi_task.elf >wifi_task.objdump
 [wifi_task build complete]
-14:31:54 **** Build of configuration Nios II for project wifi_task ****
+16:03:21 **** Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 [BSP build complete]
 [wifi_task build complete]
-14:31:56 **** Incremental Build of configuration Nios II for project wifi_task ****
+16:03:22 **** Incremental Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/

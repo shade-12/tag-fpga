@@ -83,9 +83,8 @@ int WiFiUart::update_entry(volatile int *tag_id, volatile int *result)
     write_m(command, strlen(command));
     write_s('\r');
     write_s('\n');
-    for (int i = 0;i < 7000000; i++){};
+    for (int i = 0;i < 50000; i++){};
 
-    flush();
     return 1;
 }
 

@@ -48,7 +48,7 @@ function update_db_entry(tag_id, poach_res)
         ExpressionAttributeValues = {
             [":val"] = poach_res,
         },
-        ReturnValues = "ALL_NEW"
+        ReturnValues = "NONE"
     }
 
     db:request("UpdateItem", payload)

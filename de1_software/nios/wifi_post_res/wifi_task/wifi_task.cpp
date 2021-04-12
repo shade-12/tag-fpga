@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "system.h"
 #include "WiFiUart.h"
 #include "../../src/terasic_includes.h"
@@ -37,18 +38,21 @@ int wifi_task()
     // Check if 200 is received
     int count = 0;
     char *buffer;
+
+    while (!WiFi_UART.read_ready()) {}
+
     while (WiFi_UART.read_ready()) {
         buffer[count] = WiFi_UART.read_s();
         count++;
     }
 
-	printf(buffer);
+    WiFi_UART.flush();
 	
 	if (strcmp(buffer,"200\r\n") == 0) {
-        printf("ERROR: Failed to updated database entry.\n");
-        return 0;
+        printf("UPDATE SUCCESS: Database entry updated.\n");
+        return 1;
     }
-		
-    printf("UPDATE SUCCESS: Database entry updated.\n");
-    return 1;
+	
+    printf("ERROR: Failed to updated database entry.\n");
+    return -1;
 }

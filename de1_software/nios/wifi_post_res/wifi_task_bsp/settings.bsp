@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>12-Apr-2021 1:13:39 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1618258419797</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>12-Apr-2021 3:57:55 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1618268275854</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\tag2\de1_software\nios\wifi_post_res\wifi_task_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\tag2\de1_hardware\hps_fpga\tag_nios_system.sopcinfo</SopcDesignFile>
