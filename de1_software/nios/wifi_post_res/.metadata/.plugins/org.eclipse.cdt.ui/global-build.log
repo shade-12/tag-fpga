@@ -1,4 +1,4 @@
-11:10:02 **** Build of configuration Nios II for project wifi_task ****
+13:13:59 **** Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
@@ -37,13 +37,13 @@ Info:                 65410 KBytes free for stack + heap.
 Info: Creating wifi_task.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source wifi_task.elf >wifi_task.objdump
 [wifi_task build complete]
-11:10:11 **** Build of configuration Nios II for project wifi_task ****
+13:14:08 **** Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 [BSP build complete]
 [wifi_task build complete]
-11:10:13 **** Incremental Build of configuration Nios II for project wifi_task ****
+13:14:10 **** Incremental Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/

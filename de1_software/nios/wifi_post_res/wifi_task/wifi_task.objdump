@@ -9,10 +9,10 @@ Program Header:
     LOAD off    0x00001000 vaddr 0x08000000 paddr 0x08000000 align 2**12
          filesz 0x00000020 memsz 0x00000020 flags r-x
     LOAD off    0x00001020 vaddr 0x08000020 paddr 0x08000020 align 2**12
-         filesz 0x0001b8d0 memsz 0x0001b8d0 flags r-x
-    LOAD off    0x0001c8f0 vaddr 0x0801b8f0 paddr 0x0801d574 align 2**12
+         filesz 0x0001b8c8 memsz 0x0001b8c8 flags r-x
+    LOAD off    0x0001c8e8 vaddr 0x0801b8e8 paddr 0x0801d56c align 2**12
          filesz 0x00001c84 memsz 0x00001c84 flags rw-
-    LOAD off    0x0001f1f8 vaddr 0x0801f1f8 paddr 0x0801f1f8 align 2**12
+    LOAD off    0x0001f1f0 vaddr 0x0801f1f0 paddr 0x0801f1f0 align 2**12
          filesz 0x00000000 memsz 0x00000278 flags rw-
 
 Sections:
@@ -23,70 +23,70 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .text         0001abec  08000230  08000230  00001230  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  3 .rodata       00000ad4  0801ae1c  0801ae1c  0001be1c  2**2
+  3 .rodata       00000acc  0801ae1c  0801ae1c  0001be1c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .rwdata       00001c84  0801b8f0  0801d574  0001c8f0  2**2
+  4 .rwdata       00001c84  0801b8e8  0801d56c  0001c8e8  2**2
                   CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
-  5 .bss          00000278  0801f1f8  0801f1f8  0001f1f8  2**2
+  5 .bss          00000278  0801f1f0  0801f1f0  0001f1f0  2**2
                   ALLOC, SMALL_DATA
-  6 .sdram_controller 00000000  0801f470  0801f470  0001e574  2**0
+  6 .sdram_controller 00000000  0801f468  0801f468  0001e56c  2**0
                   CONTENTS
-  7 .comment      00000023  00000000  00000000  0001e574  2**0
+  7 .comment      00000023  00000000  00000000  0001e56c  2**0
                   CONTENTS, READONLY
-  8 .debug_aranges 000012c0  00000000  00000000  0001e598  2**3
+  8 .debug_aranges 000012c0  00000000  00000000  0001e590  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   000383c4  00000000  00000000  0001f858  2**0
+  9 .debug_info   000383c4  00000000  00000000  0001f850  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 0000de89  00000000  00000000  00057c1c  2**0
+ 10 .debug_abbrev 0000de89  00000000  00000000  00057c14  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   0001193a  00000000  00000000  00065aa5  2**0
+ 11 .debug_line   0001193a  00000000  00000000  00065a9d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  000033e8  00000000  00000000  000773e0  2**2
+ 12 .debug_frame  000033e8  00000000  00000000  000773d8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    000059e3  00000000  00000000  0007a7c8  2**0
+ 13 .debug_str    000059e3  00000000  00000000  0007a7c0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00025091  00000000  00000000  000801ab  2**0
+ 14 .debug_loc    00025091  00000000  00000000  000801a3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  000a523c  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  000a5234  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00001be0  00000000  00000000  000a5250  2**3
+ 16 .debug_ranges 00001be0  00000000  00000000  000a5248  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  000abb63  2**0
+ 17 .thread_model 00000003  00000000  00000000  000abb5b  2**0
                   CONTENTS, READONLY
- 18 .cpu          0000000c  00000000  00000000  000abb66  2**0
+ 18 .cpu          0000000c  00000000  00000000  000abb5e  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  000abb72  2**0
+ 19 .qsys         00000001  00000000  00000000  000abb6a  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  000abb73  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  000abb6b  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  000abb74  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  000abb6c  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  000abb78  2**0
+ 22 .sysid_base   00000004  00000000  00000000  000abb70  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  000abb7c  2**0
+ 23 .sysid_time   00000004  00000000  00000000  000abb74  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  000abb80  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  000abb78  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  000abb8b  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  000abb83  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  000abb96  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  000abb8e  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 0000000f  00000000  00000000  000abba1  2**0
+ 27 .sopc_system_name 0000000f  00000000  00000000  000abb99  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 0000001d  00000000  00000000  000abbb0  2**0
+ 28 .quartus_project_dir 0000001d  00000000  00000000  000abba8  2**0
                   CONTENTS, READONLY
- 29 .jdi          00007b07  00000000  00000000  000abbcd  2**0
+ 29 .jdi          00007b07  00000000  00000000  000abbc5  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     002dcdb0  00000000  00000000  000b36d4  2**0
+ 30 .sopcinfo     002dcdb0  00000000  00000000  000b36cc  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 08000000 l    d  .entry	00000000 .entry
 08000020 l    d  .exceptions	00000000 .exceptions
 08000230 l    d  .text	00000000 .text
 0801ae1c l    d  .rodata	00000000 .rodata
-0801b8f0 l    d  .rwdata	00000000 .rwdata
-0801f1f8 l    d  .bss	00000000 .bss
-0801f470 l    d  .sdram_controller	00000000 .sdram_controller
+0801b8e8 l    d  .rwdata	00000000 .rwdata
+0801f1f0 l    d  .bss	00000000 .bss
+0801f468 l    d  .sdram_controller	00000000 .sdram_controller
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
 00000000 l    d  .debug_info	00000000 .debug_info
@@ -127,16 +127,16 @@ SYMBOL TABLE:
 08002228 l     F .text	000000fc critical_factorization
 08002324 l     F .text	00000374 two_way_long_needle
 00000000 l    df *ABS*	00000000 vfprintf.c
-0801b2b2 l     O .rodata	00000010 zeroes.4166
-0801b2c2 l     O .rodata	00000010 blanks.4165
+0801b2aa l     O .rodata	00000010 zeroes.4166
+0801b2ba l     O .rodata	00000010 blanks.4165
 00000000 l    df *ABS*	00000000 vfprintf.c
-0801b2d2 l     O .rodata	00000010 zeroes.4181
-0801b2e2 l     O .rodata	00000010 blanks.4180
+0801b2ca l     O .rodata	00000010 zeroes.4181
+0801b2da l     O .rodata	00000010 blanks.4180
 00000000 l    df *ABS*	00000000 vfscanf.c
-0801b2fa l     O .rodata	00000022 basefix.4098
+0801b2f2 l     O .rodata	00000022 basefix.4098
 00000000 l    df *ABS*	00000000 wsetup.c
 00000000 l    df *ABS*	00000000 ctype_.c
-0801b41d l     O .rodata	00000180 _ctype_b
+0801b415 l     O .rodata	00000180 _ctype_b
 00000000 l    df *ABS*	00000000 dtoa.c
 080084fc l     F .text	00000228 quorem
 00000000 l    df *ABS*	00000000 fflush.c
@@ -149,13 +149,13 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 fvwrite.c
 00000000 l    df *ABS*	00000000 fwalk.c
 00000000 l    df *ABS*	00000000 impure.c
-0801bcf8 l     O .rwdata	00000424 impure_data
+0801bcf0 l     O .rwdata	00000424 impure_data
 00000000 l    df *ABS*	00000000 int_errno.c
 00000000 l    df *ABS*	00000000 iswspace.c
 00000000 l    df *ABS*	00000000 locale.c
-0801c13c l     O .rwdata	00000020 lc_ctype_charset
-0801c11c l     O .rwdata	00000020 lc_message_charset
-0801c15c l     O .rwdata	00000038 lconv
+0801c134 l     O .rwdata	00000020 lc_ctype_charset
+0801c114 l     O .rwdata	00000020 lc_message_charset
+0801c154 l     O .rwdata	00000038 lconv
 00000000 l    df *ABS*	00000000 makebuf.c
 00000000 l    df *ABS*	00000000 mbrtowc.c
 00000000 l    df *ABS*	00000000 mbtowc_r.c
@@ -165,7 +165,7 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 memmove.c
 00000000 l    df *ABS*	00000000 memset.c
 00000000 l    df *ABS*	00000000 mprec.c
-0801b5c0 l     O .rodata	0000000c p05.2678
+0801b5b8 l     O .rodata	0000000c p05.2678
 00000000 l    df *ABS*	00000000 putc.c
 00000000 l    df *ABS*	00000000 mallocr.c
 00000000 l    df *ABS*	00000000 refill.c
@@ -176,21 +176,21 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 stdio.c
 00000000 l    df *ABS*	00000000 strchr.c
 00000000 l    df *ABS*	00000000 strtod.c
-0801c1a8 l     O .rwdata	00000014 fpi.2638
-0801b6f4 l     O .rodata	00000028 tinytens
-0801c194 l     O .rwdata	00000014 fpinan.2674
+0801c1a0 l     O .rwdata	00000014 fpi.2638
+0801b6ec l     O .rodata	00000028 tinytens
+0801c18c l     O .rwdata	00000014 fpinan.2674
 00000000 l    df *ABS*	00000000 strtol.c
 00000000 l    df *ABS*	00000000 strtoll_r.c
 00000000 l    df *ABS*	00000000 strtoul.c
 00000000 l    df *ABS*	00000000 strtoull_r.c
 00000000 l    df *ABS*	00000000 vfprintf.c
-0801b71c l     O .rodata	00000010 zeroes.4110
-0801b72c l     O .rodata	00000010 blanks.4109
+0801b714 l     O .rodata	00000010 zeroes.4110
+0801b724 l     O .rodata	00000010 blanks.4109
 00000000 l    df *ABS*	00000000 ungetc.c
 00000000 l    df *ABS*	00000000 vfprintf.c
 0801111c l     F .text	000000fc __sprint_r.part.0
-0801b74c l     O .rodata	00000010 blanks.4125
-0801b73c l     O .rodata	00000010 zeroes.4126
+0801b744 l     O .rodata	00000010 blanks.4125
+0801b734 l     O .rodata	00000010 zeroes.4126
 00000000 l    df *ABS*	00000000 wbuf.c
 00000000 l    df *ABS*	00000000 writer.c
 00000000 l    df *ABS*	00000000 closer.c
@@ -249,17 +249,17 @@ SYMBOL TABLE:
 08017dbc l     F .text	00000050 alt_get_errno
 00000000 l    df *ABS*	00000000 alt_release_fd.c
 00000000 l    df *ABS*	00000000 alt_sbrk.c
-0801d554 l     O .rwdata	00000004 heap_end
+0801d54c l     O .rwdata	00000004 heap_end
 00000000 l    df *ABS*	00000000 alt_write.c
 08018040 l     F .text	00000050 alt_get_errno
 00000000 l    df *ABS*	00000000 alt_sys_init.c
 08018190 l     F .text	00000038 alt_dev_reg
-0801c364 l     O .rwdata	000000a4 dma_fpga_to_hps_priv
-0801c408 l     O .rwdata	0000001c dma_fpga_to_hps_tx
-0801c424 l     O .rwdata	0000001c dma_fpga_to_hps_rx
-0801c440 l     O .rwdata	00001060 jtag_uart_0
-0801d4a0 l     O .rwdata	0000002c bt_rs232_uart
-0801d4cc l     O .rwdata	0000002c wifi_rs232_uart
+0801c35c l     O .rwdata	000000a4 dma_fpga_to_hps_priv
+0801c400 l     O .rwdata	0000001c dma_fpga_to_hps_tx
+0801c41c l     O .rwdata	0000001c dma_fpga_to_hps_rx
+0801c438 l     O .rwdata	00001060 jtag_uart_0
+0801d498 l     O .rwdata	0000002c bt_rs232_uart
+0801d4c4 l     O .rwdata	0000002c wifi_rs232_uart
 00000000 l    df *ABS*	00000000 altera_avalon_dma.c
 08018280 l     F .text	00000038 alt_dma_txchan_reg
 080182b8 l     F .text	00000038 alt_dma_rxchan_reg
@@ -303,22 +303,22 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 __atexit.c
 00000000 l    df *ABS*	00000000 __call_atexit.c
 00000000 l    df *ABS*	00000000 alt_exit.c
-0801f238 g     O .bss	00000004 alt_instruction_exception_handler
+0801f230 g     O .bss	00000004 alt_instruction_exception_handler
 08001d70 g     F .text	00000018 putchar
 080014d8 g     F .text	00000008 _ZNKSt9type_info15__is_function_pEv
 0800ca00 g     F .text	00000074 _mprec_log10
 0800caec g     F .text	0000008c __any_on
 08013928 g     F .text	00000054 _isatty_r
-0801b5cc g     O .rodata	00000028 __mprec_tinytens
+0801b5c4 g     O .rodata	00000028 __mprec_tinytens
 08017d04 g     F .text	00000078 alt_main
 08002100 g     F .text	00000090 strcpy
 08001d88 g     F .text	000000b8 _puts_r
-0801f370 g     O .bss	00000100 alt_irq
+0801f368 g     O .bss	00000100 alt_irq
 0801397c g     F .text	0000005c _lseek_r
 0800029c g     F .text	00000048 _ZN8WiFiUartD1Ev
-0801d574 g       *ABS*	00000000 __flash_rwdata_start
+0801d56c g       *ABS*	00000000 __flash_rwdata_start
 08016024 g     F .text	00000084 .hidden __eqdf2
-0801f470 g       *ABS*	00000000 __alt_heap_start
+0801f468 g       *ABS*	00000000 __alt_heap_start
 08001d2c g     F .text	0000003c printf
 08013af4 g     F .text	0000009c _wcrtomb_r
 08000a98 g     F .text	00000394 _Z13patch_dnn_resPc
@@ -328,7 +328,7 @@ SYMBOL TABLE:
 08012678 g     F .text	00000154 __swbuf_r
 08001208 g     F .text	00000010 _ZN10__cxxabiv120__si_class_type_infoD2Ev
 0800b140 g     F .text	0000007c _setlocale_r
-0801b1dc  w    O .rodata	00000025 _ZTSN10__cxxabiv120__si_class_type_infoE
+0801b1d4  w    O .rodata	00000025 _ZTSN10__cxxabiv120__si_class_type_infoE
 08000a58 g     F .text	00000040 _Z3strPVi
 0800a260 g     F .text	00000078 __sfmoreglue
 08011100 g     F .text	0000001c ungetc
@@ -338,27 +338,27 @@ SYMBOL TABLE:
 08000494 g     F .text	000001a4 _ZN8WiFiUart12send_commandEPKc
 0800b8b0 g     F .text	0000015c memmove
 0800a3f0 g     F .text	00000018 _cleanup
-0801d510 g     O .rwdata	00000004 req
+0801d508 g     O .rwdata	00000004 req
 0800bb30 g     F .text	000000a8 _Balloc
 08000384 g     F .text	00000110 _ZN8WiFiUart7connectEv
 080160a8 g     F .text	000000e0 .hidden __gtdf2
 0801a848 g     F .text	00000020 altera_nios2_gen2_irq_init
 00000000  w      *UND*	00000000 __errno
-0801f1f8 g     O .bss	00000004 tagid_str
+0801f1f0 g     O .bss	00000004 tagid_str
 08000000 g     F .entry	0000000c __reset
 08000020 g       *ABS*	00000000 __flash_exceptions_start
 08012c60 g     F .text	00000058 _fstat_r
-0801f210 g     O .bss	00000004 errno
+0801f208 g     O .bss	00000004 errno
 0800835c g     F .text	00000024 __svfscanf
 0800d5d4 g     F .text	00000008 __seofread
 08000000 g       *ABS*	00000000 __alt_mem_sdram_controller
 0800fcd4 g     F .text	000011d0 ___svfiprintf_internal_r
-0801f224 g     O .bss	00000004 alt_argv
-080254f8 g       *ABS*	00000000 _gp
-0801f23c g     O .bss	0000000c WiFi_UART
+0801f21c g     O .bss	00000004 alt_argv
+080254f0 g       *ABS*	00000000 _gp
+0801f234 g     O .bss	0000000c WiFi_UART
 0801af80  w    O .rodata	0000000a _ZTS8WiFiUart
 08019f48 g     F .text	00000054 alt_dma_txchan_open
-0801c1e4 g     O .rwdata	00000180 alt_fd_list
+0801c1dc g     O .rwdata	00000180 alt_fd_list
 08001d68 g     F .text	00000008 _putchar_r
 0801a054 g     F .text	00000090 alt_find_dev
 0800b778 g     F .text	00000138 memcpy
@@ -385,15 +385,15 @@ SYMBOL TABLE:
 08014bec g     F .text	00000008 .hidden __udivsi3
 08017a48 g     F .text	000000ac isatty
 0800b110 g     F .text	00000030 iswspace
-0801b61c g     O .rodata	000000c8 __mprec_tens
+0801b614 g     O .rodata	000000c8 __mprec_tens
 0800b1bc g     F .text	0000000c __locale_charset
 08014d50 g     F .text	000000b8 .hidden __lesf2
 08013e00 g     F .text	00000074 .hidden __fixunsdfsi
 0800026c g     F .text	00000030 _ZN8WiFiUartC2Ev
-0801f20c g     O .bss	00000004 __malloc_top_pad
+0801f204 g     O .bss	00000004 __malloc_top_pad
 0800026c g     F .text	00000030 _ZN8WiFiUartC1Ev
 0800f794 g     F .text	00000024 strtoul
-0801d530 g     O .rwdata	00000004 __mb_cur_max
+0801d528 g     O .rwdata	00000004 __mb_cur_max
 0800b1ec g     F .text	0000000c _localeconv_r
 080002e4 g     F .text	00000038 _ZN8WiFiUartD0Ev
 0800f7b8 g     F .text	00000354 _strtoull_r
@@ -401,72 +401,72 @@ SYMBOL TABLE:
 0800aafc g     F .text	000004a4 __sfvwrite_r
 0800107c g     F .text	000000b8 _ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
 08001e54 g     F .text	00000054 _sbrk_r
-0801b24c  w    O .rodata	00000020 _ZTVSt9type_info
+0801b244  w    O .rodata	00000020 _ZTVSt9type_info
 080139d8 g     F .text	0000005c _read_r
-0801d54c g     O .rwdata	00000004 alt_max_fd
+0801d544 g     O .rwdata	00000004 alt_max_fd
 080199a8 g     F .text	00000044 alt_up_rs232_check_parity
 08012970 g     F .text	00000100 _fclose_r
 0800a074 g     F .text	00000030 fflush
-0801f208 g     O .bss	00000004 __malloc_max_sbrked_mem
+0801f200 g     O .bss	00000004 __malloc_max_sbrked_mem
 0801a258 g     F .text	000001b0 alt_irq_register
 08014e08 g     F .text	0000089c .hidden __adddf3
 08014c24 g     F .text	00000074 .hidden __nesf2
 080182f0 g     F .text	000000f4 alt_avalon_dma_launch_bidir
-0801b210  w    O .rodata	0000002c _ZTVN10__cxxabiv120__si_class_type_infoE
+0801b208  w    O .rodata	0000002c _ZTVN10__cxxabiv120__si_class_type_infoE
 0800029c g     F .text	00000048 _ZN8WiFiUartD2Ev
 0800c704 g     F .text	0000011c __b2d
-0801d4f8  w    O .rwdata	00000008 _ZTI8WiFiUart
+0801d4f0  w    O .rwdata	00000008 _ZTI8WiFiUart
 08019ea4 g     F .text	00000054 alt_dma_rxchan_open
 080144b4 g     F .text	0000061c .hidden __umoddi3
 08017c28 g     F .text	000000dc lseek
 08001010 g     F .text	0000006c _ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
 08001204 g     F .text	00000004 _ZdlPv
 0801af70  w    O .rodata	00000010 _ZTV8WiFiUart
-0801d528 g     O .rwdata	00000004 _global_impure_ptr
+0801d520 g     O .rwdata	00000004 _global_impure_ptr
 0800cce0 g     F .text	000005a0 _realloc_r
-0801f470 g       *ABS*	00000000 __bss_end
+0801f468 g       *ABS*	00000000 __bss_end
 0801a744 g     F .text	00000104 alt_tick
-0801f270 g     O .bss	00000100 __hexdig
+0801f268 g     O .bss	00000100 __hexdig
 08013e74 g     F .text	00000640 .hidden __udivdi3
 08012a84 g     F .text	00000184 _fputwc_r
-0801b5f4 g     O .rodata	00000028 __mprec_bigtens
+0801b5ec g     O .rodata	00000028 __mprec_bigtens
 0800bd3c g     F .text	00000104 __s2b
 080174fc g     F .text	000000a4 .hidden __floatunsidf
 0800c4ac g     F .text	00000060 __mcmp
-0801f1fc g     O .bss	00000004 rid_str
+0801f1f4 g     O .bss	00000004 rid_str
 0800a428 g     F .text	00000018 __fp_lock_all
 0801a6ac g     F .text	00000098 alt_alarm_stop
 0800086c g     F .text	00000060 _ZN8WiFiUart6read_sEv
 0800f1b0 g     F .text	00000024 strtol
-0801f22c g     O .bss	00000004 alt_irq_active
+0801f224 g     O .bss	00000004 alt_irq_active
 080009a4 g     F .text	000000b4 _Z9wifi_taskv
 080000fc g     F .exceptions	000000d4 alt_irq_handler
-0801c1bc g     O .rwdata	00000028 alt_dev_null
-0801b180  w    O .rodata	00000022 _ZTSN10__cxxabiv117__class_type_infoE
+0801c1b4 g     O .rwdata	00000028 alt_dev_null
+0801b178  w    O .rodata	00000022 _ZTSN10__cxxabiv117__class_type_infoE
 08019d44 g     F .text	0000001c alt_dcache_flush_all
 0800be40 g     F .text	00000068 __hi0bits
 080173a4 g     F .text	00000088 .hidden __fixdfsi
 0800ee28 g     F .text	0000001c strtod
-0801d574 g       *ABS*	00000000 __ram_rwdata_end
+0801d56c g       *ABS*	00000000 __ram_rwdata_end
 080014cc g     F .text	00000004 _ZNSt9type_infoD1Ev
-0801d544 g     O .rwdata	00000008 alt_dev_list
+0801d53c g     O .rwdata	00000008 alt_dev_list
 08018a20 g     F .text	00000074 alt_avalon_dma_space
 08018090 g     F .text	00000100 write
 0800cb78 g     F .text	000000a0 _putc_r
 080014e8 g     F .text	00000004 _ZNSt9type_infoD0Ev
 08014c98 g     F .text	000000b8 .hidden __gtsf2
-0801b8f0 g       *ABS*	00000000 __ram_rodata_end
+0801b8e8 g       *ABS*	00000000 __ram_rodata_end
 08017940 g     F .text	000000b8 fstat
 08019b30 g     F .text	00000094 alt_up_rs232_write_fd
 08016188 g     F .text	000000e0 .hidden __ledf2
 08001fd4 g     F .text	00000088 strcat
 0800c224 g     F .text	00000140 __pow5mult
 08011230 g     F .text	00001424 ___vfiprintf_internal_r
-0801f21c g     O .bss	00000004 __nlocale_changed
+0801f214 g     O .bss	00000004 __nlocale_changed
 08014bf4 g     F .text	00000008 .hidden __umodsi3
 080014e0 g     F .text	00000008 _ZNKSt9type_info11__do_upcastEPKN10__cxxabiv117__class_type_infoEPPv
 08001ee4 g     F .text	0000002c _scanf_r
-0801f470 g       *ABS*	00000000 end
+0801f468 g       *ABS*	00000000 end
 08018f98 g     F .text	000000b8 altera_avalon_jtag_uart_init
 080001d0 g     F .exceptions	00000060 alt_instruction_exception_entry
 08001134 g     F .text	000000d0 _ZNK10__cxxabiv117__class_type_info12__do_dyncastEiNS0_10__sub_kindEPKS0_PKvS3_S5_RNS0_16__dyncast_resultE
@@ -483,16 +483,16 @@ SYMBOL TABLE:
 0800b1c8 g     F .text	00000010 __locale_mb_cur_max
 08018a94 g     F .text	00000138 alt_avalon_dma_send
 0801ac4c g     F .text	00000194 __call_exitprocs
-0801d560 g     O .rwdata	00000008 alt_dma_txchan_list
-0801f218 g     O .bss	00000004 __mlocale_changed
-0801d51c g     O .rwdata	00000004 __malloc_sbrk_base
+0801d558 g     O .rwdata	00000008 alt_dma_txchan_list
+0801f210 g     O .bss	00000004 __mlocale_changed
+0801d514 g     O .rwdata	00000004 __malloc_sbrk_base
 08000230 g     F .text	0000003c _start
-0801f230 g     O .bss	00000004 _alt_tick_rate
+0801f228 g     O .bss	00000004 _alt_tick_rate
 08002698 g     F .text	00000378 strstr
 0800f1d4 g     F .text	00000314 _strtoll_r
-0801b23c  w    O .rodata	0000000d _ZTSSt9type_info
+0801b234  w    O .rodata	0000000d _ZTSSt9type_info
 0800c364 g     F .text	00000148 __lshift
-0801f234 g     O .bss	00000004 _alt_nticks
+0801f22c g     O .bss	00000004 _alt_nticks
 08017e0c g     F .text	00000104 read
 080181fc g     F .text	00000084 alt_sys_init
 0800fb0c g     F .text	000001c8 __ssprint_r
@@ -503,9 +503,9 @@ SYMBOL TABLE:
 0800bf94 g     F .text	00000290 __multiply
 08019300 g     F .text	00000068 altera_avalon_jtag_uart_close
 08014bfc g     F .text	00000028 .hidden __mulsi3
-0801b8f0 g       *ABS*	00000000 __ram_rwdata_start
+0801b8e8 g       *ABS*	00000000 __ram_rwdata_start
 0801ae1c g       *ABS*	00000000 __ram_rodata_start
-0801f248 g     O .bss	00000028 __malloc_current_mallinfo
+0801f240 g     O .bss	00000028 __malloc_current_mallinfo
 08014c24 g     F .text	00000074 .hidden __eqsf2
 0800c820 g     F .text	0000013c __d2b
 080014cc g     F .text	00000004 _ZNSt9type_infoD2Ev
@@ -517,7 +517,7 @@ SYMBOL TABLE:
 08012844 g     F .text	00000054 _close_r
 0800b6fc g     F .text	0000007c memcmp
 08018ef4 g     F .text	00000050 altera_avalon_jtag_uart_close_fd
-0801f470 g       *ABS*	00000000 __alt_stack_base
+0801f468 g       *ABS*	00000000 __alt_stack_base
 08018f44 g     F .text	00000054 altera_avalon_jtag_uart_ioctl_fd
 08001208 g     F .text	00000010 _ZN10__cxxabiv120__si_class_type_infoD1Ev
 080083cc g     F .text	00000130 __swsetup_r
@@ -525,7 +525,7 @@ SYMBOL TABLE:
 0800a2d8 g     F .text	00000118 __sfp
 0800ca74 g     F .text	00000078 __copybits
 080014d0 g     F .text	00000008 _ZNKSt9type_info14__is_pointer_pEv
-0801b8f0 g     O .rwdata	00000408 __malloc_av_
+0801b8e8 g     O .rwdata	00000408 __malloc_av_
 0800a424 g     F .text	00000004 __sinit_lock_release
 08016268 g     F .text	0000086c .hidden __muldf3
 0800d580 g     F .text	00000054 __sread
@@ -536,40 +536,40 @@ SYMBOL TABLE:
 08017d7c g     F .text	00000020 __malloc_lock
 08017f90 g     F .text	000000b0 sbrk
 08002a10 g     F .text	00002070 ___svfprintf_internal_r
-0801b1b0  w    O .rodata	0000002c _ZTVN10__cxxabiv117__class_type_infoE
+0801b1a8  w    O .rodata	0000002c _ZTVN10__cxxabiv117__class_type_infoE
 08009e4c g     F .text	00000228 _fflush_r
 08012898 g     F .text	000000d8 _calloc_r
 08000638 g     F .text	0000010c _ZN8WiFiUart9send_dataEPKci
-0801f1f8 g       *ABS*	00000000 __bss_start
+0801f1f0 g       *ABS*	00000000 __bss_start
 0800ba0c g     F .text	00000124 memset
 08000960 g     F .text	00000044 main
 080188a0 g     F .text	00000048 alt_avalon_dma_rx_ioctl
-0801d504 g     O .rwdata	00000004 rid
-0801f228 g     O .bss	00000004 alt_envp
-0801f204 g     O .bss	00000004 __malloc_max_total_mem
+0801d4fc g     O .rwdata	00000004 rid
+0801f220 g     O .bss	00000004 alt_envp
+0801f1fc g     O .bss	00000004 __malloc_max_total_mem
 08018e94 g     F .text	00000060 altera_avalon_jtag_uart_write_fd
 080127cc g     F .text	0000001c __swbuf
 08014d50 g     F .text	000000b8 .hidden __ltsf2
 0800a458 g     F .text	00000250 _fread_r
 0800d6b4 g     F .text	00000008 __sclose
 0c000000 g       *ABS*	00000000 __alt_heap_limit
-0801d500 g     O .rwdata	00000004 tagid
+0801d4f8 g     O .rwdata	00000004 tagid
 08012a70 g     F .text	00000014 fclose
 0800ef48 g     F .text	00000268 _strtol_r
 080175a0 g     F .text	00000198 .hidden __truncdfsf2
 08008724 g     F .text	00001728 _dtoa_r
 08001558 g     F .text	000007a8 _malloc_r
 08013c68 g     F .text	00000030 __ascii_wctomb
-0801d550 g     O .rwdata	00000004 alt_errno
+0801d548 g     O .rwdata	00000004 alt_errno
 08010ea4 g     F .text	000000d4 __submore
-0801b1a4  w    O .rodata	0000000c _ZTIN10__cxxabiv117__class_type_infoE
+0801b19c  w    O .rodata	0000000c _ZTIN10__cxxabiv117__class_type_infoE
 0800afa0 g     F .text	000000b8 _fwalk
 0800b5b8 g     F .text	0000005c _mbtowc_r
 0800cc18 g     F .text	000000c8 putc
 08014b3c g     F .text	00000054 .hidden __divsi3
 0800a6e8 g     F .text	00000124 _malloc_trim_r
 0801ae18 g       *ABS*	00000000 __CTOR_END__
-0801d50c g     O .rwdata	00000004 server_endpoint
+0801d504 g     O .rwdata	00000004 server_endpoint
 0800205c g     F .text	000000a4 strcmp
 0801ae1c g       *ABS*	00000000 __flash_rodata_start
 0801ae18 g       *ABS*	00000000 __DTOR_LIST__
@@ -579,18 +579,18 @@ SYMBOL TABLE:
 08017f10 g     F .text	00000080 alt_release_fd
 08001218 g     F .text	00000034 _ZN10__cxxabiv120__si_class_type_infoD0Ev
 08001f68 g     F .text	0000006c sprintf
-0801b778 g     O .rodata	00000100 .hidden __clz_tab
-0801f214 g     O .bss	00000004 _PathLocale
+0801b770 g     O .rodata	00000100 .hidden __clz_tab
+0801f20c g     O .bss	00000004 _PathLocale
 0800ee44 g     F .text	00000104 strtof
 0801aaec g     F .text	00000014 atexit
 08014c98 g     F .text	000000b8 .hidden __gesf2
-0801d508 g     O .rwdata	00000004 result
+0801d500 g     O .rwdata	00000004 result
 080127e8 g     F .text	0000005c _write_r
 0800b1f8 g     F .text	0000001c setlocale
 08001ea8 g     F .text	0000003c scanf
 0800d578 g     F .text	00000008 nanf
-0801d52c g     O .rwdata	00000004 _impure_ptr
-0801f220 g     O .bss	00000004 alt_argc
+0801d524 g     O .rwdata	00000004 _impure_ptr
+0801f218 g     O .bss	00000004 alt_argc
 0800b3d8 g     F .text	000000ac _mbrtowc_r
 08019ff8 g     F .text	0000005c _do_dtors
 0800b1e4 g     F .text	00000008 __locale_cjk_lang
@@ -600,59 +600,59 @@ SYMBOL TABLE:
 0800b574 g     F .text	00000044 __ascii_mbtowc
 0800c6a4 g     F .text	00000060 __ulp
 0800a440 g     F .text	00000018 __fp_unlock_all
-0801d53c g     O .rwdata	00000008 alt_fs_list
+0801d534 g     O .rwdata	00000008 alt_fs_list
 08019878 g     F .text	00000058 alt_up_rs232_enable_read_interrupt
 080199ec g     F .text	00000040 alt_up_rs232_write_data
 08000fcc g     F .text	00000010 _ZN10__cxxabiv117__class_type_infoD2Ev
 08000020 g       *ABS*	00000000 __ram_exceptions_start
 0800b214 g     F .text	0000000c localeconv
 08012db8 g     F .text	00000084 __hexdig_init
-0801b204  w    O .rodata	0000000c _ZTIN10__cxxabiv120__si_class_type_infoE
-0801d574 g       *ABS*	00000000 _edata
+0801b1fc  w    O .rodata	0000000c _ZTIN10__cxxabiv120__si_class_type_infoE
+0801d56c g       *ABS*	00000000 _edata
 08000744 g     F .text	00000070 _ZN8WiFiUart4getsEPci
-0801f470 g       *ABS*	00000000 _end
+0801f468 g       *ABS*	00000000 _end
 08000230 g       *ABS*	00000000 __ram_exceptions_end
 080082f4 g     F .text	00000068 vfscanf
 08019368 g     F .text	000000ec altera_avalon_jtag_uart_ioctl
 0800d5dc g     F .text	0000007c __swrite
-0801d520 g     O .rwdata	00000004 __malloc_trim_threshold
+0801d518 g     O .rwdata	00000004 __malloc_trim_threshold
 0800b1d8 g     F .text	0000000c __locale_msgcharset
 0801ab00 g     F .text	00000038 exit
 0800b058 g     F .text	000000b8 _fwalk_reent
 080013ac g     F .text	0000009c _ZNK10__cxxabiv120__si_class_type_info20__do_find_public_srcEiPKvPKNS_17__class_type_infoES2_
 0800c50c g     F .text	00000198 __mdiff
 08014b90 g     F .text	0000005c .hidden __modsi3
-0801d524 g     O .rwdata	00000004 __ctype_ptr__
+0801d51c g     O .rwdata	00000004 __ctype_ptr__
 0c000000 g       *ABS*	00000000 __alt_data_end
 08000020 g     F .exceptions	00000000 alt_exception
 0800a41c g     F .text	00000004 __sfp_lock_release
 0800d4b8 g     F .text	000000c0 __sccl
-0801b31c g     O .rodata	00000101 _ctype_
-0801d534 g     O .rwdata	00000004 __mbtowc
+0801b314 g     O .rodata	00000101 _ctype_
+0801d52c g     O .rwdata	00000004 __mbtowc
 0801ade0 g     F .text	00000034 _exit
 08019c04 g     F .text	00000140 alt_alarm_start
 08013cf4 g     F .text	0000010c .hidden __muldi3
 0800b220 g     F .text	000001b8 __smakebuf_r
 08002190 g     F .text	00000098 strlen
-0801d514  w    O .rwdata	00000008 _ZTISt9type_info
+0801d50c  w    O .rwdata	00000008 _ZTISt9type_info
 0801a54c g     F .text	00000160 open
 080160a8 g     F .text	000000e0 .hidden __gedf2
 08012e3c g     F .text	00000858 __gethex
-0801d538 g     O .rwdata	00000004 __wctomb
-0801f200 g     O .bss	00000004 result_str
+0801d530 g     O .rwdata	00000004 __wctomb
+0801f1f8 g     O .bss	00000004 result_str
 08011218 g     F .text	00000018 __sprint_r
 0801a0e4 g     F .text	0000001c alt_icache_flush_all
 0800d6bc g     F .text	00000164 strchr
-0801d568 g     O .rwdata	00000004 alt_priority_mask
+0801d560 g     O .rwdata	00000004 alt_priority_mask
 08006b7c g     F .text	00000024 __vfprintf_internal
 08013c98 g     F .text	0000005c _wctomb_r
 080188e8 g     F .text	00000138 alt_avalon_dma_prepare
 08016ad4 g     F .text	000008d0 .hidden __subdf3
-0801d558 g     O .rwdata	00000008 alt_dma_rxchan_list
+0801d550 g     O .rwdata	00000008 alt_dma_rxchan_list
 0800bea8 g     F .text	000000b0 __lo0bits
 08006ba0 g     F .text	00001754 __svfscanf_r
 0800031c g     F .text	00000068 _ZN8WiFiUart4openEPKc
-0801d56c g     O .rwdata	00000008 alt_alarm_list
+0801d564 g     O .rwdata	00000008 alt_alarm_list
 08010f78 g     F .text	00000188 _ungetc_r
 08019f9c g     F .text	0000005c _do_ctors
 0801992c g     F .text	00000040 alt_up_rs232_get_used_space_in_read_FIFO
@@ -937,13 +937,13 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
 #else
         alt_irq[i].handler(alt_irq[i].context, i); 
  800013c:	008200b4 	movhi	r2,2050
- 8000140:	10bcdc04 	addi	r2,r2,-3216
+ 8000140:	10bcda04 	addi	r2,r2,-3224
  8000144:	e0fffd17 	ldw	r3,-12(fp)
  8000148:	180690fa 	slli	r3,r3,3
  800014c:	10c5883a 	add	r2,r2,r3
  8000150:	10c00017 	ldw	r3,0(r2)
  8000154:	008200b4 	movhi	r2,2050
- 8000158:	10bcdc04 	addi	r2,r2,-3216
+ 8000158:	10bcda04 	addi	r2,r2,-3224
  800015c:	e13ffd17 	ldw	r4,-12(fp)
  8000160:	200890fa 	slli	r4,r4,3
  8000164:	1105883a 	add	r2,r2,r4
@@ -1076,7 +1076,7 @@ Disassembly of section .text:
     movhi gp, %hi(_gp)
  8000238:	068200b4 	movhi	gp,2050
     ori gp, gp, %lo(_gp)
- 800023c:	d6953e14 	ori	gp,gp,21752
+ 800023c:	d6953c14 	ori	gp,gp,21744
  */
 #ifndef ALT_SIM_OPTIMIZE
     /* Log that the BSS is about to be cleared. */
@@ -1085,12 +1085,12 @@ Disassembly of section .text:
     movhi r2, %hi(__bss_start)
  8000240:	00820074 	movhi	r2,2049
     ori r2, r2, %lo(__bss_start)
- 8000244:	10bc7e14 	ori	r2,r2,61944
+ 8000244:	10bc7c14 	ori	r2,r2,61936
 
     movhi r3, %hi(__bss_end)
  8000248:	00c20074 	movhi	r3,2049
     ori r3, r3, %lo(__bss_end)
- 800024c:	18fd1c14 	ori	r3,r3,62576
+ 800024c:	18fd1a14 	ori	r3,r3,62568
 
     beq r2, r3, 1f
  8000250:	10c00326 	beq	r2,r3,8000260 <_start+0x30>
@@ -1850,13 +1850,13 @@ int main()
  8000964:	dfc00115 	stw	ra,4(sp)
  8000968:	df000015 	stw	fp,0(sp)
  800096c:	d839883a 	mov	fp,sp
-  printf("NIOS II SOFTWARE APPLICATION: BLUETOOTH TEST\n");
+  printf("NIOS II SOFTWARE APPLICATION: WIFI TEST\n");
  8000970:	010200b4 	movhi	r4,2050
  8000974:	212be304 	addi	r4,r4,-20596
  8000978:	8001e400 	call	8001e40 <puts>
   printf("===========================================\n\n");
  800097c:	010200b4 	movhi	r4,2050
- 8000980:	212bef04 	addi	r4,r4,-20548
+ 8000980:	212bed04 	addi	r4,r4,-20556
  8000984:	8001e400 	call	8001e40 <puts>
 
   wifi_task();
@@ -1883,14 +1883,14 @@ int wifi_task()
  80009b0:	df001b04 	addi	fp,sp,108
     int open_success = WiFi_UART.open(WIFI_RS232_UART_NAME);
  80009b4:	010200b4 	movhi	r4,2050
- 80009b8:	213c8f04 	addi	r4,r4,-3524
+ 80009b8:	213c8d04 	addi	r4,r4,-3532
  80009bc:	014200b4 	movhi	r5,2050
- 80009c0:	296bfb04 	addi	r5,r5,-20500
+ 80009c0:	296bf904 	addi	r5,r5,-20508
  80009c4:	800031c0 	call	800031c <_ZN8WiFiUart4openEPKc>
  80009c8:	e0bfe515 	stw	r2,-108(fp)
     WiFi_UART.flush();
  80009cc:	010200b4 	movhi	r4,2050
- 80009d0:	213c8f04 	addi	r4,r4,-3524
+ 80009d0:	213c8d04 	addi	r4,r4,-3532
  80009d4:	80009140 	call	8000914 <_ZN8WiFiUart5flushEv>
 
     if (!open_success) {
@@ -1898,7 +1898,7 @@ int wifi_task()
  80009dc:	1000051e 	bne	r2,zero,80009f4 <_Z9wifi_taskv+0x50>
         printf("OPEN ERROR: RS232 UART port fail to open.\n");
  80009e0:	010200b4 	movhi	r4,2050
- 80009e4:	212c0104 	addi	r4,r4,-20476
+ 80009e4:	212bff04 	addi	r4,r4,-20484
  80009e8:	8001e400 	call	8001e40 <puts>
         return 0;
  80009ec:	0005883a 	mov	r2,zero
@@ -1907,7 +1907,7 @@ int wifi_task()
 
     int connect_success = WiFi_UART.connect();
  80009f4:	010200b4 	movhi	r4,2050
- 80009f8:	213c8f04 	addi	r4,r4,-3524
+ 80009f8:	213c8d04 	addi	r4,r4,-3532
  80009fc:	80003840 	call	8000384 <_ZN8WiFiUart7connectEv>
  8000a00:	e0bfe615 	stw	r2,-104(fp)
 
@@ -1931,7 +1931,7 @@ int wifi_task()
             printf("Response: %s\n", str);
  8000a2c:	e0bfe704 	addi	r2,fp,-100
  8000a30:	010200b4 	movhi	r4,2050
- 8000a34:	212c0c04 	addi	r4,r4,-20432
+ 8000a34:	212c0a04 	addi	r4,r4,-20440
  8000a38:	100b883a 	mov	r5,r2
  8000a3c:	8001d2c0 	call	8001d2c <printf>
     }
@@ -1961,7 +1961,7 @@ char * str(volatile int *num) {
     sprintf(snum, "%i", num);
  8000a6c:	e13ffd04 	addi	r4,fp,-12
  8000a70:	014200b4 	movhi	r5,2050
- 8000a74:	296c4d04 	addi	r5,r5,-20172
+ 8000a74:	296c4b04 	addi	r5,r5,-20180
  8000a78:	e1bfff17 	ldw	r6,-4(fp)
  8000a7c:	8001f680 	call	8001f68 <sprintf>
     return snum;
@@ -2106,13 +2106,13 @@ char *patch_dnn_res(char *str)
  8000c4c:	e0ffe504 	addi	r3,fp,-108
  8000c50:	1809883a 	mov	r4,r3
  8000c54:	014200b4 	movhi	r5,2050
- 8000c58:	296c4e04 	addi	r5,r5,-20168
+ 8000c58:	296c4c04 	addi	r5,r5,-20176
  8000c5c:	100d883a 	mov	r6,r2
  8000c60:	8001f680 	call	8001f68 <sprintf>
         success = WiFi_UART.send_command(cmd_buffer);
  8000c64:	e0bfe504 	addi	r2,fp,-108
  8000c68:	010200b4 	movhi	r4,2050
- 8000c6c:	213c8f04 	addi	r4,r4,-3524
+ 8000c6c:	213c8d04 	addi	r4,r4,-3532
  8000c70:	100b883a 	mov	r5,r2
  8000c74:	80004940 	call	8000494 <_ZN8WiFiUart12send_commandEPKc>
  8000c78:	1004c03a 	cmpne	r2,r2,zero
@@ -2128,13 +2128,13 @@ char *patch_dnn_res(char *str)
  8000c94:	e0bfe504 	addi	r2,fp,-108
  8000c98:	1009883a 	mov	r4,r2
  8000c9c:	014200b4 	movhi	r5,2050
- 8000ca0:	296c5504 	addi	r5,r5,-20140
+ 8000ca0:	296c5304 	addi	r5,r5,-20148
  8000ca4:	180d883a 	mov	r6,r3
  8000ca8:	8001f680 	call	8001f68 <sprintf>
         success = WiFi_UART.send_command(cmd_buffer);
  8000cac:	e0bfe504 	addi	r2,fp,-108
  8000cb0:	010200b4 	movhi	r4,2050
- 8000cb4:	213c8f04 	addi	r4,r4,-3524
+ 8000cb4:	213c8d04 	addi	r4,r4,-3532
  8000cb8:	100b883a 	mov	r5,r2
  8000cbc:	80004940 	call	8000494 <_ZN8WiFiUart12send_commandEPKc>
  8000cc0:	1004c03a 	cmpne	r2,r2,zero
@@ -2147,7 +2147,7 @@ char *patch_dnn_res(char *str)
  8000cd0:	e13eea17 	ldw	r4,-1112(fp)
  8000cd4:	80021900 	call	8002190 <strlen>
  8000cd8:	010200b4 	movhi	r4,2050
- 8000cdc:	213c8f04 	addi	r4,r4,-3524
+ 8000cdc:	213c8d04 	addi	r4,r4,-3532
  8000ce0:	e17eea17 	ldw	r5,-1112(fp)
  8000ce4:	100d883a 	mov	r6,r2
  8000ce8:	80006380 	call	8000638 <_ZN8WiFiUart9send_dataEPKci>
@@ -2166,7 +2166,7 @@ char *patch_dnn_res(char *str)
  8000d00:	0080fa04 	movi	r2,1000
  8000d04:	e0feeb04 	addi	r3,fp,-1108
  8000d08:	010200b4 	movhi	r4,2050
- 8000d0c:	213c8f04 	addi	r4,r4,-3524
+ 8000d0c:	213c8d04 	addi	r4,r4,-3532
  8000d10:	180b883a 	mov	r5,r3
  8000d14:	100d883a 	mov	r6,r2
  8000d18:	80007440 	call	8000744 <_ZN8WiFiUart4getsEPci>
@@ -2174,7 +2174,7 @@ char *patch_dnn_res(char *str)
  8000d1c:	e0beeb04 	addi	r2,fp,-1108
  8000d20:	1009883a 	mov	r4,r2
  8000d24:	014200b4 	movhi	r5,2050
- 8000d28:	296c5904 	addi	r5,r5,-20124
+ 8000d28:	296c5704 	addi	r5,r5,-20132
  8000d2c:	80026980 	call	8002698 <strstr>
  8000d30:	10002e26 	beq	r2,zero,8000dec <_Z13patch_dnn_resPc+0x354>
                 length = strlen(buffer);
@@ -2191,7 +2191,7 @@ char *patch_dnn_res(char *str)
  8000d54:	00c0fa04 	movi	r3,1000
  8000d58:	1885c83a 	sub	r2,r3,r2
  8000d5c:	010200b4 	movhi	r4,2050
- 8000d60:	213c8f04 	addi	r4,r4,-3524
+ 8000d60:	213c8d04 	addi	r4,r4,-3532
  8000d64:	100d883a 	mov	r6,r2
  8000d68:	80007440 	call	8000744 <_ZN8WiFiUart4getsEPci>
                     if (strcmp(buffer + length, "\r\n") == 0)
@@ -2200,7 +2200,7 @@ char *patch_dnn_res(char *str)
  8000d74:	1885883a 	add	r2,r3,r2
  8000d78:	1009883a 	mov	r4,r2
  8000d7c:	014200b4 	movhi	r5,2050
- 8000d80:	296c5b04 	addi	r5,r5,-20116
+ 8000d80:	296c5904 	addi	r5,r5,-20124
  8000d84:	800205c0 	call	800205c <strcmp>
  8000d88:	10000e1e 	bne	r2,zero,8000dc4 <_Z13patch_dnn_resPc+0x32c>
                         break;
@@ -2214,14 +2214,14 @@ char *patch_dnn_res(char *str)
         WiFi_UART.gets(buffer, 9);
  8000d94:	e0beeb04 	addi	r2,fp,-1108
  8000d98:	010200b4 	movhi	r4,2050
- 8000d9c:	213c8f04 	addi	r4,r4,-3524
+ 8000d9c:	213c8d04 	addi	r4,r4,-3532
  8000da0:	100b883a 	mov	r5,r2
  8000da4:	01800244 	movi	r6,9
  8000da8:	80007440 	call	8000744 <_ZN8WiFiUart4getsEPci>
         printf("Response: %s\n", buffer);
  8000dac:	e0beeb04 	addi	r2,fp,-1108
  8000db0:	010200b4 	movhi	r4,2050
- 8000db4:	212c0c04 	addi	r4,r4,-20432
+ 8000db4:	212c0a04 	addi	r4,r4,-20440
  8000db8:	100b883a 	mov	r5,r2
  8000dbc:	8001d2c0 	call	8001d2c <printf>
  8000dc0:	00000b06 	br	8000df0 <_Z13patch_dnn_resPc+0x358>
@@ -2301,7 +2301,7 @@ char *str(volatile int *num);
 char *patch_dnn_res(char *str);
 WiFiUart WiFi_UART;
  8000e5c:	010200b4 	movhi	r4,2050
- 8000e60:	213c8f04 	addi	r4,r4,-3524
+ 8000e60:	213c8d04 	addi	r4,r4,-3532
  8000e64:	800026c0 	call	800026c <_ZN8WiFiUartC1Ev>
                   Host: k7t0ap6b0i.execute-api.us-west-2.amazonaws.com\r\n\
                   Content-Type: application/json\r\n\
@@ -2322,10 +2322,10 @@ const char *result_str = (result) ? "true" : "false";
  8000e88:	d0a00417 	ldw	r2,-32752(gp)
  8000e8c:	10000326 	beq	r2,zero,8000e9c <_Z41__static_initialization_and_destruction_0ii+0x70>
  8000e90:	008200b4 	movhi	r2,2050
- 8000e94:	10ac5c04 	addi	r2,r2,-20112
+ 8000e94:	10ac5a04 	addi	r2,r2,-20120
  8000e98:	00000206 	br	8000ea4 <_Z41__static_initialization_and_destruction_0ii+0x78>
  8000e9c:	008200b4 	movhi	r2,2050
- 8000ea0:	10ac5e04 	addi	r2,r2,-20104
+ 8000ea0:	10ac5c04 	addi	r2,r2,-20112
  8000ea4:	d0a74215 	stw	r2,-25336(gp)
  8000ea8:	e0bffe17 	ldw	r2,-8(fp)
  8000eac:	1000061e 	bne	r2,zero,8000ec8 <_Z41__static_initialization_and_destruction_0ii+0x9c>
@@ -2339,7 +2339,7 @@ char *str(volatile int *num);
 char *patch_dnn_res(char *str);
 WiFiUart WiFi_UART;
  8000ebc:	010200b4 	movhi	r4,2050
- 8000ec0:	213c8f04 	addi	r4,r4,-3524
+ 8000ec0:	213c8d04 	addi	r4,r4,-3532
  8000ec4:	800029c0 	call	800029c <_ZN8WiFiUartD1Ev>
         strcpy(str, buffer);
         return str;
@@ -2422,7 +2422,7 @@ WiFiUart WiFi_UART;
 
 08000fcc <_ZN10__cxxabiv117__class_type_infoD1Ev>:
  8000fcc:	008200b4 	movhi	r2,2050
- 8000fd0:	10ac6e04 	addi	r2,r2,-20040
+ 8000fd0:	10ac6c04 	addi	r2,r2,-20048
  8000fd4:	20800015 	stw	r2,0(r4)
  8000fd8:	80014cc1 	jmpi	80014cc <_ZNSt9type_infoD1Ev>
 
@@ -2431,7 +2431,7 @@ WiFiUart WiFi_UART;
  8000fe0:	008200b4 	movhi	r2,2050
  8000fe4:	dc000015 	stw	r16,0(sp)
  8000fe8:	dfc00115 	stw	ra,4(sp)
- 8000fec:	10ac6e04 	addi	r2,r2,-20040
+ 8000fec:	10ac6c04 	addi	r2,r2,-20048
  8000ff0:	20800015 	stw	r2,0(r4)
  8000ff4:	2021883a 	mov	r16,r4
  8000ff8:	80014cc0 	call	80014cc <_ZNSt9type_infoD1Ev>
@@ -2577,7 +2577,7 @@ WiFiUart WiFi_UART;
 
 08001208 <_ZN10__cxxabiv120__si_class_type_infoD1Ev>:
  8001208:	008200b4 	movhi	r2,2050
- 800120c:	10ac8604 	addi	r2,r2,-19944
+ 800120c:	10ac8404 	addi	r2,r2,-19952
  8001210:	20800015 	stw	r2,0(r4)
  8001214:	8000fcc1 	jmpi	8000fcc <_ZN10__cxxabiv117__class_type_infoD1Ev>
 
@@ -2586,7 +2586,7 @@ WiFiUart WiFi_UART;
  800121c:	008200b4 	movhi	r2,2050
  8001220:	dc000015 	stw	r16,0(sp)
  8001224:	dfc00115 	stw	ra,4(sp)
- 8001228:	10ac8604 	addi	r2,r2,-19944
+ 8001228:	10ac8404 	addi	r2,r2,-19952
  800122c:	20800015 	stw	r2,0(r4)
  8001230:	2021883a 	mov	r16,r4
  8001234:	8000fcc0 	call	8000fcc <_ZN10__cxxabiv117__class_type_infoD1Ev>
@@ -2801,14 +2801,14 @@ WiFiUart WiFi_UART;
 
 08001530 <malloc>:
  8001530:	008200b4 	movhi	r2,2050
- 8001534:	10b54b04 	addi	r2,r2,-10964
+ 8001534:	10b54904 	addi	r2,r2,-10972
  8001538:	200b883a 	mov	r5,r4
  800153c:	11000017 	ldw	r4,0(r2)
  8001540:	80015581 	jmpi	8001558 <_malloc_r>
 
 08001544 <free>:
  8001544:	008200b4 	movhi	r2,2050
- 8001548:	10b54b04 	addi	r2,r2,-10964
+ 8001548:	10b54904 	addi	r2,r2,-10972
  800154c:	200b883a 	mov	r5,r4
  8001550:	11000017 	ldw	r4,0(r2)
  8001554:	800a80c1 	jmpi	800a80c <_free_r>
@@ -2838,7 +2838,7 @@ WiFiUart WiFi_UART;
  80015ac:	14402736 	bltu	r2,r17,800164c <_malloc_r+0xf4>
  80015b0:	8806d0fa 	srli	r3,r17,3
  80015b4:	04c200b4 	movhi	r19,2050
- 80015b8:	9cee3c04 	addi	r19,r19,-18192
+ 80015b8:	9cee3a04 	addi	r19,r19,-18200
  80015bc:	18c5883a 	add	r2,r3,r3
  80015c0:	1085883a 	add	r2,r2,r2
  80015c4:	1085883a 	add	r2,r2,r2
@@ -2884,7 +2884,7 @@ WiFiUart WiFi_UART;
  8001664:	39cb883a 	add	r5,r7,r7
  8001668:	04c200b4 	movhi	r19,2050
  800166c:	294b883a 	add	r5,r5,r5
- 8001670:	9cee3c04 	addi	r19,r19,-18192
+ 8001670:	9cee3a04 	addi	r19,r19,-18200
  8001674:	294b883a 	add	r5,r5,r5
  8001678:	994b883a 	add	r5,r19,r5
  800167c:	2c000317 	ldw	r16,12(r5)
@@ -2906,7 +2906,7 @@ WiFiUart WiFi_UART;
  80016bc:	38c00044 	addi	r3,r7,1
  80016c0:	018200b4 	movhi	r6,2050
  80016c4:	9c000417 	ldw	r16,16(r19)
- 80016c8:	31ae3c04 	addi	r6,r6,-18192
+ 80016c8:	31ae3a04 	addi	r6,r6,-18200
  80016cc:	32400204 	addi	r9,r6,8
  80016d0:	82410326 	beq	r16,r9,8001ae0 <_malloc_r+0x588>
  80016d4:	81000117 	ldw	r4,4(r16)
@@ -3017,8 +3017,8 @@ WiFiUart WiFi_UART;
  8001878:	18805d16 	blt	r3,r2,80019f0 <_malloc_r+0x498>
  800187c:	05c200b4 	movhi	r23,2050
  8001880:	008200b4 	movhi	r2,2050
- 8001884:	bdf54704 	addi	r23,r23,-10980
- 8001888:	10bc8304 	addi	r2,r2,-3572
+ 8001884:	bdf54504 	addi	r23,r23,-10988
+ 8001888:	10bc8104 	addi	r2,r2,-3580
  800188c:	15400017 	ldw	r21,0(r2)
  8001890:	b9000017 	ldw	r4,0(r23)
  8001894:	00ffffc4 	movi	r3,-1
@@ -3038,7 +3038,7 @@ WiFiUart WiFi_UART;
  80018cc:	10c0a426 	beq	r2,r3,8001b60 <_malloc_r+0x608>
  80018d0:	1180a236 	bltu	r2,r6,8001b5c <_malloc_r+0x604>
  80018d4:	070200b4 	movhi	fp,2050
- 80018d8:	e73c9204 	addi	fp,fp,-3512
+ 80018d8:	e73c9004 	addi	fp,fp,-3520
  80018dc:	e0c00017 	ldw	r3,0(fp)
  80018e0:	a8c7883a 	add	r3,r21,r3
  80018e4:	e0c00015 	stw	r3,0(fp)
@@ -3087,12 +3087,12 @@ WiFiUart WiFi_UART;
  8001990:	21400215 	stw	r5,8(r4)
  8001994:	3080c036 	bltu	r6,r2,8001c98 <_malloc_r+0x740>
  8001998:	008200b4 	movhi	r2,2050
- 800199c:	10bc8204 	addi	r2,r2,-3576
+ 800199c:	10bc8004 	addi	r2,r2,-3584
  80019a0:	11000017 	ldw	r4,0(r2)
  80019a4:	20c0012e 	bgeu	r4,r3,80019ac <_malloc_r+0x454>
  80019a8:	10c00015 	stw	r3,0(r2)
  80019ac:	008200b4 	movhi	r2,2050
- 80019b0:	10bc8104 	addi	r2,r2,-3580
+ 80019b0:	10bc7f04 	addi	r2,r2,-3588
  80019b4:	11000017 	ldw	r4,0(r2)
  80019b8:	9c000217 	ldw	r16,8(r19)
  80019bc:	20c0012e 	bgeu	r4,r3,80019c4 <_malloc_r+0x46c>
@@ -3138,7 +3138,7 @@ WiFiUart WiFi_UART;
  8001a5c:	994b883a 	add	r5,r19,r5
  8001a60:	28800217 	ldw	r2,8(r5)
  8001a64:	020200b4 	movhi	r8,2050
- 8001a68:	422e3c04 	addi	r8,r8,-18192
+ 8001a68:	422e3a04 	addi	r8,r8,-18200
  8001a6c:	11406326 	beq	r2,r5,8001bfc <_malloc_r+0x6a4>
  8001a70:	01bfff04 	movi	r6,-4
  8001a74:	11000117 	ldw	r4,4(r2)
@@ -3275,14 +3275,14 @@ WiFiUart WiFi_UART;
  8001c80:	002b883a 	mov	r21,zero
  8001c84:	003f3006 	br	8001948 <__alt_data_end+0xfc001948>
  8001c88:	008200b4 	movhi	r2,2050
- 8001c8c:	10b54704 	addi	r2,r2,-10980
+ 8001c8c:	10b54504 	addi	r2,r2,-10988
  8001c90:	15000015 	stw	r20,0(r2)
  8001c94:	003f1b06 	br	8001904 <__alt_data_end+0xfc001904>
  8001c98:	9009883a 	mov	r4,r18
  8001c9c:	81400204 	addi	r5,r16,8
  8001ca0:	800a80c0 	call	800a80c <_free_r>
  8001ca4:	008200b4 	movhi	r2,2050
- 8001ca8:	10bc9204 	addi	r2,r2,-3512
+ 8001ca8:	10bc9004 	addi	r2,r2,-3520
  8001cac:	10c00017 	ldw	r3,0(r2)
  8001cb0:	003f3906 	br	8001998 <__alt_data_end+0xfc001998>
  8001cb4:	01005504 	movi	r4,340
@@ -3325,7 +3325,7 @@ WiFiUart WiFi_UART;
  8001d38:	d9800215 	stw	r6,8(sp)
  8001d3c:	d9c00315 	stw	r7,12(sp)
  8001d40:	008200b4 	movhi	r2,2050
- 8001d44:	10b54b04 	addi	r2,r2,-10964
+ 8001d44:	10b54904 	addi	r2,r2,-10972
  8001d48:	10800017 	ldw	r2,0(r2)
  8001d4c:	200b883a 	mov	r5,r4
  8001d50:	d9800104 	addi	r6,sp,4
@@ -3341,7 +3341,7 @@ WiFiUart WiFi_UART;
 
 08001d70 <putchar>:
  8001d70:	008200b4 	movhi	r2,2050
- 8001d74:	10b54b04 	addi	r2,r2,-10964
+ 8001d74:	10b54904 	addi	r2,r2,-10972
  8001d78:	200b883a 	mov	r5,r4
  8001d7c:	11000017 	ldw	r4,0(r2)
  8001d80:	21800217 	ldw	r6,8(r4)
@@ -3357,13 +3357,13 @@ WiFiUart WiFi_UART;
  8001da0:	2823883a 	mov	r17,r5
  8001da4:	80021900 	call	8002190 <strlen>
  8001da8:	00c200b4 	movhi	r3,2050
- 8001dac:	18f54b04 	addi	r3,r3,-10964
+ 8001dac:	18f54904 	addi	r3,r3,-10972
  8001db0:	18c00017 	ldw	r3,0(r3)
  8001db4:	11000044 	addi	r4,r2,1
  8001db8:	d8800115 	stw	r2,4(sp)
  8001dbc:	18c00217 	ldw	r3,8(r3)
  8001dc0:	014200b4 	movhi	r5,2050
- 8001dc4:	296c9b04 	addi	r5,r5,-19860
+ 8001dc4:	296c9904 	addi	r5,r5,-19868
  8001dc8:	1880030b 	ldhu	r2,12(r3)
  8001dcc:	d9400215 	stw	r5,8(sp)
  8001dd0:	d9000615 	stw	r4,24(sp)
@@ -3397,7 +3397,7 @@ WiFiUart WiFi_UART;
 
 08001e40 <puts>:
  8001e40:	008200b4 	movhi	r2,2050
- 8001e44:	10b54b04 	addi	r2,r2,-10964
+ 8001e44:	10b54904 	addi	r2,r2,-10972
  8001e48:	200b883a 	mov	r5,r4
  8001e4c:	11000017 	ldw	r4,0(r2)
  8001e50:	8001d881 	jmpi	8001d88 <_puts_r>
@@ -3407,7 +3407,7 @@ WiFiUart WiFi_UART;
  8001e58:	dc000015 	stw	r16,0(sp)
  8001e5c:	040200b4 	movhi	r16,2050
  8001e60:	dc400115 	stw	r17,4(sp)
- 8001e64:	843c8404 	addi	r16,r16,-3568
+ 8001e64:	843c8204 	addi	r16,r16,-3576
  8001e68:	2023883a 	mov	r17,r4
  8001e6c:	2809883a 	mov	r4,r5
  8001e70:	dfc00215 	stw	ra,8(sp)
@@ -3432,7 +3432,7 @@ WiFiUart WiFi_UART;
  8001eb4:	d9800215 	stw	r6,8(sp)
  8001eb8:	d9c00315 	stw	r7,12(sp)
  8001ebc:	008200b4 	movhi	r2,2050
- 8001ec0:	10b54b04 	addi	r2,r2,-10964
+ 8001ec0:	10b54904 	addi	r2,r2,-10972
  8001ec4:	200d883a 	mov	r6,r4
  8001ec8:	11000017 	ldw	r4,0(r2)
  8001ecc:	d9c00104 	addi	r7,sp,4
@@ -3486,7 +3486,7 @@ WiFiUart WiFi_UART;
  8001f74:	d9801b15 	stw	r6,108(sp)
  8001f78:	d9c01c15 	stw	r7,112(sp)
  8001f7c:	010200b4 	movhi	r4,2050
- 8001f80:	21354b04 	addi	r4,r4,-10964
+ 8001f80:	21354904 	addi	r4,r4,-10972
  8001f84:	21000017 	ldw	r4,0(r4)
  8001f88:	00a00034 	movhi	r2,32768
  8001f8c:	10bfffc4 	addi	r2,r2,-1
@@ -4209,7 +4209,7 @@ WiFiUart WiFi_UART;
  8002a80:	d9400404 	addi	r5,sp,16
  8002a84:	050200b4 	movhi	r20,2050
  8002a88:	b905c83a 	sub	r2,r23,r4
- 8002a8c:	a52cac84 	addi	r20,r20,-19790
+ 8002a8c:	a52caa84 	addi	r20,r20,-19798
  8002a90:	d9002815 	stw	r4,160(sp)
  8002a94:	d9401e15 	stw	r5,120(sp)
  8002a98:	d8002015 	stw	zero,128(sp)
@@ -4527,7 +4527,7 @@ WiFiUart WiFi_UART;
  8002f78:	4d45aa0e 	bge	r9,r21,8004624 <___svfprintf_internal_r+0x1c14>
  8002f7c:	014200b4 	movhi	r5,2050
  8002f80:	a809883a 	mov	r4,r21
- 8002f84:	296cb084 	addi	r5,r5,-19774
+ 8002f84:	296cae84 	addi	r5,r5,-19782
  8002f88:	dc003c15 	stw	r16,240(sp)
  8002f8c:	882b883a 	mov	r21,r17
  8002f90:	d9403615 	stw	r5,216(sp)
@@ -4542,7 +4542,7 @@ WiFiUart WiFi_UART;
  8002fb4:	010200b4 	movhi	r4,2050
  8002fb8:	18c00404 	addi	r3,r3,16
  8002fbc:	10800044 	addi	r2,r2,1
- 8002fc0:	212cb084 	addi	r4,r4,-19774
+ 8002fc0:	212cae84 	addi	r4,r4,-19782
  8002fc4:	41000015 	stw	r4,0(r8)
  8002fc8:	44c00115 	stw	r19,4(r8)
  8002fcc:	d8c02015 	stw	r3,128(sp)
@@ -4611,7 +4611,7 @@ WiFiUart WiFi_UART;
  80030c8:	acc4260e 	bge	r21,r19,8004164 <___svfprintf_internal_r+0x1754>
  80030cc:	014200b4 	movhi	r5,2050
  80030d0:	9809883a 	mov	r4,r19
- 80030d4:	296cac84 	addi	r5,r5,-19790
+ 80030d4:	296caa84 	addi	r5,r5,-19798
  80030d8:	dc002c15 	stw	r16,176(sp)
  80030dc:	8827883a 	mov	r19,r17
  80030e0:	d9402b15 	stw	r5,172(sp)
@@ -4676,7 +4676,7 @@ WiFiUart WiFi_UART;
  80031cc:	d8801f17 	ldw	r2,124(sp)
  80031d0:	8c05550e 	bge	r17,r16,8004728 <___svfprintf_internal_r+0x1d18>
  80031d4:	010200b4 	movhi	r4,2050
- 80031d8:	212cb084 	addi	r4,r4,-19774
+ 80031d8:	212cae84 	addi	r4,r4,-19782
  80031dc:	d9003615 	stw	r4,216(sp)
  80031e0:	048001c4 	movi	r18,7
  80031e4:	dcc02f17 	ldw	r19,188(sp)
@@ -4687,7 +4687,7 @@ WiFiUart WiFi_UART;
  80031f8:	014200b4 	movhi	r5,2050
  80031fc:	18c00404 	addi	r3,r3,16
  8003200:	10800044 	addi	r2,r2,1
- 8003204:	296cb084 	addi	r5,r5,-19774
+ 8003204:	296cae84 	addi	r5,r5,-19782
  8003208:	41400015 	stw	r5,0(r8)
  800320c:	44400115 	stw	r17,4(r8)
  8003210:	d8c02015 	stw	r3,128(sp)
@@ -4764,7 +4764,7 @@ WiFiUart WiFi_UART;
  800332c:	008011c4 	movi	r2,71
  8003330:	1404410e 	bge	r2,r16,8004438 <___svfprintf_internal_r+0x1a28>
  8003334:	014200b4 	movhi	r5,2050
- 8003338:	296c9d04 	addi	r5,r5,-19852
+ 8003338:	296c9b04 	addi	r5,r5,-19860
  800333c:	d9403115 	stw	r5,196(sp)
  8003340:	00c000c4 	movi	r3,3
  8003344:	00bfdfc4 	movi	r2,-129
@@ -4815,7 +4815,7 @@ WiFiUart WiFi_UART;
  80033f8:	00801e04 	movi	r2,120
  80033fc:	d8802745 	stb	r2,157(sp)
  8003400:	008200b4 	movhi	r2,2050
- 8003404:	10aca504 	addi	r2,r2,-19820
+ 8003404:	10aca304 	addi	r2,r2,-19828
  8003408:	29400104 	addi	r5,r5,4
  800340c:	da002917 	ldw	r8,164(sp)
  8003410:	d8803b15 	stw	r2,236(sp)
@@ -4885,7 +4885,7 @@ WiFiUart WiFi_UART;
  8003510:	9839883a 	mov	fp,r19
  8003514:	dcc02a03 	ldbu	r19,168(sp)
  8003518:	014200b4 	movhi	r5,2050
- 800351c:	296ca004 	addi	r5,r5,-19840
+ 800351c:	296c9e04 	addi	r5,r5,-19848
  8003520:	dcc02785 	stb	r19,158(sp)
  8003524:	d9403b15 	stw	r5,236(sp)
  8003528:	e0c0080c 	andi	r3,fp,32
@@ -4973,7 +4973,7 @@ WiFiUart WiFi_UART;
  8003670:	9839883a 	mov	fp,r19
  8003674:	dcc02a03 	ldbu	r19,168(sp)
  8003678:	010200b4 	movhi	r4,2050
- 800367c:	212ca504 	addi	r4,r4,-19820
+ 800367c:	212ca304 	addi	r4,r4,-19828
  8003680:	d9003b15 	stw	r4,236(sp)
  8003684:	dcc02785 	stb	r19,158(sp)
  8003688:	e0c0080c 	andi	r3,fp,32
@@ -5104,7 +5104,7 @@ WiFiUart WiFi_UART;
  800387c:	1000fc1e 	bne	r2,zero,8003c70 <___svfprintf_internal_r+0x1260>
  8003880:	d8801f17 	ldw	r2,124(sp)
  8003884:	010200b4 	movhi	r4,2050
- 8003888:	212cac04 	addi	r4,r4,-19792
+ 8003888:	212caa04 	addi	r4,r4,-19800
  800388c:	18c00044 	addi	r3,r3,1
  8003890:	10800044 	addi	r2,r2,1
  8003894:	41000015 	stw	r4,0(r8)
@@ -5140,7 +5140,7 @@ WiFiUart WiFi_UART;
  800390c:	d8801f17 	ldw	r2,124(sp)
  8003910:	8c00980e 	bge	r17,r16,8003b74 <___svfprintf_internal_r+0x1164>
  8003914:	014200b4 	movhi	r5,2050
- 8003918:	296cac84 	addi	r5,r5,-19790
+ 8003918:	296caa84 	addi	r5,r5,-19798
  800391c:	d9402b15 	stw	r5,172(sp)
  8003920:	04c001c4 	movi	r19,7
  8003924:	dc802f17 	ldw	r18,188(sp)
@@ -5173,7 +5173,7 @@ WiFiUart WiFi_UART;
  8003990:	acc3840e 	bge	r21,r19,80047a4 <___svfprintf_internal_r+0x1d94>
  8003994:	014200b4 	movhi	r5,2050
  8003998:	9809883a 	mov	r4,r19
- 800399c:	296cac84 	addi	r5,r5,-19790
+ 800399c:	296caa84 	addi	r5,r5,-19798
  80039a0:	dc002c15 	stw	r16,176(sp)
  80039a4:	8827883a 	mov	r19,r17
  80039a8:	d9402b15 	stw	r5,172(sp)
@@ -5292,7 +5292,7 @@ WiFiUart WiFi_UART;
  8003b6c:	8a000204 	addi	r8,r17,8
  8003b70:	003d8f06 	br	80031b0 <__alt_data_end+0xfc0031b0>
  8003b74:	010200b4 	movhi	r4,2050
- 8003b78:	212cac84 	addi	r4,r4,-19790
+ 8003b78:	212caa84 	addi	r4,r4,-19798
  8003b7c:	d9002b15 	stw	r4,172(sp)
  8003b80:	d9002b17 	ldw	r4,172(sp)
  8003b84:	1c07883a 	add	r3,r3,r16
@@ -5383,7 +5383,7 @@ WiFiUart WiFi_UART;
  8003cd8:	d8801f17 	ldw	r2,124(sp)
  8003cdc:	9c41130e 	bge	r19,r17,800412c <___svfprintf_internal_r+0x171c>
  8003ce0:	014200b4 	movhi	r5,2050
- 8003ce4:	296cac84 	addi	r5,r5,-19790
+ 8003ce4:	296caa84 	addi	r5,r5,-19798
  8003ce8:	d9402b15 	stw	r5,172(sp)
  8003cec:	054001c4 	movi	r21,7
  8003cf0:	dc802f17 	ldw	r18,188(sp)
@@ -5425,7 +5425,7 @@ WiFiUart WiFi_UART;
  8003d80:	05400404 	movi	r21,16
  8003d84:	acc2f80e 	bge	r21,r19,8004968 <___svfprintf_internal_r+0x1f58>
  8003d88:	014200b4 	movhi	r5,2050
- 8003d8c:	296cac84 	addi	r5,r5,-19790
+ 8003d8c:	296caa84 	addi	r5,r5,-19798
  8003d90:	d9402b15 	stw	r5,172(sp)
  8003d94:	01c001c4 	movi	r7,7
  8003d98:	dc802f17 	ldw	r18,188(sp)
@@ -5522,7 +5522,7 @@ WiFiUart WiFi_UART;
  8003f04:	d8801f17 	ldw	r2,124(sp)
  8003f08:	8c3f1a0e 	bge	r17,r16,8003b74 <__alt_data_end+0xfc003b74>
  8003f0c:	014200b4 	movhi	r5,2050
- 8003f10:	296cac84 	addi	r5,r5,-19790
+ 8003f10:	296caa84 	addi	r5,r5,-19798
  8003f14:	d9402b15 	stw	r5,172(sp)
  8003f18:	04c001c4 	movi	r19,7
  8003f1c:	dc802f17 	ldw	r18,188(sp)
@@ -5594,7 +5594,7 @@ WiFiUart WiFi_UART;
  8004024:	008011c4 	movi	r2,71
  8004028:	14011016 	blt	r2,r16,800446c <___svfprintf_internal_r+0x1a5c>
  800402c:	010200b4 	movhi	r4,2050
- 8004030:	212c9e04 	addi	r4,r4,-19848
+ 8004030:	212c9c04 	addi	r4,r4,-19856
  8004034:	d9003115 	stw	r4,196(sp)
  8004038:	00c000c4 	movi	r3,3
  800403c:	00bfdfc4 	movi	r2,-129
@@ -5658,7 +5658,7 @@ WiFiUart WiFi_UART;
  8004124:	00800084 	movi	r2,2
  8004128:	003c9e06 	br	80033a4 <__alt_data_end+0xfc0033a4>
  800412c:	010200b4 	movhi	r4,2050
- 8004130:	212cac84 	addi	r4,r4,-19790
+ 8004130:	212caa84 	addi	r4,r4,-19798
  8004134:	d9002b15 	stw	r4,172(sp)
  8004138:	d9002b17 	ldw	r4,172(sp)
  800413c:	1c47883a 	add	r3,r3,r17
@@ -5672,7 +5672,7 @@ WiFiUart WiFi_UART;
  800415c:	42000204 	addi	r8,r8,8
  8004160:	003f3e06 	br	8003e5c <__alt_data_end+0xfc003e5c>
  8004164:	010200b4 	movhi	r4,2050
- 8004168:	212cac84 	addi	r4,r4,-19790
+ 8004168:	212caa84 	addi	r4,r4,-19798
  800416c:	d9002b15 	stw	r4,172(sp)
  8004170:	003bf806 	br	8003154 <__alt_data_end+0xfc003154>
  8004174:	d9002f17 	ldw	r4,188(sp)
@@ -5688,7 +5688,7 @@ WiFiUart WiFi_UART;
  800419c:	01000044 	movi	r4,1
  80041a0:	18c00044 	addi	r3,r3,1
  80041a4:	10800044 	addi	r2,r2,1
- 80041a8:	296cac04 	addi	r5,r5,-19792
+ 80041a8:	296caa04 	addi	r5,r5,-19800
  80041ac:	41000115 	stw	r4,4(r8)
  80041b0:	41400015 	stw	r5,0(r8)
  80041b4:	d8c02015 	stw	r3,128(sp)
@@ -5718,7 +5718,7 @@ WiFiUart WiFi_UART;
  8004214:	04400404 	movi	r17,16
  8004218:	8c01190e 	bge	r17,r16,8004680 <___svfprintf_internal_r+0x1c70>
  800421c:	014200b4 	movhi	r5,2050
- 8004220:	296cac84 	addi	r5,r5,-19790
+ 8004220:	296caa84 	addi	r5,r5,-19798
  8004224:	d9402b15 	stw	r5,172(sp)
  8004228:	04c001c4 	movi	r19,7
  800422c:	dc802f17 	ldw	r18,188(sp)
@@ -5853,7 +5853,7 @@ WiFiUart WiFi_UART;
  8004430:	dc802d15 	stw	r18,180(sp)
  8004434:	003ab906 	br	8002f1c <__alt_data_end+0xfc002f1c>
  8004438:	010200b4 	movhi	r4,2050
- 800443c:	212c9c04 	addi	r4,r4,-19856
+ 800443c:	212c9a04 	addi	r4,r4,-19864
  8004440:	d9003115 	stw	r4,196(sp)
  8004444:	003bbe06 	br	8003340 <__alt_data_end+0xfc003340>
  8004448:	d9002f17 	ldw	r4,188(sp)
@@ -5866,7 +5866,7 @@ WiFiUart WiFi_UART;
  8004464:	b4000515 	stw	r16,20(r22)
  8004468:	00398306 	br	8002a78 <__alt_data_end+0xfc002a78>
  800446c:	014200b4 	movhi	r5,2050
- 8004470:	296c9f04 	addi	r5,r5,-19844
+ 8004470:	296c9d04 	addi	r5,r5,-19852
  8004474:	d9403115 	stw	r5,196(sp)
  8004478:	003eef06 	br	8004038 <__alt_data_end+0xfc004038>
  800447c:	d9002f17 	ldw	r4,188(sp)
@@ -5976,7 +5976,7 @@ WiFiUart WiFi_UART;
  800461c:	50d5883a 	add	r10,r10,r3
  8004620:	003f5506 	br	8004378 <__alt_data_end+0xfc004378>
  8004624:	010200b4 	movhi	r4,2050
- 8004628:	212cb084 	addi	r4,r4,-19774
+ 8004628:	212cae84 	addi	r4,r4,-19782
  800462c:	d9003615 	stw	r4,216(sp)
  8004630:	003a7706 	br	8003010 <__alt_data_end+0xfc003010>
  8004634:	0023883a 	mov	r17,zero
@@ -5999,7 +5999,7 @@ WiFiUart WiFi_UART;
  8004678:	da000404 	addi	r8,sp,16
  800467c:	003e0c06 	br	8003eb0 <__alt_data_end+0xfc003eb0>
  8004680:	010200b4 	movhi	r4,2050
- 8004684:	212cac84 	addi	r4,r4,-19790
+ 8004684:	212caa84 	addi	r4,r4,-19798
  8004688:	d9002b15 	stw	r4,172(sp)
  800468c:	d9002b17 	ldw	r4,172(sp)
  8004690:	1c07883a 	add	r3,r3,r16
@@ -6030,7 +6030,7 @@ WiFiUart WiFi_UART;
  80046f4:	4805883a 	mov	r2,r9
  80046f8:	4800b616 	blt	r9,zero,80049d4 <___svfprintf_internal_r+0x1fc4>
  80046fc:	014200b4 	movhi	r5,2050
- 8004700:	296caa04 	addi	r5,r5,-19800
+ 8004700:	296ca804 	addi	r5,r5,-19808
  8004704:	d8802a15 	stw	r2,168(sp)
  8004708:	dc802d15 	stw	r18,180(sp)
  800470c:	d8003215 	stw	zero,200(sp)
@@ -6041,7 +6041,7 @@ WiFiUart WiFi_UART;
  8004720:	0021883a 	mov	r16,zero
  8004724:	003df406 	br	8003ef8 <__alt_data_end+0xfc003ef8>
  8004728:	014200b4 	movhi	r5,2050
- 800472c:	296cb084 	addi	r5,r5,-19774
+ 800472c:	296cae84 	addi	r5,r5,-19782
  8004730:	d9403615 	stw	r5,216(sp)
  8004734:	003ac306 	br	8003244 <__alt_data_end+0xfc003244>
  8004738:	00800b44 	movi	r2,45
@@ -6072,7 +6072,7 @@ WiFiUart WiFi_UART;
  800479c:	5005883a 	mov	r2,r10
  80047a0:	003f0906 	br	80043c8 <__alt_data_end+0xfc0043c8>
  80047a4:	010200b4 	movhi	r4,2050
- 80047a8:	212cac84 	addi	r4,r4,-19790
+ 80047a8:	212caa84 	addi	r4,r4,-19798
  80047ac:	d9002b15 	stw	r4,172(sp)
  80047b0:	003c9a06 	br	8003a1c <__alt_data_end+0xfc003a1c>
  80047b4:	da402a15 	stw	r9,168(sp)
@@ -6185,7 +6185,7 @@ WiFiUart WiFi_UART;
  8004960:	883ead0e 	bge	r17,zero,8004418 <__alt_data_end+0xfc004418>
  8004964:	003fec06 	br	8004918 <__alt_data_end+0xfc004918>
  8004968:	010200b4 	movhi	r4,2050
- 800496c:	212cac84 	addi	r4,r4,-19790
+ 800496c:	212caa84 	addi	r4,r4,-19798
  8004970:	d9002b15 	stw	r4,172(sp)
  8004974:	003d2006 	br	8003df8 <__alt_data_end+0xfc003df8>
  8004978:	d9003717 	ldw	r4,220(sp)
@@ -6303,7 +6303,7 @@ WiFiUart WiFi_UART;
  8004b30:	d9400404 	addi	r5,sp,16
  8004b34:	050200b4 	movhi	r20,2050
  8004b38:	1905c83a 	sub	r2,r3,r4
- 8004b3c:	a52cb484 	addi	r20,r20,-19758
+ 8004b3c:	a52cb284 	addi	r20,r20,-19766
  8004b40:	d8c12815 	stw	r3,1184(sp)
  8004b44:	d9012915 	stw	r4,1188(sp)
  8004b48:	d9411e15 	stw	r5,1144(sp)
@@ -6665,7 +6665,7 @@ WiFiUart WiFi_UART;
  80050d8:	d8811f17 	ldw	r2,1148(sp)
  80050dc:	4d45750e 	bge	r9,r21,80066b4 <___vfprintf_internal_r+0x1c34>
  80050e0:	014200b4 	movhi	r5,2050
- 80050e4:	296cb884 	addi	r5,r5,-19742
+ 80050e4:	296cb684 	addi	r5,r5,-19750
  80050e8:	d9413615 	stw	r5,1240(sp)
  80050ec:	4827883a 	mov	r19,r9
  80050f0:	048001c4 	movi	r18,7
@@ -6676,7 +6676,7 @@ WiFiUart WiFi_UART;
  8005104:	010200b4 	movhi	r4,2050
  8005108:	18c00404 	addi	r3,r3,16
  800510c:	10800044 	addi	r2,r2,1
- 8005110:	212cb884 	addi	r4,r4,-19742
+ 8005110:	212cb684 	addi	r4,r4,-19750
  8005114:	41000015 	stw	r4,0(r8)
  8005118:	44c00115 	stw	r19,4(r8)
  800511c:	d8c12015 	stw	r3,1152(sp)
@@ -6740,7 +6740,7 @@ WiFiUart WiFi_UART;
  8005204:	d8811f17 	ldw	r2,1148(sp)
  8005208:	acc4720e 	bge	r21,r19,80063d4 <___vfprintf_internal_r+0x1954>
  800520c:	014200b4 	movhi	r5,2050
- 8005210:	296cb484 	addi	r5,r5,-19758
+ 8005210:	296cb284 	addi	r5,r5,-19766
  8005214:	d9412c15 	stw	r5,1200(sp)
  8005218:	048001c4 	movi	r18,7
  800521c:	00000306 	br	800522c <___vfprintf_internal_r+0x7ac>
@@ -6797,7 +6797,7 @@ WiFiUart WiFi_UART;
  80052e8:	d8811f17 	ldw	r2,1148(sp)
  80052ec:	8c05340e 	bge	r17,r16,80067c0 <___vfprintf_internal_r+0x1d40>
  80052f0:	010200b4 	movhi	r4,2050
- 80052f4:	212cb884 	addi	r4,r4,-19742
+ 80052f4:	212cb684 	addi	r4,r4,-19750
  80052f8:	d9013615 	stw	r4,1240(sp)
  80052fc:	048001c4 	movi	r18,7
  8005300:	00000306 	br	8005310 <___vfprintf_internal_r+0x890>
@@ -6807,7 +6807,7 @@ WiFiUart WiFi_UART;
  8005310:	014200b4 	movhi	r5,2050
  8005314:	18c00404 	addi	r3,r3,16
  8005318:	10800044 	addi	r2,r2,1
- 800531c:	296cb884 	addi	r5,r5,-19742
+ 800531c:	296cb684 	addi	r5,r5,-19750
  8005320:	41400015 	stw	r5,0(r8)
  8005324:	44400115 	stw	r17,4(r8)
  8005328:	d8c12015 	stw	r3,1152(sp)
@@ -6884,7 +6884,7 @@ WiFiUart WiFi_UART;
  8005444:	008011c4 	movi	r2,71
  8005448:	14045d0e 	bge	r2,r16,80065c0 <___vfprintf_internal_r+0x1b40>
  800544c:	014200b4 	movhi	r5,2050
- 8005450:	296c9d04 	addi	r5,r5,-19852
+ 8005450:	296c9b04 	addi	r5,r5,-19860
  8005454:	d9413115 	stw	r5,1220(sp)
  8005458:	00c000c4 	movi	r3,3
  800545c:	00bfdfc4 	movi	r2,-129
@@ -6935,7 +6935,7 @@ WiFiUart WiFi_UART;
  8005510:	9839883a 	mov	fp,r19
  8005514:	dcc12b03 	ldbu	r19,1196(sp)
  8005518:	014200b4 	movhi	r5,2050
- 800551c:	296ca004 	addi	r5,r5,-19840
+ 800551c:	296c9e04 	addi	r5,r5,-19848
  8005520:	dcc12785 	stb	r19,1182(sp)
  8005524:	d9413b15 	stw	r5,1260(sp)
  8005528:	e0c0080c 	andi	r3,fp,32
@@ -6981,7 +6981,7 @@ WiFiUart WiFi_UART;
  80055c8:	9839883a 	mov	fp,r19
  80055cc:	dcc12b03 	ldbu	r19,1196(sp)
  80055d0:	010200b4 	movhi	r4,2050
- 80055d4:	212ca504 	addi	r4,r4,-19820
+ 80055d4:	212ca304 	addi	r4,r4,-19828
  80055d8:	d9013b15 	stw	r4,1260(sp)
  80055dc:	dcc12785 	stb	r19,1182(sp)
  80055e0:	e0c0080c 	andi	r3,fp,32
@@ -7040,7 +7040,7 @@ WiFiUart WiFi_UART;
  80056b4:	00801e04 	movi	r2,120
  80056b8:	d8812745 	stb	r2,1181(sp)
  80056bc:	008200b4 	movhi	r2,2050
- 80056c0:	10aca504 	addi	r2,r2,-19820
+ 80056c0:	10aca304 	addi	r2,r2,-19828
  80056c4:	29400104 	addi	r5,r5,4
  80056c8:	da012a17 	ldw	r8,1192(sp)
  80056cc:	d8813b15 	stw	r2,1260(sp)
@@ -7218,7 +7218,7 @@ WiFiUart WiFi_UART;
  800597c:	1000f41e 	bne	r2,zero,8005d50 <___vfprintf_internal_r+0x12d0>
  8005980:	d8811f17 	ldw	r2,1148(sp)
  8005984:	010200b4 	movhi	r4,2050
- 8005988:	212cac04 	addi	r4,r4,-19792
+ 8005988:	212caa04 	addi	r4,r4,-19800
  800598c:	18c00044 	addi	r3,r3,1
  8005990:	10800044 	addi	r2,r2,1
  8005994:	41000015 	stw	r4,0(r8)
@@ -7254,7 +7254,7 @@ WiFiUart WiFi_UART;
  8005a0c:	d8811f17 	ldw	r2,1148(sp)
  8005a10:	8c007e0e 	bge	r17,r16,8005c0c <___vfprintf_internal_r+0x118c>
  8005a14:	014200b4 	movhi	r5,2050
- 8005a18:	296cb484 	addi	r5,r5,-19758
+ 8005a18:	296cb284 	addi	r5,r5,-19766
  8005a1c:	d9412c15 	stw	r5,1200(sp)
  8005a20:	04c001c4 	movi	r19,7
  8005a24:	00000306 	br	8005a34 <___vfprintf_internal_r+0xfb4>
@@ -7285,7 +7285,7 @@ WiFiUart WiFi_UART;
  8005a88:	d8811f17 	ldw	r2,1148(sp)
  8005a8c:	acc3870e 	bge	r21,r19,80068ac <___vfprintf_internal_r+0x1e2c>
  8005a90:	014200b4 	movhi	r5,2050
- 8005a94:	296cb484 	addi	r5,r5,-19758
+ 8005a94:	296cb284 	addi	r5,r5,-19766
  8005a98:	d9412c15 	stw	r5,1200(sp)
  8005a9c:	048001c4 	movi	r18,7
  8005aa0:	00000306 	br	8005ab0 <___vfprintf_internal_r+0x1030>
@@ -7380,7 +7380,7 @@ WiFiUart WiFi_UART;
  8005c04:	8a000204 	addi	r8,r17,8
  8005c08:	003db006 	br	80052cc <__alt_data_end+0xfc0052cc>
  8005c0c:	010200b4 	movhi	r4,2050
- 8005c10:	212cb484 	addi	r4,r4,-19758
+ 8005c10:	212cb284 	addi	r4,r4,-19766
  8005c14:	d9012c15 	stw	r4,1200(sp)
  8005c18:	d9012c17 	ldw	r4,1200(sp)
  8005c1c:	1c07883a 	add	r3,r3,r16
@@ -7489,7 +7489,7 @@ WiFiUart WiFi_UART;
  8005db8:	d8811f17 	ldw	r2,1148(sp)
  8005dbc:	9c41770e 	bge	r19,r17,800639c <___vfprintf_internal_r+0x191c>
  8005dc0:	014200b4 	movhi	r5,2050
- 8005dc4:	296cb484 	addi	r5,r5,-19758
+ 8005dc4:	296cb284 	addi	r5,r5,-19766
  8005dc8:	d9412c15 	stw	r5,1200(sp)
  8005dcc:	054001c4 	movi	r21,7
  8005dd0:	00000306 	br	8005de0 <___vfprintf_internal_r+0x1360>
@@ -7527,7 +7527,7 @@ WiFiUart WiFi_UART;
  8005e50:	05400404 	movi	r21,16
  8005e54:	acc0810e 	bge	r21,r19,800605c <___vfprintf_internal_r+0x15dc>
  8005e58:	014200b4 	movhi	r5,2050
- 8005e5c:	296cb484 	addi	r5,r5,-19758
+ 8005e5c:	296cb284 	addi	r5,r5,-19766
  8005e60:	d9412c15 	stw	r5,1200(sp)
  8005e64:	01c001c4 	movi	r7,7
  8005e68:	00000306 	br	8005e78 <___vfprintf_internal_r+0x13f8>
@@ -7619,7 +7619,7 @@ WiFiUart WiFi_UART;
  8005fc0:	d8811f17 	ldw	r2,1148(sp)
  8005fc4:	8c3f110e 	bge	r17,r16,8005c0c <__alt_data_end+0xfc005c0c>
  8005fc8:	014200b4 	movhi	r5,2050
- 8005fcc:	296cb484 	addi	r5,r5,-19758
+ 8005fcc:	296cb284 	addi	r5,r5,-19766
  8005fd0:	d9412c15 	stw	r5,1200(sp)
  8005fd4:	04c001c4 	movi	r19,7
  8005fd8:	00000306 	br	8005fe8 <___vfprintf_internal_r+0x1568>
@@ -7656,7 +7656,7 @@ WiFiUart WiFi_UART;
  8006054:	44400204 	addi	r17,r8,8
  8006058:	003ee006 	br	8005bdc <__alt_data_end+0xfc005bdc>
  800605c:	010200b4 	movhi	r4,2050
- 8006060:	212cb484 	addi	r4,r4,-19758
+ 8006060:	212cb284 	addi	r4,r4,-19766
  8006064:	d9012c15 	stw	r4,1200(sp)
  8006068:	d8812c17 	ldw	r2,1200(sp)
  800606c:	1cc7883a 	add	r3,r3,r19
@@ -7864,7 +7864,7 @@ WiFiUart WiFi_UART;
  8006394:	00800084 	movi	r2,2
  8006398:	003c4906 	br	80054c0 <__alt_data_end+0xfc0054c0>
  800639c:	010200b4 	movhi	r4,2050
- 80063a0:	212cb484 	addi	r4,r4,-19758
+ 80063a0:	212cb284 	addi	r4,r4,-19766
  80063a4:	d9012c15 	stw	r4,1200(sp)
  80063a8:	d9012c17 	ldw	r4,1200(sp)
  80063ac:	1c47883a 	add	r3,r3,r17
@@ -7878,7 +7878,7 @@ WiFiUart WiFi_UART;
  80063cc:	42000204 	addi	r8,r8,8
  80063d0:	003ed106 	br	8005f18 <__alt_data_end+0xfc005f18>
  80063d4:	010200b4 	movhi	r4,2050
- 80063d8:	212cb484 	addi	r4,r4,-19758
+ 80063d8:	212cb284 	addi	r4,r4,-19766
  80063dc:	d9012c15 	stw	r4,1200(sp)
  80063e0:	003ba306 	br	8005270 <__alt_data_end+0xfc005270>
  80063e4:	b809883a 	mov	r4,r23
@@ -7894,7 +7894,7 @@ WiFiUart WiFi_UART;
  800640c:	01000044 	movi	r4,1
  8006410:	18c00044 	addi	r3,r3,1
  8006414:	10800044 	addi	r2,r2,1
- 8006418:	296cac04 	addi	r5,r5,-19792
+ 8006418:	296caa04 	addi	r5,r5,-19800
  800641c:	41000115 	stw	r4,4(r8)
  8006420:	41400015 	stw	r5,0(r8)
  8006424:	d8c12015 	stw	r3,1152(sp)
@@ -7924,7 +7924,7 @@ WiFiUart WiFi_UART;
  8006484:	04400404 	movi	r17,16
  8006488:	8c00bd0e 	bge	r17,r16,8006780 <___vfprintf_internal_r+0x1d00>
  800648c:	014200b4 	movhi	r5,2050
- 8006490:	296cb484 	addi	r5,r5,-19758
+ 8006490:	296cb284 	addi	r5,r5,-19766
  8006494:	d9412c15 	stw	r5,1200(sp)
  8006498:	04c001c4 	movi	r19,7
  800649c:	00000306 	br	80064ac <___vfprintf_internal_r+0x1a2c>
@@ -7950,7 +7950,7 @@ WiFiUart WiFi_UART;
  80064ec:	008011c4 	movi	r2,71
  80064f0:	1400db16 	blt	r2,r16,8006860 <___vfprintf_internal_r+0x1de0>
  80064f4:	010200b4 	movhi	r4,2050
- 80064f8:	212c9e04 	addi	r4,r4,-19848
+ 80064f8:	212c9c04 	addi	r4,r4,-19856
  80064fc:	d9013115 	stw	r4,1220(sp)
  8006500:	00c000c4 	movi	r3,3
  8006504:	00bfdfc4 	movi	r2,-129
@@ -8001,7 +8001,7 @@ WiFiUart WiFi_UART;
  80065b8:	10c00015 	stw	r3,0(r2)
  80065bc:	00396d06 	br	8004b74 <__alt_data_end+0xfc004b74>
  80065c0:	010200b4 	movhi	r4,2050
- 80065c4:	212c9c04 	addi	r4,r4,-19856
+ 80065c4:	212c9a04 	addi	r4,r4,-19864
  80065c8:	d9013115 	stw	r4,1220(sp)
  80065cc:	003ba206 	br	8005458 <__alt_data_end+0xfc005458>
  80065d0:	b809883a 	mov	r4,r23
@@ -8062,7 +8062,7 @@ WiFiUart WiFi_UART;
  80066ac:	20bb060e 	bge	r4,r2,80052c8 <__alt_data_end+0xfc0052c8>
  80066b0:	003d6206 	br	8005c3c <__alt_data_end+0xfc005c3c>
  80066b4:	010200b4 	movhi	r4,2050
- 80066b8:	212cb884 	addi	r4,r4,-19742
+ 80066b8:	212cb684 	addi	r4,r4,-19750
  80066bc:	d9013615 	stw	r4,1240(sp)
  80066c0:	003aa306 	br	8005150 <__alt_data_end+0xfc005150>
  80066c4:	d8812604 	addi	r2,sp,1176
@@ -8113,7 +8113,7 @@ WiFiUart WiFi_UART;
  8006778:	da000404 	addi	r8,sp,16
  800677c:	003dfb06 	br	8005f6c <__alt_data_end+0xfc005f6c>
  8006780:	010200b4 	movhi	r4,2050
- 8006784:	212cb484 	addi	r4,r4,-19758
+ 8006784:	212cb284 	addi	r4,r4,-19766
  8006788:	d9012c15 	stw	r4,1200(sp)
  800678c:	d9012c17 	ldw	r4,1200(sp)
  8006790:	1c07883a 	add	r3,r3,r16
@@ -8129,7 +8129,7 @@ WiFiUart WiFi_UART;
  80067b8:	0021883a 	mov	r16,zero
  80067bc:	003dfd06 	br	8005fb4 <__alt_data_end+0xfc005fb4>
  80067c0:	014200b4 	movhi	r5,2050
- 80067c4:	296cb884 	addi	r5,r5,-19742
+ 80067c4:	296cb684 	addi	r5,r5,-19750
  80067c8:	d9413615 	stw	r5,1240(sp)
  80067cc:	003ae306 	br	800535c <__alt_data_end+0xfc00535c>
  80067d0:	b809883a 	mov	r4,r23
@@ -8150,7 +8150,7 @@ WiFiUart WiFi_UART;
  800680c:	4805883a 	mov	r2,r9
  8006810:	4800b216 	blt	r9,zero,8006adc <___vfprintf_internal_r+0x205c>
  8006814:	014200b4 	movhi	r5,2050
- 8006818:	296caa04 	addi	r5,r5,-19800
+ 8006818:	296ca804 	addi	r5,r5,-19808
  800681c:	d8812b15 	stw	r2,1196(sp)
  8006820:	dc812d15 	stw	r18,1204(sp)
  8006824:	d8013215 	stw	zero,1224(sp)
@@ -8169,7 +8169,7 @@ WiFiUart WiFi_UART;
  8006858:	11000015 	stw	r4,0(r2)
  800685c:	0038c506 	br	8004b74 <__alt_data_end+0xfc004b74>
  8006860:	014200b4 	movhi	r5,2050
- 8006864:	296c9f04 	addi	r5,r5,-19844
+ 8006864:	296c9d04 	addi	r5,r5,-19852
  8006868:	d9413115 	stw	r5,1220(sp)
  800686c:	003f2406 	br	8006500 <__alt_data_end+0xfc006500>
  8006870:	00800b44 	movi	r2,45
@@ -8188,7 +8188,7 @@ WiFiUart WiFi_UART;
  80068a4:	040019c4 	movi	r16,103
  80068a8:	003e7606 	br	8006284 <__alt_data_end+0xfc006284>
  80068ac:	010200b4 	movhi	r4,2050
- 80068b0:	212cb484 	addi	r4,r4,-19758
+ 80068b0:	212cb284 	addi	r4,r4,-19766
  80068b4:	d9012c15 	stw	r4,1200(sp)
  80068b8:	003c8e06 	br	8005af4 <__alt_data_end+0xfc005af4>
  80068bc:	5005883a 	mov	r2,r10
@@ -8371,7 +8371,7 @@ WiFiUart WiFi_UART;
 08006b7c <__vfprintf_internal>:
  8006b7c:	2007883a 	mov	r3,r4
  8006b80:	010200b4 	movhi	r4,2050
- 8006b84:	21354b04 	addi	r4,r4,-10964
+ 8006b84:	21354904 	addi	r4,r4,-10972
  8006b88:	21000017 	ldw	r4,0(r4)
  8006b8c:	2805883a 	mov	r2,r5
  8006b90:	300f883a 	mov	r7,r6
@@ -8410,7 +8410,7 @@ WiFiUart WiFi_UART;
  8006c0c:	d800a115 	stw	zero,644(sp)
  8006c10:	d8009f15 	stw	zero,636(sp)
  8006c14:	d800a015 	stw	zero,640(sp)
- 8006c18:	8c754904 	addi	r17,r17,-10972
+ 8006c18:	8c754704 	addi	r17,r17,-10980
  8006c1c:	a827883a 	mov	r19,r21
  8006c20:	e025883a 	mov	r18,fp
  8006c24:	80800007 	ldb	r2,0(r16)
@@ -9355,7 +9355,7 @@ WiFiUart WiFi_UART;
  8007ad0:	003fe006 	br	8007a54 <__alt_data_end+0xfc007a54>
  8007ad4:	024200b4 	movhi	r9,2050
  8007ad8:	8421883a 	add	r16,r16,r16
- 8007adc:	4a6cbe84 	addi	r9,r9,-19718
+ 8007adc:	4a6cbc84 	addi	r9,r9,-19726
  8007ae0:	4c05883a 	add	r2,r9,r16
  8007ae4:	1400000f 	ldh	r16,0(r2)
  8007ae8:	00800204 	movi	r2,8
@@ -9363,7 +9363,7 @@ WiFiUart WiFi_UART;
  8007af0:	003fe206 	br	8007a7c <__alt_data_end+0xfc007a7c>
  8007af4:	024200b4 	movhi	r9,2050
  8007af8:	8421883a 	add	r16,r16,r16
- 8007afc:	4a6cbe84 	addi	r9,r9,-19718
+ 8007afc:	4a6cbc84 	addi	r9,r9,-19726
  8007b00:	4c05883a 	add	r2,r9,r16
  8007b04:	1400000f 	ldh	r16,0(r2)
  8007b08:	00bd1fc4 	movi	r2,-2945
@@ -9677,7 +9677,7 @@ WiFiUart WiFi_UART;
  8007fd8:	b8800136 	bltu	r23,r2,8007fe0 <__svfscanf_r+0x1440>
  8007fdc:	ddc05584 	addi	r23,sp,342
  8007fe0:	014200b4 	movhi	r5,2050
- 8007fe4:	296cbd04 	addi	r5,r5,-19724
+ 8007fe4:	296cbb04 	addi	r5,r5,-19732
  8007fe8:	b809883a 	mov	r4,r23
  8007fec:	8001f680 	call	8001f68 <sprintf>
  8007ff0:	003cae06 	br	80072ac <__alt_data_end+0xfc0072ac>
@@ -9878,7 +9878,7 @@ WiFiUart WiFi_UART;
  80082f4:	defffb04 	addi	sp,sp,-20
  80082f8:	dc000115 	stw	r16,4(sp)
  80082fc:	040200b4 	movhi	r16,2050
- 8008300:	84354b04 	addi	r16,r16,-10964
+ 8008300:	84354904 	addi	r16,r16,-10972
  8008304:	dc800315 	stw	r18,12(sp)
  8008308:	2025883a 	mov	r18,r4
  800830c:	81000017 	ldw	r4,0(r16)
@@ -9905,7 +9905,7 @@ WiFiUart WiFi_UART;
 0800835c <__svfscanf>:
  800835c:	2007883a 	mov	r3,r4
  8008360:	010200b4 	movhi	r4,2050
- 8008364:	21354b04 	addi	r4,r4,-10964
+ 8008364:	21354904 	addi	r4,r4,-10972
  8008368:	21000017 	ldw	r4,0(r4)
  800836c:	2805883a 	mov	r2,r5
  8008370:	300f883a 	mov	r7,r6
@@ -9937,7 +9937,7 @@ WiFiUart WiFi_UART;
 080083cc <__swsetup_r>:
  80083cc:	008200b4 	movhi	r2,2050
  80083d0:	defffd04 	addi	sp,sp,-12
- 80083d4:	10b54b04 	addi	r2,r2,-10964
+ 80083d4:	10b54904 	addi	r2,r2,-10972
  80083d8:	dc400115 	stw	r17,4(sp)
  80083dc:	2023883a 	mov	r17,r4
  80083e0:	11000017 	ldw	r4,0(r2)
@@ -10197,7 +10197,7 @@ WiFiUart WiFi_UART;
  80087c8:	18800015 	stw	r2,0(r3)
  80087cc:	2001a226 	beq	r4,zero,8008e58 <_dtoa_r+0x734>
  80087d0:	008200b4 	movhi	r2,2050
- 80087d4:	10acac44 	addi	r2,r2,-19791
+ 80087d4:	10acaa44 	addi	r2,r2,-19799
  80087d8:	20800015 	stw	r2,0(r4)
  80087dc:	10bfffc4 	addi	r2,r2,-1
  80087e0:	dfc02117 	ldw	ra,132(sp)
@@ -10217,7 +10217,7 @@ WiFiUart WiFi_UART;
  8008818:	18800015 	stw	r2,0(r3)
  800881c:	90017c26 	beq	r18,zero,8008e10 <_dtoa_r+0x6ec>
  8008820:	008200b4 	movhi	r2,2050
- 8008824:	10ad6b04 	addi	r2,r2,-19028
+ 8008824:	10ad6904 	addi	r2,r2,-19036
  8008828:	d9002517 	ldw	r4,148(sp)
  800882c:	203fec26 	beq	r4,zero,80087e0 <__alt_data_end+0xfc0087e0>
  8008830:	10c000c7 	ldb	r3,3(r2)
@@ -10311,7 +10311,7 @@ WiFiUart WiFi_UART;
  8008990:	10c21f36 	bltu	r2,r3,8009210 <_dtoa_r+0xaec>
  8008994:	180490fa 	slli	r2,r3,3
  8008998:	00c200b4 	movhi	r3,2050
- 800899c:	18ed8704 	addi	r3,r3,-18916
+ 800899c:	18ed8504 	addi	r3,r3,-18924
  80089a0:	1885883a 	add	r2,r3,r2
  80089a4:	11000017 	ldw	r4,0(r2)
  80089a8:	11400117 	ldw	r5,4(r2)
@@ -10385,14 +10385,14 @@ WiFiUart WiFi_UART;
  8008ab8:	100490fa 	slli	r2,r2,3
  8008abc:	182fd13a 	srai	r23,r3,4
  8008ac0:	00c200b4 	movhi	r3,2050
- 8008ac4:	18ed8704 	addi	r3,r3,-18916
+ 8008ac4:	18ed8504 	addi	r3,r3,-18924
  8008ac8:	1885883a 	add	r2,r3,r2
  8008acc:	b8c0040c 	andi	r3,r23,16
  8008ad0:	12c00017 	ldw	r11,0(r2)
  8008ad4:	12800117 	ldw	r10,4(r2)
  8008ad8:	18039726 	beq	r3,zero,8009938 <_dtoa_r+0x1214>
  8008adc:	008200b4 	movhi	r2,2050
- 8008ae0:	10ad7d04 	addi	r2,r2,-18956
+ 8008ae0:	10ad7b04 	addi	r2,r2,-18964
  8008ae4:	11800817 	ldw	r6,32(r2)
  8008ae8:	11c00917 	ldw	r7,36(r2)
  8008aec:	9009883a 	mov	r4,r18
@@ -10408,7 +10408,7 @@ WiFiUart WiFi_UART;
  8008b14:	182b883a 	mov	r21,r3
  8008b18:	b8001126 	beq	r23,zero,8008b60 <_dtoa_r+0x43c>
  8008b1c:	050200b4 	movhi	r20,2050
- 8008b20:	a52d7d04 	addi	r20,r20,-18956
+ 8008b20:	a52d7b04 	addi	r20,r20,-18964
  8008b24:	5805883a 	mov	r2,r11
  8008b28:	5007883a 	mov	r3,r10
  8008b2c:	b980004c 	andi	r6,r23,1
@@ -10465,7 +10465,7 @@ WiFiUart WiFi_UART;
  8008bf8:	50bfffc4 	addi	r2,r10,-1
  8008bfc:	100490fa 	slli	r2,r2,3
  8008c00:	00c200b4 	movhi	r3,2050
- 8008c04:	18ed8704 	addi	r3,r3,-18916
+ 8008c04:	18ed8504 	addi	r3,r3,-18924
  8008c08:	1885883a 	add	r2,r3,r2
  8008c0c:	11800017 	ldw	r6,0(r2)
  8008c10:	11c00117 	ldw	r7,4(r2)
@@ -10601,7 +10601,7 @@ WiFiUart WiFi_UART;
  8008e18:	a8aa703a 	and	r21,r21,r2
  8008e1c:	a83e801e 	bne	r21,zero,8008820 <__alt_data_end+0xfc008820>
  8008e20:	008200b4 	movhi	r2,2050
- 8008e24:	10ad6804 	addi	r2,r2,-19040
+ 8008e24:	10ad6604 	addi	r2,r2,-19048
  8008e28:	003e7f06 	br	8008828 <__alt_data_end+0xfc008828>
  8008e2c:	10c00204 	addi	r3,r2,8
  8008e30:	003e8206 	br	800883c <__alt_data_end+0xfc00883c>
@@ -10615,7 +10615,7 @@ WiFiUart WiFi_UART;
  8008e50:	d8000f15 	stw	zero,60(sp)
  8008e54:	003e9f06 	br	80088d4 <__alt_data_end+0xfc0088d4>
  8008e58:	008200b4 	movhi	r2,2050
- 8008e5c:	10acac04 	addi	r2,r2,-19792
+ 8008e5c:	10acaa04 	addi	r2,r2,-19800
  8008e60:	003e5f06 	br	80087e0 <__alt_data_end+0xfc0087e0>
  8008e64:	80001115 	stw	zero,68(r16)
  8008e68:	8009883a 	mov	r4,r16
@@ -10638,7 +10638,7 @@ WiFiUart WiFi_UART;
  8008eac:	200490fa 	slli	r2,r4,3
  8008eb0:	00c200b4 	movhi	r3,2050
  8008eb4:	d9802217 	ldw	r6,136(sp)
- 8008eb8:	18ed8704 	addi	r3,r3,-18916
+ 8008eb8:	18ed8504 	addi	r3,r3,-18924
  8008ebc:	1885883a 	add	r2,r3,r2
  8008ec0:	14400017 	ldw	r17,0(r2)
  8008ec4:	15000117 	ldw	r20,4(r2)
@@ -11339,7 +11339,7 @@ WiFiUart WiFi_UART;
  80099a0:	b88003cc 	andi	r2,r23,15
  80099a4:	100490fa 	slli	r2,r2,3
  80099a8:	00c200b4 	movhi	r3,2050
- 80099ac:	18ed8704 	addi	r3,r3,-18916
+ 80099ac:	18ed8504 	addi	r3,r3,-18924
  80099b0:	1885883a 	add	r2,r3,r2
  80099b4:	11800017 	ldw	r6,0(r2)
  80099b8:	11c00117 	ldw	r7,4(r2)
@@ -11351,7 +11351,7 @@ WiFiUart WiFi_UART;
  80099d0:	182b883a 	mov	r21,r3
  80099d4:	b800f426 	beq	r23,zero,8009da8 <_dtoa_r+0x1684>
  80099d8:	020200b4 	movhi	r8,2050
- 80099dc:	422d7d04 	addi	r8,r8,-18956
+ 80099dc:	422d7b04 	addi	r8,r8,-18964
  80099e0:	8029883a 	mov	r20,r16
  80099e4:	04400084 	movi	r17,2
  80099e8:	4021883a 	mov	r16,r8
@@ -11409,7 +11409,7 @@ WiFiUart WiFi_UART;
  8009ab8:	51bfffc4 	addi	r6,r10,-1
  8009abc:	300490fa 	slli	r2,r6,3
  8009ac0:	00c200b4 	movhi	r3,2050
- 8009ac4:	18ed8704 	addi	r3,r3,-18916
+ 8009ac4:	18ed8504 	addi	r3,r3,-18924
  8009ac8:	1885883a 	add	r2,r3,r2
  8009acc:	d9c00e17 	ldw	r7,56(sp)
  8009ad0:	11000017 	ldw	r4,0(r2)
@@ -11779,12 +11779,12 @@ WiFiUart WiFi_UART;
 0800a074 <fflush>:
  800a074:	20000526 	beq	r4,zero,800a08c <fflush+0x18>
  800a078:	008200b4 	movhi	r2,2050
- 800a07c:	10b54b04 	addi	r2,r2,-10964
+ 800a07c:	10b54904 	addi	r2,r2,-10972
  800a080:	200b883a 	mov	r5,r4
  800a084:	11000017 	ldw	r4,0(r2)
  800a088:	8009e4c1 	jmpi	8009e4c <_fflush_r>
  800a08c:	008200b4 	movhi	r2,2050
- 800a090:	10b54a04 	addi	r2,r2,-10968
+ 800a090:	10b54804 	addi	r2,r2,-10976
  800a094:	11000017 	ldw	r4,0(r2)
  800a098:	01420074 	movhi	r5,2049
  800a09c:	29679304 	addi	r5,r5,-25012
@@ -11944,7 +11944,7 @@ WiFiUart WiFi_UART;
 0800a2d8 <__sfp>:
  800a2d8:	008200b4 	movhi	r2,2050
  800a2dc:	defffb04 	addi	sp,sp,-20
- 800a2e0:	10b54a04 	addi	r2,r2,-10968
+ 800a2e0:	10b54804 	addi	r2,r2,-10976
  800a2e4:	dc800215 	stw	r18,8(sp)
  800a2e8:	14800017 	ldw	r18,0(r2)
  800a2ec:	dcc00315 	stw	r19,12(sp)
@@ -12015,7 +12015,7 @@ WiFiUart WiFi_UART;
 
 0800a3f0 <_cleanup>:
  800a3f0:	008200b4 	movhi	r2,2050
- 800a3f4:	10b54a04 	addi	r2,r2,-10968
+ 800a3f4:	10b54804 	addi	r2,r2,-10976
  800a3f8:	11000017 	ldw	r4,0(r2)
  800a3fc:	01420074 	movhi	r5,2049
  800a400:	294a9c04 	addi	r5,r5,10864
@@ -12041,7 +12041,7 @@ WiFiUart WiFi_UART;
 
 0800a428 <__fp_lock_all>:
  800a428:	008200b4 	movhi	r2,2050
- 800a42c:	10b54b04 	addi	r2,r2,-10964
+ 800a42c:	10b54904 	addi	r2,r2,-10972
  800a430:	11000017 	ldw	r4,0(r2)
  800a434:	01420074 	movhi	r5,2049
  800a438:	29682904 	addi	r5,r5,-24412
@@ -12049,7 +12049,7 @@ WiFiUart WiFi_UART;
 
 0800a440 <__fp_unlock_all>:
  800a440:	008200b4 	movhi	r2,2050
- 800a444:	10b54b04 	addi	r2,r2,-10964
+ 800a444:	10b54904 	addi	r2,r2,-10972
  800a448:	11000017 	ldw	r4,0(r2)
  800a44c:	01420074 	movhi	r5,2049
  800a450:	29682b04 	addi	r5,r5,-24404
@@ -12207,7 +12207,7 @@ WiFiUart WiFi_UART;
 
 0800a6a8 <fread>:
  800a6a8:	008200b4 	movhi	r2,2050
- 800a6ac:	10b54b04 	addi	r2,r2,-10964
+ 800a6ac:	10b54904 	addi	r2,r2,-10972
  800a6b0:	2011883a 	mov	r8,r4
  800a6b4:	11000017 	ldw	r4,0(r2)
  800a6b8:	defffe04 	addi	sp,sp,-8
@@ -12232,7 +12232,7 @@ WiFiUart WiFi_UART;
  800a6fc:	dc000015 	stw	r16,0(sp)
  800a700:	dfc00415 	stw	ra,16(sp)
  800a704:	2821883a 	mov	r16,r5
- 800a708:	9cee3c04 	addi	r19,r19,-18192
+ 800a708:	9cee3a04 	addi	r19,r19,-18200
  800a70c:	2025883a 	mov	r18,r4
  800a710:	8017d7c0 	call	8017d7c <__malloc_lock>
  800a714:	98800217 	ldw	r2,8(r19)
@@ -12268,7 +12268,7 @@ WiFiUart WiFi_UART;
  800a78c:	00ffffc4 	movi	r3,-1
  800a790:	10c00d26 	beq	r2,r3,800a7c8 <_malloc_trim_r+0xe0>
  800a794:	00c200b4 	movhi	r3,2050
- 800a798:	18fc9204 	addi	r3,r3,-3512
+ 800a798:	18fc9004 	addi	r3,r3,-3520
  800a79c:	18800017 	ldw	r2,0(r3)
  800a7a0:	99000217 	ldw	r4,8(r19)
  800a7a4:	8c23c83a 	sub	r17,r17,r16
@@ -12288,13 +12288,13 @@ WiFiUart WiFi_UART;
  800a7dc:	1107c83a 	sub	r3,r2,r4
  800a7e0:	28ffdd0e 	bge	r5,r3,800a758 <__alt_data_end+0xfc00a758>
  800a7e4:	014200b4 	movhi	r5,2050
- 800a7e8:	29754704 	addi	r5,r5,-10980
+ 800a7e8:	29754504 	addi	r5,r5,-10988
  800a7ec:	29400017 	ldw	r5,0(r5)
  800a7f0:	18c00054 	ori	r3,r3,1
  800a7f4:	20c00115 	stw	r3,4(r4)
  800a7f8:	00c200b4 	movhi	r3,2050
  800a7fc:	1145c83a 	sub	r2,r2,r5
- 800a800:	18fc9204 	addi	r3,r3,-3512
+ 800a800:	18fc9004 	addi	r3,r3,-3520
  800a804:	18800015 	stw	r2,0(r3)
  800a808:	003fd306 	br	800a758 <__alt_data_end+0xfc00a758>
 
@@ -12312,7 +12312,7 @@ WiFiUart WiFi_UART;
  800a834:	024200b4 	movhi	r9,2050
  800a838:	81bffe04 	addi	r6,r16,-8
  800a83c:	2084703a 	and	r2,r4,r2
- 800a840:	4a6e3c04 	addi	r9,r9,-18192
+ 800a840:	4a6e3a04 	addi	r9,r9,-18200
  800a844:	308b883a 	add	r5,r6,r2
  800a848:	2a000117 	ldw	r8,4(r5)
  800a84c:	49c00217 	ldw	r7,8(r9)
@@ -12338,7 +12338,7 @@ WiFiUart WiFi_UART;
  800a89c:	29000217 	ldw	r4,8(r5)
  800a8a0:	10c5883a 	add	r2,r2,r3
  800a8a4:	00c200b4 	movhi	r3,2050
- 800a8a8:	18ee3e04 	addi	r3,r3,-18184
+ 800a8a8:	18ee3c04 	addi	r3,r3,-18192
  800a8ac:	20c07526 	beq	r4,r3,800aa84 <_free_r+0x278>
  800a8b0:	29c00317 	ldw	r7,12(r5)
  800a8b4:	11400054 	ori	r5,r2,1
@@ -12388,7 +12388,7 @@ WiFiUart WiFi_UART;
  800a964:	1a49883a 	add	r4,r3,r9
  800a968:	20c00217 	ldw	r3,8(r4)
  800a96c:	01c200b4 	movhi	r7,2050
- 800a970:	39ee3c04 	addi	r7,r7,-18192
+ 800a970:	39ee3a04 	addi	r7,r7,-18200
  800a974:	19003b26 	beq	r3,r4,800aa64 <_free_r+0x258>
  800a978:	01ffff04 	movi	r7,-4
  800a97c:	19400117 	ldw	r5,4(r3)
@@ -12415,12 +12415,12 @@ WiFiUart WiFi_UART;
  800a9d0:	10c00054 	ori	r3,r2,1
  800a9d4:	30c00115 	stw	r3,4(r6)
  800a9d8:	00c200b4 	movhi	r3,2050
- 800a9dc:	18f54804 	addi	r3,r3,-10976
+ 800a9dc:	18f54604 	addi	r3,r3,-10984
  800a9e0:	18c00017 	ldw	r3,0(r3)
  800a9e4:	49800215 	stw	r6,8(r9)
  800a9e8:	10ffcf36 	bltu	r2,r3,800a928 <__alt_data_end+0xfc00a928>
  800a9ec:	008200b4 	movhi	r2,2050
- 800a9f0:	10bc8304 	addi	r2,r2,-3572
+ 800a9f0:	10bc8104 	addi	r2,r2,-3580
  800a9f4:	11400017 	ldw	r5,0(r2)
  800a9f8:	8809883a 	mov	r4,r17
  800a9fc:	800a6e80 	call	800a6e8 <_malloc_trim_r>
@@ -12887,7 +12887,7 @@ WiFiUart WiFi_UART;
  800b110:	00803fc4 	movi	r2,255
  800b114:	11000836 	bltu	r2,r4,800b138 <iswspace+0x28>
  800b118:	008200b4 	movhi	r2,2050
- 800b11c:	10b54904 	addi	r2,r2,-10972
+ 800b11c:	10b54704 	addi	r2,r2,-10980
  800b120:	10800017 	ldw	r2,0(r2)
  800b124:	1109883a 	add	r4,r2,r4
  800b128:	20800043 	ldbu	r2,1(r4)
@@ -12901,7 +12901,7 @@ WiFiUart WiFi_UART;
  800b140:	30001b26 	beq	r6,zero,800b1b0 <_setlocale_r+0x70>
  800b144:	014200b4 	movhi	r5,2050
  800b148:	defffe04 	addi	sp,sp,-8
- 800b14c:	296d6d04 	addi	r5,r5,-19020
+ 800b14c:	296d6b04 	addi	r5,r5,-19028
  800b150:	3009883a 	mov	r4,r6
  800b154:	dc000015 	stw	r16,0(sp)
  800b158:	dfc00115 	stw	ra,4(sp)
@@ -12909,41 +12909,41 @@ WiFiUart WiFi_UART;
  800b160:	800205c0 	call	800205c <strcmp>
  800b164:	1000061e 	bne	r2,zero,800b180 <_setlocale_r+0x40>
  800b168:	008200b4 	movhi	r2,2050
- 800b16c:	10ad6c04 	addi	r2,r2,-19024
+ 800b16c:	10ad6a04 	addi	r2,r2,-19032
  800b170:	dfc00117 	ldw	ra,4(sp)
  800b174:	dc000017 	ldw	r16,0(sp)
  800b178:	dec00204 	addi	sp,sp,8
  800b17c:	f800283a 	ret
  800b180:	014200b4 	movhi	r5,2050
- 800b184:	296d6c04 	addi	r5,r5,-19024
+ 800b184:	296d6a04 	addi	r5,r5,-19032
  800b188:	8009883a 	mov	r4,r16
  800b18c:	800205c0 	call	800205c <strcmp>
  800b190:	103ff526 	beq	r2,zero,800b168 <__alt_data_end+0xfc00b168>
  800b194:	014200b4 	movhi	r5,2050
- 800b198:	296ca404 	addi	r5,r5,-19824
+ 800b198:	296ca204 	addi	r5,r5,-19832
  800b19c:	8009883a 	mov	r4,r16
  800b1a0:	800205c0 	call	800205c <strcmp>
  800b1a4:	103ff026 	beq	r2,zero,800b168 <__alt_data_end+0xfc00b168>
  800b1a8:	0005883a 	mov	r2,zero
  800b1ac:	003ff006 	br	800b170 <__alt_data_end+0xfc00b170>
  800b1b0:	008200b4 	movhi	r2,2050
- 800b1b4:	10ad6c04 	addi	r2,r2,-19024
+ 800b1b4:	10ad6a04 	addi	r2,r2,-19032
  800b1b8:	f800283a 	ret
 
 0800b1bc <__locale_charset>:
  800b1bc:	008200b4 	movhi	r2,2050
- 800b1c0:	10b04f04 	addi	r2,r2,-16068
+ 800b1c0:	10b04d04 	addi	r2,r2,-16076
  800b1c4:	f800283a 	ret
 
 0800b1c8 <__locale_mb_cur_max>:
  800b1c8:	008200b4 	movhi	r2,2050
- 800b1cc:	10b54c04 	addi	r2,r2,-10960
+ 800b1cc:	10b54a04 	addi	r2,r2,-10968
  800b1d0:	10800017 	ldw	r2,0(r2)
  800b1d4:	f800283a 	ret
 
 0800b1d8 <__locale_msgcharset>:
  800b1d8:	008200b4 	movhi	r2,2050
- 800b1dc:	10b04704 	addi	r2,r2,-16100
+ 800b1dc:	10b04504 	addi	r2,r2,-16108
  800b1e0:	f800283a 	ret
 
 0800b1e4 <__locale_cjk_lang>:
@@ -12952,12 +12952,12 @@ WiFiUart WiFi_UART;
 
 0800b1ec <_localeconv_r>:
  800b1ec:	008200b4 	movhi	r2,2050
- 800b1f0:	10b05704 	addi	r2,r2,-16036
+ 800b1f0:	10b05504 	addi	r2,r2,-16044
  800b1f4:	f800283a 	ret
 
 0800b1f8 <setlocale>:
  800b1f8:	00c200b4 	movhi	r3,2050
- 800b1fc:	18f54b04 	addi	r3,r3,-10964
+ 800b1fc:	18f54904 	addi	r3,r3,-10972
  800b200:	2005883a 	mov	r2,r4
  800b204:	19000017 	ldw	r4,0(r3)
  800b208:	280d883a 	mov	r6,r5
@@ -12966,7 +12966,7 @@ WiFiUart WiFi_UART;
 
 0800b214 <localeconv>:
  800b214:	008200b4 	movhi	r2,2050
- 800b218:	10b05704 	addi	r2,r2,-16036
+ 800b218:	10b05504 	addi	r2,r2,-16044
  800b21c:	f800283a 	ret
 
 0800b220 <__smakebuf_r>:
@@ -13087,7 +13087,7 @@ WiFiUart WiFi_UART;
  800b3e0:	dc800715 	stw	r18,28(sp)
  800b3e4:	dc400615 	stw	r17,24(sp)
  800b3e8:	dc000515 	stw	r16,20(sp)
- 800b3ec:	10b54d04 	addi	r2,r2,-10956
+ 800b3ec:	10b54b04 	addi	r2,r2,-10964
  800b3f0:	dfc00815 	stw	ra,32(sp)
  800b3f4:	2021883a 	mov	r16,r4
  800b3f8:	dc400917 	ldw	r17,36(sp)
@@ -13117,7 +13117,7 @@ WiFiUart WiFi_UART;
  800b458:	f800283a 	ret
  800b45c:	800b1bc0 	call	800b1bc <__locale_charset>
  800b460:	018200b4 	movhi	r6,2050
- 800b464:	31aca404 	addi	r6,r6,-19824
+ 800b464:	31aca204 	addi	r6,r6,-19832
  800b468:	d8800015 	stw	r2,0(sp)
  800b46c:	dc400115 	stw	r17,4(sp)
  800b470:	8009883a 	mov	r4,r16
@@ -13140,10 +13140,10 @@ WiFiUart WiFi_UART;
  800b4ac:	3823883a 	mov	r17,r7
  800b4b0:	28002026 	beq	r5,zero,800b534 <mbrtowc+0xb0>
  800b4b4:	048200b4 	movhi	r18,2050
- 800b4b8:	94b54b04 	addi	r18,r18,-10964
+ 800b4b8:	94b54904 	addi	r18,r18,-10972
  800b4bc:	008200b4 	movhi	r2,2050
  800b4c0:	95800017 	ldw	r22,0(r18)
- 800b4c4:	10b54d04 	addi	r2,r2,-10956
+ 800b4c4:	10b54b04 	addi	r2,r2,-10964
  800b4c8:	15400017 	ldw	r21,0(r2)
  800b4cc:	2029883a 	mov	r20,r4
  800b4d0:	3027883a 	mov	r19,r6
@@ -13172,14 +13172,14 @@ WiFiUart WiFi_UART;
  800b52c:	dec00a04 	addi	sp,sp,40
  800b530:	f800283a 	ret
  800b534:	048200b4 	movhi	r18,2050
- 800b538:	94b54b04 	addi	r18,r18,-10964
+ 800b538:	94b54904 	addi	r18,r18,-10972
  800b53c:	008200b4 	movhi	r2,2050
  800b540:	94c00017 	ldw	r19,0(r18)
- 800b544:	10b54d04 	addi	r2,r2,-10956
+ 800b544:	10b54b04 	addi	r2,r2,-10964
  800b548:	14000017 	ldw	r16,0(r2)
  800b54c:	800b1bc0 	call	800b1bc <__locale_charset>
  800b550:	018200b4 	movhi	r6,2050
- 800b554:	31aca404 	addi	r6,r6,-19824
+ 800b554:	31aca204 	addi	r6,r6,-19832
  800b558:	d8800015 	stw	r2,0(sp)
  800b55c:	dc400115 	stw	r17,4(sp)
  800b560:	9809883a 	mov	r4,r19
@@ -13210,7 +13210,7 @@ WiFiUart WiFi_UART;
 0800b5b8 <_mbtowc_r>:
  800b5b8:	008200b4 	movhi	r2,2050
  800b5bc:	defff804 	addi	sp,sp,-32
- 800b5c0:	10b54d04 	addi	r2,r2,-10956
+ 800b5c0:	10b54b04 	addi	r2,r2,-10964
  800b5c4:	dfc00715 	stw	ra,28(sp)
  800b5c8:	dc000615 	stw	r16,24(sp)
  800b5cc:	14000017 	ldw	r16,0(r2)
@@ -14092,7 +14092,7 @@ WiFiUart WiFi_UART;
  800c30c:	10bfffc4 	addi	r2,r2,-1
  800c310:	1085883a 	add	r2,r2,r2
  800c314:	00c200b4 	movhi	r3,2050
- 800c318:	18ed7004 	addi	r3,r3,-19008
+ 800c318:	18ed6e04 	addi	r3,r3,-19016
  800c31c:	1085883a 	add	r2,r2,r2
  800c320:	1885883a 	add	r2,r3,r2
  800c324:	11800017 	ldw	r6,0(r2)
@@ -14571,7 +14571,7 @@ WiFiUart WiFi_UART;
  800ca48:	f800283a 	ret
  800ca4c:	202090fa 	slli	r16,r4,3
  800ca50:	008200b4 	movhi	r2,2050
- 800ca54:	10ad8704 	addi	r2,r2,-18916
+ 800ca54:	10ad8504 	addi	r2,r2,-18924
  800ca58:	1421883a 	add	r16,r2,r16
  800ca5c:	80800017 	ldw	r2,0(r16)
  800ca60:	80c00117 	ldw	r3,4(r16)
@@ -14695,7 +14695,7 @@ WiFiUart WiFi_UART;
  800cc18:	defffc04 	addi	sp,sp,-16
  800cc1c:	dc400115 	stw	r17,4(sp)
  800cc20:	044200b4 	movhi	r17,2050
- 800cc24:	8c754b04 	addi	r17,r17,-10964
+ 800cc24:	8c754904 	addi	r17,r17,-10972
  800cc28:	dc800215 	stw	r18,8(sp)
  800cc2c:	2025883a 	mov	r18,r4
  800cc30:	89000017 	ldw	r4,0(r17)
@@ -14774,7 +14774,7 @@ WiFiUart WiFi_UART;
  800cd4c:	a4408136 	bltu	r20,r17,800cf54 <_realloc_r+0x274>
  800cd50:	81c03c0e 	bge	r16,r7,800ce44 <_realloc_r+0x164>
  800cd54:	070200b4 	movhi	fp,2050
- 800cd58:	e72e3c04 	addi	fp,fp,-18192
+ 800cd58:	e72e3a04 	addi	fp,fp,-18200
  800cd5c:	e1000217 	ldw	r4,8(fp)
  800cd60:	ac05883a 	add	r2,r21,r16
  800cd64:	2080bf26 	beq	r4,r2,800d064 <_realloc_r+0x384>
@@ -15186,7 +15186,7 @@ WiFiUart WiFi_UART;
  800d3ac:	800a4080 	call	800a408 <__sinit>
  800d3b0:	003fc306 	br	800d2c0 <__alt_data_end+0xfc00d2c0>
  800d3b4:	008200b4 	movhi	r2,2050
- 800d3b8:	10b54a04 	addi	r2,r2,-10968
+ 800d3b8:	10b54804 	addi	r2,r2,-10976
  800d3bc:	11000017 	ldw	r4,0(r2)
  800d3c0:	01420074 	movhi	r5,2049
  800d3c4:	2974a004 	addi	r5,r5,-11648
@@ -15671,7 +15671,7 @@ WiFiUart WiFi_UART;
  800daf0:	e0bf971e 	bne	fp,r2,800d950 <__alt_data_end+0xfc00d950>
  800daf4:	014200b4 	movhi	r5,2050
  800daf8:	d9000617 	ldw	r4,24(sp)
- 800dafc:	296dbc04 	addi	r5,r5,-18704
+ 800dafc:	296dba04 	addi	r5,r5,-18712
  800db00:	01c00644 	movi	r7,25
  800db04:	00000b06 	br	800db34 <_strtod_r+0x314>
  800db08:	21000044 	addi	r4,r4,1
@@ -15824,7 +15824,7 @@ WiFiUart WiFi_UART;
  800dd54:	100490fa 	slli	r2,r2,3
  800dd58:	180b883a 	mov	r5,r3
  800dd5c:	00c200b4 	movhi	r3,2050
- 800dd60:	18ed8704 	addi	r3,r3,-18916
+ 800dd60:	18ed8504 	addi	r3,r3,-18924
  800dd64:	1885883a 	add	r2,r3,r2
  800dd68:	d9000817 	ldw	r4,32(sp)
  800dd6c:	11800017 	ldw	r6,0(r2)
@@ -15851,7 +15851,7 @@ WiFiUart WiFi_UART;
  800ddc0:	19030a16 	blt	r3,r4,800e9ec <_strtod_r+0x11cc>
  800ddc4:	202290fa 	slli	r17,r4,3
  800ddc8:	008200b4 	movhi	r2,2050
- 800ddcc:	10ad8704 	addi	r2,r2,-18916
+ 800ddcc:	10ad8504 	addi	r2,r2,-18924
  800ddd0:	1445883a 	add	r2,r2,r17
  800ddd4:	d9800817 	ldw	r6,32(sp)
  800ddd8:	d9c00717 	ldw	r7,28(sp)
@@ -15931,7 +15931,7 @@ WiFiUart WiFi_UART;
  800df00:	10000b26 	beq	r2,zero,800df30 <_strtod_r+0x710>
  800df04:	100490fa 	slli	r2,r2,3
  800df08:	00c200b4 	movhi	r3,2050
- 800df0c:	18ed8704 	addi	r3,r3,-18916
+ 800df0c:	18ed8504 	addi	r3,r3,-18924
  800df10:	1885883a 	add	r2,r3,r2
  800df14:	d9800817 	ldw	r6,32(sp)
  800df18:	d9c00717 	ldw	r7,28(sp)
@@ -16367,7 +16367,7 @@ WiFiUart WiFi_UART;
  800e5d0:	8827d13a 	srai	r19,r17,4
  800e5d4:	05400044 	movi	r21,1
  800e5d8:	044200b4 	movhi	r17,2050
- 800e5dc:	8c6d7d04 	addi	r17,r17,-18956
+ 800e5dc:	8c6d7b04 	addi	r17,r17,-18964
  800e5e0:	acc1ea0e 	bge	r21,r19,800ed8c <_strtod_r+0x156c>
  800e5e4:	d8800817 	ldw	r2,32(sp)
  800e5e8:	d8c00717 	ldw	r3,28(sp)
@@ -16426,7 +16426,7 @@ WiFiUart WiFi_UART;
  800e6bc:	d8c01017 	ldw	r3,64(sp)
  800e6c0:	04c200b4 	movhi	r19,2050
  800e6c4:	d8800504 	addi	r2,sp,20
- 800e6c8:	9cf06a04 	addi	r19,r19,-15960
+ 800e6c8:	9cf06804 	addi	r19,r19,-15968
  800e6cc:	d8800015 	stw	r2,0(sp)
  800e6d0:	d8c00115 	stw	r3,4(sp)
  800e6d4:	8009883a 	mov	r4,r16
@@ -16549,7 +16549,7 @@ WiFiUart WiFi_UART;
  800e8a8:	10000b26 	beq	r2,zero,800e8d8 <_strtod_r+0x10b8>
  800e8ac:	100490fa 	slli	r2,r2,3
  800e8b0:	00c200b4 	movhi	r3,2050
- 800e8b4:	18ed8704 	addi	r3,r3,-18916
+ 800e8b4:	18ed8504 	addi	r3,r3,-18924
  800e8b8:	1885883a 	add	r2,r3,r2
  800e8bc:	d9000817 	ldw	r4,32(sp)
  800e8c0:	d9400717 	ldw	r5,28(sp)
@@ -16570,7 +16570,7 @@ WiFiUart WiFi_UART;
  800e8fc:	d8800817 	ldw	r2,32(sp)
  800e900:	d8c00717 	ldw	r3,28(sp)
  800e904:	04c200b4 	movhi	r19,2050
- 800e908:	9cedbd04 	addi	r19,r19,-18700
+ 800e908:	9cedbb04 	addi	r19,r19,-18708
  800e90c:	8980004c 	andi	r6,r17,1
  800e910:	30000526 	beq	r6,zero,800e928 <_strtod_r+0x1108>
  800e914:	99800017 	ldw	r6,0(r19)
@@ -16634,7 +16634,7 @@ WiFiUart WiFi_UART;
  800e9fc:	15a1c83a 	sub	r16,r2,r22
  800ea00:	800690fa 	slli	r3,r16,3
  800ea04:	044200b4 	movhi	r17,2050
- 800ea08:	8c6d8704 	addi	r17,r17,-18916
+ 800ea08:	8c6d8504 	addi	r17,r17,-18924
  800ea0c:	88c7883a 	add	r3,r17,r3
  800ea10:	d9800817 	ldw	r6,32(sp)
  800ea14:	d9c00717 	ldw	r7,28(sp)
@@ -16755,7 +16755,7 @@ WiFiUart WiFi_UART;
  800ebe0:	18bcc216 	blt	r3,r2,800deec <__alt_data_end+0xfc00deec>
  800ebe4:	182290fa 	slli	r17,r3,3
  800ebe8:	008200b4 	movhi	r2,2050
- 800ebec:	10ad8704 	addi	r2,r2,-18916
+ 800ebec:	10ad8504 	addi	r2,r2,-18924
  800ebf0:	1445c83a 	sub	r2,r2,r17
  800ebf4:	d9000817 	ldw	r4,32(sp)
  800ebf8:	d9400717 	ldw	r5,28(sp)
@@ -16792,7 +16792,7 @@ WiFiUart WiFi_UART;
  800ec74:	003e4506 	br	800e58c <__alt_data_end+0xfc00e58c>
  800ec78:	014200b4 	movhi	r5,2050
  800ec7c:	d9000617 	ldw	r4,24(sp)
- 800ec80:	296db904 	addi	r5,r5,-18716
+ 800ec80:	296db704 	addi	r5,r5,-18724
  800ec84:	01c00644 	movi	r7,25
  800ec88:	00000b06 	br	800ecb8 <_strtod_r+0x1498>
  800ec8c:	21000044 	addi	r4,r4,1
@@ -16811,7 +16811,7 @@ WiFiUart WiFi_UART;
  800ecc0:	018200b4 	movhi	r6,2050
  800ecc4:	200b883a 	mov	r5,r4
  800ecc8:	d9000615 	stw	r4,24(sp)
- 800eccc:	31adba04 	addi	r6,r6,-18712
+ 800eccc:	31adb804 	addi	r6,r6,-18720
  800ecd0:	02000644 	movi	r8,25
  800ecd4:	00000a06 	br	800ed00 <_strtod_r+0x14e0>
  800ecd8:	28800003 	ldbu	r2,0(r5)
@@ -16870,7 +16870,7 @@ WiFiUart WiFi_UART;
  800edac:	047ed316 	blt	zero,r17,800e8fc <__alt_data_end+0xfc00e8fc>
  800edb0:	003ef106 	br	800e978 <__alt_data_end+0xfc00e978>
  800edb4:	014200b4 	movhi	r5,2050
- 800edb8:	29706504 	addi	r5,r5,-15980
+ 800edb8:	29706304 	addi	r5,r5,-15988
  800edbc:	d9000604 	addi	r4,sp,24
  800edc0:	d9800204 	addi	r6,sp,8
  800edc4:	80136940 	call	8013694 <__hexnan>
@@ -16901,7 +16901,7 @@ WiFiUart WiFi_UART;
 
 0800ee28 <strtod>:
  800ee28:	00c200b4 	movhi	r3,2050
- 800ee2c:	18f54b04 	addi	r3,r3,-10964
+ 800ee2c:	18f54904 	addi	r3,r3,-10972
  800ee30:	2005883a 	mov	r2,r4
  800ee34:	19000017 	ldw	r4,0(r3)
  800ee38:	280d883a 	mov	r6,r5
@@ -16912,7 +16912,7 @@ WiFiUart WiFi_UART;
  800ee44:	defffb04 	addi	sp,sp,-20
  800ee48:	dcc00315 	stw	r19,12(sp)
  800ee4c:	04c200b4 	movhi	r19,2050
- 800ee50:	9cf54b04 	addi	r19,r19,-10964
+ 800ee50:	9cf54904 	addi	r19,r19,-10972
  800ee54:	2005883a 	mov	r2,r4
  800ee58:	99000017 	ldw	r4,0(r19)
  800ee5c:	280d883a 	mov	r6,r5
@@ -16978,7 +16978,7 @@ WiFiUart WiFi_UART;
 0800ef48 <_strtol_r>:
  800ef48:	008200b4 	movhi	r2,2050
  800ef4c:	defff204 	addi	sp,sp,-56
- 800ef50:	10b54904 	addi	r2,r2,-10972
+ 800ef50:	10b54704 	addi	r2,r2,-10980
  800ef54:	dd400915 	stw	r21,36(sp)
  800ef58:	15400017 	ldw	r21,0(r2)
  800ef5c:	ddc00b15 	stw	r23,44(sp)
@@ -17134,7 +17134,7 @@ WiFiUart WiFi_UART;
 0800f1b0 <strtol>:
  800f1b0:	2007883a 	mov	r3,r4
  800f1b4:	010200b4 	movhi	r4,2050
- 800f1b8:	21354b04 	addi	r4,r4,-10964
+ 800f1b8:	21354904 	addi	r4,r4,-10972
  800f1bc:	21000017 	ldw	r4,0(r4)
  800f1c0:	2805883a 	mov	r2,r5
  800f1c4:	300f883a 	mov	r7,r6
@@ -17145,7 +17145,7 @@ WiFiUart WiFi_UART;
 0800f1d4 <_strtoll_r>:
  800f1d4:	008200b4 	movhi	r2,2050
  800f1d8:	deffef04 	addi	sp,sp,-68
- 800f1dc:	10b54904 	addi	r2,r2,-10972
+ 800f1dc:	10b54704 	addi	r2,r2,-10980
  800f1e0:	dd800d15 	stw	r22,52(sp)
  800f1e4:	15800017 	ldw	r22,0(r2)
  800f1e8:	df000f15 	stw	fp,60(sp)
@@ -17344,7 +17344,7 @@ WiFiUart WiFi_UART;
 0800f4e8 <_strtoul_r>:
  800f4e8:	008200b4 	movhi	r2,2050
  800f4ec:	defff204 	addi	sp,sp,-56
- 800f4f0:	10b54904 	addi	r2,r2,-10972
+ 800f4f0:	10b54704 	addi	r2,r2,-10980
  800f4f4:	dd800a15 	stw	r22,40(sp)
  800f4f8:	15800017 	ldw	r22,0(r2)
  800f4fc:	ddc00b15 	stw	r23,44(sp)
@@ -17517,7 +17517,7 @@ WiFiUart WiFi_UART;
 0800f794 <strtoul>:
  800f794:	2007883a 	mov	r3,r4
  800f798:	010200b4 	movhi	r4,2050
- 800f79c:	21354b04 	addi	r4,r4,-10964
+ 800f79c:	21354904 	addi	r4,r4,-10972
  800f7a0:	21000017 	ldw	r4,0(r4)
  800f7a4:	2805883a 	mov	r2,r5
  800f7a8:	300f883a 	mov	r7,r6
@@ -17528,7 +17528,7 @@ WiFiUart WiFi_UART;
 0800f7b8 <_strtoull_r>:
  800f7b8:	008200b4 	movhi	r2,2050
  800f7bc:	deffee04 	addi	sp,sp,-72
- 800f7c0:	10b54904 	addi	r2,r2,-10972
+ 800f7c0:	10b54704 	addi	r2,r2,-10980
  800f7c4:	ddc00f15 	stw	r23,60(sp)
  800f7c8:	15c00017 	ldw	r23,0(r2)
  800f7cc:	df001015 	stw	fp,64(sp)
@@ -17882,7 +17882,7 @@ WiFiUart WiFi_UART;
  800fd2c:	dc402917 	ldw	r17,164(sp)
  800fd30:	04c200b4 	movhi	r19,2050
  800fd34:	10c9c83a 	sub	r4,r2,r3
- 800fd38:	9cedc704 	addi	r19,r19,-18660
+ 800fd38:	9cedc504 	addi	r19,r19,-18668
  800fd3c:	d8801e15 	stw	r2,120(sp)
  800fd40:	d8c01f15 	stw	r3,124(sp)
  800fd44:	dec01a15 	stw	sp,104(sp)
@@ -18057,7 +18057,7 @@ WiFiUart WiFi_UART;
  800ffe8:	a9800007 	ldb	r6,0(r21)
  800ffec:	003f8406 	br	800fe00 <__alt_data_end+0xfc00fe00>
  800fff0:	014200b4 	movhi	r5,2050
- 800fff4:	296ca504 	addi	r5,r5,-19820
+ 800fff4:	296ca304 	addi	r5,r5,-19828
  800fff8:	d9402a15 	stw	r5,168(sp)
  800fffc:	dd801d85 	stb	r22,118(sp)
  8010000:	80c0080c 	andi	r3,r16,32
@@ -18163,7 +18163,7 @@ WiFiUart WiFi_UART;
  8010190:	00800c04 	movi	r2,48
  8010194:	18c00104 	addi	r3,r3,4
  8010198:	d8801d05 	stb	r2,116(sp)
- 801019c:	212ca504 	addi	r4,r4,-19820
+ 801019c:	212ca304 	addi	r4,r4,-19828
  80101a0:	00801e04 	movi	r2,120
  80101a4:	d8801d45 	stb	r2,117(sp)
  80101a8:	d8c02415 	stw	r3,144(sp)
@@ -18252,7 +18252,7 @@ WiFiUart WiFi_UART;
  80102f4:	d8801b17 	ldw	r2,108(sp)
  80102f8:	4f02c00e 	bge	r9,fp,8010dfc <___svfiprintf_internal_r+0x1128>
  80102fc:	010200b4 	movhi	r4,2050
- 8010300:	212dcb04 	addi	r4,r4,-18644
+ 8010300:	212dc904 	addi	r4,r4,-18652
  8010304:	d9002815 	stw	r4,160(sp)
  8010308:	a809883a 	mov	r4,r21
  801030c:	dc002b15 	stw	r16,172(sp)
@@ -18270,7 +18270,7 @@ WiFiUart WiFi_UART;
  801033c:	014200b4 	movhi	r5,2050
  8010340:	18c00404 	addi	r3,r3,16
  8010344:	10800044 	addi	r2,r2,1
- 8010348:	296dcb04 	addi	r5,r5,-18644
+ 8010348:	296dc904 	addi	r5,r5,-18652
  801034c:	41400015 	stw	r5,0(r8)
  8010350:	45c00115 	stw	r23,4(r8)
  8010354:	d8c01c15 	stw	r3,112(sp)
@@ -18304,7 +18304,7 @@ WiFiUart WiFi_UART;
  80103c4:	42000204 	addi	r8,r8,8
  80103c8:	00008106 	br	80105d0 <___svfiprintf_internal_r+0x8fc>
  80103cc:	010200b4 	movhi	r4,2050
- 80103d0:	212ca004 	addi	r4,r4,-19840
+ 80103d0:	212c9e04 	addi	r4,r4,-19848
  80103d4:	dd801d85 	stb	r22,118(sp)
  80103d8:	d9002a15 	stw	r4,168(sp)
  80103dc:	80c0080c 	andi	r3,r16,32
@@ -18467,7 +18467,7 @@ WiFiUart WiFi_UART;
  8010650:	01c00404 	movi	r7,16
  8010654:	3dc1940e 	bge	r7,r23,8010ca8 <___svfiprintf_internal_r+0xfd4>
  8010658:	010200b4 	movhi	r4,2050
- 801065c:	212dc704 	addi	r4,r4,-18660
+ 801065c:	212dc504 	addi	r4,r4,-18668
  8010660:	d9002115 	stw	r4,132(sp)
  8010664:	a809883a 	mov	r4,r21
  8010668:	dc002015 	stw	r16,128(sp)
@@ -18534,7 +18534,7 @@ WiFiUart WiFi_UART;
  801075c:	d8801b17 	ldw	r2,108(sp)
  8010760:	a401aa0e 	bge	r20,r16,8010e0c <___svfiprintf_internal_r+0x1138>
  8010764:	014200b4 	movhi	r5,2050
- 8010768:	296dcb04 	addi	r5,r5,-18644
+ 8010768:	296dc904 	addi	r5,r5,-18652
  801076c:	d9402815 	stw	r5,160(sp)
  8010770:	058001c4 	movi	r22,7
  8010774:	ddc02217 	ldw	r23,136(sp)
@@ -18545,7 +18545,7 @@ WiFiUart WiFi_UART;
  8010788:	010200b4 	movhi	r4,2050
  801078c:	18c00404 	addi	r3,r3,16
  8010790:	10800044 	addi	r2,r2,1
- 8010794:	212dcb04 	addi	r4,r4,-18644
+ 8010794:	212dc904 	addi	r4,r4,-18652
  8010798:	41000015 	stw	r4,0(r8)
  801079c:	45000115 	stw	r20,4(r8)
  80107a0:	d8c01c15 	stw	r3,112(sp)
@@ -18640,7 +18640,7 @@ WiFiUart WiFi_UART;
  8010904:	01c00404 	movi	r7,16
  8010908:	3dc1440e 	bge	r7,r23,8010e1c <___svfiprintf_internal_r+0x1148>
  801090c:	010200b4 	movhi	r4,2050
- 8010910:	212dc704 	addi	r4,r4,-18660
+ 8010910:	212dc504 	addi	r4,r4,-18668
  8010914:	d9002115 	stw	r4,132(sp)
  8010918:	a809883a 	mov	r4,r21
  801091c:	dc002515 	stw	r16,148(sp)
@@ -18871,7 +18871,7 @@ WiFiUart WiFi_UART;
  8010ca0:	d811883a 	mov	r8,sp
  8010ca4:	003e6706 	br	8010644 <__alt_data_end+0xfc010644>
  8010ca8:	014200b4 	movhi	r5,2050
- 8010cac:	296dc704 	addi	r5,r5,-18660
+ 8010cac:	296dc504 	addi	r5,r5,-18668
  8010cb0:	d9402115 	stw	r5,132(sp)
  8010cb4:	003e8f06 	br	80106f4 <__alt_data_end+0xfc0106f4>
  8010cb8:	1c800017 	ldw	r18,0(r3)
@@ -18934,7 +18934,7 @@ WiFiUart WiFi_UART;
  8010d9c:	a025883a 	mov	r18,r20
  8010da0:	a0002916 	blt	r20,zero,8010e48 <___svfiprintf_internal_r+0x1174>
  8010da4:	00c200b4 	movhi	r3,2050
- 8010da8:	18ecaa04 	addi	r3,r3,-19800
+ 8010da8:	18eca804 	addi	r3,r3,-19808
  8010dac:	dd802415 	stw	r22,144(sp)
  8010db0:	d8c02715 	stw	r3,156(sp)
  8010db4:	003d4206 	br	80102c0 <__alt_data_end+0xfc0102c0>
@@ -18956,15 +18956,15 @@ WiFiUart WiFi_UART;
  8010df4:	11400015 	stw	r5,0(r2)
  8010df8:	003bd906 	br	800fd60 <__alt_data_end+0xfc00fd60>
  8010dfc:	014200b4 	movhi	r5,2050
- 8010e00:	296dcb04 	addi	r5,r5,-18644
+ 8010e00:	296dc904 	addi	r5,r5,-18652
  8010e04:	d9402815 	stw	r5,160(sp)
  8010e08:	003d6506 	br	80103a0 <__alt_data_end+0xfc0103a0>
  8010e0c:	010200b4 	movhi	r4,2050
- 8010e10:	212dcb04 	addi	r4,r4,-18644
+ 8010e10:	212dc904 	addi	r4,r4,-18652
  8010e14:	d9002815 	stw	r4,160(sp)
  8010e18:	003e6e06 	br	80107d4 <__alt_data_end+0xfc0107d4>
  8010e1c:	014200b4 	movhi	r5,2050
- 8010e20:	296dc704 	addi	r5,r5,-18660
+ 8010e20:	296dc504 	addi	r5,r5,-18668
  8010e24:	d9402115 	stw	r5,132(sp)
  8010e28:	003edf06 	br	80109a8 <__alt_data_end+0xfc0109a8>
  8010e2c:	d8002015 	stw	zero,128(sp)
@@ -19155,7 +19155,7 @@ WiFiUart WiFi_UART;
 
 08011100 <ungetc>:
  8011100:	00c200b4 	movhi	r3,2050
- 8011104:	18f54b04 	addi	r3,r3,-10964
+ 8011104:	18f54904 	addi	r3,r3,-10972
  8011108:	2005883a 	mov	r2,r4
  801110c:	19000017 	ldw	r4,0(r3)
  8011110:	280d883a 	mov	r6,r5
@@ -19280,8 +19280,8 @@ WiFiUart WiFi_UART;
  80112d4:	070200b4 	movhi	fp,2050
  80112d8:	044200b4 	movhi	r17,2050
  80112dc:	2145c83a 	sub	r2,r4,r5
- 80112e0:	e72dd304 	addi	fp,fp,-18612
- 80112e4:	8c6dcf04 	addi	r17,r17,-18628
+ 80112e0:	e72dd104 	addi	fp,fp,-18620
+ 80112e4:	8c6dcd04 	addi	r17,r17,-18636
  80112e8:	d9011e15 	stw	r4,1144(sp)
  80112ec:	d9411f15 	stw	r5,1148(sp)
  80112f0:	dec11a15 	stw	sp,1128(sp)
@@ -19593,7 +19593,7 @@ WiFiUart WiFi_UART;
  80117b8:	d8c11c17 	ldw	r3,1136(sp)
  80117bc:	3cc36b0e 	bge	r7,r19,801256c <___vfiprintf_internal_r+0x133c>
  80117c0:	008200b4 	movhi	r2,2050
- 80117c4:	10add304 	addi	r2,r2,-18612
+ 80117c4:	10add104 	addi	r2,r2,-18620
  80117c8:	dc012915 	stw	r16,1188(sp)
  80117cc:	d9011b17 	ldw	r4,1132(sp)
  80117d0:	9821883a 	mov	r16,r19
@@ -19654,7 +19654,7 @@ WiFiUart WiFi_UART;
  80118ac:	04c00404 	movi	r19,16
  80118b0:	9c030d0e 	bge	r19,r16,80124e8 <___vfiprintf_internal_r+0x12b8>
  80118b4:	008200b4 	movhi	r2,2050
- 80118b8:	10adcf04 	addi	r2,r2,-18628
+ 80118b8:	10adcd04 	addi	r2,r2,-18636
  80118bc:	d8812615 	stw	r2,1176(sp)
  80118c0:	058001c4 	movi	r22,7
  80118c4:	00000506 	br	80118dc <___vfiprintf_internal_r+0x6ac>
@@ -19752,7 +19752,7 @@ WiFiUart WiFi_UART;
  8011a34:	003e5f06 	br	80113b4 <__alt_data_end+0xfc0113b4>
  8011a38:	d8c12203 	ldbu	r3,1160(sp)
  8011a3c:	010200b4 	movhi	r4,2050
- 8011a40:	212ca004 	addi	r4,r4,-19840
+ 8011a40:	212c9e04 	addi	r4,r4,-19848
  8011a44:	d8c11d85 	stb	r3,1142(sp)
  8011a48:	d9012715 	stw	r4,1180(sp)
  8011a4c:	90c0080c 	andi	r3,r18,32
@@ -19847,7 +19847,7 @@ WiFiUart WiFi_UART;
  8011bb0:	003f8c06 	br	80119e4 <__alt_data_end+0xfc0119e4>
  8011bb4:	d8c12203 	ldbu	r3,1160(sp)
  8011bb8:	010200b4 	movhi	r4,2050
- 8011bbc:	212ca504 	addi	r4,r4,-19820
+ 8011bbc:	212ca304 	addi	r4,r4,-19828
  8011bc0:	d8c11d85 	stb	r3,1142(sp)
  8011bc4:	d9012715 	stw	r4,1180(sp)
  8011bc8:	90c0080c 	andi	r3,r18,32
@@ -19882,7 +19882,7 @@ WiFiUart WiFi_UART;
  8011c3c:	010200b4 	movhi	r4,2050
  8011c40:	18c00104 	addi	r3,r3,4
  8011c44:	d8811d05 	stb	r2,1140(sp)
- 8011c48:	212ca504 	addi	r4,r4,-19820
+ 8011c48:	212ca304 	addi	r4,r4,-19828
  8011c4c:	00801e04 	movi	r2,120
  8011c50:	d8811d45 	stb	r2,1141(sp)
  8011c54:	d8c12315 	stw	r3,1164(sp)
@@ -20056,7 +20056,7 @@ WiFiUart WiFi_UART;
  8011ef4:	04000404 	movi	r16,16
  8011ef8:	8481ad0e 	bge	r16,r18,80125b0 <___vfiprintf_internal_r+0x1380>
  8011efc:	014200b4 	movhi	r5,2050
- 8011f00:	296dd304 	addi	r5,r5,-18612
+ 8011f00:	296dd104 	addi	r5,r5,-18620
  8011f04:	d9011b17 	ldw	r4,1132(sp)
  8011f08:	d9412615 	stw	r5,1176(sp)
  8011f0c:	04c001c4 	movi	r19,7
@@ -20133,7 +20133,7 @@ WiFiUart WiFi_UART;
  8012028:	04c00404 	movi	r19,16
  801202c:	9d81720e 	bge	r19,r22,80125f8 <___vfiprintf_internal_r+0x13c8>
  8012030:	008200b4 	movhi	r2,2050
- 8012034:	10adcf04 	addi	r2,r2,-18628
+ 8012034:	10adcd04 	addi	r2,r2,-18636
  8012038:	d8812615 	stw	r2,1176(sp)
  801203c:	028001c4 	movi	r10,7
  8012040:	00000506 	br	8012058 <___vfiprintf_internal_r+0xe28>
@@ -20435,7 +20435,7 @@ WiFiUart WiFi_UART;
  80124e0:	a805883a 	mov	r2,r21
  80124e4:	003c8406 	br	80116f8 <__alt_data_end+0xfc0116f8>
  80124e8:	010200b4 	movhi	r4,2050
- 80124ec:	212dcf04 	addi	r4,r4,-18628
+ 80124ec:	212dcd04 	addi	r4,r4,-18636
  80124f0:	d9012615 	stw	r4,1176(sp)
  80124f4:	003d0606 	br	8011910 <__alt_data_end+0xfc011910>
  80124f8:	b9800043 	ldbu	r6,1(r23)
@@ -20468,7 +20468,7 @@ WiFiUart WiFi_UART;
  8012564:	28800044 	addi	r2,r5,1
  8012568:	003cce06 	br	80118a4 <__alt_data_end+0xfc0118a4>
  801256c:	014200b4 	movhi	r5,2050
- 8012570:	296dd304 	addi	r5,r5,-18612
+ 8012570:	296dd104 	addi	r5,r5,-18620
  8012574:	d9412615 	stw	r5,1176(sp)
  8012578:	d9411b17 	ldw	r5,1132(sp)
  801257c:	29400044 	addi	r5,r5,1
@@ -20480,13 +20480,13 @@ WiFiUart WiFi_UART;
  8012594:	802b883a 	mov	r21,r16
  8012598:	80001c16 	blt	r16,zero,801260c <___vfiprintf_internal_r+0x13dc>
  801259c:	00c200b4 	movhi	r3,2050
- 80125a0:	18ecaa04 	addi	r3,r3,-19800
+ 80125a0:	18eca804 	addi	r3,r3,-19808
  80125a4:	dcc12315 	stw	r19,1164(sp)
  80125a8:	d8c12215 	stw	r3,1160(sp)
  80125ac:	003cff06 	br	80119ac <__alt_data_end+0xfc0119ac>
  80125b0:	d9411b17 	ldw	r5,1132(sp)
  80125b4:	008200b4 	movhi	r2,2050
- 80125b8:	10add304 	addi	r2,r2,-18612
+ 80125b8:	10add104 	addi	r2,r2,-18620
  80125bc:	d8812615 	stw	r2,1176(sp)
  80125c0:	29400044 	addi	r5,r5,1
  80125c4:	003e6706 	br	8011f64 <__alt_data_end+0xfc011f64>
@@ -20503,7 +20503,7 @@ WiFiUart WiFi_UART;
  80125f0:	0021883a 	mov	r16,zero
  80125f4:	003c5f06 	br	8011774 <__alt_data_end+0xfc011774>
  80125f8:	010200b4 	movhi	r4,2050
- 80125fc:	212dcf04 	addi	r4,r4,-18628
+ 80125fc:	212dcd04 	addi	r4,r4,-18636
  8012600:	d9012615 	stw	r4,1176(sp)
  8012604:	1009883a 	mov	r4,r2
  8012608:	003ea006 	br	801208c <__alt_data_end+0xfc01208c>
@@ -20529,7 +20529,7 @@ WiFiUart WiFi_UART;
 08012654 <__vfiprintf_internal>:
  8012654:	2007883a 	mov	r3,r4
  8012658:	010200b4 	movhi	r4,2050
- 801265c:	21354b04 	addi	r4,r4,-10964
+ 801265c:	21354904 	addi	r4,r4,-10972
  8012660:	21000017 	ldw	r4,0(r4)
  8012664:	2805883a 	mov	r2,r5
  8012668:	300f883a 	mov	r7,r6
@@ -20626,7 +20626,7 @@ WiFiUart WiFi_UART;
 
 080127cc <__swbuf>:
  80127cc:	00c200b4 	movhi	r3,2050
- 80127d0:	18f54b04 	addi	r3,r3,-10964
+ 80127d0:	18f54904 	addi	r3,r3,-10972
  80127d4:	2005883a 	mov	r2,r4
  80127d8:	19000017 	ldw	r4,0(r3)
  80127dc:	280d883a 	mov	r6,r5
@@ -20638,7 +20638,7 @@ WiFiUart WiFi_UART;
  80127ec:	dc000015 	stw	r16,0(sp)
  80127f0:	040200b4 	movhi	r16,2050
  80127f4:	dc400115 	stw	r17,4(sp)
- 80127f8:	843c8404 	addi	r16,r16,-3568
+ 80127f8:	843c8204 	addi	r16,r16,-3576
  80127fc:	2023883a 	mov	r17,r4
  8012800:	2809883a 	mov	r4,r5
  8012804:	300b883a 	mov	r5,r6
@@ -20663,7 +20663,7 @@ WiFiUart WiFi_UART;
  8012848:	dc000015 	stw	r16,0(sp)
  801284c:	040200b4 	movhi	r16,2050
  8012850:	dc400115 	stw	r17,4(sp)
- 8012854:	843c8404 	addi	r16,r16,-3568
+ 8012854:	843c8204 	addi	r16,r16,-3576
  8012858:	2023883a 	mov	r17,r4
  801285c:	2809883a 	mov	r4,r5
  8012860:	dfc00215 	stw	ra,8(sp)
@@ -20805,7 +20805,7 @@ WiFiUart WiFi_UART;
 
 08012a70 <fclose>:
  8012a70:	008200b4 	movhi	r2,2050
- 8012a74:	10b54b04 	addi	r2,r2,-10964
+ 8012a74:	10b54904 	addi	r2,r2,-10972
  8012a78:	200b883a 	mov	r5,r4
  8012a7c:	11000017 	ldw	r4,0(r2)
  8012a80:	80129701 	jmpi	8012970 <_fclose_r>
@@ -20913,7 +20913,7 @@ WiFiUart WiFi_UART;
  8012c08:	defffc04 	addi	sp,sp,-16
  8012c0c:	dc000115 	stw	r16,4(sp)
  8012c10:	040200b4 	movhi	r16,2050
- 8012c14:	84354b04 	addi	r16,r16,-10964
+ 8012c14:	84354904 	addi	r16,r16,-10972
  8012c18:	dc400215 	stw	r17,8(sp)
  8012c1c:	2023883a 	mov	r17,r4
  8012c20:	81000017 	ldw	r4,0(r16)
@@ -20938,7 +20938,7 @@ WiFiUart WiFi_UART;
  8012c64:	dc000015 	stw	r16,0(sp)
  8012c68:	040200b4 	movhi	r16,2050
  8012c6c:	dc400115 	stw	r17,4(sp)
- 8012c70:	843c8404 	addi	r16,r16,-3568
+ 8012c70:	843c8204 	addi	r16,r16,-3576
  8012c74:	2023883a 	mov	r17,r4
  8012c78:	2809883a 	mov	r4,r5
  8012c7c:	300b883a 	mov	r5,r6
@@ -21026,8 +21026,8 @@ WiFiUart WiFi_UART;
 08012db8 <__hexdig_init>:
  8012db8:	014200b4 	movhi	r5,2050
  8012dbc:	00c200b4 	movhi	r3,2050
- 8012dc0:	296ddb44 	addi	r5,r5,-18579
- 8012dc4:	18fc9c04 	addi	r3,r3,-3472
+ 8012dc0:	296dd944 	addi	r5,r5,-18587
+ 8012dc4:	18fc9a04 	addi	r3,r3,-3480
  8012dc8:	01000404 	movi	r4,16
  8012dcc:	00800c04 	movi	r2,48
  8012dd0:	10c5883a 	add	r2,r2,r3
@@ -21037,7 +21037,7 @@ WiFiUart WiFi_UART;
  8012de0:	29400044 	addi	r5,r5,1
  8012de4:	103ffa1e 	bne	r2,zero,8012dd0 <__alt_data_end+0xfc012dd0>
  8012de8:	014200b4 	movhi	r5,2050
- 8012dec:	296dd944 	addi	r5,r5,-18587
+ 8012dec:	296dd744 	addi	r5,r5,-18595
  8012df0:	01000684 	movi	r4,26
  8012df4:	00801844 	movi	r2,97
  8012df8:	10c5883a 	add	r2,r2,r3
@@ -21047,7 +21047,7 @@ WiFiUart WiFi_UART;
  8012e08:	29400044 	addi	r5,r5,1
  8012e0c:	103ffa1e 	bne	r2,zero,8012df8 <__alt_data_end+0xfc012df8>
  8012e10:	014200b4 	movhi	r5,2050
- 8012e14:	296dd744 	addi	r5,r5,-18595
+ 8012e14:	296dd544 	addi	r5,r5,-18603
  8012e18:	01000684 	movi	r4,26
  8012e1c:	00801044 	movi	r2,65
  8012e20:	10c5883a 	add	r2,r2,r3
@@ -21077,7 +21077,7 @@ WiFiUart WiFi_UART;
  8012e78:	800b1ec0 	call	800b1ec <_localeconv_r>
  8012e7c:	14800017 	ldw	r18,0(r2)
  8012e80:	054200b4 	movhi	r21,2050
- 8012e84:	ad7c9c04 	addi	r21,r21,-3472
+ 8012e84:	ad7c9a04 	addi	r21,r21,-3480
  8012e88:	9009883a 	mov	r4,r18
  8012e8c:	80021900 	call	8002190 <strlen>
  8012e90:	1027883a 	mov	r19,r2
@@ -21102,7 +21102,7 @@ WiFiUart WiFi_UART;
  8012edc:	a8c7883a 	add	r3,r21,r3
  8012ee0:	18800003 	ldbu	r2,0(r3)
  8012ee4:	058200b4 	movhi	r22,2050
- 8012ee8:	b5bc9c04 	addi	r22,r22,-3472
+ 8012ee8:	b5bc9a04 	addi	r22,r22,-3480
  8012eec:	1000cc26 	beq	r2,zero,8013220 <__gethex+0x3e4>
  8012ef0:	b8800003 	ldbu	r2,0(r23)
  8012ef4:	d8000015 	stw	zero,0(sp)
@@ -21273,7 +21273,7 @@ WiFiUart WiFi_UART;
  8013188:	18bf7536 	bltu	r3,r2,8012f60 <__alt_data_end+0xfc012f60>
  801318c:	58800043 	ldbu	r2,1(r11)
  8013190:	014200b4 	movhi	r5,2050
- 8013194:	297c9c04 	addi	r5,r5,-3472
+ 8013194:	297c9a04 	addi	r5,r5,-3480
  8013198:	2885883a 	add	r2,r5,r2
  801319c:	12800003 	ldbu	r10,0(r2)
  80131a0:	21003fcc 	andi	r4,r4,255
@@ -21598,7 +21598,7 @@ WiFiUart WiFi_UART;
  8013694:	defff504 	addi	sp,sp,-44
  8013698:	dc000315 	stw	r16,12(sp)
  801369c:	040200b4 	movhi	r16,2050
- 80136a0:	843c9c04 	addi	r16,r16,-3472
+ 80136a0:	843c9a04 	addi	r16,r16,-3480
  80136a4:	80800c03 	ldbu	r2,48(r16)
  80136a8:	dfc00a15 	stw	ra,40(sp)
  80136ac:	dd800915 	stw	r22,36(sp)
@@ -21766,7 +21766,7 @@ WiFiUart WiFi_UART;
  801392c:	dc000015 	stw	r16,0(sp)
  8013930:	040200b4 	movhi	r16,2050
  8013934:	dc400115 	stw	r17,4(sp)
- 8013938:	843c8404 	addi	r16,r16,-3568
+ 8013938:	843c8204 	addi	r16,r16,-3576
  801393c:	2023883a 	mov	r17,r4
  8013940:	2809883a 	mov	r4,r5
  8013944:	dfc00215 	stw	ra,8(sp)
@@ -21789,7 +21789,7 @@ WiFiUart WiFi_UART;
  8013980:	dc000015 	stw	r16,0(sp)
  8013984:	040200b4 	movhi	r16,2050
  8013988:	dc400115 	stw	r17,4(sp)
- 801398c:	843c8404 	addi	r16,r16,-3568
+ 801398c:	843c8204 	addi	r16,r16,-3576
  8013990:	2023883a 	mov	r17,r4
  8013994:	2809883a 	mov	r4,r5
  8013998:	300b883a 	mov	r5,r6
@@ -21814,7 +21814,7 @@ WiFiUart WiFi_UART;
  80139dc:	dc000015 	stw	r16,0(sp)
  80139e0:	040200b4 	movhi	r16,2050
  80139e4:	dc400115 	stw	r17,4(sp)
- 80139e8:	843c8404 	addi	r16,r16,-3568
+ 80139e8:	843c8204 	addi	r16,r16,-3576
  80139ec:	2023883a 	mov	r17,r4
  80139f0:	2809883a 	mov	r4,r5
  80139f4:	300b883a 	mov	r5,r6
@@ -21890,7 +21890,7 @@ WiFiUart WiFi_UART;
  8013afc:	dc800815 	stw	r18,32(sp)
  8013b00:	dc400715 	stw	r17,28(sp)
  8013b04:	dc000615 	stw	r16,24(sp)
- 8013b08:	10b54e04 	addi	r2,r2,-10952
+ 8013b08:	10b54c04 	addi	r2,r2,-10960
  8013b0c:	dfc00915 	stw	ra,36(sp)
  8013b10:	2021883a 	mov	r16,r4
  8013b14:	3823883a 	mov	r17,r7
@@ -21938,10 +21938,10 @@ WiFiUart WiFi_UART;
  8013bb4:	3023883a 	mov	r17,r6
  8013bb8:	20001d26 	beq	r4,zero,8013c30 <wcrtomb+0xa0>
  8013bbc:	048200b4 	movhi	r18,2050
- 8013bc0:	94b54b04 	addi	r18,r18,-10964
+ 8013bc0:	94b54904 	addi	r18,r18,-10972
  8013bc4:	008200b4 	movhi	r2,2050
  8013bc8:	95400017 	ldw	r21,0(r18)
- 8013bcc:	10b54e04 	addi	r2,r2,-10952
+ 8013bcc:	10b54c04 	addi	r2,r2,-10960
  8013bd0:	15000017 	ldw	r20,0(r2)
  8013bd4:	2827883a 	mov	r19,r5
  8013bd8:	800b1bc0 	call	800b1bc <__locale_charset>
@@ -21967,10 +21967,10 @@ WiFiUart WiFi_UART;
  8013c28:	dec00b04 	addi	sp,sp,44
  8013c2c:	f800283a 	ret
  8013c30:	048200b4 	movhi	r18,2050
- 8013c34:	94b54b04 	addi	r18,r18,-10964
+ 8013c34:	94b54904 	addi	r18,r18,-10972
  8013c38:	008200b4 	movhi	r2,2050
  8013c3c:	94c00017 	ldw	r19,0(r18)
- 8013c40:	10b54e04 	addi	r2,r2,-10952
+ 8013c40:	10b54c04 	addi	r2,r2,-10960
  8013c44:	14000017 	ldw	r16,0(r2)
  8013c48:	800b1bc0 	call	800b1bc <__locale_charset>
  8013c4c:	9809883a 	mov	r4,r19
@@ -21998,7 +21998,7 @@ WiFiUart WiFi_UART;
 08013c98 <_wctomb_r>:
  8013c98:	008200b4 	movhi	r2,2050
  8013c9c:	defff904 	addi	sp,sp,-28
- 8013ca0:	10b54e04 	addi	r2,r2,-10952
+ 8013ca0:	10b54c04 	addi	r2,r2,-10960
  8013ca4:	dfc00615 	stw	ra,24(sp)
  8013ca8:	dc400515 	stw	r17,20(sp)
  8013cac:	dc000415 	stw	r16,16(sp)
@@ -22147,7 +22147,7 @@ WiFiUart WiFi_UART;
  8013ed0:	1007883a 	mov	r3,r2
  8013ed4:	3084d83a 	srl	r2,r6,r2
  8013ed8:	010200b4 	movhi	r4,2050
- 8013edc:	212dde04 	addi	r4,r4,-18568
+ 8013edc:	212ddc04 	addi	r4,r4,-18576
  8013ee0:	2085883a 	add	r2,r4,r2
  8013ee4:	11000003 	ldbu	r4,0(r2)
  8013ee8:	20c9883a 	add	r4,r4,r3
@@ -22216,7 +22216,7 @@ WiFiUart WiFi_UART;
  8013fe4:	2811883a 	mov	r8,r5
  8013fe8:	394ad83a 	srl	r5,r7,r5
  8013fec:	008200b4 	movhi	r2,2050
- 8013ff0:	10adde04 	addi	r2,r2,-18568
+ 8013ff0:	10addc04 	addi	r2,r2,-18576
  8013ff4:	114b883a 	add	r5,r2,r5
  8013ff8:	29400003 	ldbu	r5,0(r5)
  8013ffc:	00c00804 	movi	r3,32
@@ -22241,7 +22241,7 @@ WiFiUart WiFi_UART;
  8014048:	1007883a 	mov	r3,r2
  801404c:	9084d83a 	srl	r2,r18,r2
  8014050:	010200b4 	movhi	r4,2050
- 8014054:	212dde04 	addi	r4,r4,-18568
+ 8014054:	212ddc04 	addi	r4,r4,-18576
  8014058:	2085883a 	add	r2,r4,r2
  801405c:	11800003 	ldbu	r6,0(r2)
  8014060:	01c00804 	movi	r7,32
@@ -22549,7 +22549,7 @@ WiFiUart WiFi_UART;
  8014510:	2805883a 	mov	r2,r5
  8014514:	314ad83a 	srl	r5,r6,r5
  8014518:	00c200b4 	movhi	r3,2050
- 801451c:	18edde04 	addi	r3,r3,-18568
+ 801451c:	18eddc04 	addi	r3,r3,-18576
  8014520:	194b883a 	add	r5,r3,r5
  8014524:	29000003 	ldbu	r4,0(r5)
  8014528:	2089883a 	add	r4,r4,r2
@@ -22608,7 +22608,7 @@ WiFiUart WiFi_UART;
  80145fc:	282b883a 	mov	r21,r5
  8014600:	394ad83a 	srl	r5,r7,r5
  8014604:	00c200b4 	movhi	r3,2050
- 8014608:	18edde04 	addi	r3,r3,-18568
+ 8014608:	18eddc04 	addi	r3,r3,-18576
  801460c:	194b883a 	add	r5,r3,r5
  8014610:	28800003 	ldbu	r2,0(r5)
  8014614:	00c00804 	movi	r3,32
@@ -22637,7 +22637,7 @@ WiFiUart WiFi_UART;
  8014670:	1007883a 	mov	r3,r2
  8014674:	9884d83a 	srl	r2,r19,r2
  8014678:	010200b4 	movhi	r4,2050
- 801467c:	212dde04 	addi	r4,r4,-18568
+ 801467c:	212ddc04 	addi	r4,r4,-18576
  8014680:	2085883a 	add	r2,r4,r2
  8014684:	11000003 	ldbu	r4,0(r2)
  8014688:	00800804 	movi	r2,32
@@ -25806,7 +25806,7 @@ WiFiUart WiFi_UART;
  801774c:	01400604 	movi	r5,24
  8017750:	20c8d83a 	srl	r4,r4,r3
  8017754:	008200b4 	movhi	r2,2050
- 8017758:	10adde04 	addi	r2,r2,-18568
+ 8017758:	10addc04 	addi	r2,r2,-18576
  801775c:	1109883a 	add	r4,r2,r4
  8017760:	20800003 	ldbu	r2,0(r4)
  8017764:	2885c83a 	sub	r2,r5,r2
@@ -25837,16 +25837,16 @@ static ALT_INLINE int* alt_get_errno(void)
  80177a8:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  80177ac:	008200b4 	movhi	r2,2050
- 80177b0:	10b55404 	addi	r2,r2,-10928
+ 80177b0:	10b55204 	addi	r2,r2,-10936
  80177b4:	10800017 	ldw	r2,0(r2)
  80177b8:	10000526 	beq	r2,zero,80177d0 <alt_get_errno+0x34>
  80177bc:	008200b4 	movhi	r2,2050
- 80177c0:	10b55404 	addi	r2,r2,-10928
+ 80177c0:	10b55204 	addi	r2,r2,-10936
  80177c4:	10800017 	ldw	r2,0(r2)
  80177c8:	103ee83a 	callr	r2
  80177cc:	00000206 	br	80177d8 <alt_get_errno+0x3c>
  80177d0:	008200b4 	movhi	r2,2050
- 80177d4:	10bc8404 	addi	r2,r2,-3568
+ 80177d4:	10bc8204 	addi	r2,r2,-3576
 }
  80177d8:	e037883a 	mov	sp,fp
  80177dc:	dfc00117 	ldw	ra,4(sp)
@@ -25879,7 +25879,7 @@ int ALT_CLOSE (int fildes)
  8017810:	8014bfc0 	call	8014bfc <__mulsi3>
  8017814:	1007883a 	mov	r3,r2
  8017818:	008200b4 	movhi	r2,2050
- 801781c:	10b07904 	addi	r2,r2,-15900
+ 801781c:	10b07704 	addi	r2,r2,-15908
  8017820:	1885883a 	add	r2,r3,r2
  8017824:	00000106 	br	801782c <close+0x40>
  8017828:	0005883a 	mov	r2,zero
@@ -25981,16 +25981,16 @@ static ALT_INLINE int* alt_get_errno(void)
  80178fc:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8017900:	008200b4 	movhi	r2,2050
- 8017904:	10b55404 	addi	r2,r2,-10928
+ 8017904:	10b55204 	addi	r2,r2,-10936
  8017908:	10800017 	ldw	r2,0(r2)
  801790c:	10000526 	beq	r2,zero,8017924 <alt_get_errno+0x34>
  8017910:	008200b4 	movhi	r2,2050
- 8017914:	10b55404 	addi	r2,r2,-10928
+ 8017914:	10b55204 	addi	r2,r2,-10936
  8017918:	10800017 	ldw	r2,0(r2)
  801791c:	103ee83a 	callr	r2
  8017920:	00000206 	br	801792c <alt_get_errno+0x3c>
  8017924:	008200b4 	movhi	r2,2050
- 8017928:	10bc8404 	addi	r2,r2,-3568
+ 8017928:	10bc8204 	addi	r2,r2,-3576
 }
  801792c:	e037883a 	mov	sp,fp
  8017930:	dfc00117 	ldw	ra,4(sp)
@@ -26024,7 +26024,7 @@ int ALT_FSTAT (int file, struct stat *st)
  8017968:	8014bfc0 	call	8014bfc <__mulsi3>
  801796c:	1007883a 	mov	r3,r2
  8017970:	008200b4 	movhi	r2,2050
- 8017974:	10b07904 	addi	r2,r2,-15900
+ 8017974:	10b07704 	addi	r2,r2,-15908
  8017978:	1885883a 	add	r2,r3,r2
  801797c:	00000106 	br	8017984 <fstat+0x44>
  8017980:	0005883a 	mov	r2,zero
@@ -26094,16 +26094,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8017a04:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8017a08:	008200b4 	movhi	r2,2050
- 8017a0c:	10b55404 	addi	r2,r2,-10928
+ 8017a0c:	10b55204 	addi	r2,r2,-10936
  8017a10:	10800017 	ldw	r2,0(r2)
  8017a14:	10000526 	beq	r2,zero,8017a2c <alt_get_errno+0x34>
  8017a18:	008200b4 	movhi	r2,2050
- 8017a1c:	10b55404 	addi	r2,r2,-10928
+ 8017a1c:	10b55204 	addi	r2,r2,-10936
  8017a20:	10800017 	ldw	r2,0(r2)
  8017a24:	103ee83a 	callr	r2
  8017a28:	00000206 	br	8017a34 <alt_get_errno+0x3c>
  8017a2c:	008200b4 	movhi	r2,2050
- 8017a30:	10bc8404 	addi	r2,r2,-3568
+ 8017a30:	10bc8204 	addi	r2,r2,-3576
 }
  8017a34:	e037883a 	mov	sp,fp
  8017a38:	dfc00117 	ldw	ra,4(sp)
@@ -26136,7 +26136,7 @@ int ALT_ISATTY (int file)
  8017a6c:	8014bfc0 	call	8014bfc <__mulsi3>
  8017a70:	1007883a 	mov	r3,r2
  8017a74:	008200b4 	movhi	r2,2050
- 8017a78:	10b07904 	addi	r2,r2,-15900
+ 8017a78:	10b07704 	addi	r2,r2,-15908
  8017a7c:	1885883a 	add	r2,r3,r2
  8017a80:	00000106 	br	8017a88 <isatty+0x40>
  8017a84:	0005883a 	mov	r2,zero
@@ -26259,11 +26259,11 @@ void alt_load (void)
 
   alt_load_section (&__flash_rwdata_start, 
  8017b68:	010200b4 	movhi	r4,2050
- 8017b6c:	21355d04 	addi	r4,r4,-10892
+ 8017b6c:	21355b04 	addi	r4,r4,-10900
  8017b70:	014200b4 	movhi	r5,2050
- 8017b74:	296e3c04 	addi	r5,r5,-18192
+ 8017b74:	296e3a04 	addi	r5,r5,-18200
  8017b78:	018200b4 	movhi	r6,2050
- 8017b7c:	31b55d04 	addi	r6,r6,-10892
+ 8017b7c:	31b55b04 	addi	r6,r6,-10900
  8017b80:	8017af40 	call	8017af4 <alt_load_section>
 
   /*
@@ -26289,7 +26289,7 @@ void alt_load (void)
  8017ba8:	014200b4 	movhi	r5,2050
  8017bac:	296b8704 	addi	r5,r5,-20964
  8017bb0:	018200b4 	movhi	r6,2050
- 8017bb4:	31ae3c04 	addi	r6,r6,-18192
+ 8017bb4:	31ae3a04 	addi	r6,r6,-18200
  8017bb8:	8017af40 	call	8017af4 <alt_load_section>
   
   /*
@@ -26320,16 +26320,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8017be4:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8017be8:	008200b4 	movhi	r2,2050
- 8017bec:	10b55404 	addi	r2,r2,-10928
+ 8017bec:	10b55204 	addi	r2,r2,-10936
  8017bf0:	10800017 	ldw	r2,0(r2)
  8017bf4:	10000526 	beq	r2,zero,8017c0c <alt_get_errno+0x34>
  8017bf8:	008200b4 	movhi	r2,2050
- 8017bfc:	10b55404 	addi	r2,r2,-10928
+ 8017bfc:	10b55204 	addi	r2,r2,-10936
  8017c00:	10800017 	ldw	r2,0(r2)
  8017c04:	103ee83a 	callr	r2
  8017c08:	00000206 	br	8017c14 <alt_get_errno+0x3c>
  8017c0c:	008200b4 	movhi	r2,2050
- 8017c10:	10bc8404 	addi	r2,r2,-3568
+ 8017c10:	10bc8204 	addi	r2,r2,-3576
 }
  8017c14:	e037883a 	mov	sp,fp
  8017c18:	dfc00117 	ldw	ra,4(sp)
@@ -26367,7 +26367,7 @@ off_t ALT_LSEEK (int file, off_t ptr, int dir)
  8017c58:	8014bfc0 	call	8014bfc <__mulsi3>
  8017c5c:	1007883a 	mov	r3,r2
  8017c60:	008200b4 	movhi	r2,2050
- 8017c64:	10b07904 	addi	r2,r2,-15900
+ 8017c64:	10b07704 	addi	r2,r2,-15908
  8017c68:	1885883a 	add	r2,r3,r2
  8017c6c:	00000106 	br	8017c74 <lseek+0x4c>
  8017c70:	0005883a 	mov	r2,zero
@@ -26477,11 +26477,11 @@ void alt_main (void)
     ALT_LOG_PRINT_BOOT("[alt_main.c] Redirecting IO.\r\n");
     alt_io_redirect(ALT_STDOUT, ALT_STDIN, ALT_STDERR);
  8017d24:	010200b4 	movhi	r4,2050
- 8017d28:	212e2104 	addi	r4,r4,-18300
+ 8017d28:	212e1f04 	addi	r4,r4,-18308
  8017d2c:	014200b4 	movhi	r5,2050
- 8017d30:	296e2104 	addi	r5,r5,-18300
+ 8017d30:	296e1f04 	addi	r5,r5,-18308
  8017d34:	018200b4 	movhi	r6,2050
- 8017d38:	31ae2104 	addi	r6,r6,-18300
+ 8017d38:	31ae1f04 	addi	r6,r6,-18308
  8017d3c:	801a1e00 	call	801a1e0 <alt_io_redirect>
   /* 
    * Call the C++ constructors 
@@ -26566,16 +26566,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8017dc8:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8017dcc:	008200b4 	movhi	r2,2050
- 8017dd0:	10b55404 	addi	r2,r2,-10928
+ 8017dd0:	10b55204 	addi	r2,r2,-10936
  8017dd4:	10800017 	ldw	r2,0(r2)
  8017dd8:	10000526 	beq	r2,zero,8017df0 <alt_get_errno+0x34>
  8017ddc:	008200b4 	movhi	r2,2050
- 8017de0:	10b55404 	addi	r2,r2,-10928
+ 8017de0:	10b55204 	addi	r2,r2,-10936
  8017de4:	10800017 	ldw	r2,0(r2)
  8017de8:	103ee83a 	callr	r2
  8017dec:	00000206 	br	8017df8 <alt_get_errno+0x3c>
  8017df0:	008200b4 	movhi	r2,2050
- 8017df4:	10bc8404 	addi	r2,r2,-3568
+ 8017df4:	10bc8204 	addi	r2,r2,-3576
 }
  8017df8:	e037883a 	mov	sp,fp
  8017dfc:	dfc00117 	ldw	ra,4(sp)
@@ -26610,7 +26610,7 @@ int ALT_READ (int file, void *ptr, size_t len)
  8017e38:	8014bfc0 	call	8014bfc <__mulsi3>
  8017e3c:	1007883a 	mov	r3,r2
  8017e40:	008200b4 	movhi	r2,2050
- 8017e44:	10b07904 	addi	r2,r2,-15900
+ 8017e44:	10b07704 	addi	r2,r2,-15908
  8017e48:	1885883a 	add	r2,r3,r2
  8017e4c:	00000106 	br	8017e54 <read+0x48>
  8017e50:	0005883a 	mov	r2,zero
@@ -26717,7 +26717,7 @@ void alt_release_fd (int fd)
   {
     alt_fd_list[fd].fd_flags = 0;
  8017f34:	040200b4 	movhi	r16,2050
- 8017f38:	84307904 	addi	r16,r16,-15900
+ 8017f38:	84307704 	addi	r16,r16,-15908
  8017f3c:	e0bffe17 	ldw	r2,-8(fp)
  8017f40:	1009883a 	mov	r4,r2
  8017f44:	01400304 	movi	r5,12
@@ -26727,7 +26727,7 @@ void alt_release_fd (int fd)
  8017f54:	10000015 	stw	zero,0(r2)
     alt_fd_list[fd].dev      = 0;
  8017f58:	040200b4 	movhi	r16,2050
- 8017f5c:	84307904 	addi	r16,r16,-15900
+ 8017f5c:	84307704 	addi	r16,r16,-15908
  8017f60:	e0bffe17 	ldw	r2,-8(fp)
  8017f64:	1009883a 	mov	r4,r2
  8017f68:	01400304 	movi	r5,12
@@ -26851,16 +26851,16 @@ static ALT_INLINE int* alt_get_errno(void)
  801804c:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8018050:	008200b4 	movhi	r2,2050
- 8018054:	10b55404 	addi	r2,r2,-10928
+ 8018054:	10b55204 	addi	r2,r2,-10936
  8018058:	10800017 	ldw	r2,0(r2)
  801805c:	10000526 	beq	r2,zero,8018074 <alt_get_errno+0x34>
  8018060:	008200b4 	movhi	r2,2050
- 8018064:	10b55404 	addi	r2,r2,-10928
+ 8018064:	10b55204 	addi	r2,r2,-10936
  8018068:	10800017 	ldw	r2,0(r2)
  801806c:	103ee83a 	callr	r2
  8018070:	00000206 	br	801807c <alt_get_errno+0x3c>
  8018074:	008200b4 	movhi	r2,2050
- 8018078:	10bc8404 	addi	r2,r2,-3568
+ 8018078:	10bc8204 	addi	r2,r2,-3576
 }
  801807c:	e037883a 	mov	sp,fp
  8018080:	dfc00117 	ldw	ra,4(sp)
@@ -26895,7 +26895,7 @@ int ALT_WRITE (int file, const void *ptr, size_t len)
  80180bc:	8014bfc0 	call	8014bfc <__mulsi3>
  80180c0:	1007883a 	mov	r3,r2
  80180c4:	008200b4 	movhi	r2,2050
- 80180c8:	10b07904 	addi	r2,r2,-15900
+ 80180c8:	10b07704 	addi	r2,r2,-15908
  80180cc:	1885883a 	add	r2,r3,r2
  80180d0:	00000106 	br	80180d8 <write+0x48>
  80180d4:	0005883a 	mov	r2,zero
@@ -26994,7 +26994,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   return alt_dev_llist_insert ((alt_dev_llist*) dev, &alt_dev_list);
  80181a4:	e13fff17 	ldw	r4,-4(fp)
  80181a8:	014200b4 	movhi	r5,2050
- 80181ac:	29755104 	addi	r5,r5,-10940
+ 80181ac:	29754f04 	addi	r5,r5,-10948
  80181b0:	8019db00 	call	8019db0 <alt_dev_llist_insert>
 }
  80181b4:	e037883a 	mov	sp,fp
@@ -27048,30 +27048,30 @@ void alt_sys_init( void )
  801820c:	008000c4 	movi	r2,3
  8018210:	d8800015 	stw	r2,0(sp)
  8018214:	010200b4 	movhi	r4,2050
- 8018218:	21310204 	addi	r4,r4,-15352
+ 8018218:	21310004 	addi	r4,r4,-15360
  801821c:	014200b4 	movhi	r5,2050
- 8018220:	29710904 	addi	r5,r5,-15324
+ 8018220:	29710704 	addi	r5,r5,-15332
  8018224:	01801004 	movi	r6,64
  8018228:	000f883a 	mov	r7,zero
  801822c:	8018d8c0 	call	8018d8c <alt_avalon_dma_init>
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
  8018230:	010200b4 	movhi	r4,2050
- 8018234:	21311a04 	addi	r4,r4,-15256
+ 8018234:	21311804 	addi	r4,r4,-15264
  8018238:	000b883a 	mov	r5,zero
  801823c:	000d883a 	mov	r6,zero
  8018240:	8018f980 	call	8018f98 <altera_avalon_jtag_uart_init>
  8018244:	010200b4 	movhi	r4,2050
- 8018248:	21311004 	addi	r4,r4,-15296
+ 8018248:	21310e04 	addi	r4,r4,-15304
  801824c:	80181900 	call	8018190 <alt_dev_reg>
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);
  8018250:	0001883a 	nop
     ALTERA_UP_AVALON_RS232_INIT ( BT_RS232_UART, bt_rs232_uart);
  8018254:	010200b4 	movhi	r4,2050
- 8018258:	21352804 	addi	r4,r4,-11104
+ 8018258:	21352604 	addi	r4,r4,-11112
  801825c:	80181900 	call	8018190 <alt_dev_reg>
     ALTERA_UP_AVALON_RS232_INIT ( WIFI_RS232_UART, wifi_rs232_uart);
  8018260:	010200b4 	movhi	r4,2050
- 8018264:	21353304 	addi	r4,r4,-11060
+ 8018264:	21353104 	addi	r4,r4,-11068
  8018268:	80181900 	call	8018190 <alt_dev_reg>
 }
  801826c:	e037883a 	mov	sp,fp
@@ -27097,7 +27097,7 @@ static ALT_INLINE int alt_dma_txchan_reg (alt_dma_txchan_dev* dev)
   return alt_dev_llist_insert((alt_dev_llist*) dev, &alt_dma_txchan_list);
  8018294:	e13fff17 	ldw	r4,-4(fp)
  8018298:	014200b4 	movhi	r5,2050
- 801829c:	29755804 	addi	r5,r5,-10912
+ 801829c:	29755604 	addi	r5,r5,-10920
  80182a0:	8019db00 	call	8019db0 <alt_dev_llist_insert>
 }
  80182a4:	e037883a 	mov	sp,fp
@@ -27123,7 +27123,7 @@ static ALT_INLINE int alt_dma_rxchan_reg (alt_dma_rxchan_dev* dev)
   return alt_dev_llist_insert((alt_dev_llist*) dev, &alt_dma_rxchan_list);
  80182cc:	e13fff17 	ldw	r4,-4(fp)
  80182d0:	014200b4 	movhi	r5,2050
- 80182d4:	29755604 	addi	r5,r5,-10920
+ 80182d4:	29755404 	addi	r5,r5,-10928
  80182d8:	8019db00 	call	8019db0 <alt_dev_llist_insert>
 }
  80182dc:	e037883a 	mov	sp,fp
@@ -28579,7 +28579,7 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_ticks_per_second (void)
 {
   return _alt_tick_rate;
  8019004:	008200b4 	movhi	r2,2050
- 8019008:	10bc8c04 	addi	r2,r2,-3536
+ 8019008:	10bc8a04 	addi	r2,r2,-3544
  801900c:	10800017 	ldw	r2,0(r2)
  8019010:	1809883a 	mov	r4,r3
  8019014:	100b883a 	mov	r5,r2
@@ -28895,7 +28895,7 @@ altera_avalon_jtag_uart_timeout(void* context)
  80192dc:	e0bff917 	ldw	r2,-28(fp)
  80192e0:	10c00915 	stw	r3,36(r2)
  80192e4:	008200b4 	movhi	r2,2050
- 80192e8:	10bc8c04 	addi	r2,r2,-3536
+ 80192e8:	10bc8a04 	addi	r2,r2,-3544
  80192ec:	10800017 	ldw	r2,0(r2)
       ALT_FLAG_POST (sp->events, ALT_JTAG_UART_TIMEOUT, OS_FLAG_SET);
     }
@@ -29907,7 +29907,7 @@ alt_up_rs232_dev* alt_up_rs232_open_dev(const char* name)
   alt_up_rs232_dev *dev = (alt_up_rs232_dev*)alt_find_dev(name, &alt_dev_list);
  8019bd8:	e13fff17 	ldw	r4,-4(fp)
  8019bdc:	014200b4 	movhi	r5,2050
- 8019be0:	29755104 	addi	r5,r5,-10940
+ 8019be0:	29754f04 	addi	r5,r5,-10948
  8019be4:	801a0540 	call	801a054 <alt_find_dev>
  8019be8:	e0bffe15 	stw	r2,-8(fp)
 
@@ -29938,7 +29938,7 @@ int alt_alarm_start (alt_alarm* alarm, alt_u32 nticks,
   alt_u32 current_nticks = 0;
  8019c20:	e03ff615 	stw	zero,-40(fp)
  8019c24:	008200b4 	movhi	r2,2050
- 8019c28:	10bc8c04 	addi	r2,r2,-3536
+ 8019c28:	10bc8a04 	addi	r2,r2,-3544
  8019c2c:	10800017 	ldw	r2,0(r2)
   
   if (alt_ticks_per_second ())
@@ -29983,7 +29983,7 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_nticks (void)
 {
   return _alt_nticks;
  8019c74:	008200b4 	movhi	r2,2050
- 8019c78:	10bc8d04 	addi	r2,r2,-3532
+ 8019c78:	10bc8b04 	addi	r2,r2,-3540
  8019c7c:	10800017 	ldw	r2,0(r2)
       
       current_nticks = alt_nticks();
@@ -30023,7 +30023,7 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_nticks (void)
       alt_llist_insert (&alt_alarm_list, &alarm->llist);
  8019cc4:	e0fffc17 	ldw	r3,-16(fp)
  8019cc8:	008200b4 	movhi	r2,2050
- 8019ccc:	10b55b04 	addi	r2,r2,-10900
+ 8019ccc:	10b55904 	addi	r2,r2,-10908
  8019cd0:	e0bff915 	stw	r2,-28(fp)
  8019cd4:	e0fffa15 	stw	r3,-24(fp)
  */
@@ -30118,16 +30118,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8019d6c:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8019d70:	008200b4 	movhi	r2,2050
- 8019d74:	10b55404 	addi	r2,r2,-10928
+ 8019d74:	10b55204 	addi	r2,r2,-10936
  8019d78:	10800017 	ldw	r2,0(r2)
  8019d7c:	10000526 	beq	r2,zero,8019d94 <alt_get_errno+0x34>
  8019d80:	008200b4 	movhi	r2,2050
- 8019d84:	10b55404 	addi	r2,r2,-10928
+ 8019d84:	10b55204 	addi	r2,r2,-10936
  8019d88:	10800017 	ldw	r2,0(r2)
  8019d8c:	103ee83a 	callr	r2
  8019d90:	00000206 	br	8019d9c <alt_get_errno+0x3c>
  8019d94:	008200b4 	movhi	r2,2050
- 8019d98:	10bc8404 	addi	r2,r2,-3568
+ 8019d98:	10bc8204 	addi	r2,r2,-3576
 }
  8019d9c:	e037883a 	mov	sp,fp
  8019da0:	dfc00117 	ldw	ra,4(sp)
@@ -30224,16 +30224,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8019e60:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8019e64:	008200b4 	movhi	r2,2050
- 8019e68:	10b55404 	addi	r2,r2,-10928
+ 8019e68:	10b55204 	addi	r2,r2,-10936
  8019e6c:	10800017 	ldw	r2,0(r2)
  8019e70:	10000526 	beq	r2,zero,8019e88 <alt_get_errno+0x34>
  8019e74:	008200b4 	movhi	r2,2050
- 8019e78:	10b55404 	addi	r2,r2,-10928
+ 8019e78:	10b55204 	addi	r2,r2,-10936
  8019e7c:	10800017 	ldw	r2,0(r2)
  8019e80:	103ee83a 	callr	r2
  8019e84:	00000206 	br	8019e90 <alt_get_errno+0x3c>
  8019e88:	008200b4 	movhi	r2,2050
- 8019e8c:	10bc8404 	addi	r2,r2,-3568
+ 8019e8c:	10bc8204 	addi	r2,r2,-3576
 }
  8019e90:	e037883a 	mov	sp,fp
  8019e94:	dfc00117 	ldw	ra,4(sp)
@@ -30294,16 +30294,16 @@ static ALT_INLINE int* alt_get_errno(void)
  8019f04:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  8019f08:	008200b4 	movhi	r2,2050
- 8019f0c:	10b55404 	addi	r2,r2,-10928
+ 8019f0c:	10b55204 	addi	r2,r2,-10936
  8019f10:	10800017 	ldw	r2,0(r2)
  8019f14:	10000526 	beq	r2,zero,8019f2c <alt_get_errno+0x34>
  8019f18:	008200b4 	movhi	r2,2050
- 8019f1c:	10b55404 	addi	r2,r2,-10928
+ 8019f1c:	10b55204 	addi	r2,r2,-10936
  8019f20:	10800017 	ldw	r2,0(r2)
  8019f24:	103ee83a 	callr	r2
  8019f28:	00000206 	br	8019f34 <alt_get_errno+0x3c>
  8019f2c:	008200b4 	movhi	r2,2050
- 8019f30:	10bc8404 	addi	r2,r2,-3568
+ 8019f30:	10bc8204 	addi	r2,r2,-3576
 }
  8019f34:	e037883a 	mov	sp,fp
  8019f38:	dfc00117 	ldw	ra,4(sp)
@@ -30566,7 +30566,7 @@ static void alt_open_fd(alt_fd* fd, const char* name, int flags, int mode)
   {
     fd->dev      = alt_fd_list[old].dev;
  801a140:	040200b4 	movhi	r16,2050
- 801a144:	84307904 	addi	r16,r16,-15900
+ 801a144:	84307704 	addi	r16,r16,-15908
  801a148:	e0bffa17 	ldw	r2,-24(fp)
  801a14c:	1009883a 	mov	r4,r2
  801a150:	01400304 	movi	r5,12
@@ -30577,7 +30577,7 @@ static void alt_open_fd(alt_fd* fd, const char* name, int flags, int mode)
  801a164:	10c00015 	stw	r3,0(r2)
     fd->priv     = alt_fd_list[old].priv;
  801a168:	040200b4 	movhi	r16,2050
- 801a16c:	84307904 	addi	r16,r16,-15900
+ 801a16c:	84307704 	addi	r16,r16,-15908
  801a170:	e0bffa17 	ldw	r2,-24(fp)
  801a174:	1009883a 	mov	r4,r2
  801a178:	01400304 	movi	r5,12
@@ -30589,7 +30589,7 @@ static void alt_open_fd(alt_fd* fd, const char* name, int flags, int mode)
  801a190:	10c00115 	stw	r3,4(r2)
     fd->fd_flags = alt_fd_list[old].fd_flags;
  801a194:	040200b4 	movhi	r16,2050
- 801a198:	84307904 	addi	r16,r16,-15900
+ 801a198:	84307704 	addi	r16,r16,-15908
  801a19c:	e0bffa17 	ldw	r2,-24(fp)
  801a1a0:	1009883a 	mov	r4,r2
  801a1a4:	01400304 	movi	r5,12
@@ -30630,21 +30630,21 @@ void alt_io_redirect(const char* stdout_dev,
 
   alt_open_fd (&alt_fd_list[STDOUT_FILENO], stdout_dev, O_WRONLY, 0777);
  801a1fc:	010200b4 	movhi	r4,2050
- 801a200:	21307c04 	addi	r4,r4,-15888
+ 801a200:	21307a04 	addi	r4,r4,-15896
  801a204:	e17ffd17 	ldw	r5,-12(fp)
  801a208:	01800044 	movi	r6,1
  801a20c:	01c07fc4 	movi	r7,511
  801a210:	801a1000 	call	801a100 <alt_open_fd>
   alt_open_fd (&alt_fd_list[STDIN_FILENO], stdin_dev, O_RDONLY, 0777);
  801a214:	010200b4 	movhi	r4,2050
- 801a218:	21307904 	addi	r4,r4,-15900
+ 801a218:	21307704 	addi	r4,r4,-15908
  801a21c:	e17ffe17 	ldw	r5,-8(fp)
  801a220:	000d883a 	mov	r6,zero
  801a224:	01c07fc4 	movi	r7,511
  801a228:	801a1000 	call	801a100 <alt_open_fd>
   alt_open_fd (&alt_fd_list[STDERR_FILENO], stderr_dev, O_WRONLY, 0777);
  801a22c:	010200b4 	movhi	r4,2050
- 801a230:	21307f04 	addi	r4,r4,-15876
+ 801a230:	21307d04 	addi	r4,r4,-15884
  801a234:	e17fff17 	ldw	r5,-4(fp)
  801a238:	01800044 	movi	r6,1
  801a23c:	01c07fc4 	movi	r7,511
@@ -30705,7 +30705,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
 
     alt_irq[id].handler = handler;
  801a2a4:	008200b4 	movhi	r2,2050
- 801a2a8:	10bcdc04 	addi	r2,r2,-3216
+ 801a2a8:	10bcda04 	addi	r2,r2,-3224
  801a2ac:	e0fffd17 	ldw	r3,-12(fp)
  801a2b0:	180690fa 	slli	r3,r3,3
  801a2b4:	10c5883a 	add	r2,r2,r3
@@ -30713,7 +30713,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
  801a2bc:	10c00015 	stw	r3,0(r2)
     alt_irq[id].context = context;
  801a2c0:	008200b4 	movhi	r2,2050
- 801a2c4:	10bcdc04 	addi	r2,r2,-3216
+ 801a2c4:	10bcda04 	addi	r2,r2,-3224
  801a2c8:	e0fffd17 	ldw	r3,-12(fp)
  801a2cc:	180690fa 	slli	r3,r3,3
  801a2d0:	10c5883a 	add	r2,r2,r3
@@ -30757,15 +30757,15 @@ static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable (alt_u32 id)
  801a318:	1884983a 	sll	r2,r3,r2
  801a31c:	1007883a 	mov	r3,r2
  801a320:	008200b4 	movhi	r2,2050
- 801a324:	10bc8b04 	addi	r2,r2,-3540
+ 801a324:	10bc8904 	addi	r2,r2,-3548
  801a328:	10800017 	ldw	r2,0(r2)
  801a32c:	1886b03a 	or	r3,r3,r2
  801a330:	008200b4 	movhi	r2,2050
- 801a334:	10bc8b04 	addi	r2,r2,-3540
+ 801a334:	10bc8904 	addi	r2,r2,-3548
  801a338:	10c00015 	stw	r3,0(r2)
   NIOS2_WRITE_IENABLE (alt_irq_active);
  801a33c:	008200b4 	movhi	r2,2050
- 801a340:	10bc8b04 	addi	r2,r2,-3540
+ 801a340:	10bc8904 	addi	r2,r2,-3548
  801a344:	10800017 	ldw	r2,0(r2)
  801a348:	100170fa 	wrctl	ienable,r2
  801a34c:	e0bff617 	ldw	r2,-40(fp)
@@ -30818,15 +30818,15 @@ static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_disable (alt_u32 id)
  801a398:	0084303a 	nor	r2,zero,r2
  801a39c:	1007883a 	mov	r3,r2
  801a3a0:	008200b4 	movhi	r2,2050
- 801a3a4:	10bc8b04 	addi	r2,r2,-3540
+ 801a3a4:	10bc8904 	addi	r2,r2,-3548
  801a3a8:	10800017 	ldw	r2,0(r2)
  801a3ac:	1886703a 	and	r3,r3,r2
  801a3b0:	008200b4 	movhi	r2,2050
- 801a3b4:	10bc8b04 	addi	r2,r2,-3540
+ 801a3b4:	10bc8904 	addi	r2,r2,-3548
  801a3b8:	10c00015 	stw	r3,0(r2)
   NIOS2_WRITE_IENABLE (alt_irq_active);
  801a3bc:	008200b4 	movhi	r2,2050
- 801a3c0:	10bc8b04 	addi	r2,r2,-3540
+ 801a3c0:	10bc8904 	addi	r2,r2,-3548
  801a3c4:	10800017 	ldw	r2,0(r2)
  801a3c8:	100170fa 	wrctl	ienable,r2
  801a3cc:	e0bffa17 	ldw	r2,-24(fp)
@@ -30873,16 +30873,16 @@ static ALT_INLINE int* alt_get_errno(void)
  801a414:	d839883a 	mov	fp,sp
   return ((alt_errno) ? alt_errno() : &errno);
  801a418:	008200b4 	movhi	r2,2050
- 801a41c:	10b55404 	addi	r2,r2,-10928
+ 801a41c:	10b55204 	addi	r2,r2,-10936
  801a420:	10800017 	ldw	r2,0(r2)
  801a424:	10000526 	beq	r2,zero,801a43c <alt_get_errno+0x34>
  801a428:	008200b4 	movhi	r2,2050
- 801a42c:	10b55404 	addi	r2,r2,-10928
+ 801a42c:	10b55204 	addi	r2,r2,-10936
  801a430:	10800017 	ldw	r2,0(r2)
  801a434:	103ee83a 	callr	r2
  801a438:	00000206 	br	801a444 <alt_get_errno+0x3c>
  801a43c:	008200b4 	movhi	r2,2050
- 801a440:	10bc8404 	addi	r2,r2,-3568
+ 801a440:	10bc8204 	addi	r2,r2,-3576
 }
  801a444:	e037883a 	mov	sp,fp
  801a448:	dfc00117 	ldw	ra,4(sp)
@@ -30925,7 +30925,7 @@ static int alt_file_locked (alt_fd* fd)
   {
     if ((alt_fd_list[i].dev == fd->dev) &&
  801a48c:	040200b4 	movhi	r16,2050
- 801a490:	84307904 	addi	r16,r16,-15900
+ 801a490:	84307704 	addi	r16,r16,-15908
  801a494:	e0bffd17 	ldw	r2,-12(fp)
  801a498:	1009883a 	mov	r4,r2
  801a49c:	01400304 	movi	r5,12
@@ -30937,7 +30937,7 @@ static int alt_file_locked (alt_fd* fd)
  801a4b4:	1880151e 	bne	r3,r2,801a50c <alt_file_locked+0xb4>
         (alt_fd_list[i].fd_flags & ALT_FD_EXCL) &&
  801a4b8:	040200b4 	movhi	r16,2050
- 801a4bc:	84307904 	addi	r16,r16,-15900
+ 801a4bc:	84307704 	addi	r16,r16,-15908
  801a4c0:	e0bffd17 	ldw	r2,-12(fp)
  801a4c4:	1009883a 	mov	r4,r2
  801a4c8:	01400304 	movi	r5,12
@@ -30959,7 +30959,7 @@ static int alt_file_locked (alt_fd* fd)
  801a4e8:	8014bfc0 	call	8014bfc <__mulsi3>
  801a4ec:	1007883a 	mov	r3,r2
  801a4f0:	008200b4 	movhi	r2,2050
- 801a4f4:	10b07904 	addi	r2,r2,-15900
+ 801a4f4:	10b07704 	addi	r2,r2,-15908
  801a4f8:	1887883a 	add	r3,r3,r2
    */
 
@@ -30984,7 +30984,7 @@ static int alt_file_locked (alt_fd* fd)
  801a510:	10800044 	addi	r2,r2,1
  801a514:	e0bffd15 	stw	r2,-12(fp)
  801a518:	008200b4 	movhi	r2,2050
- 801a51c:	10b55304 	addi	r2,r2,-10932
+ 801a51c:	10b55104 	addi	r2,r2,-10940
  801a520:	10800017 	ldw	r2,0(r2)
  801a524:	1007883a 	mov	r3,r2
  801a528:	e0bffd17 	ldw	r2,-12(fp)
@@ -31036,7 +31036,7 @@ int ALT_OPEN (const char* file, int flags, int mode)
   if (!(dev = alt_find_dev (file, &alt_dev_list)))
  801a57c:	e13ffd17 	ldw	r4,-12(fp)
  801a580:	014200b4 	movhi	r5,2050
- 801a584:	29755104 	addi	r5,r5,-10940
+ 801a584:	29754f04 	addi	r5,r5,-10948
  801a588:	801a0540 	call	801a054 <alt_find_dev>
  801a58c:	e0bff815 	stw	r2,-32(fp)
  801a590:	e0bff817 	ldw	r2,-32(fp)
@@ -31080,7 +31080,7 @@ int ALT_OPEN (const char* file, int flags, int mode)
  801a5dc:	8014bfc0 	call	8014bfc <__mulsi3>
  801a5e0:	1007883a 	mov	r3,r2
  801a5e4:	008200b4 	movhi	r2,2050
- 801a5e8:	10b07904 	addi	r2,r2,-15900
+ 801a5e8:	10b07704 	addi	r2,r2,-15908
  801a5ec:	1885883a 	add	r2,r3,r2
  801a5f0:	e0bffc15 	stw	r2,-16(fp)
       fd->fd_flags = (flags & ~ALT_FD_FLAGS_MASK);
@@ -31412,7 +31412,7 @@ alt_dev* alt_find_file (const char* name)
  801a878:	e13fff15 	stw	r4,-4(fp)
   alt_dev* next = (alt_dev*) alt_fs_list.next;   
  801a87c:	008200b4 	movhi	r2,2050
- 801a880:	10b54f04 	addi	r2,r2,-10948
+ 801a880:	10b54d04 	addi	r2,r2,-10956
  801a884:	10800017 	ldw	r2,0(r2)
  801a888:	e0bffd15 	stw	r2,-12(fp)
   /*
@@ -31502,7 +31502,7 @@ alt_dev* alt_find_file (const char* name)
   while (next != (alt_dev*) &alt_fs_list)
  801a954:	e0fffd17 	ldw	r3,-12(fp)
  801a958:	008200b4 	movhi	r2,2050
- 801a95c:	10b54f04 	addi	r2,r2,-10948
+ 801a95c:	10b54d04 	addi	r2,r2,-10956
  801a960:	18bfcb1e 	bne	r3,r2,801a890 <__alt_data_end+0xfc01a890>
     next = (alt_dev*) next->llist.next;
   }
@@ -31546,7 +31546,7 @@ int alt_get_fd (alt_dev* dev)
   {
     if (!alt_fd_list[i].dev)
  801a9a4:	040200b4 	movhi	r16,2050
- 801a9a8:	84307904 	addi	r16,r16,-15900
+ 801a9a8:	84307704 	addi	r16,r16,-15908
  801a9ac:	e0bffc17 	ldw	r2,-16(fp)
  801a9b0:	1009883a 	mov	r4,r2
  801a9b4:	01400304 	movi	r5,12
@@ -31557,7 +31557,7 @@ int alt_get_fd (alt_dev* dev)
     {
       alt_fd_list[i].dev = dev;
  801a9c8:	040200b4 	movhi	r16,2050
- 801a9cc:	84307904 	addi	r16,r16,-15900
+ 801a9cc:	84307704 	addi	r16,r16,-15908
  801a9d0:	e0bffc17 	ldw	r2,-16(fp)
  801a9d4:	1009883a 	mov	r4,r2
  801a9d8:	01400304 	movi	r5,12
@@ -31567,14 +31567,14 @@ int alt_get_fd (alt_dev* dev)
  801a9e8:	10c00015 	stw	r3,0(r2)
       if (i > alt_max_fd)
  801a9ec:	008200b4 	movhi	r2,2050
- 801a9f0:	10b55304 	addi	r2,r2,-10932
+ 801a9f0:	10b55104 	addi	r2,r2,-10940
  801a9f4:	10c00017 	ldw	r3,0(r2)
  801a9f8:	e0bffc17 	ldw	r2,-16(fp)
  801a9fc:	1880040e 	bge	r3,r2,801aa10 <alt_get_fd+0x94>
       {
         alt_max_fd = i;
  801aa00:	008200b4 	movhi	r2,2050
- 801aa04:	10b55304 	addi	r2,r2,-10932
+ 801aa04:	10b55104 	addi	r2,r2,-10940
  801aa08:	e0fffc17 	ldw	r3,-16(fp)
  801aa0c:	10c00015 	stw	r3,0(r2)
       }
@@ -31688,7 +31688,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
  801ab10:	2021883a 	mov	r16,r4
  801ab14:	801ac4c0 	call	801ac4c <__call_exitprocs>
  801ab18:	008200b4 	movhi	r2,2050
- 801ab1c:	10b54a04 	addi	r2,r2,-10968
+ 801ab1c:	10b54804 	addi	r2,r2,-10976
  801ab20:	11000017 	ldw	r4,0(r2)
  801ab24:	20800f17 	ldw	r2,60(r4)
  801ab28:	10000126 	beq	r2,zero,801ab30 <exit+0x30>
@@ -31699,7 +31699,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
 0801ab38 <__register_exitproc>:
  801ab38:	008200b4 	movhi	r2,2050
  801ab3c:	defffa04 	addi	sp,sp,-24
- 801ab40:	10b54a04 	addi	r2,r2,-10968
+ 801ab40:	10b54804 	addi	r2,r2,-10976
  801ab44:	dc000315 	stw	r16,12(sp)
  801ab48:	14000017 	ldw	r16,0(r2)
  801ab4c:	dc400415 	stw	r17,16(sp)
@@ -31769,7 +31769,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
 
 0801ac4c <__call_exitprocs>:
  801ac4c:	008200b4 	movhi	r2,2050
- 801ac50:	10b54a04 	addi	r2,r2,-10968
+ 801ac50:	10b54804 	addi	r2,r2,-10976
  801ac54:	10800017 	ldw	r2,0(r2)
  801ac58:	defff404 	addi	sp,sp,-48
  801ac5c:	dd800815 	stw	r22,32(sp)

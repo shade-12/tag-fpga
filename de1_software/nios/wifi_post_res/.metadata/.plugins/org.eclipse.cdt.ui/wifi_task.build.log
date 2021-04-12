@@ -1,9 +1,9 @@
-11:10:13 **** Incremental Build of configuration Nios II for project wifi_task ****
+13:14:10 **** Incremental Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 [BSP build complete]
 [wifi_task build complete]
 
-11:10:14 Build Finished (took 680ms)
+13:14:11 Build Finished (took 739ms)
 

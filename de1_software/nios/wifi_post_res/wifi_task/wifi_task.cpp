@@ -11,13 +11,14 @@
 #include "../../src/terasic_includes.h"
 #include "../../src/tasks.h"
 
-char *str(volatile int *num);
-char *patch_dnn_res(char *str);
-WiFiUart WiFi_UART;
+volatile int *tagid  = (volatile int *) 0x0a900000; /* tag id */
+volatile int *result = (volatile int *) 0x0b000004; /* dnn result */
 
 
 int wifi_task()
 {
+    WiFiUart WiFi_UART;
+
     int open_success = WiFi_UART.open(WIFI_RS232_UART_NAME);
     WiFi_UART.flush();
 
@@ -26,98 +27,28 @@ int wifi_task()
         return 0;
     }
 
-    int connect_success = WiFi_UART.connect();
+    int init_success = WiFi_UART.init();
 
-    if (!connect_success)
+    if (!init_success)
+        return -1;
+
+    WiFi_UART.update_entry(tagid, result);
+
+    // Check if 200 is received
+    int count = 0;
+    char *buffer;
+    while (WiFi_UART.read_ready()) {
+        buffer[count] = WiFi_UART.read_s();
+        count++;
+    }
+
+	printf(buffer);
+	
+	if (strcmp(buffer,"200\r\n") == 0) {
+        printf("ERROR: Falied to updated database entry.\n");
         return 0;
-
-    char str[100];
-
-    while (1) {
-        if (patch_dnn_res(str) != NULL)
-            printf("Response: %s\n", str);
     }
-
-    return 0;
-}
-
-
-volatile int *tagid  = (volatile int *) 0x0a900000; /* tag id */
-volatile int *rid    = (volatile int *) 0x0b001000; /* reading id */
-volatile int *result = (volatile int *) 0x0b000004; /* dnn result */
-
-const char *server_endpoint = "k7t0ap6b0i.execute-api.us-west-2.amazonaws.com";
-const char *req = "PATCH /dev/sensors HTTP/1.1\r\n\
-                  Host: k7t0ap6b0i.execute-api.us-west-2.amazonaws.com\r\n\
-                  Content-Type: application/json\r\n\
-                  \r\n\
-                  tagId=";
-
-const char *tagid_str = str(tagid);
-const char *rid_str = str(rid);
-const char *result_str = (result) ? "true" : "false";
-
-
-/* Convert integer to string */
-char * str(volatile int *num) {
-    char snum[5];
-    sprintf(snum, "%i", num);
-    return snum;
-}
-
-
-char *patch_dnn_res(char *str)
-{
-    char *patch_result_req;
-    patch_result_req = (char *) malloc(strlen(req) + strlen(tagid_str) + strlen(rid_str) + strlen(result_str) + 1); /* make space for the new string */
-    strcpy(patch_result_req, req);
-    strcat(patch_result_req, tagid_str);
-    strcat(patch_result_req, "&readingId=");
-    strcat(patch_result_req, rid_str);
-    strcat(patch_result_req, "&poach=");
-    strcat(patch_result_req, result_str);
-    strcat(patch_result_req, "\r\n\r\n");
-
-    bool success = true;
-    char cmd_buffer[100];
-    char buffer[1000];
-
-    if (success) {
-        sprintf(cmd_buffer, "AT+CIPSTART=\"TCP\",\"%s\",80", server_endpoint);
-        success = WiFi_UART.send_command(cmd_buffer);
-    }
-    if (success) {
-        sprintf(cmd_buffer, "AT+CIPSEND=%d", strlen(patch_result_req));
-        success = WiFi_UART.send_command(cmd_buffer);
-    }
-    if (success) {
-        success = WiFi_UART.send_data(patch_result_req, strlen(patch_result_req));
-    }
-
-    int length = 0;
-
-    if (success) {
-        while (1) {
-            WiFi_UART.gets(buffer, sizeof(buffer));
-            if (strstr(buffer, "+IPD") != NULL) {
-                length = strlen(buffer);
-                while (1) {
-                    WiFi_UART.gets(buffer + length, sizeof(buffer) - length);
-                    if (strcmp(buffer + length, "\r\n") == 0)
-                        break;
-                    length += strlen(buffer + length);
-                }
-                break;
-            }
-        }
-        WiFi_UART.gets(buffer, 9);
-        printf("Response: %s\n", buffer);
-    }
-
-    if (success) {
-        strcpy(str, buffer);
-        return str;
-    } else {
-        return NULL;
-    }
+		
+    printf("UPDATE SUCCESS: Database entry updated.\n");
+    return 1;
 }
