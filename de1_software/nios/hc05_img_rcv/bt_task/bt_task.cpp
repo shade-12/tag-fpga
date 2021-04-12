@@ -17,7 +17,7 @@
 #define INPUT_SIZE 1400
 
 volatile unsigned *input = (volatile unsigned *) 0x0a800000; /* input image */
-volatile unsigned *id = (volatile unsigned *) 0x0a804000; /* tag id */
+volatile unsigned *id = (volatile unsigned *) 0x0a900000; /* tag id */
 
 
 int bt_task()
