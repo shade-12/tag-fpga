@@ -21,7 +21,7 @@ $ sopc-create-header-files \
 
 2. Run the following command in SoC EDS Command Shell (admin mode):
     ```sh
-    tar zxf /cygdrive/c/intelFPGA/18.0/embedded/host_tools/altera/preloader/uboot-socfpga.tar.gz
+    tar zxf /cygdrive/d/tag2/de1_software/hps/preloader/uboot-socfpga.tar.gz
     ```
 
 3. Run `make`

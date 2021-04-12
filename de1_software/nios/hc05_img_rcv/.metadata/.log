@@ -54,3 +54,16 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY com.altera.sbtgui.launch 1 0 2021-04-12 11:05:43.802
 !MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x8 --id=0x0 --timestamp=1618249170 /cygdrive/d/tag2/de1_software/nios/hc05_img_rcv/bt_task/bt_task.elf]
+!SESSION 2021-04-12 11:15:16.525 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-12 11:16:07.972
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x8 --id=0x0 --timestamp=1618249170]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-12 11:16:09.929
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x8 --id=0x0 --timestamp=1618249170 /cygdrive/d/tag2/de1_software/nios/hc05_img_rcv/bt_task/bt_task.elf]

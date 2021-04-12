@@ -15,6 +15,7 @@
 #include "../../src/terasic_includes.h"
 #include "../../src/tasks.h"
 
+// #define INPUT_SIZE 1400
 #define INPUT_SIZE 1400
 
 volatile int *input = (volatile int *) 0x0A800000; /* input image */

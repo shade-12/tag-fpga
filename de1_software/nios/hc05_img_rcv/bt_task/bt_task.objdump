@@ -7327,7 +7327,7 @@ static int alt_avalon_dma_ioctl (alt_avalon_dma_priv* priv, int req, void* arg)
  800523c:	1000683a 	jmp	r2
  8005240:	08005404 	addi	zero,at,336
  8005244:	08005268 	cmpgeui	zero,at,329
- 8005248:	080052c0 	call	80052c <__reset-0x77ffad4>
+ 8005248:	080052c0 	call	80052c <__alt_mem_sdram_controller-0x77ffad4>
  800524c:	080052ec 	andhi	zero,at,331
  8005250:	08005344 	addi	zero,at,333
  8005254:	08005370 	cmpltui	zero,at,333
@@ -10469,10 +10469,10 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
 	...
  8006f94:	010d0bff 	0x10d0bff
  8006f98:	01010004 	movi	r4,1024
- 8006f9c:	00000100 	call	10 <__reset-0x7fffff0>
- 8006fa0:	00000000 	call	0 <__reset-0x8000000>
+ 8006f9c:	00000100 	call	10 <__alt_mem_sdram_controller-0x7fffff0>
+ 8006fa0:	00000000 	call	0 <__alt_mem_sdram_controller-0x8000000>
  8006fa4:	01110bff 	0x1110bff
  8006fa8:	01010004 	movi	r4,1024
  8006fac:	7f000105 	stb	fp,4(r15)
- 8006fb0:	007d0000 	call	7d000 <__reset-0x7f83000>
+ 8006fb0:	007d0000 	call	7d000 <__alt_mem_sdram_controller-0x7f83000>
 	...
