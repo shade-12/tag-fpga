@@ -1,22 +1,9 @@
-00:05:59 **** Build of configuration Nios II for project wifi_task ****
+23:07:20 **** Incremental Build of configuration Nios II for project wifi_task ****
 make all 
 Info: Building D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/
 [BSP build complete]
-Info: Compiling esp8266.c to obj/default/esp8266.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/ -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/esp8266.o esp8266.c
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//HAL/inc -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/ -ID:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-main.c: In function 'main':
-main.c:24:9: warning: variable 'time' set but not used [-Wunused-but-set-variable]
-     int time;
-         ^
-Info: Linking wifi_task.elf
-nios2-elf-g++  -T'D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//linker.x' -msys-crt0='D:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/tag2/de1_software/nios/wifi_post_res/wifi_task_bsp/   -Wl,-Map=wifi_task.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o wifi_task.elf obj/default/esp8266.o obj/default/main.o -lm -msys-lib=m
-c:/altera/15.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.9.1/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: wifi_task.elf section `.text' will not fit in region `onchip_sram'
-c:/altera/15.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.9.1/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: region `onchip_sram' overflowed by 60716 bytes
-collect2.exe: error: ld returned 1 exit status
-make: *** [wifi_task.elf] Error 1
+[wifi_task build complete]
 
-00:06:00 Build Finished (took 993ms)
+23:07:21 Build Finished (took 669ms)
 

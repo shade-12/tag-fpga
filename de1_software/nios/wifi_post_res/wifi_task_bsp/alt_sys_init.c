@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
  *
- * Generated: Fri Apr 09 00:03:46 PDT 2021
+ * Generated: Sun Apr 11 23:01:27 PDT 2021
  */
 
 /*
@@ -59,7 +59,7 @@
  */
 
 #include "altera_nios2_gen2_irq.h"
-#include "Altera_UP_SD_Card_Avalon_Interface.h"
+#include "altera_avalon_dma.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_sysid_qsys.h"
 #include "altera_up_avalon_rs232.h"
@@ -69,11 +69,11 @@
  */
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS2_GEN2_0, nios2_gen2_0);
+ALTERA_AVALON_DMA_INSTANCE ( DMA_FPGA_TO_HPS, dma_fpga_to_hps);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID, sysid);
 ALTERA_UP_AVALON_RS232_INSTANCE ( BT_RS232_UART, bt_rs232_uart);
 ALTERA_UP_AVALON_RS232_INSTANCE ( WIFI_RS232_UART, wifi_rs232_uart);
-ALTERA_UP_SD_CARD_AVALON_INTERFACE_INSTANCE ( SD_CARD_INTERFACE, sd_card_interface);
 
 /*
  * Initialize the interrupt controller devices
@@ -96,9 +96,9 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
+    ALTERA_AVALON_DMA_INIT ( DMA_FPGA_TO_HPS, dma_fpga_to_hps);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);
     ALTERA_UP_AVALON_RS232_INIT ( BT_RS232_UART, bt_rs232_uart);
     ALTERA_UP_AVALON_RS232_INIT ( WIFI_RS232_UART, wifi_rs232_uart);
-    ALTERA_UP_SD_CARD_AVALON_INTERFACE_INIT ( SD_CARD_INTERFACE, sd_card_interface);
 }

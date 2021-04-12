@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'tag_nios_system'
  * SOPC Builder design path: D:/tag2/de1_hardware/hps_fpga/tag_nios_system.sopcinfo
  *
- * Generated: Fri Apr 09 00:03:46 PDT 2021
+ * Generated: Sun Apr 11 23:01:27 PDT 2021
  */
 
 /*
@@ -50,9 +50,9 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x20000, LENGTH = 32
-    onchip_sram : ORIGIN = 0x20020, LENGTH = 53216
-    sdram_controller : ORIGIN = 0x8000000, LENGTH = 67108864
+    onchip_sram : ORIGIN = 0x20000, LENGTH = 53248
+    reset : ORIGIN = 0x8000000, LENGTH = 32
+    sdram_controller : ORIGIN = 0x8000020, LENGTH = 67108832
 }
 
 /* Define symbols for each memory base-address */
@@ -113,7 +113,7 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > onchip_sram
+    } > sdram_controller
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
@@ -209,16 +209,9 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > onchip_sram = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
+    } > sdram_controller = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .rodata : AT ( LOADADDR (.text) + SIZEOF (.text) )
+    .rodata :
     {
         PROVIDE (__ram_rodata_start = ABSOLUTE(.));
         . = ALIGN(4);
@@ -235,9 +228,13 @@ SECTIONS
      * This section's LMA is set to the .text region.
      * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
      *
+     * .rwdata region equals the .text region, and is set to be loaded into .text region.
+     * This requires two copies of .rwdata in the .text region. One read writable at VMA.
+     * and one read-only at LMA. crt0 will copy from LMA to VMA on reset
+     *
      */
 
-    .rwdata : AT ( LOADADDR (.rodata) + SIZEOF (.rodata) )
+    .rwdata LOADADDR (.rodata) + SIZEOF (.rodata) : AT ( LOADADDR (.rodata) + SIZEOF (.rodata)+ SIZEOF (.rwdata) )
     {
         PROVIDE (__ram_rwdata_start = ABSOLUTE(.));
         . = ALIGN(4);
@@ -260,7 +257,14 @@ SECTIONS
 
     PROVIDE (__flash_rwdata_start = LOADADDR(.rwdata));
 
-    .bss :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .bss LOADADDR (.rwdata) + SIZEOF (.rwdata) : AT ( LOADADDR (.rwdata) + SIZEOF (.rwdata) )
     {
         __bss_start = ABSOLUTE(.);
         PROVIDE (__sbss_start = ABSOLUTE(.));
@@ -305,7 +309,7 @@ SECTIONS
      *
      */
 
-    .onchip_sram LOADADDR (.rwdata) + SIZEOF (.rwdata) : AT ( LOADADDR (.rwdata) + SIZEOF (.rwdata) )
+    .onchip_sram : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_onchip_sram_start = ABSOLUTE(.));
         *(.onchip_sram .onchip_sram. onchip_sram.*)
@@ -322,7 +326,7 @@ SECTIONS
      *
      */
 
-    .sdram_controller : AT ( LOADADDR (.onchip_sram) + SIZEOF (.onchip_sram) )
+    .sdram_controller LOADADDR (.onchip_sram) + SIZEOF (.onchip_sram) : AT ( LOADADDR (.onchip_sram) + SIZEOF (.onchip_sram) )
     {
         PROVIDE (_alt_partition_sdram_controller_start = ABSOLUTE(.));
         *(.sdram_controller .sdram_controller. sdram_controller.*)

@@ -25,6 +25,14 @@
          type = "int";
       }
    }
+   element ARM_A9_HPS.f2h_axi_slave
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
    element JTAG_To_FPGA_bridge
    {
       datum _sortIndex
@@ -47,6 +55,38 @@
       {
          value = "1";
          type = "boolean";
+      }
+   }
+   element dma_fpga_to_hps
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element dma_fpga_to_hps.control_port_slave
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
+   element dma_hps_to_fpga
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element dma_hps_to_fpga.control_port_slave
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
       }
    }
    element dnn_accelerator
@@ -90,7 +130,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "16";
          type = "int";
       }
    }
@@ -98,7 +138,7 @@
    {
       datum baseAddress
       {
-         value = "72";
+         value = "104";
          type = "String";
       }
    }
@@ -106,7 +146,7 @@
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "17";
          type = "int";
       }
    }
@@ -114,7 +154,7 @@
    {
       datum baseAddress
       {
-         value = "64";
+         value = "96";
          type = "String";
       }
    }
@@ -181,27 +221,6 @@
          type = "String";
       }
    }
-   element sd_card_interface
-   {
-      datum _sortIndex
-      {
-         value = "11";
-         type = "int";
-      }
-   }
-   element sd_card_interface.avalon_sdcard_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "1024";
-         type = "String";
-      }
-   }
    element sdram_controller
    {
       datum _sortIndex
@@ -235,7 +254,7 @@
    {
       datum baseAddress
       {
-         value = "48";
+         value = "112";
          type = "String";
       }
    }
@@ -275,7 +294,7 @@
    {
       datum baseAddress
       {
-         value = "32";
+         value = "96";
          type = "String";
       }
    }
@@ -335,11 +354,6 @@
    dir="end" />
  <interface name="memory" internal="ARM_A9_HPS.memory" type="conduit" dir="end" />
  <interface name="reset" internal="system_pll.ref_reset" type="reset" dir="end" />
- <interface
-   name="sd_card"
-   internal="sd_card_interface.conduit_end"
-   type="conduit"
-   dir="end" />
  <interface
    name="sdram"
    internal="sdram_controller.wire"
@@ -920,6 +934,56 @@
   <parameter name="stop_bits" value="1" />
  </module>
  <module
+   name="dma_fpga_to_hps"
+   kind="altera_avalon_dma"
+   version="15.0"
+   enabled="1">
+  <parameter name="allowByteTransactions" value="true" />
+  <parameter name="allowDoubleWordTransactions" value="true" />
+  <parameter name="allowHalfWordTransactions" value="true" />
+  <parameter name="allowQuadWordTransactions" value="true" />
+  <parameter name="allowWordTransactions" value="true" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="bigEndian" value="false" />
+  <parameter name="burstEnable" value="false" />
+  <parameter name="fifoDepth" value="32" />
+  <parameter name="maxBurstSize" value="128" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="16" />
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='onchip_sram.s1' start='0x20000' end='0x2D000' /></address-map>]]></parameter>
+  <parameter name="readSlaveAddressWidthMax" value="18" />
+  <parameter name="readSlaveDataWidthMax" value="32" />
+  <parameter name="softresetEnable" value="true" />
+  <parameter name="useRegistersForFIFO" value="false" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='ARM_A9_HPS_axi_sdram.axi_slave0' start='0x0' end='0x80000000' /><slave name='ARM_A9_HPS_gmac0.axi_slave0' start='0xFF700000' end='0xFF702000' /><slave name='ARM_A9_HPS_gmac1.axi_slave0' start='0xFF702000' end='0xFF704000' /><slave name='ARM_A9_HPS_sdmmc.axi_slave0' start='0xFF704000' end='0xFF705000' /><slave name='ARM_A9_HPS_qspi.axi_slave0' start='0xFF705000' end='0xFF705100' /><slave name='ARM_A9_HPS_fpgamgr.axi_slave0' start='0xFF706000' end='0xFF707000' /><slave name='ARM_A9_HPS_gpio0.axi_slave0' start='0xFF708000' end='0xFF708100' /><slave name='ARM_A9_HPS_gpio1.axi_slave0' start='0xFF709000' end='0xFF709100' /><slave name='ARM_A9_HPS_gpio2.axi_slave0' start='0xFF70A000' end='0xFF70A100' /><slave name='ARM_A9_HPS_l3regs.axi_slave0' start='0xFF800000' end='0xFF801000' /><slave name='ARM_A9_HPS_nand0.axi_slave0' start='0xFF900000' end='0xFF910000' /><slave name='ARM_A9_HPS_qspi.axi_slave1' start='0xFFA00000' end='0xFFA00100' /><slave name='ARM_A9_HPS_usb0.axi_slave0' start='0xFFB00000' end='0xFFB40000' /><slave name='ARM_A9_HPS_usb1.axi_slave0' start='0xFFB40000' end='0xFFB80000' /><slave name='ARM_A9_HPS_nand0.axi_slave1' start='0xFFB80000' end='0xFFB90000' /><slave name='ARM_A9_HPS_fpgamgr.axi_slave1' start='0xFFB90000' end='0xFFB90100' /><slave name='ARM_A9_HPS_dcan0.axi_slave0' start='0xFFC00000' end='0xFFC01000' /><slave name='ARM_A9_HPS_dcan1.axi_slave0' start='0xFFC01000' end='0xFFC02000' /><slave name='ARM_A9_HPS_uart0.axi_slave0' start='0xFFC02000' end='0xFFC02100' /><slave name='ARM_A9_HPS_uart1.axi_slave0' start='0xFFC03000' end='0xFFC03100' /><slave name='ARM_A9_HPS_i2c0.axi_slave0' start='0xFFC04000' end='0xFFC04100' /><slave name='ARM_A9_HPS_i2c1.axi_slave0' start='0xFFC05000' end='0xFFC05100' /><slave name='ARM_A9_HPS_i2c2.axi_slave0' start='0xFFC06000' end='0xFFC06100' /><slave name='ARM_A9_HPS_i2c3.axi_slave0' start='0xFFC07000' end='0xFFC07100' /><slave name='ARM_A9_HPS_timer0.axi_slave0' start='0xFFC08000' end='0xFFC08100' /><slave name='ARM_A9_HPS_timer1.axi_slave0' start='0xFFC09000' end='0xFFC09100' /><slave name='ARM_A9_HPS_sdrctl.axi_slave0' start='0xFFC25000' end='0xFFC26000' /><slave name='ARM_A9_HPS_timer2.axi_slave0' start='0xFFD00000' end='0xFFD00100' /><slave name='ARM_A9_HPS_timer3.axi_slave0' start='0xFFD01000' end='0xFFD01100' /><slave name='ARM_A9_HPS_clkmgr.axi_slave0' start='0xFFD04000' end='0xFFD05000' /><slave name='ARM_A9_HPS_rstmgr.axi_slave0' start='0xFFD05000' end='0xFFD05100' /><slave name='ARM_A9_HPS_sysmgr.axi_slave0' start='0xFFD08000' end='0xFFD08400' /><slave name='ARM_A9_HPS_dma.axi_slave0' start='0xFFE01000' end='0xFFE02000' /><slave name='ARM_A9_HPS_spim0.axi_slave0' start='0xFFF00000' end='0xFFF00100' /><slave name='ARM_A9_HPS_spim1.axi_slave0' start='0xFFF01000' end='0xFFF01100' /><slave name='ARM_A9_HPS_arm_gic_0.axi_slave1' start='0xFFFEC100' end='0xFFFEC200' /><slave name='ARM_A9_HPS_timer.axi_slave0' start='0xFFFEC600' end='0xFFFEC700' /><slave name='ARM_A9_HPS_arm_gic_0.axi_slave0' start='0xFFFED000' end='0xFFFEE000' /><slave name='ARM_A9_HPS_L2.axi_slave0' start='0xFFFEF000' end='0xFFFF0000' /><slave name='ARM_A9_HPS_axi_ocram.axi_slave0' start='0xFFFF0000' end='0x100000000' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="32" />
+  <parameter name="writeSlaveDataWidthMax" value="32" />
+ </module>
+ <module
+   name="dma_hps_to_fpga"
+   kind="altera_avalon_dma"
+   version="15.0"
+   enabled="1">
+  <parameter name="allowByteTransactions" value="true" />
+  <parameter name="allowDoubleWordTransactions" value="true" />
+  <parameter name="allowHalfWordTransactions" value="true" />
+  <parameter name="allowQuadWordTransactions" value="true" />
+  <parameter name="allowWordTransactions" value="true" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="bigEndian" value="false" />
+  <parameter name="burstEnable" value="false" />
+  <parameter name="fifoDepth" value="32" />
+  <parameter name="maxBurstSize" value="128" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="16" />
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ARM_A9_HPS_axi_sdram.axi_slave0' start='0x0' end='0x80000000' /><slave name='ARM_A9_HPS_gmac0.axi_slave0' start='0xFF700000' end='0xFF702000' /><slave name='ARM_A9_HPS_gmac1.axi_slave0' start='0xFF702000' end='0xFF704000' /><slave name='ARM_A9_HPS_sdmmc.axi_slave0' start='0xFF704000' end='0xFF705000' /><slave name='ARM_A9_HPS_qspi.axi_slave0' start='0xFF705000' end='0xFF705100' /><slave name='ARM_A9_HPS_fpgamgr.axi_slave0' start='0xFF706000' end='0xFF707000' /><slave name='ARM_A9_HPS_gpio0.axi_slave0' start='0xFF708000' end='0xFF708100' /><slave name='ARM_A9_HPS_gpio1.axi_slave0' start='0xFF709000' end='0xFF709100' /><slave name='ARM_A9_HPS_gpio2.axi_slave0' start='0xFF70A000' end='0xFF70A100' /><slave name='ARM_A9_HPS_l3regs.axi_slave0' start='0xFF800000' end='0xFF801000' /><slave name='ARM_A9_HPS_nand0.axi_slave0' start='0xFF900000' end='0xFF910000' /><slave name='ARM_A9_HPS_qspi.axi_slave1' start='0xFFA00000' end='0xFFA00100' /><slave name='ARM_A9_HPS_usb0.axi_slave0' start='0xFFB00000' end='0xFFB40000' /><slave name='ARM_A9_HPS_usb1.axi_slave0' start='0xFFB40000' end='0xFFB80000' /><slave name='ARM_A9_HPS_nand0.axi_slave1' start='0xFFB80000' end='0xFFB90000' /><slave name='ARM_A9_HPS_fpgamgr.axi_slave1' start='0xFFB90000' end='0xFFB90100' /><slave name='ARM_A9_HPS_dcan0.axi_slave0' start='0xFFC00000' end='0xFFC01000' /><slave name='ARM_A9_HPS_dcan1.axi_slave0' start='0xFFC01000' end='0xFFC02000' /><slave name='ARM_A9_HPS_uart0.axi_slave0' start='0xFFC02000' end='0xFFC02100' /><slave name='ARM_A9_HPS_uart1.axi_slave0' start='0xFFC03000' end='0xFFC03100' /><slave name='ARM_A9_HPS_i2c0.axi_slave0' start='0xFFC04000' end='0xFFC04100' /><slave name='ARM_A9_HPS_i2c1.axi_slave0' start='0xFFC05000' end='0xFFC05100' /><slave name='ARM_A9_HPS_i2c2.axi_slave0' start='0xFFC06000' end='0xFFC06100' /><slave name='ARM_A9_HPS_i2c3.axi_slave0' start='0xFFC07000' end='0xFFC07100' /><slave name='ARM_A9_HPS_timer0.axi_slave0' start='0xFFC08000' end='0xFFC08100' /><slave name='ARM_A9_HPS_timer1.axi_slave0' start='0xFFC09000' end='0xFFC09100' /><slave name='ARM_A9_HPS_sdrctl.axi_slave0' start='0xFFC25000' end='0xFFC26000' /><slave name='ARM_A9_HPS_timer2.axi_slave0' start='0xFFD00000' end='0xFFD00100' /><slave name='ARM_A9_HPS_timer3.axi_slave0' start='0xFFD01000' end='0xFFD01100' /><slave name='ARM_A9_HPS_clkmgr.axi_slave0' start='0xFFD04000' end='0xFFD05000' /><slave name='ARM_A9_HPS_rstmgr.axi_slave0' start='0xFFD05000' end='0xFFD05100' /><slave name='ARM_A9_HPS_sysmgr.axi_slave0' start='0xFFD08000' end='0xFFD08400' /><slave name='ARM_A9_HPS_dma.axi_slave0' start='0xFFE01000' end='0xFFE02000' /><slave name='ARM_A9_HPS_spim0.axi_slave0' start='0xFFF00000' end='0xFFF00100' /><slave name='ARM_A9_HPS_spim1.axi_slave0' start='0xFFF01000' end='0xFFF01100' /><slave name='ARM_A9_HPS_arm_gic_0.axi_slave1' start='0xFFFEC100' end='0xFFFEC200' /><slave name='ARM_A9_HPS_timer.axi_slave0' start='0xFFFEC600' end='0xFFFEC700' /><slave name='ARM_A9_HPS_arm_gic_0.axi_slave0' start='0xFFFED000' end='0xFFFEE000' /><slave name='ARM_A9_HPS_L2.axi_slave0' start='0xFFFEF000' end='0xFFFF0000' /><slave name='ARM_A9_HPS_axi_ocram.axi_slave0' start='0xFFFF0000' end='0x100000000' /></address-map>]]></parameter>
+  <parameter name="readSlaveAddressWidthMax" value="32" />
+  <parameter name="readSlaveDataWidthMax" value="32" />
+  <parameter name="softresetEnable" value="true" />
+  <parameter name="useRegistersForFIFO" value="false" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='onchip_sram.s1' start='0x20000' end='0x2D000' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="18" />
+  <parameter name="writeSlaveDataWidthMax" value="32" />
+ </module>
+ <module
    name="dnn_accelerator"
    kind="dnn_accelerator"
    version="1.0"
@@ -1019,7 +1083,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='bt_rs232_uart.avalon_rs232_slave' start='0x0' end='0x8' /><slave name='sysid.control_slave' start='0x8' end='0x10' /><slave name='wifi_rs232_uart.avalon_rs232_slave' start='0x10' end='0x18' /><slave name='wifi_reset.s1' start='0x20' end='0x30' /><slave name='switches.s1' start='0x30' end='0x40' /><slave name='sd_card_interface.avalon_sdcard_slave' start='0x400' end='0x800' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x800' end='0x1000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1000' end='0x1008' /><slave name='leds.s1' start='0x1010' end='0x1020' /><slave name='onchip_sram.s1' start='0x20000' end='0x2D000' /><slave name='sdram_controller.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='bt_rs232_uart.avalon_rs232_slave' start='0x0' end='0x8' /><slave name='sysid.control_slave' start='0x8' end='0x10' /><slave name='wifi_rs232_uart.avalon_rs232_slave' start='0x10' end='0x18' /><slave name='dma_fpga_to_hps.control_port_slave' start='0x40' end='0x60' /><slave name='wifi_reset.s1' start='0x60' end='0x70' /><slave name='switches.s1' start='0x70' end='0x80' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x800' end='0x1000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1000' end='0x1008' /><slave name='leds.s1' start='0x1010' end='0x1020' /><slave name='onchip_sram.s1' start='0x20000' end='0x2D000' /><slave name='sdram_controller.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1058,14 +1122,14 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='nios2_gen2_0.debug_mem_slave' start='0x800' end='0x1000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1000' end='0x1008' /><slave name='onchip_sram.s1' start='0x20000' end='0x2D000' /><slave name='sdram_controller.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='dma_fpga_to_hps.control_port_slave' start='0x40' end='0x60' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x800' end='0x1000' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1000' end='0x1008' /><slave name='sdram_controller.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="7" />
+  <parameter name="internalIrqMaskSystemInfo" value="15" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -1205,14 +1269,6 @@
   <parameter name="writable" value="true" />
  </module>
  <module
-   name="sd_card_interface"
-   kind="Altera_UP_SD_Card_Avalon_Interface"
-   version="15.0"
-   enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
- </module>
- <module
    name="sdram_controller"
    kind="altera_avalon_new_sdram_controller"
    version="15.0"
@@ -1346,9 +1402,9 @@
    kind="avalon"
    version="15.0"
    start="nios2_gen2_0.data_master"
-   end="sd_card_interface.avalon_sdcard_slave">
+   end="dma_fpga_to_hps.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1402,7 +1458,7 @@
    start="nios2_gen2_0.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0030" />
+  <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1411,7 +1467,7 @@
    start="nios2_gen2_0.data_master"
    end="wifi_reset.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1420,7 +1476,7 @@
    start="ARM_A9_HPS.h2f_lw_axi_master"
    end="jtag_uart_arm_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0048" />
+  <parameter name="baseAddress" value="0x0068" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1429,7 +1485,7 @@
    start="ARM_A9_HPS.h2f_lw_axi_master"
    end="jtag_uart_arm_1.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1439,6 +1495,15 @@
    end="dnn_accelerator.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="dma_hps_to_fpga.control_port_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1454,18 +1519,18 @@
    kind="avalon"
    version="15.0"
    start="nios2_gen2_0.instruction_master"
-   end="nios2_gen2_0.debug_mem_slave">
+   end="dma_fpga_to_hps.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0800" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="15.0"
    start="nios2_gen2_0.instruction_master"
-   end="onchip_sram.s1">
+   end="nios2_gen2_0.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="baseAddress" value="0x0800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1483,7 +1548,7 @@
    start="JTAG_To_FPGA_bridge.master"
    end="jtag_uart_arm_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0048" />
+  <parameter name="baseAddress" value="0xff200068" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1492,7 +1557,7 @@
    start="JTAG_To_FPGA_bridge.master"
    end="jtag_uart_arm_1.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0xff200060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1501,7 +1566,52 @@
    start="JTAG_To_FPGA_bridge.master"
    end="dnn_accelerator.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0xff200000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="JTAG_To_FPGA_bridge.master"
+   end="dma_hps_to_fpga.control_port_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0xff200040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="dma_hps_to_fpga.read_master"
+   end="ARM_A9_HPS.f2h_axi_slave">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="dma_fpga_to_hps.read_master"
+   end="onchip_sram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="dma_fpga_to_hps.write_master"
+   end="ARM_A9_HPS.f2h_axi_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="dma_hps_to_fpga.write_master"
+   end="onchip_sram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00020000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1520,11 +1630,6 @@
    start="system_pll.sys_clk"
    end="sdram_controller.clk" />
  <connection kind="clock" version="15.0" start="system_pll.sys_clk" end="leds.clk" />
- <connection
-   kind="clock"
-   version="15.0"
-   start="system_pll.sys_clk"
-   end="sd_card_interface.clk" />
  <connection
    kind="clock"
    version="15.0"
@@ -1569,6 +1674,16 @@
    kind="clock"
    version="15.0"
    start="system_pll.sys_clk"
+   end="dma_hps_to_fpga.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
+   end="dma_fpga_to_hps.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="system_pll.sys_clk"
    end="onchip_sram.clk1" />
  <connection
    kind="clock"
@@ -1607,6 +1722,13 @@
  <connection
    kind="interrupt"
    version="15.0"
+   start="ARM_A9_HPS.f2h_irq1"
+   end="dma_hps_to_fpga.irq">
+  <parameter name="irqNumber" value="1" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.0"
    start="nios2_gen2_0.irq"
    end="bt_rs232_uart.interrupt">
   <parameter name="irqNumber" value="1" />
@@ -1624,6 +1746,13 @@
    start="nios2_gen2_0.irq"
    end="jtag_uart_0.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.0"
+   start="nios2_gen2_0.irq"
+   end="dma_fpga_to_hps.irq">
+  <parameter name="irqNumber" value="3" />
  </connection>
  <connection
    kind="reset"
@@ -1693,6 +1822,11 @@
  <connection
    kind="reset"
    version="15.0"
+   start="ARM_A9_HPS.h2f_reset"
+   end="dma_hps_to_fpga.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
    start="system_pll.reset_source"
    end="JTAG_To_FPGA_bridge.clk_reset" />
  <connection
@@ -1715,11 +1849,6 @@
    version="15.0"
    start="system_pll.reset_source"
    end="leds.reset" />
- <connection
-   kind="reset"
-   version="15.0"
-   start="system_pll.reset_source"
-   end="sd_card_interface.reset" />
  <connection
    kind="reset"
    version="15.0"
@@ -1760,6 +1889,16 @@
    version="15.0"
    start="system_pll.reset_source"
    end="wifi_reset.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
+   end="dma_hps_to_fpga.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="system_pll.reset_source"
+   end="dma_fpga_to_hps.reset" />
  <connection
    kind="reset"
    version="15.0"

@@ -1,6 +1,0 @@
-23:01:59 **** Clean-only build of configuration Nios II for project sd_task_bsp ****
-make clean 
-[BSP clean complete]
-
-23:02:00 Build Finished (took 706ms)
-

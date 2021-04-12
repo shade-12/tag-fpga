@@ -1,4 +1,4 @@
-!SESSION 2021-04-08 23:08:02.162 -----------------------------------------------
+!SESSION 2021-04-11 23:00:20.859 -----------------------------------------------
 eclipse.buildId=4.3.2.M20140221-1700
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,8 +6,20 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.cdt.core 1 0 2021-04-08 23:09:40.955
-!MESSAGE Indexed 'wifi_task_bsp' (80 sources, 163 headers) in 2.42 sec: 5,144 declarations; 7,998 references; 51 unresolved inclusions; 3 syntax errors; 105 unresolved names (0.79%)
+!ENTRY org.eclipse.cdt.core 1 0 2021-04-11 23:01:31.273
+!MESSAGE Indexed 'wifi_task_bsp' (81 sources, 143 headers) in 2.38 sec: 4,075 declarations; 7,165 references; 79 unresolved inclusions; 6 syntax errors; 168 unresolved names (1.47%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2021-04-08 23:09:41.812
+!ENTRY org.eclipse.cdt.core 1 0 2021-04-11 23:01:32.362
 !MESSAGE Indexed 'wifi_task' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-11 23:05:20.026
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x8 --id=0x0 --timestamp=1618201335]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-11 23:05:21.949
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x8 --id=0x0 --timestamp=1618201335 /cygdrive/d/tag2/de1_software/nios/wifi_post_res/wifi_task/wifi_task.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-11 23:07:22.312
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x8 --id=0x0 --timestamp=1618201335]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-04-11 23:07:24.306
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x8 --id=0x0 --timestamp=1618201335 /cygdrive/d/tag2/de1_software/nios/wifi_post_res/wifi_task/wifi_task.elf]

@@ -4,7 +4,7 @@
 ### Description
 This directory contains the main NIOS II-based software application, `system_application` that runs on FPGA for our project. The main tasks of the applciation are as follow:
 - Wait for incoming image data from RaspberryPi via Bluetooth
-- Incoming image data of size (100 x 168), 24bit RGB, is stored in SDRAM
+- Incoming image data of size (28 x 50) is stored in a 1-D array of size 1400 in SDRAM
 - After all bytes have been received, DMA controller write to DNN accelerator address
 - Wait for human detection 1-bit result from HPS
 - Send 1-bit result to cloud database with a PATCH request via WiFi

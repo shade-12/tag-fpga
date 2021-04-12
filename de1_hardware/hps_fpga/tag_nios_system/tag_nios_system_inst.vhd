@@ -77,10 +77,6 @@
 			memory_mem_dm                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
 			reset_reset                     : in    std_logic                     := 'X';             -- reset
-			sd_card_b_SD_cmd                : inout std_logic                     := 'X';             -- b_SD_cmd
-			sd_card_b_SD_dat                : inout std_logic                     := 'X';             -- b_SD_dat
-			sd_card_b_SD_dat3               : inout std_logic                     := 'X';             -- b_SD_dat3
-			sd_card_o_SD_clock              : out   std_logic;                                        -- o_SD_clock
 			sdram_addr                      : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_ba                        : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_cas_n                     : out   std_logic;                                        -- cas_n
@@ -177,10 +173,6 @@
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --           .mem_dm
 			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --           .oct_rzqin
 			reset_reset                     => CONNECTED_TO_reset_reset,                     --      reset.reset
-			sd_card_b_SD_cmd                => CONNECTED_TO_sd_card_b_SD_cmd,                --    sd_card.b_SD_cmd
-			sd_card_b_SD_dat                => CONNECTED_TO_sd_card_b_SD_dat,                --           .b_SD_dat
-			sd_card_b_SD_dat3               => CONNECTED_TO_sd_card_b_SD_dat3,               --           .b_SD_dat3
-			sd_card_o_SD_clock              => CONNECTED_TO_sd_card_o_SD_clock,              --           .o_SD_clock
 			sdram_addr                      => CONNECTED_TO_sdram_addr,                      --      sdram.addr
 			sdram_ba                        => CONNECTED_TO_sdram_ba,                        --           .ba
 			sdram_cas_n                     => CONNECTED_TO_sdram_cas_n,                     --           .cas_n

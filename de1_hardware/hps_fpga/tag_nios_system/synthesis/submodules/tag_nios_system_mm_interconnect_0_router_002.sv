@@ -134,9 +134,9 @@ module tag_nios_system_mm_interconnect_0_router_002
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h1000 - 64'h800); 
-    localparam PAD1 = log2ceil(64'h1008 - 64'h1000); 
-    localparam PAD2 = log2ceil(64'h30000 - 64'h20000); 
+    localparam PAD0 = log2ceil(64'h60 - 64'h40); 
+    localparam PAD1 = log2ceil(64'h1000 - 64'h800); 
+    localparam PAD2 = log2ceil(64'h1008 - 64'h1000); 
     localparam PAD3 = log2ceil(64'hc000000 - 64'h8000000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
@@ -191,22 +191,22 @@ module tag_nios_system_mm_interconnect_0_router_002
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x800 .. 0x1000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 28'h800   ) begin
+    // ( 0x40 .. 0x60 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 28'h40   ) begin
             src_channel = 11'b0100;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
-    end
-
-    // ( 0x1000 .. 0x1008 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h1000   ) begin
-            src_channel = 11'b0010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
-    // ( 0x20000 .. 0x30000 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 28'h20000   ) begin
+    // ( 0x800 .. 0x1000 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h800   ) begin
             src_channel = 11'b1000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
+    end
+
+    // ( 0x1000 .. 0x1008 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 28'h1000   ) begin
+            src_channel = 11'b0010;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x8000000 .. 0xc000000 )

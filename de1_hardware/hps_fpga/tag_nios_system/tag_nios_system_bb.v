@@ -77,10 +77,6 @@ module tag_nios_system (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	reset_reset,
-	sd_card_b_SD_cmd,
-	sd_card_b_SD_dat,
-	sd_card_b_SD_dat3,
-	sd_card_o_SD_clock,
 	sdram_addr,
 	sdram_ba,
 	sdram_cas_n,
@@ -173,10 +169,6 @@ module tag_nios_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset;
-	inout		sd_card_b_SD_cmd;
-	inout		sd_card_b_SD_dat;
-	inout		sd_card_b_SD_dat3;
-	output		sd_card_o_SD_clock;
 	output	[12:0]	sdram_addr;
 	output	[1:0]	sdram_ba;
 	output		sdram_cas_n;
