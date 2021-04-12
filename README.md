@@ -44,9 +44,9 @@ Main functionalities:
 
 ### Deep Neural Network Accelerator
 
-The multi-layer perceptron (MLP) is used in this project to detect the human presence in our image dataset captured using a RaspberryPi camera. That is, our MLP will take a 28×28-pixel 24bit RGB image as input and determine there is a human present in the image.
+The multi-layer perceptron (MLP) is used in this project to detect the human presence in our image dataset captured using a RaspberryPi camera. That is, our MLP will take a 28×50-pixel image as input and determine there is a human present in the image.
 
-Our MLP consists of several linear layers that first multiply the previous layer's outputs by a weight matrix and add a constant “bias” value to each output, and then apply a non-linear activation function to obtain the current layer's outputs (called activations). Our MLP will have a 784-pixel input (the 28×28-pixel image), two 1000-neuron hidden layers, and a 10-neuron output layer; the output neuron with the highest value will tell us which digit the network thinks it sees.
+Our MLP consists of several linear layers that first multiply the previous layer's outputs by a weight matrix and add a constant “bias” value to each output, and then apply a non-linear activation function to obtain the current layer's outputs (called activations). Our MLP will have a 1400-pixel input (the 28×50-pixel image), two 1000-neuron hidden layers, and a 10-neuron output layer; the output neuron with the highest value will tell us which digit the network thinks it sees.
 
 *Traning script for these networks is stored in a separate repository.*
 
