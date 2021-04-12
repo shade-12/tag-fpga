@@ -124,7 +124,7 @@ module tag_nios_computer(
 	output HPS_USB_STP
 );
 
-	wire wifi_reset, sd_card_b_SD_cmd, sd_card_b_SD_dat, sd_card_b_SD_dat3, sd_card_o_SD_clock;
+	wire wifi_reset;
 
 	assign GPIO_1[1] = KEY[0] & wifi_reset;
 
@@ -164,10 +164,6 @@ module tag_nios_computer(
 		.wifi_reset_export               (wifi_reset),
 		.leds_export                     (LEDR),
 		.switches_export                 (SW),
-		.sd_card_b_SD_cmd                (sd_card_b_SD_cmd),
-		.sd_card_b_SD_dat                (sd_card_b_SD_dat),
-		.sd_card_b_SD_dat3               (sd_card_b_SD_dat3),
-		.sd_card_o_SD_clock              (sd_card_o_SD_clock),
 
 		// ###############################################
 		// HPS side

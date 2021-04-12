@@ -76,10 +76,6 @@
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //           .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //           .oct_rzqin
 		.reset_reset                     (<connected-to-reset_reset>),                     //      reset.reset
-		.sd_card_b_SD_cmd                (<connected-to-sd_card_b_SD_cmd>),                //    sd_card.b_SD_cmd
-		.sd_card_b_SD_dat                (<connected-to-sd_card_b_SD_dat>),                //           .b_SD_dat
-		.sd_card_b_SD_dat3               (<connected-to-sd_card_b_SD_dat3>),               //           .b_SD_dat3
-		.sd_card_o_SD_clock              (<connected-to-sd_card_o_SD_clock>),              //           .o_SD_clock
 		.sdram_addr                      (<connected-to-sdram_addr>),                      //      sdram.addr
 		.sdram_ba                        (<connected-to-sdram_ba>),                        //           .ba
 		.sdram_cas_n                     (<connected-to-sdram_cas_n>),                     //           .cas_n
