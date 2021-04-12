@@ -45,7 +45,7 @@ int wifi_task()
 	printf(buffer);
 	
 	if (strcmp(buffer,"200\r\n") == 0) {
-        printf("ERROR: Falied to updated database entry.\n");
+        printf("ERROR: Failed to updated database entry.\n");
         return 0;
     }
 		

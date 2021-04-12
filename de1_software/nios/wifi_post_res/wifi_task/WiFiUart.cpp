@@ -72,13 +72,13 @@ int WiFiUart::update_entry(volatile int *tag_id, volatile int *result)
 
     char command[50] = "update_db_entry(\"";
     char tid_str[8];
-	snprintf(tid_str, 8, "%d", tag_id); // covert tag_id from int to string 
-    strcat(command,tid_str);
-	strcat(command,"\",");
+	snprintf(tid_str, 8, "%d", tag_id); // convert tag_id from int to string 
+    strcat(command, tid_str);
+	strcat(command, "\",");
     strcat(command, result_str);
-    strcat(command,")");
+    strcat(command, ")");
     
-	printf(command);
+	printf("Command: %s\n", command);
 
     write_m(command, strlen(command));
     write_s('\r');
@@ -118,7 +118,6 @@ int WiFiUart::write_s(alt_u8 data)
 
     if (WRITE_FIFO_SPACE >= WRITE_FIFO_EMPTY) {
         alt_up_rs232_write_data(RS232_DEV, data);
-        printf("%s", data);
         result = 1;
     }
 

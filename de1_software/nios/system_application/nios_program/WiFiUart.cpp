@@ -11,6 +11,7 @@
 #include "sys/alt_dev.h"
 #include "altera_up_avalon_rs232.h"
 
+char *script = "dofile(\"patch_data.lua\")";
 
 WiFiUart::WiFiUart()
 {
@@ -39,112 +40,69 @@ int WiFiUart::open(const char *device_name)
 }
 
 
-int WiFiUart::connect()
+int WiFiUart::init()
 {
 	if (RS232_DEV == NULL) {
         printf("ERROR: Open RS232 port before conencting.\n");
         return 0;
     }
 
-    char ssid[20], passwd[20];
+    flush();    // Clear FIFO
 
-    send_command("AT+CWMODE_CUR=1");    // Obtain current AT command version
-    send_command("AT+CWLAPOPT=1,0x2");  // Get avaialble wifi ssid, sorted according to RSSI (signal strength)
+    int i;
+    char *crlf = "\r\n";
+    
+    for (i = 0; i < 5; i++) {   // Send CRLF multiple times to let the wifi firmware match up the communication baud rate
+        write_m(crlf, strlen(crlf));
+        flush();
+    }
 
-    printf("Network Name (SSID) List:\n");
-    send_command("AT+CWLAP");           // List available APs
+    write_m(script, strlen(script));
+    write_s('\r');
+    write_s('\n');
+    flush();
 
-    // Collect user input
-    printf("Enter the Network Name (SSID): ");
-    scanf("%s", ssid);
-    printf("\n");
-
-    printf("Enter the Password of Network Name (SSID): ");
-    scanf("%s", passwd);
-    printf("\n");
-
-    printf("Connecting to WiFi AP (SSID: %s)\n", ssid);
-
-    char cmd[100];
-    sprintf(cmd, "AT+CWJAP_CUR=\"%s\",\"%s\"", ssid, passwd);   // Connects to an AP
-
-    // Return the response obtained after sending AT command
-    // requesting wifi connection
-    return send_command(cmd);
     return 1;
 }
 
 
-int WiFiUart::send_command(const char *cmd)
+int WiFiUart::update_entry(volatile int *tag_id, volatile int *result)
 {
-    int count;
+    const char *result_str = (result) ? "true" : "false";
 
-	for (count = 0; count < strlen(cmd); count++) {
-		write_s(cmd[count]);
-	}
-    alt_u8 c = {'\r'};
-    write_s(c);
-    c = {'\n'};
-    write_s(c);
+    char command[50] = "update_db_entry(\"";
+    char tid_str[8];
+	snprintf(tid_str, 8, "%d", tag_id); // convert tag_id from int to string 
+    strcat(command, tid_str);
+	strcat(command, "\",");
+    strcat(command, result_str);
+    strcat(command, ")");
+    
+	printf("Command: %s\n", command);
 
-    char buffer[1000];
-    count = 0;
+    write_m(command, strlen(command));
+    write_s('\r');
+    write_s('\n');
+    for (int i = 0;i < 7000000; i++){};
 
-    while (read_ready()) {
-        // read unwanted char out of fifo receiver buffer
-        buffer[count] = read_s();
-        count++;
-    }
-
-    if (strstr(buffer, "OK") != NULL) {
-        if (strcmp("AT+CWLAP", cmd) == 0)
-            printf("%s\n", buffer);
-        return true;
-    } else if (strstr(buffer, "ERROR") != NULL) {
-        printf("AT ERROR: %s\n", buffer);
-        return false;
-    } else if (strstr(buffer, "FAIL") != NULL) {
-        printf("AT ERROR: %s\n", buffer);
-        return false;
-    }
-
-    printf("AT ERROR: Buffer empty.\n");
-    return false;
+    flush();
+    return 1;
 }
 
 
-int WiFiUart::send_data(const char *data, int length)
+int WiFiUart::write_m(char data[], int length)
 {
     int count;
-
 	for (count = 0; count < length; count++) {
 		write_s(data[count]);
 	}
-
-    char buffer[1000];
-    count = 0;
-
-    while (read_ready()) {
-        // read unwanted char out of fifo receiver buffer
-        buffer[count] = read_s();
-        count++;
-    }
-
-    if (strstr(buffer, "SEND OK") != NULL) {
-        return true;
-    } else if (strstr(buffer, "SEND FAIL") != NULL) {
-        printf("%s", buffer);
-        return false;
-    }
-
-    return false;
+    return count;
 }
 
 
-void WiFiUart::gets(char *buffer, int length)
+void WiFiUart::read_m(int *buffer, int length)
 {
-	int count;
-
+    int count;
     for (count = 0; count < length; count++) {
 		buffer[count] = read_s();
 	}
@@ -160,7 +118,6 @@ int WiFiUart::write_s(alt_u8 data)
 
     if (WRITE_FIFO_SPACE >= WRITE_FIFO_EMPTY) {
         alt_up_rs232_write_data(RS232_DEV, data);
-        printf("%s", data);
         result = 1;
     }
 

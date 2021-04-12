@@ -30,35 +30,36 @@ class WiFiUart {
 		int open(const char *device_name);
 
 		/**
-		 * Prompt user for WiFi network name and password, then connect
-		 * to WiFi network.
+		 * Run "patch_data.lua", which connect RFS wifi module to my home network and
+		 * make update_db_entry(), check_wifi() functions available.
 		 * @return 1 if sucess, 0 otherwise
 		**/
-		int connect();
+		int init();
 
 		/**
-		 * Send AT command to ESP8266 chip.
-		 * @param cmd - pointer to AT command string
-		 * @return 1 if success, 0 otherwise
+		 * Update entry in dynamodb.
+		 * @param tag_id
+		 * @param result
+		 * @return 1 if sucess, 0 otherwise
 		**/
-		int send_command(const char *cmd);
+		int update_entry(volatile int *tag_id, volatile int *result);
 
 		/**
 		 * Write multiple chars to the RS232 UART core.
-		 * @param data - pointer to the characters to be transferred 
+		 * @param data - the characters to be transferred 
 		 * 				 to the RS232 UART Core
-		 * @param length - the length of data to be transferred
+		 * @param length - the length of @param data
 		 * @return the number of chars written to UART core.
 		**/
-		int send_data(const char *data, int length);
+		int write_m(char data[], int length);
 
 		/**
 		 * Read multiple chars from the RS232 UART core.
-		 * @param buffer - pointer to the memory where the characters read from the RS232
+		 * @param buffer - pointer to the memory where the numbers read from the RS232
 		 *   			   UART core should be stored
 		 * @param length - the number of character to be read from UART
 		**/
-		void gets(char *buffer, int length);
+		void read_m(int *buffer, int length);
 
 		/**
 		 * Write single char to the RS232 UART core.

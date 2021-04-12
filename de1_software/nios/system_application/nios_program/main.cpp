@@ -16,7 +16,7 @@
 
 volatile int *input = (volatile int *) 0x0A800000; /* input image */
 volatile int *id = (volatile int *) 0x0A900000; /* tag id */
-volatile int *res = (volatile int *) 0x0B000000; /* dnn result */
+volatile int *res = (volatile int *) 0x0B000000; /* dnn done signal */
 
 
 int main()
