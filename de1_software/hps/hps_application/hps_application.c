@@ -20,25 +20,12 @@
 #include "socal/socal.h"
 #include "../hps_soc_system.h"
 
+#define N 2     // Number of integers to be copied from HPS to FPGA
+
 void setup_hps_timer() {
     assert(ALT_E_SUCCESS == alt_globaltmr_init());
 }
 
-void setup_hps_gpio() {
-    uint32_t hps_gpio_config_len = 2;
-    ALT_GPIO_CONFIG_RECORD_t hps_gpio_config[] = {
-        {HPS_LED_IDX  , ALT_GPIO_PIN_OUTPUT, 0, 0, ALT_GPIO_PIN_DEBOUNCE, ALT_GPIO_PIN_DATAZERO},
-        {HPS_KEY_N_IDX, ALT_GPIO_PIN_INPUT , 0, 0, ALT_GPIO_PIN_DEBOUNCE, ALT_GPIO_PIN_DATAZERO}
-    };
-
-    assert(ALT_E_SUCCESS == alt_gpio_init());
-    assert(ALT_E_SUCCESS == alt_gpio_group_config(hps_gpio_config, hps_gpio_config_len));
-}
-
-void setup_fpga_leds() {
-    // Switch on first LED only
-    alt_write_word(fpga_leds, 0x1);
-}
 
 /* The HPS doesn't have a sleep() function like the Nios II, so we can make one
  * by using the global timer. */
@@ -55,45 +42,39 @@ void delay_us(uint32_t us) {
     while(alt_globaltmr_get64() < end_time);
 }
 
-void handle_hps_led() {
-    uint32_t hps_gpio_input = alt_gpio_port_data_read(HPS_KEY_N_PORT, HPS_KEY_N_MASK);
 
-    // HPS_KEY_N is active-low
-    bool toggle_hps_led = (~hps_gpio_input & HPS_KEY_N_MASK);
+void start_dma() {
+    // === DMA transfer HPS -> FPGA
+    // set up DMA
+    // from https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/ug/ug_embedded_ip.pdf
+    // section 29.4.3 Table 282
+    *(DMA_status_ptr) = 0;
 
-    if (toggle_hps_led) {
-        uint32_t hps_led_value = alt_read_word(ALT_GPIO1_SWPORTA_DR_ADDR);
-        hps_led_value >>= HPS_LED_PORT_BIT;
-        hps_led_value = !hps_led_value;
-        hps_led_value <<= HPS_LED_PORT_BIT;
-        assert(ALT_E_SUCCESS == alt_gpio_port_data_write(HPS_LED_PORT, HPS_LED_MASK, hps_led_value));
-    }
-}
+    // read bus-master gets data from HPS addr=0xffff0000
+    *(DMA_status_ptr + 1) = 0xffff0000;
 
-void handle_fpga_leds() {
-    uint32_t leds_mask = alt_read_word(fpga_leds);
+    // write bus_master for FPGA SRAM is mapped to 0x08000000
+    *(DMA_status_ptr + 2) = 0x08000000;
 
-    if (leds_mask != (0x01 << (HPS_FPGA_LEDS_DATA_WIDTH - 1))) {
-        // rotate leds
-        leds_mask <<= 1;
-    } else {
-        // reset leds
-        leds_mask = 0x1;
-    }
+    // copy 8 bytes for 2 ints
+    *(DMA_status_ptr + 3) = N * 4;
 
-    alt_write_word(fpga_leds, leds_mask);
+    // Set bit 2 for WORD trnsfer
+    // Set bit 3 to sart DMA
+    // Set bit 7 to stop on byte-count
+    // Start the timer because DMA will start
+    gettimeofday(&t1, NULL);
+    *(DMA_status_ptr + 6) = 0b10001100;
+    
+    while ((*(DMA_startus_ptr) & 0x010) == 0) {}
 }
 
 int main() {
     printf("RUNNING ARM A9 HPS APPLICATION\n");
 
     setup_hps_timer();
-    setup_hps_gpio();
-    setup_fpga_leds();
 
     while (true) {
-        handle_hps_led();
-        handle_fpga_leds();
         delay_us(ALT_MICROSECS_IN_A_SEC / 10);
     }
 

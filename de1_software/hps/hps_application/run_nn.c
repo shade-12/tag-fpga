@@ -18,15 +18,14 @@
 #define L4_OUT 2
 #define NPARAMS (L1_OUT + L1_IN * L1_OUT + L2_OUT + L2_IN * L2_OUT + L3_OUT + L3_IN * L3_OUT + L4_OUT + L4_IN * L4_OUT)
 
-volatile unsigned *dnn_acc = (volatile unsigned *) 0xFF202040; /* DNN accelerator */
+volatile unsigned *dnn_acc = (volatile unsigned *) 0xFF200000; /* DNN accelerator */
 
-/* normally these would be contiguous but it's nice to know where they are for debugging */
-volatile int *nn      = (volatile int *) 0x01000000; /* neural network biases and weights */
-volatile int *input   = (volatile int *) 0x01800000; /* input image */
-volatile int *l1_acts = (volatile int *) 0x01801000; /* activations of layer 1 */
-volatile int *l2_acts = (volatile int *) 0x01802000; /* activations of layer 2 */
-volatile int *l3_acts = (volatile int *) 0x01803000; /* activations of layer 3 */
-volatile int *l4_acts = (volatile int *) 0x01804000; /* activations of layer 4 (output) */
+volatile int *nn      = (volatile int *) 0x0A000000; /* neural network biases and weights */
+volatile int *input   = (volatile int *) 0x0A800000; /* input image */
+volatile int *l1_acts = (volatile int *) 0x0A802000; /* activations of layer 1 */
+volatile int *l2_acts = (volatile int *) 0x0A803000; /* activations of layer 2 */
+volatile int *l3_acts = (volatile int *) 0x0A804000; /* activations of layer 3 */
+volatile int *l4_acts = (volatile int *) 0x0A805000; /* activations of layer 4 (output) */
 
 // Set to 1 to use hardware accelerator, 0 to use software
 #define USE_HW 1
